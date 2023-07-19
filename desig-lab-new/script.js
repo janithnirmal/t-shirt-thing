@@ -1,187 +1,177 @@
-
-$(document).ready(function() {
-  $('#btn1').hover(function() {
-    $('#messageContainer1').css('opacity', '1'); // Show the message on hover
-  }, function() {
-    $('#messageContainer1').css('opacity', '0'); // Hide the message when the hover ends
-  });
-
-  $('#btn2').hover(function() {
-    $('#messageContainer2').css('opacity', '1'); // Show the message on hover
-  }, function() {
-    $('#messageContainer2').css('opacity', '0'); // Hide the message when the hover ends
-  });
-
-  $('#showModal').hover(function() {
-    $('#messageContainer3').css('opacity', '1'); // Show the message on hover
-  }, function() {
-    $('#messageContainer3').css('opacity', '0'); // Hide the message when the hover ends
-  });
-
-  $('#btn4').hover(function() {
-    $('#messageContainer4').css('opacity', '1'); // Show the message on hover
-  }, function() {
-    $('#messageContainer4').css('opacity', '0'); // Hide the message when the hover ends
-  });
-
-
-
-$('#btn5').hover(function() {
-  $('#messageContainer5').css('opacity', '1'); // Show the message on hover
-}, function() {
-  $('#messageContainer5').css('opacity', '0'); // Hide the message when the hover ends
-});
-
-$('#btn6').hover(function() {
-  $('#messageContainer6').css('opacity', '1'); // Show the message on hover
-}, function() {
-  $('#messageContainer6').css('opacity', '0'); // Hide the message when the hover ends
-});
-
-
-$('#btn7').hover(function() {
-$('#messageContainer7').css('opacity', '1'); // Show the message on hover
-}, function() {
-$('#messageContainer7').css('opacity', '0'); // Hide the message when the hover ends
-});
-
-
-$('#showModal').on('click', function() {
-$('#myModal').modal({
-  escapeClose: false,
-  clickClose: false,
-  showClose: false
-});
-
-
-});
-
-// Close modal box on close button click
-$('.modal-close').on('click', function() {
-$.modal.close();
-
-// Remove the highlight effect
-$('#myModal').removeClass('highlight');
-});
-
-let currentStep = 1;
-const totalSteps = 3;
-
-// Function to show the current step
-function showStep(step) {
-    $('.steps').hide();
-    $(`#step${step}`).show();
-}
-
-// Function to go to the previous step
-function previousStep() {
-    if (currentStep > 1) {
-        currentStep--;
-        showStep(currentStep);
+$(document).ready(function () {
+  $("#btn1").hover(
+    function () {
+      $("#messageContainer1").css("opacity", "1"); // Show the message on hover
+    },
+    function () {
+      $("#messageContainer1").css("opacity", "0"); // Hide the message when the hover ends
     }
-}
+  );
 
-// Function to go to the next step
-function nextStep() {
-    if (currentStep < totalSteps) {
-        currentStep++;
-        showStep(currentStep);
+  $("#btn2").hover(
+    function () {
+      $("#messageContainer2").css("opacity", "1"); // Show the message on hover
+    },
+    function () {
+      $("#messageContainer2").css("opacity", "0"); // Hide the message when the hover ends
     }
-}
+  );
 
-// Show the initial step
-showStep(currentStep);
+  $("#showModal").hover(
+    function () {
+      $("#messageContainer3").css("opacity", "1"); // Show the message on hover
+    },
+    function () {
+      $("#messageContainer3").css("opacity", "0"); // Hide the message when the hover ends
+    }
+  );
 
-$('.next-button').on('click', function() {
-    nextStep();
-});
+  $("#btn4").hover(
+    function () {
+      $("#messageContainer4").css("opacity", "1"); // Show the message on hover
+    },
+    function () {
+      $("#messageContainer4").css("opacity", "0"); // Hide the message when the hover ends
+    }
+  );
 
-$('.prev-button').on('click', function() {
-    previousStep();
-});
+  $("#btn5").hover(
+    function () {
+      $("#messageContainer5").css("opacity", "1"); // Show the message on hover
+    },
+    function () {
+      $("#messageContainer5").css("opacity", "0"); // Hide the message when the hover ends
+    }
+  );
 
+  $("#btn6").hover(
+    function () {
+      $("#messageContainer6").css("opacity", "1"); // Show the message on hover
+    },
+    function () {
+      $("#messageContainer6").css("opacity", "0"); // Hide the message when the hover ends
+    }
+  );
 
+  $("#btn7").hover(
+    function () {
+      $("#messageContainer7").css("opacity", "1"); // Show the message on hover
+    },
+    function () {
+      $("#messageContainer7").css("opacity", "0"); // Hide the message when the hover ends
+    }
+  );
 
- // Show the modal on click
- $('#showModal').on('click', function() {
-  $('#myModal').modal({
+  $("#showModal").on("click", function () {
+    $("#myModal").modal({
       escapeClose: false,
       clickClose: false,
-      showClose: false
+      showClose: false,
+    });
+  });
+
+  // Close modal box on close button click
+  $(".modal-close").on("click", function () {
+    $.modal.close();
+
+    // Remove the highlight effect
+    $("#myModal").removeClass("highlight");
+  });
+
+  let currentStep = 1;
+  const totalSteps = 3;
+
+  // Function to show the current step
+  function showStep(step) {
+    $(".steps").hide();
+    $(`#step${step}`).show();
+  }
+
+  // Function to go to the previous step
+  function previousStep() {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  // Function to go to the next step
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+
+  // Show the initial step
+  showStep(currentStep);
+
+  $(".next-button").on("click", function () {
+    nextStep();
+  });
+
+  $(".prev-button").on("click", function () {
+    previousStep();
+  });
+
+  // Show the modal on click
+  $("#showModal").on("click", function () {
+    $("#myModal").modal({
+      escapeClose: false,
+      clickClose: false,
+      showClose: false,
+    });
+  });
+
+  // Close modal box on close button click
+  $(".modal-close").on("click", function () {
+    $.modal.close();
+
+    // Remove the highlight effect
+    $("#myModal").removeClass("highlight");
+  });
+
+  // Attach click event to "Select" buttons
+  $(".select-button").on("click", function () {
+    // Go to the next step
+    nextStep();
+    // Get the .bullet element associated with the clicked button
+    var bullet = $(this).closest(".step1").find(".bullet");
+
+    // Show the right icon (e.g., checkmark)
+    bullet.find("#check").show();
+
+    // Hide the icon after a short delay (optional)
+    setTimeout(function () {
+      bullet.find("#check").hide();
+    }, 1000); // Change the delay as needed (in milliseconds)
   });
 });
 
-// Close modal box on close button click
-$('.modal-close').on('click', function() {
-  $.modal.close();
-
-  // Remove the highlight effect
-  $('#myModal').removeClass('highlight');
-});
-
-
-// Attach click event to "Select" buttons
-$('.select-button').on('click', function() {
-  // Go to the next step
-  nextStep();
-  // Get the .bullet element associated with the clicked button
-  var bullet = $(this).closest('.step1').find('.bullet');
-
-  // Show the right icon (e.g., checkmark)
-  bullet.find('#check').show();
-
-  // Hide the icon after a short delay (optional)
-  setTimeout(function() {
-      bullet.find('#check').hide();
-  }, 1000); // Change the delay as needed (in milliseconds)
-});
-
-
-
-
-
-});
-
-
 function toggleDropdown() {
-var dropdownMenu = document.querySelector(".dropdown-menu");
-dropdownMenu.classList.toggle("show");
+  var dropdownMenu = document.querySelector(".dropdown-menu");
+  dropdownMenu.classList.toggle("show");
 }
 
 function setColor(color) {
-var smallBox = document.querySelector(".small-box");
-smallBox.style.backgroundColor = color;
+  var smallBox = document.querySelector(".small-box");
+  smallBox.style.backgroundColor = color;
 }
-
 
 // Function to hide the dropdown menu
 function hideDropdown() {
-var dropdownMenu = document.querySelector(".dropdown-menu");
-dropdownMenu.classList.remove("show");
+  var dropdownMenu = document.querySelector(".dropdown-menu");
+  dropdownMenu.classList.remove("show");
 }
 
-// Add event listener to the document for clicks
-document.addEventListener("click", function(event) {
-var dropdown = document.querySelector(".dropdown");
-var dropdownMenu = document.querySelector(".dropdown-menu");
+// // Add event listener to the document for clicks
+// document.addEventListener("click", function(event) {
+// var dropdown = document.querySelector(".dropdown");
+// var dropdownMenu = document.querySelector(".dropdown-menu");
 
-// Check if the click target is within the dropdown or its menu
-if (!dropdown.contains(event.target)) {
-// Click target is outside of the dropdown, hide the menu
-dropdownMenu.classList.remove("show");
-}
-});
-
-
-
-
-
-
-
-
-
-
-
-
-       
-           
+// // Check if the click target is within the dropdown or its menu
+// if (!dropdown.contains(event.target)) {
+// // Click target is outside of the dropdown, hide the menu
+// dropdownMenu.classList.remove("show");
+// }
+// });
