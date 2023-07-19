@@ -1,0 +1,494 @@
+/*  nav bar styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e4e9ed;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+nav {
+  background-color: #000;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+nav img {
+  height: 40px;
+  margin: 10px;
+}
+
+nav a:nth-child(2) {
+  padding-left: 0px;
+  color: #fff;
+}
+
+nav a:nth-child(6) {
+  color: #ffa500;
+}
+
+nav a:nth-child(7) {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+nav a {
+  float: left;
+  color: #989da0;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav i {
+  color: #ffa500;
+}
+
+.piority {
+  background-color: #0c7ce5;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  padding: 4px 8px;
+  color: #fff;
+}
+
+
+
+
+
+.main-box {
+    margin-top: 6%;
+    margin-right: 5%;
+    margin-left: 5%;
+    height: 789px;
+    padding: 1%;
+    background-color: white;
+    position: relative;
+  }
+  
+  .left-side {
+    position: absolute;
+    left: 0.5%;
+    top: -2%;
+  }
+  .near-left {
+    position: absolute;
+    left: 10.5%;
+    top: -1%;
+  }
+  .bottom-near-left {
+    position: absolute;
+    left: 10.5%;
+    top: 13%;
+  }
+
+  
+  .middle-side {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+  }
+  
+  .right-side {
+    position: absolute;
+    right: -.5%;
+    top: 1%;
+  }
+  .list-group {
+    
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 24%;
+    margin-left: 11%;
+    width: 98%;
+    height: 7%;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.8);
+    border-radius: 7px;
+    margin-bottom: 0.5%;
+    position: relative;
+  }
+  .list-group #btn4{
+    margin-bottom: .3%;
+  }
+  
+  .list-group-item {
+    display: block;
+    padding: 0.1rem 0.25rem;
+    margin-bottom: -14%;
+  }
+  
+  .list-group-item button {
+    background-color: red;
+    width: 90px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+  } 
+
+  #messageContainer1 {
+    background-color: #989da0;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    margin-top: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
+
+  }
+  
+  #messageContainer2 {
+    background-color: #989da0;
+    margin-top: -10%;
+    opacity: 0;
+
+    padding-left: 10px;
+width: 135px;
+    border-radius: 4px;
+    color: #fff;
+    transition: opacity 0.3s ease;
+  }
+  
+  #messageContainer3 {
+    background-color: #989da0;
+    margin-top: -16px;
+    border-radius: 4px;
+    padding-left: 10px;
+width: 160px;
+    opacity: 0;
+    color: #fff;
+    transition: opacity 0.3s ease;
+  }
+  
+  #messageContainer4 {
+    background-color: #989da0;
+    margin-top: -16px;
+    border-radius: 4px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding-left: 10px;
+width: 225px;
+  }
+
+  #messageContainer5 {
+    background-color: #989da0;
+    margin-top: 20%;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 4px;
+    color: #fff;
+    
+    padding-left: 10px;
+    width: 95px;
+  }
+  #messageContainer6 {
+    background-color: #989da0;
+    margin-top: 90px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 4px;
+    color: #fff;
+    
+    padding-left: 10px;
+    width: 120px;
+  }
+  #messageContainer7 {
+    background-color: #989da0;
+    margin-top: -16px;
+    margin-top: 80px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    border-radius: 4px;
+    color: #fff;
+    
+    padding-left: 10px;
+    width: 170px;
+  }
+  #messageContainer1 i{
+    color: #ffa500;
+  }
+  #messageContainer2 i{
+    color: #ffa500;
+  }#messageContainer3 i{
+    color: #ffa500;
+  }#messageContainer4 i{
+    color: #ffa500;
+  }
+ .bottom-near-left i{
+  color: #ffa500;
+ }
+  
+
+
+  .cardtwo {
+    margin-top: 8%;
+    margin-left: 0.5%;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.8);
+    width: 6.5%;
+    height: 43%;
+    padding-left: 1%;
+    padding-right: 0px;
+    border-radius: 9px;
+  }
+  
+  .cardtwo i {
+    color: #0c7ce5;
+    padding-left: 8px;
+    margin-top: 30%;
+    font-size: 50px;
+  }
+  
+  .cardtwo p {
+    color: #0c7ce5;
+    margin-top: 4px;
+    font-size: 80%;
+  }
+  
+ 
+
+  dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    border: none;
+    padding: 1px 10px;
+    font-weight: 100;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+   
+position: relative;
+right: 40px;
+top: 20px;
+min-width: 190px;
+    display: none;
+    padding: 10px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+
+  }
+  
+  .color-option {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #000;
+    z-index: 100;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.8);
+  
+  }
+  
+  .big-box {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    margin-top: 0px;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.8);
+  }
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  
+  .small-box {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 10px;
+    margin: -14px 10px 10px 10px;
+  }
+ .loku-box{
+  width: 400px;
+  height: 400px;
+  border: 3px solid black;
+  display: none;
+ }
+  
+  .modal-box {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 5px;
+    text-align: center;
+    
+  }
+  
+  .modal-close {
+    float: right;
+    cursor: pointer;
+  }
+  .modal{
+    margin-top: 70px;
+    height: 500px;
+  }
+  
+
+   .progress-bar{
+    display: flex;
+    margin-left: -50px;
+    margin-top: -10px;
+  }
+  .progress-bar .step{
+    width: 100%;
+    padding: 40px;
+
+  }
+  .progress-bar .step p{
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 8px;
+    width: 100px;
+  }
+  .step .bullet{
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.2s;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .shirt-item{
+    margin-top: -50px;
+    width: 110%;
+    height: 390px;
+    padding: 0;
+    position: relative;
+   } 
+   .step1 .step1-box1{
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    
+    
+   
+   }
+   .step1 .step1-box2{
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  
+  
+   
+   }
+   .step p{
+    margin-top: 1%;
+   }
+   .step1 .step1-box2:hover{
+    background-color: #d3d3d3;
+   }
+   .step1 .step1-box1:hover{
+    background-color: #d3d3d3;
+   }
+   .step1 .step1-box1 button{
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    border: none;
+    position: absolute;
+    top: 240px;
+    left: 60px;
+    font-size: 17px;
+  
+   }
+  
+   .step1 .step1-box2 button{
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    border: none;
+    position: absolute;
+    top: 240px;
+    right: 60px;
+    font-size: 17px;
+  
+   }
+   .step-btn{
+    background-color: #989da0;
+    position: absolute;
+    bottom: 4%;
+    display: flex;
+   align-items: center;
+   width: 100%;
+  
+   }
+   .next{
+    margin-left: 320px;
+   }
+  
+   
+  .steps{
+    display: none;
+    
+  }
+  
+  .buttons{
+    margin-top: 90px;
+    position: absolute;
+    bottom: 0px;
+  }
+  .next-button{
+    
+    margin-left: 300px;
+    font-size: 17px;
+    border: none;
+
+  }
+  .prev-button{
+    font-size: 17px;
+    border: none;
+
+
+  }
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+ #check {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -10px; /* Adjust the position as needed */
+  font-size: 20px;
+  color: #0c7ce5; /* Set the desired icon color */
+}
+
+ 

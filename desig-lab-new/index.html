@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/f98ce7c376.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a href=""><img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" alt=""></a> 
+        <a href="">DesignLab</a>
+        <a href="">Designs</a>
+        <a href="">Orders</a>
+        <a href="">Help</a>
+        <a href="">
+            Reviews
+            <i class="fas fa-star"></i>
+        </a>
+        <a href=""><img src="images/nav-image.png" alt=""></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href=""><button class="piority sign-in">Sign In</button></a>
+    </nav>
+
+    <div class="main-box">
+        <div class="left-side">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <button id="btn1" style="background-color: #6c7a89;">Polo Tshirt</button>
+                </li>
+                <li class="list-group-item">
+                    <button id="btn2" style="background-color: #2c82c9;">Men</button>
+                </li>
+                <li class="list-group-item">
+                    <button  id="showModal" style="background-color: #f62459;">Product</button>
+                </li>
+                <li class="list-group-item">
+                    <button id="btn4" style="background-color: #343f86;">Budget</button>
+                </li>
+            </ul>
+        </div>
+        <div class="near-left">
+            <div id="messageContainer1">
+                <p><i class="fa-solid fa-hand-point-left"></i>
+                    This will indicate product type</p>
+            </div>
+            <div id="messageContainer2">
+                <p><i class="fa-solid fa-hand-point-left"></i>
+                    Change type </p>
+            </div>
+            <div id="messageContainer3">
+                <p><i class="fa-solid fa-hand-point-left"></i>
+                    Change Product</p>
+            </div>
+            <div id="messageContainer4">
+                <p><i class="fa-solid fa-hand-point-left"></i>
+                    What are the materials</p>
+            </div>
+        </div>
+
+        <div class="cardtwo">
+            <div id="btn5">
+                <i class="fas fa-font"></i>
+                <p style="padding-left: 3%">Add Text</p>
+            </div>
+            <div id="btn6"> 
+                <i class="fas fa-image" style="padding-left: 6px;"></i>
+                <p>Add Image</p>
+            </div>
+            <div id="btn7">
+                <i class="fa fa-cloud-arrow-down" style="padding-left: 0px;"></i>
+                <p style="margin-left: -4px;margin-bottom: 12p8x;">Save Design</p>
+            </div>
+        </div>
+        <div class="bottom-near-left">
+            <div id="messageContainer5">
+                <p><i class="fa-solid fa-hand-point-left"></i>
+                    Add text </p>
+            </div>
+            <div id="messageContainer6">
+                <p><i class="fa-solid fa-hand-point-left"></i>
+                    Add image</p>
+            </div>
+            <div id="messageContainer7">
+                <p><i class="fa-solid fa-hand-point-left"></i>
+                    Save your design</p>
+            </div>
+        </div>
+
+        <div class="middle-side">
+            <img src="images/shirt.png" alt="" class="shape" style="margin-left: 20px;">
+            <div id="myModal" class="modal">
+                <div class="modal-box">
+                    <div class="product-form">
+                        <div class="progress-bar">
+                            <div class="step">
+                                <div class="bullet">
+                                    <span>1</span>
+                                    
+                                </div>
+               <div class="fas fa-check" id="check"></div>
+
+                                <p>Start Here</p>
+                            </div>
+                            <div class="step">
+                                <div class="bullet">
+                                    <span>2</span>
+                                </div>
+                                <p>T-shirt Type</p>
+                            </div>
+                            <div class="step">
+                                <div class="bullet">
+                                    <span>3</span>
+                                </div>
+                                <p>Templeate</p>
+                            </div>
+                        </div>
+
+                        <div class="shirt-item">
+                            <!-- Step 1 -->
+                            <div class="steps" id="step1">
+                              <p>Hey Let's start here!</p>
+                                <div class="step1">
+                                    <div class="step1-box1">
+                                        <img src="images/shirt-new-removebg-preview.png" alt="">
+                                        <button class="select-button">Select</button>
+                                    </div>
+                                    <div class="step1-box2">
+                                    <img src="images/girl-shirt.png" alt="">
+                                        
+                                        <button class="select-button">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="steps" id="step2">
+                              <p>Great! Now it's time to select what you want..</p>
+
+                              <div class="step1">
+                                <div class="step1-box1">
+                                    <img src="images/shirt-new-removebg-preview.png" alt="">
+                                    <button class="select-button">Select</button>
+                                </div>
+                                <div class="step1-box2">
+                                    <img src="images/girl-shirt.png" alt="">
+                                    <button class="select-button">Select</button>
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="steps" id="step3">
+                              <p>We prepaired everything for you. Just select your template!</p>
+
+                              <div class="step1">
+                                <div class="step1-box1">
+                                  <img src="images/shirt-new-removebg-preview.png" alt="">
+                                    
+                                    <button class="select-button">Select</button>
+                                </div>
+                                <div class="step1-box2">
+                                    <img src="images/girl-shirt.png" alt="">
+                                    <button class="select-button">Select</button>
+                                </div>
+                            </div>
+                            </div>
+
+                            
+<div class="buttons">
+                            <!-- Next and Previous buttons -->
+                            <button class=" prev-button" onclick="previousStep()">Previous</button>
+                             <button class="next-button" onclick="nextStep()" id="next">Next</button>
+                            </div> 
+                        </div>
+                        <span class="modal-close">&times;</span>           
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <img src="images/buttonline.png" alt="" style="padding-right: 10px;">
+            <div class="big-box">
+                <div class="small-box"></div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown()" style="background-color: white;"> Color <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-menu">
+                        <div class="color-row">
+                            <div class="color-option" onclick="setColor('red')" style="background-color: red;"></div>
+                            <div class="color-option" onclick="setColor('blue')" style="background-color: blue;"></div>
+                            <div class="color-option" onclick="setColor('green')" style="background-color: green;"></div>
+                            <div class="color-option" onclick="setColor('yellow')" style="background-color: yellow;"></div>
+                            <div class="color-option" onclick="setColor('orange')" style="background-color: orange;"></div>
+                        </div>
+                        <div class="color-row">
+                            <div class="color-option" onclick="setColor('purple')" style="background-color: purple;"></div>
+                            <div class="color-option" onclick="setColor('pink')" style="background-color: pink;"></div>
+                            <div class="color-option" onclick="setColor('teal')" style="background-color: teal;"></div>
+                            <div class="color-option" onclick="setColor('gray')" style="background-color: gray;"></div>
+                            <div class="color-option" onclick="setColor('brown')" style="background-color: brown;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
