@@ -85,7 +85,7 @@ nav i {
 }
 
 .section1 {
-  margin-top: 50px;
+  margin-top: 70px;
   width: 100%;
   height: max-content;
 }
@@ -758,6 +758,175 @@ nav i {
 .size-main {
   border: 4px solid black;
   padding: 18px 8px;
+}
+
+.t_changesection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: rgb(172, 43, 43);  */
+}
+.t_changebox {
+  width: 700px;
+  height: 680px;
+  background-color: grey;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.t_changebtnbox {
+  width: 95px;
+  min-height: 320px;
+  border-radius: 8px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.t_changebtn {
+  background-color: white;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  border-radius: 3px;
+}
+.t_changebtnimg {
+  transform: translateY(7px);
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+}
+.t_changebtnimg1 {
+  background-image: url("images/Frontside1.png");
+}
+.t_changebtnimg2 {
+  background-image: url("images/Leftside1.png");
+}
+.t_changebtnimg3 {
+  background-image: url("images/Backside1.png");
+}
+.t_changebtnimg4 {
+  background-image: url("images/Rightside1.png");
+}
+.t_changebtnpara {
+  margin-top: 14px;
+  font-size: 12px;
+}
+.t_changebtn:hover {
+  background-color: rgb(244, 244, 244);
+  cursor: pointer;
+}
+
+/* images for main section */
+.t_changeimage {
+  width: 300px;
+  height: 400px;
+  /* background-color: aquamarine; */
+}
+.t_changeimg1 {
+  width: 370px;
+  height: 500px;
+  background-image: url("images/f.png");
+  background-size: cover;
+}
+.t_changeimg2 {
+  width: 370px;
+  height: 500px;
+  background-image: url("images/L.png");
+  background-size: cover;
+  background-position: 0 -10px;
+}
+.t_changeimg3 {
+  width: 350px;
+  height: 500px;
+  background-image: url("images/M.png");
+  background-size: cover;
+}
+
+.t_changeimg4 {
+  width: 350px;
+  height: 500px;
+  background-image: url("images/R.png");
+  background-size: cover;
+}
+#t_changeblock2 {
+  display: none;
+}
+#t_changeblock3 {
+  display: none;
+}
+#t_changeblock4 {
+  display: none;
+}
+
+/* price tag css */
+.pricetagcontainer {
+  position: absolute;
+  translate: 60% 60%;
+}
+
+/* .pricetagbtn1box{
+  background-color: rgb(230, 230, 230);
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 7px;
+}
+.pricetagbtn2box{
+  background-color: rgb(230, 230, 230);
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 7px;
+}
+.pricetagbtn1heding{
+  font-size: 17px;
+  transform: translateY(-10px);
+}
+.pricetagbtn1para{
+  transform: translateY(-22px);
+  font-size: 11px;
+} */
+
+.pricetagbtn3box {
+  width: 150px;
+  height: 40px;
+  background-color: #e08e4a;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 200ms;
+}
+.pricetagbtn3heading {
+  color: aliceblue;
+}
+.pricetagbtn3box:hover {
+  transition: 200ms;
+  scale: 103%;
+  font-size: 16px;
+}
+
+.right-side-box2 {
+  margin-left: 20px;
+}
+
+.left-side-box3 {
+  position: relative;
 }
 
 @media (max-width: 1280px) {

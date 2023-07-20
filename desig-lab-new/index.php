@@ -93,6 +93,16 @@
             </button>
           </div>
         </div>
+
+        <div class="left-side-box3">
+          <div class="pricetagcontainer">
+            <img src="images/pricetag.jpg" alt="">
+            <button class="pricetagbtn3box">
+              <img src="images/Cart.png" style="width: 25px;height: 25px;">
+              <p class="pricetagbtn3heading"> MIN QTY : 15</p>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- middle panel -->
@@ -313,7 +323,7 @@
               <span style="width: 100%">Size & Qty</span>
               <i class="fas fa-chevron-down"></i>
             </button>
-            <div id="dropdownContent" class="basic-styling size-dropdown align-items-end flex-column">
+            <div id="dropdownContent" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500;">
               <i class="p-2 fas fa-close" onclick="toggleDropdown2()"></i>
               <div class="p-2 rounded-3 border border-1 border-secondary w-100">
                 <p class="text-center">Select your combination.</p>
@@ -397,6 +407,26 @@
                 <button class="btn btn-secondary w-50">test</button>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="basic-styling right-side-box2">
+          <div class="t_changebtnbox" id="viewPortChange">
+            <button class="t_changebtn t_changebtn1" onclick="sectionSwitch('t_changeblock1');">
+              <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
+              <p class="t_changebtnpara">Front view</p>
+            </button>
+            <button class="t_changebtn t_changebtn2" onclick="sectionSwitch('t_changeblock2');">
+              <div class="p-3 t_changebtnimg t_changebtnimg2"></div>
+              <p class="t_changebtnpara">Left view</p>
+            </button>
+            <button class="t_changebtn t_changebtn3" onclick="sectionSwitch('t_changeblock3');">
+              <div class="p-3 t_changebtnimg t_changebtnimg3"></div>
+              <p class="t_changebtnpara">Back view</p>
+            </button>
+            <button class="t_changebtn t_changebtn4" onclick="sectionSwitch('t_changeblock4');">
+              <div class="p-3 t_changebtnimg t_changebtnimg4"></div>
+              <p class="t_changebtnpara">Right view</p>
+            </button>
           </div>
         </div>
       </div>
