@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="t_changesection">
+      <div class="t_changebox">
+        <div class="t_changeimage">
+          <div id="t_changeblock1" class="t_changeimg1"></div>
+          <div id="t_changeblock2" class="t_changeimg2"></div>
+          <div id="t_changeblock3" class="t_changeimg3"></div>
+          <div id="t_changeblock4" class="t_changeimg4"></div>
+        </div>
+        <div class="t_changebtnbox">
+          <button class="t_changebtn t_changebtn1" onclick="sectionSwitch('t_changeblock1');">
+            <div class="t_changebtnimg t_changebtnimg1"></div>
+            <p class="t_changebtnpara">Front view</p>
+          </button>
+          <button class="t_changebtn t_changebtn2" onclick="sectionSwitch('t_changeblock2');">
+            <div class="t_changebtnimg t_changebtnimg2"></div>
+            <p class="t_changebtnpara">Left view</p>
+          </button>
+          <button class="t_changebtn t_changebtn3" onclick="sectionSwitch('t_changeblock3');">
+            <div class="t_changebtnimg t_changebtnimg3"></div>
+            <p class="t_changebtnpara">Back view</p>
+          </button>
+          <button class="t_changebtn t_changebtn4" onclick="sectionSwitch('t_changeblock4');">
+            <div class="t_changebtnimg t_changebtnimg4"></div>
+            <p class="t_changebtnpara">Right view</p>
+          </button>
+        </div>
+      </div>
+<!-- prcie tag  -->
+      <div class="pricetagcontainer">
+            <img src="pricetag.jpg" alt="">
+            <button class="pricetagbtn3box">
+                <img src="Cart.png" style="width: 25px;height: 25px;">
+                <p class="pricetagbtn3heading"> MIN QTY : 15</p>
+            </button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
