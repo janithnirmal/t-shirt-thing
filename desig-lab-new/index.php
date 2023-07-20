@@ -250,40 +250,40 @@
         <div class="basic-styling right-side-box1">
           <div class="right-side-box-btn-container">
             <div class="d-flex-column">
-              <button style="background-color: #2c82c9" class="right-side-box-btn">
-                Men1
+              <button style="background-color: #2596be" class="right-side-box-btn">
+                Men
               </button>
-              <button style="background-color: #df8b41" class="right-side-box-btn">
-                Men2
+              <button style="background-color: #8e48ae" class="right-side-box-btn">
+                Woman
               </button>
-              <button style="background-color: #70c92c" class="right-side-box-btn">
-                Men3
+              <button style="background-color: #4482c9" class="right-side-box-btn">
+                Men
               </button>
-              <button style="background-color: #c92c68" class="right-side-box-btn">
-                Men4
-              </button>
-            </div>
-
-            <div class="d-flex-column">
-              <button style="background-color: #343f86" class="right-side-box-btn">
-                Men5
-              </button>
-              <button style="background-color: #358634" class="right-side-box-btn">
-                Men6
-              </button>
-              <button style="background-color: #86346d" class="right-side-box-btn">
-                Men7
-              </button>
-              <button style="background-color: #867034" class="right-side-box-btn">
-                Men8
+              <button style="background-color: #8e44ad" class="right-side-box-btn">
+                Woman
               </button>
             </div>
 
             <div class="d-flex-column">
-              <span class="right-side-box-num">1</span>
-              <span class="right-side-box-num">1</span>
-              <span class="right-side-box-num">1</span>
-              <span class="right-side-box-num">1</span>
+              <button style="background-color: #1f3a93" class="right-side-box-btn">
+                Coparate
+              </button>
+              <button style="background-color: #1f3a93" class="right-side-box-btn">
+                Coparate
+              </button>
+              <button style="background-color: #fb6e0d" class="right-side-box-btn">
+                Budget
+              </button>
+              <button style="background-color: #fb6e0d" class="right-side-box-btn">
+                Budget
+              </button>
+            </div>
+
+            <div class="d-flex-column">
+              <span class="right-side-box-num"><input type="radio"></span>
+              <span class="right-side-box-num"><input type="radio"></span>
+              <span class="right-side-box-num"><input type="radio"></span>
+              <span class="right-side-box-num"><input type="radio"></span>
             </div>
           </div>
         </div>
@@ -362,37 +362,37 @@
               <div class="my-2 d-flex flex-column  gap-1">
                 <div class="w-100 d-flex gap-2">
                   <div class="w-50 combination-size  d-flex">
-                    <div class="combination-size-input p-1">XXl</div>
+                    <div class="combination-size-input p-1">XS</div>
                     <input type="number" class="bg-transparent border-1 border border-secondary w-75">
                   </div>
                   <div class="w-50 combination-size d-flex">
-                    <div class="combination-size-input p-1">XXl</div>
+                    <div class="combination-size-input p-1">S</div>
                     <input type="number" class="bg-transparent border-1 border border-secondary w-75">
                   </div>
                 </div>
                 <div class="w-100 d-flex gap-2">
                   <div class="w-50 combination-size  d-flex">
-                    <div class="combination-size-input p-1">XXl</div>
+                    <div class="combination-size-input p-1">M</div>
                     <input type="number" class="bg-transparent border-1 border border-secondary w-75">
                   </div>
                   <div class="w-50 combination-size d-flex">
-                    <div class="combination-size-input p-1">XXl</div>
+                    <div class="combination-size-input p-1">L</div>
                     <input type="number" class="bg-transparent border-1 border border-secondary w-75">
                   </div>
                 </div>
                 <div class="w-100 d-flex gap-2">
                   <div class="w-50 combination-size  d-flex">
-                    <div class="combination-size-input p-1">XXl</div>
+                    <div class="combination-size-input p-1">Xl</div>
                     <input type="number" class="bg-transparent border-1 border border-secondary w-75">
                   </div>
                   <div class="w-50 combination-size d-flex">
-                    <div class="combination-size-input p-1">XXl</div>
+                    <div class="combination-size-input p-1">2XXL</div>
                     <input type="number" class="bg-transparent border-1 border border-secondary w-75">
                   </div>
                 </div>
                 <div class="w-100 d-flex gap-2">
                   <div class="w-50 combination-size  d-flex">
-                    <div class="combination-size-input p-1">XXl</div>
+                    <div class="combination-size-input p-1">3XXl</div>
                     <input type="number" class="bg-transparent border-1 border border-secondary w-75">
                   </div>
                   <div class="w-50 combination-size d-flex">
@@ -403,8 +403,9 @@
               </div>
 
               <div class="d-flex gap-2 w-100">
-                <button class="btn btn-dark w-50">test</button>
-                <button class="btn btn-secondary w-50">test</button>
+              <button class="btn btn-secondary w-50">Size Chart</button>
+
+                <button class="btn btn-dark w-50">Add Quantities</button>
               </div>
             </div>
           </div>
