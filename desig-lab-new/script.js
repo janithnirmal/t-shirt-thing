@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#showModal").on("click", function () {
+  $("#showModals").on("click", function () {
     $("#myModal").modal({
       escapeClose: false,
       clickClose: false,
