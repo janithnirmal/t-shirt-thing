@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed; /* Use "fixed" instead of "absolute" */
+  top: 0; /* Position from the top of the screen */
+  right: 10px; /* Position from the right of the screen */
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  min-width: 320px;
+}
+.dropdown-content p{
+text-align: center;
+}
+.size-box{
+  min-width: 180px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.size-box input{
+  margin-right: 16px;
+  font-size: 20px;
+  
+}
+.size-box button {
+  background-color: red;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  min-width: 90px;
+  padding: 4px;
+  margin-bottom: 15px;
+}
+.size-box span{
+  margin-left: 50px;
+}
+.size-box-bottom{
+  min-width: 180px;
+  min-height: 120px;
+  padding: 10px;
+  border: 1px solid black;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.size-box-bottom input{
+  width: 80px;
+  height: 17px;
+  margin-bottom: 12px;
+  
+}
+.size-box-bottom span{
+  float: right;
+}
+.size-final-btn{
+  margin-top: 12px;
+}
+.size-final-btn button {
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  min-width: 90px;
+  padding: 7px;
+  font-size: 15px;
+  margin-left: 40px;
+  margin-bottom: 15px;
+}
+
+.size-box6{
+  margin-right: 100px;
+}
+.chart{
+  background-color: #bdc3c7;
+}
+.add{
+  background-color: #000;
+  color: white;
+}
+
+.size-main{
+  border: 4px solid black;
+  padding: 18px 8px;
+}
+    </style>
+    
+
+<body>
+    <div class="dropdown">
+        <div class="dropdown-icon" onclick="toggleDropdown()">&#9776;</div>
+        
+        <div class="dropdown-content" id="dropdownContent">
+            <!-- Content of the div box goes here -->
+            <div class="size-box">
+            <p>Select your combination.</p>
+
+                <div class="size-box1">
+                <input type="radio" id="men"><button  style="background-color: #0c7ce5;">Men</button>
+                <span><input type="radio" id="woman" ><button style="background-color: #8e44ad;"n>Woman</button></span>
+            </div>
+            <div class="size-box2">
+                <input type="radio" id="budget"><button style="background-color: #f9690e;">Budget</button>
+               <span> <input type="radio" id="coparate"><button style="background-color: #1f3a93;">Coparate</button></span>
+            </div>
+            </div>
+            <div class="size-box-bottom">
+    
+                    <div class="size-box3">
+                       <pa>S</pa><input type="text">
+                       <span><pa>S</pa><input type="text"></span>
+
+                </div>
+                <div class="size-box4">
+                    <pa>M</pa><input type="text">
+                    <span><pa>L</pa><input type="text"></span>
+
+                    
+                </div>
+                <div class="size-box5">
+                    <pa>XL</pa><input type="text">
+                    <span> <pa>XXL</pa><input type="text"></span>
+
+
+                    
+                </div>
+                <div class="size-box6">
+                    
+                    <span> <pa>XXL</pa><input type="text"></span>
+
+
+                    
+                </div>
+
+                
+                </div>
+                <div class="size-final-btn">
+                    <button class="chart"> Size Chart</button>
+                    <button class="add">ADD QUATITIES</button>
+
+        </div>
+    </div>
+
+    
+    <script>
+        function toggleDropdown() {
+  var dropdownContent = document.getElementById("dropdownContent");
+  if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+  } else {
+      dropdownContent.style.display = "block";
+  }
+}
+    </script>
+</body>
+</html>
