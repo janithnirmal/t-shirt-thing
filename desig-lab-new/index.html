@@ -302,7 +302,22 @@
             </div>
           </div>
         </div>
-        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center" style="transform: translateX(50px);">
+
+        <div class="basic-styling big-box" style="margin-top: 3px;">
+          <div class="d-flex-column" style="height: 100%">
+            <button onclick="toggleDropdowns2()" class="size-qty-box2 btn-style-remover d-flex-column" style="
+                  height: 100%;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 10px;
+                ">
+              <div class="size-qty-box1">O items</div>
+              <span style="width: 100%">Pre-Set</span>
+
+              
+              <i class="fas fa-chevron-down"></i>
+            </button></div></div>
+        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
           <div class="dropdown">
             <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="
                   align-items: center;
@@ -313,21 +328,29 @@
               <span>Color</span> <i class="fas fa-chevron-down"></i>
             </button>
 
-            <div class="dropdown-menu1 basic-styling  flex-column" id="dropdownContent1">
-              <div class="color-row">
+            <div class="dropdown-menu1 basic-styling  flex-column" id="dropdownContent1" >
+              <div class="color-row" style="max-width: 350px;">
                 <div class="color-option" onclick="setColor('red')" style="background-color: red"></div>
                 <div class="color-option" onclick="setColor('blue')" style="background-color: blue"></div>
                 <div class="color-option" onclick="setColor('green')" style="background-color: green"></div>
                 <div class="color-option" onclick="setColor('yellow')" style="background-color: yellow"></div>
                 <div class="color-option" onclick="setColor('orange')" style="background-color: orange"></div>
-              </div>
-              <div class="color-row">
                 <div class="color-option" onclick="setColor('purple')" style="background-color: purple"></div>
                 <div class="color-option" onclick="setColor('pink')" style="background-color: pink"></div>
                 <div class="color-option" onclick="setColor('teal')" style="background-color: teal"></div>
                 <div class="color-option" onclick="setColor('gray')" style="background-color: gray"></div>
                 <div class="color-option" onclick="setColor('brown')" style="background-color: brown"></div>
+                <!-- Add more colors below -->
+                <div class="color-option" onclick="setColor('cyan')" style="background-color: cyan"></div>
+                <div class="color-option" onclick="setColor('magenta')" style="background-color: magenta"></div>
+                <div class="color-option" onclick="setColor('lime')" style="background-color: lime"></div>
+                <div class="color-option" onclick="setColor('silver')" style="background-color: silver"></div>
+                <div class="color-option" onclick="setColor('indigo')" style="background-color: indigo"></div>
+                <div class="color-option" onclick="setColor('gold')" style="background-color: gold"></div>
+                <div class="color-option" onclick="setColor('maroon')" style="background-color: maroon"></div>
+                <div class="color-option" onclick="setColor('navy')" style="background-color: navy"></div>
               </div>
+              
             </div>
           </div>
         </div>
@@ -341,8 +364,15 @@
                 ">
               <div class="size-qty-box1">O items</div>
               <span style="width: 100%">Size & Qty</span>
+
+              
               <i class="fas fa-chevron-down"></i>
             </button>
+
+           
+
+
+            
             <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500;">
               <i class="p-2 fas fa-close" onclick="toggleDropdown2()"></i>
               <div class="p-2 rounded-3 border border-1 border-secondary w-100">

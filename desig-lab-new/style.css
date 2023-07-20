@@ -67,6 +67,7 @@ nav i {
 .section1-layout {
   display: flex;
   justify-content: center;
+  min-width: 90%;
   height: max-content;
   background-color: white;
 }
