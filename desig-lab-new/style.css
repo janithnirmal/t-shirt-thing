@@ -297,6 +297,16 @@ nav i {
   z-index: 1;
 }
 
+.dropdown-menu1 {
+  position: absolute;
+  translate: -63% 100%;
+  top: 10px;
+  min-width: max-content;
+  display: none;
+  padding: 10px;
+  z-index: 1;
+}
+
 .color-option {
   width: 30px;
   height: 30px;

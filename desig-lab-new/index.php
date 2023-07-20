@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <link rel="stylesheet" href="bootstrap.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dcss.css" />
 
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
@@ -121,7 +122,11 @@
                 <i class="fas fa-radio"></i>
               </div>
             </div>
-            <img src="images/shirt.png" alt="" class="shirt" />
+            <img id="t_changeblock1" src="images/f.png" alt="" class="shirt" />
+            <img id="t_changeblock2" src="images/L.png" alt="" class="shirt" />
+            <img id="t_changeblock3" src="images/M.png" alt="" class="shirt" />
+            <img id="t_changeblock4" src="images/R.png" alt="" class="shirt" />
+
           </div>
 
           <div id="myModal" class="modal">
@@ -287,13 +292,18 @@
             </div>
           </div>
         </div>
-        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center" onclick="toggleDropdown()">
-          <div class="small-box"></div>
+        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
           <div class="dropdown">
-            <button class="dropdown-toggle" style="background-color: white">
-              Color <i class="fas fa-chevron-down"></i>
+            <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="
+                  align-items: center;
+                  justify-content: center;
+                  gap: 10px;
+                  ">
+              <div class="small-box"></div>
+              <span>Color</span> <i class="fas fa-chevron-down"></i>
             </button>
-            <div class="dropdown-menu basic-styling">
+
+            <div class="dropdown-menu1 basic-styling  flex-column" id="dropdownContent1">
               <div class="color-row">
                 <div class="color-option" onclick="setColor('red')" style="background-color: red"></div>
                 <div class="color-option" onclick="setColor('blue')" style="background-color: blue"></div>
@@ -323,7 +333,7 @@
               <span style="width: 100%">Size & Qty</span>
               <i class="fas fa-chevron-down"></i>
             </button>
-            <div id="dropdownContent" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500;">
+            <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500;">
               <i class="p-2 fas fa-close" onclick="toggleDropdown2()"></i>
               <div class="p-2 rounded-3 border border-1 border-secondary w-100">
                 <p class="text-center">Select your combination.</p>
