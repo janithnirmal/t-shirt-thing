@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <link rel="stylesheet" href="bootstrap.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dcss.css"/>
 
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
@@ -121,7 +122,11 @@
                 <i class="fas fa-radio"></i>
               </div>
             </div>
-            <img src="images/shirt.png" alt="" class="shirt" />
+            <img id="t_changeblock1" src="images/f.png" alt="" class="shirt" />
+            <img id="t_changeblock2" src="images/L.png" alt="" class="shirt" />
+            <img id="t_changeblock3" src="images/M.png" alt="" class="shirt" />
+            <img id="t_changeblock4" src="images/R.png" alt="" class="shirt" />
+            
           </div>
 
           <div id="myModal" class="modal">
