@@ -112,3 +112,12 @@ function hideDropdown() {
 // dropdownMenu.classList.remove("show");
 // }
 // });
+
+function toggleDropdown2() {
+  var dropdownContent = document.getElementById("dropdownContent");
+  if (dropdownContent.style.display === "flex") {
+    dropdownContent.style.display = "none";
+  } else {
+    dropdownContent.style.display = "flex";
+  }
+}
