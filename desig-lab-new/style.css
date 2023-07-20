@@ -73,6 +73,7 @@ nav i {
 
 .section1-panel {
   height: max-content;
+  
 }
 
 .section1-panel-mid {
@@ -227,14 +228,21 @@ nav i {
 
 .icon-group-1 {
   position: absolute;
+  transform: translateY(40px);
+  margin-left: -30px;
 }
 
 .icon-group1-icons {
+  width: 40px;
+  height: 30px;
   color: black;
-  margin: 2px 0;
+  margin: 4px 0;
   background-color: white;
   border-radius: 0;
   border: rgba(93, 93, 93, 0.44) 0.5px solid;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
 }
 
 .angle-clip {
@@ -760,7 +768,7 @@ nav i {
 .chart {
   background-color: #bdc3c7;
 }
-.add {
+.add {icon-group-1
   background-color: #000;
   color: white;
 }
@@ -932,7 +940,8 @@ nav i {
 }
 
 .right-side-box2 {
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  transform: translateX(65px);
 }
 
 .left-side-box3 {
