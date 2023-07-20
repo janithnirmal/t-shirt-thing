@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!-- css -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -17,10 +19,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
     />
 
-    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script
-      defer
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"
+      defer
     ></script>
     <script src="script.js" defer></script>
     <script
@@ -28,15 +31,16 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script defer src="main.js"></script>
+    <script src="main.js" defer></script>
   </head>
+
   <body>
     <nav>
-      <a href=""
-        ><img
+      <a href="">
+        <img
           src="images/free-logo-simple-illustration-vector-260nw-776460778.webp"
-          alt=""
-      /></a>
+        />
+      </a>
       <a href="">DesignLab</a>
       <a href="">Designs</a>
       <a href="">Orders</a>
@@ -135,6 +139,7 @@
               </div>
               <img src="images/shirt.png" alt="" class="shirt" />
             </div>
+
             <div id="myModal" class="modal">
               <div class="modal-box">
                 <div class="product-form">
@@ -167,6 +172,7 @@
                       <p>Hey Let's start here!</p>
                       <div class="step1">
                         <div class="step1-box1">
+                          <p>Men</p>
                           <img
                             src="images/shirt-new-removebg-preview.png"
                             alt=""
@@ -174,10 +180,25 @@
                           <button class="select-button">Select</button>
                         </div>
                         <div class="step1-box2">
+                          <p>Woman</p>
+
                           <img src="images/girl-shirt.png" alt="" />
 
                           <button class="select-button">Select</button>
                         </div>
+                      </div>
+                      <div class="buttons">
+                        <!-- Next and Previous buttons -->
+                        <button class="prev-button" onclick="previousStep()">
+                          Previous
+                        </button>
+                        <button
+                          class="next-button"
+                          onclick="nextStep()"
+                          id="next"
+                        >
+                          Next
+                        </button>
                       </div>
                     </div>
 
@@ -187,28 +208,42 @@
 
                       <div class="step1">
                         <div class="step1-box1">
-                          <img
-                            src="images/shirt-new-removebg-preview.png"
-                            alt=""
-                          />
+                          <p>Polo TShirt</p>
+                          <img src="images/step2-image-1.png" alt="" />
                           <button class="select-button">Select</button>
                         </div>
                         <div class="step1-box2">
-                          <img src="images/girl-shirt.png" alt="" />
+                          <p>Cotton T-shirt</p>
+
+                          <img src="images/step2-image2.png" alt="" />
                           <button class="select-button">Select</button>
                         </div>
+                      </div>
+                      <div class="buttons">
+                        <!-- Next and Previous buttons -->
+                        <button class="prev-button" onclick="previousStep()">
+                          Previous
+                        </button>
+                        <button
+                          class="next-button"
+                          onclick="nextStep()"
+                          id="next"
+                        >
+                          Next
+                        </button>
                       </div>
                     </div>
 
                     <!-- Step 3 -->
                     <div class="steps" id="step3">
                       <p>
-                        We prepaired everything for you. Just select your
-                        template!
+                        We prepaired everything for you. Just select template!
                       </p>
 
                       <div class="step1">
                         <div class="step1-box1">
+                          <p>Two buttons</p>
+
                           <img
                             src="images/shirt-new-removebg-preview.png"
                             alt=""
@@ -217,24 +252,24 @@
                           <button class="select-button">Select</button>
                         </div>
                         <div class="step1-box2">
+                          <p>Three Buttons</p>
                           <img src="images/girl-shirt.png" alt="" />
                           <button class="select-button">Select</button>
                         </div>
                       </div>
-                    </div>
-
-                    <div class="buttons">
-                      <!-- Next and Previous buttons -->
-                      <button class="prev-button" onclick="previousStep()">
-                        Previous
-                      </button>
-                      <button
-                        class="next-button"
-                        onclick="nextStep()"
-                        id="next"
-                      >
-                        Next
-                      </button>
+                      <div class="buttons">
+                        <!-- Next and Previous buttons -->
+                        <button class="prev-button" onclick="previousStep()">
+                          Previous
+                        </button>
+                        <button
+                          class="next-button"
+                          onclick="nextStep()"
+                          id="next"
+                        >
+                          Next
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <span class="modal-close">&times;</span>
@@ -378,6 +413,7 @@
               </div>
             </div>
           </div>
+          <div class="right-side-box3"></div>
         </div>
       </div>
     </div>

@@ -277,8 +277,8 @@ dropdown {
 
 .dropdown-menu {
   position: relative;
-  right: 40px;
-  top: 20px;
+  translate: -50% 0;
+  top: 10px;
   min-width: max-content;
   display: none;
   padding: 10px;
@@ -292,6 +292,7 @@ dropdown {
   margin-right: 3px;
   cursor: pointer;
   background-color: #000;
+  border-radius: 3px;
   z-index: 100;
 }
 
@@ -454,6 +455,159 @@ dropdown {
 .next-button {
   margin-left: 300px;
   font-size: 17px;
+  border: none;
+}
+.prev-button {
+  font-size: 17px;
+  border: none;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+#check {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -10px; /* Adjust the position as needed */
+  font-size: 20px;
+  color: #0c7ce5; /* Set the desired icon color */
+}
+
+.modal-box {
+  background-color: #fff;
+  width: 400px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-close {
+  float: right;
+  cursor: pointer;
+}
+.modal {
+  margin-top: 70px;
+  height: 520px;
+}
+
+.progress-bar {
+  display: flex;
+  margin-left: -50px;
+  margin-top: -10px;
+}
+.progress-bar .step {
+  width: 100%;
+  padding: 40px;
+}
+.progress-bar .step p {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 8px;
+  width: 100px;
+}
+.step .bullet {
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.shirt-item {
+  margin-top: -50px;
+  width: 110%;
+  height: 390px;
+  padding: 0;
+  position: relative;
+}
+.step1 p {
+  margin: 0;
+}
+.step1 .step1-box1 {
+  position: absolute;
+  left: 0px;
+  top: 40px;
+  min-width: 200px;
+  min-height: 320px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.step1 .step1-box2 {
+  position: absolute;
+  right: 0px;
+  top: 35px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  min-height: 320px;
+  min-width: 200px;
+}
+.step p {
+  margin-top: 1%;
+}
+.step1 .step1-box2:hover {
+  background-color: #d3d3d3;
+}
+.step1 .step1-box1:hover {
+  background-color: #d3d3d3;
+}
+.step1 .step1-box1 button {
+  background-color: #d3d3d3;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  border: none;
+  position: absolute;
+  top: 270px;
+  left: 60px;
+  font-size: 17px;
+}
+
+.step1 .step1-box2 button {
+  background-color: #d3d3d3;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  border: none;
+  position: absolute;
+  top: 270px;
+  right: 60px;
+  font-size: 17px;
+}
+.step-btn {
+  background-color: #989da0;
+  position: absolute;
+  bottom: 4%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.next {
+  margin-left: 320px;
+}
+
+.steps {
+  display: none;
+}
+
+.buttons {
+  margin-top: 17880px;
+  position: absolute;
+  bottom: 0px;
+}
+.next-button {
+  margin-left: 300px;
+  font-size: 17px;
+  border: none;
+  background-color: #fff;
   border: none;
 }
 .prev-button {
