@@ -68,6 +68,7 @@ nav i {
   display: flex;
   justify-content: center;
   min-width: 90%;
+  height: 80%;
   height: max-content;
   background-color: white;
 }
@@ -769,10 +770,7 @@ nav i {
 .chart {
   background-color: #bdc3c7;
 }
-.add {icon-group-1
-  background-color: #000;
-  color: white;
-}
+
 
 .size-main {
   border: 4px solid black;
