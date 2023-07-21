@@ -22,21 +22,26 @@
 </head>
 
 <body>
-  <nav>
-    <a href="">
-      <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
-    </a>
-    <a href="">DesignLab</a>
-    <a href="">Designs</a>
-    <a href="">Orders</a>
-    <a href="">Help</a>
-    <a href="">
-      Reviews
-      <i class="fas fa-star"></i>
-    </a>
-    <a href=""><img src="images/nav-image.png" alt="" /></a>
-    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-    <a href=""><button class="piority sign-in">Sign In</button></a>
+  <nav class="d-flex justify-content-between align-items-center">
+    <div class=" h-100">
+      <a href="">
+        <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
+      </a>
+      <a href="">DesignLab</a>
+      <a href="">Designs</a>
+      <a href="">Orders</a>
+      <a href="">Help</a>
+      <a href="">
+        Reviews
+        <i class="fas fa-star"></i>
+      </a>
+    </div>
+    <div class="d-flex h-100 justify-content-center">
+      <a href=""><img class="nav-img-contact" src="images/nav-image.png" alt="" /></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a href=""><button class="piority sign-in">Sign In</button></a>
+    </div>
+
   </nav>
 
   <div class="section1">
@@ -303,7 +308,7 @@
           </div>
         </div>
 
-        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center" >
+        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
           <div class="dropdown">
             <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
               <div class="small-box"></div>

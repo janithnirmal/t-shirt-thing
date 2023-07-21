@@ -27,11 +27,10 @@ nav {
 
 nav img {
   height: 40px;
-  margin: 10px;
+  margin: 5px;
 }
 
 nav a:nth-child(2) {
-  padding-left: 0px;
   color: #fff;
 }
 
@@ -41,11 +40,15 @@ nav a:nth-child(6) {
 
 nav a:nth-child(7) {
   margin-left: auto;
-  margin-right: 20px;
+}
+
+.nav-img-contact {
+  height: 40px;
+  margin-top: -10px;
+  margin-right: 0;
 }
 
 nav a {
-  float: left;
   color: #989da0;
   text-align: center;
   padding: 14px 10px;
@@ -112,7 +115,7 @@ nav i {
   border-radius: 7px;
   outline: none;
   border: none;
-  padding: 4px 8px;
+  padding: 2px 8px;
   color: #fff;
 }
 
