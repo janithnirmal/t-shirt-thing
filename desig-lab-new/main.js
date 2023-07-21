@@ -46,6 +46,9 @@ document.getElementById("btn8").addEventListener("mouseenter", () => {
 document.getElementById("btn9").addEventListener("mouseenter", () => {
   tooltip("btn9", "Print your design", 5);
 });
+document.getElementById("btn10").addEventListener("mouseenter", () => {
+  tooltip("btn10", "Add your prset", 15);
+});
 
 
 
