@@ -70,8 +70,6 @@
               <button class="left-side-btn" id="showModal" style="background-color: #f62459">
                 Product
               </button>
-              
-              
             </div>
           </div>
           <div class="list-group-item">
@@ -113,8 +111,8 @@
         <div class="left-side-box3">
           <div class="pricetagcontainer">
             <button class="pricetagbtn3box">
-              <img src="images/Cart.png" style="width: 25px;height: 25px;">
-              <p class="pricetagbtn3heading"> MIN QTY : 15</p>
+              <img src="images/Cart.png" style="width: 25px; height: 25px" />
+              <p class="pricetagbtn3heading">MIN QTY : 15</p>
             </button>
           </div>
         </div>
@@ -126,22 +124,19 @@
           <div class="shirt-panel">
             <div class="icon-group-1 d-flex-column">
               <div class="basic-styling icon-group1-icons">
-               <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-pen"></i>
               </div>
               <div class="basic-styling icon-group1-icons">
                 <i class="fa-regular fa-trash-can"></i>
-                
               </div>
               <div class="basic-styling icon-group1-icons">
                 <i class="fas fa-tshirt"></i>
-
               </div>
             </div>
-            <img id="t_changeblock1" src="images/f.png" alt="" class="shirt" /  style="height: 500px; margin-top: 45px;">
-            <img id="t_changeblock2" src="images/L.png" alt="" class="shirt" style="height: 500px; margin-top: 45px;" />
-            <img id="t_changeblock3" src="images/M.png" alt="" class="shirt" style="height: 500px; margin-top: 45px;" />
-            <img id="t_changeblock4" src="images/R.png" alt="" class="shirt" style="height: 500px; margin-top: 45px;" />
-
+            <img id="t_changeblock1" src="images/f.png" alt="" class="shirt" style="height: 500px; margin-top: 45px" />
+            <img id="t_changeblock2" src="images/L.png" alt="" class="shirt" style="height: 500px; margin-top: 45px" />
+            <img id="t_changeblock3" src="images/M.png" alt="" class="shirt" style="height: 500px; margin-top: 45px" />
+            <img id="t_changeblock4" src="images/R.png" alt="" class="shirt" style="height: 500px; margin-top: 45px" />
           </div>
 
           <div id="myModal" class="modal">
@@ -266,7 +261,7 @@
       </div>
 
       <!-- right side panel -->
-      <div class="section1-panel section1-panel-sides side-panel-3">
+      <div class="section1-panel section1-panel-sides side-panel-3 d-flex flex-column align-items-center">
         <div class="basic-styling right-side-box1">
           <div class="right-side-box-btn-container">
             <div class="d-flex-column">
@@ -300,28 +295,23 @@
             </div>
 
             <div class="d-flex-column">
-              <span class="right-side-box-num"><input type="radio"></span>
-              <span class="right-side-box-num"><input type="radio"></span>
-              <span class="right-side-box-num"><input type="radio"></span>
-              <span class="right-side-box-num"><input type="radio"></span>
+              <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
+              <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
+              <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
+              <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
             </div>
           </div>
         </div>
 
-       
-        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center" style="transform: translateX(50px);">
+        <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center" >
           <div class="dropdown">
-            <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="
-                  align-items: center;
-                  justify-content: center;
-                  gap: 10px;
-                  ">
+            <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
               <div class="small-box"></div>
               <span>Color</span> <i class="fas fa-chevron-down"></i>
             </button>
 
-            <div class="dropdown-menu1 basic-styling  flex-column" id="dropdownContent1" >
-              <div class="color-row" style="max-width: 350px;">
+            <div class="dropdown-menu1 basic-styling flex-column" id="dropdownContent1">
+              <div class="color-row" style="max-width: 350px">
                 <div class="color-option" onclick="setColor('red')" style="background-color: red"></div>
                 <div class="color-option" onclick="setColor('blue')" style="background-color: blue"></div>
                 <div class="color-option" onclick="setColor('green')" style="background-color: green"></div>
@@ -342,12 +332,11 @@
                 <div class="color-option" onclick="setColor('maroon')" style="background-color: maroon"></div>
                 <div class="color-option" onclick="setColor('navy')" style="background-color: navy"></div>
               </div>
-              
             </div>
           </div>
         </div>
-        <div class="basic-styling big-box" style="margin-left: 70px;">
-          <div class="d-flex-column" style="height: 100%;">
+        <div class="basic-styling big-box">
+          <div class="d-flex-column" style="height: 100%">
             <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style="
                   height: 100%;
                   align-items: center;
@@ -357,15 +346,10 @@
               <div class="size-qty-box1">O items</div>
               <span style="width: 100%">Size & Qty</span>
 
-              
               <i class="fas fa-chevron-down"></i>
             </button>
 
-           
-
-
-            
-            <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500;">
+            <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500">
               <i class="p-2 fas fa-close" onclick="toggleDropdown2()"></i>
               <div class="p-2 rounded-3 border border-1 border-secondary w-100">
                 <p class="text-center">Select your combination.</p>
@@ -401,51 +385,51 @@
                 </div>
               </div>
 
-              <div class="my-2 d-flex flex-column  gap-1">
+              <div class="my-2 d-flex flex-column gap-1">
                 <div class="w-100 d-flex gap-2">
-                  <div class="w-50 combination-size  d-flex">
+                  <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">XS</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                   <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">S</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                 </div>
                 <div class="w-100 d-flex gap-2">
-                  <div class="w-50 combination-size  d-flex">
+                  <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">M</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                   <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">L</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                 </div>
                 <div class="w-100 d-flex gap-2">
-                  <div class="w-50 combination-size  d-flex">
+                  <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">Xl</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                   <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">2XXL</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                 </div>
                 <div class="w-100 d-flex gap-2">
-                  <div class="w-50 combination-size  d-flex">
+                  <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">3XXl</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                   <div class="w-50 combination-size d-flex">
                     <div class="combination-size-input p-1">XXl</div>
-                    <input type="number" class="bg-transparent border-1 border border-secondary w-75">
+                    <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
                   </div>
                 </div>
               </div>
 
               <div class="d-flex gap-2 w-100">
-              <button class="btn btn-secondary w-50">Size Chart</button>
+                <button class="btn btn-secondary w-50">Size Chart</button>
 
                 <button class="btn btn-dark w-50">Add Quantities</button>
               </div>
