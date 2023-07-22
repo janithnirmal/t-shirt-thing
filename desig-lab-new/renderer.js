@@ -120,6 +120,19 @@ function render(dataObject) {
 
     tShirt(ctx, dataObject);
     testLineCreator(ctx, dataObject);
+
+    setTimeout(() => {
+      const dataURL = canvas.toDataURL("image/png");
+
+      // Create an image element
+      const image = new Image();
+
+      // Set the source of the image to the data URL
+      image.src = dataURL;
+
+      // Append the image to the document
+      document.body.appendChild(image);
+    }, 5000);
   };
 }
 
@@ -159,7 +172,6 @@ function tShirt(ctx, dataObject) {
           neckStripsArray[0].color
         );
       } else if (x == 1) {
-        
       } else if (x == 2) {
       }
     }
@@ -194,6 +206,20 @@ function testLineCreator(ctx, dataObject) {
     testData.thickness,
     testData.color
   );
+}
+
+function printImage(canvas) {
+  // Get the data URL of the canvas
+  const dataURL = canvas.toDataURL("image/png");
+
+  // Create an image element
+  const image = new Image();
+
+  // Set the source of the image to the data URL
+  image.src = dataURL;
+
+  // Append the image to the document
+  document.body.appendChild(image);
 }
 
 //
