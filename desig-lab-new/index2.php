@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="dcss.css" />
+    <link rel="stylesheet" href="controls.css" />
 
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
@@ -20,6 +21,7 @@
     <script src="script.js" defer></script>
     <script src="main.js" defer></script>
     <script src="renderer.js" defer></script>
+    <script src="controls.js" defer></script>
 </head>
 
 <body>
@@ -55,7 +57,12 @@
             <!-- middle panel -->
             <div class="section1-panel section1-panel-mid side-panel-2 bg-success h-100 d-flex justify-content-center align-items-center">
                 <div class="t-shirt-panel-container">
-                    <div id="canvas" class="t-shirt-panel-container"></div>
+                    <div class="canvasOverly">
+                        <div id="tShirt" class="canvasOverlyInner">
+                            <div class="tshirt-coller-left" onclick="neckControlModelOpen()"></div>
+                        </div>
+                    </div>
+                    <div id="canvas" class="t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
                 </div>
 
             </div>
@@ -68,6 +75,15 @@
                     <button onclick="viewChange('back');">back</button>
                     <button onclick="viewChange('left');">Left</button>
                     <button onclick="viewChange('right');">right</button>
+                </div>
+                <div class="my-2 d-flex flex-column">
+                    <h6 class="text-center fw-bold text-dark">Tester</h6>
+                    <input type="number" value="100" id="startingPointXTest">
+                    <input type="number" value="100" id="startingPointYTest">
+                    <input type="number" value="200" id="endingPointXTest">
+                    <input type="number" value="200" id="endingPointYTest">
+                    <input type="number" value="5" id="thicknessTest">
+                    <input type="text" value="white" id="colorTest">
                 </div>
             </div>
         </div>
