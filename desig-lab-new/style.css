@@ -948,6 +948,12 @@ nav i {
   position: relative;
 }
 
+.t-shirt-panel-container {
+  width: 400px;
+  min-height: 540px;
+  background-color: gray;
+}
+
 @media (max-width: 1280px) {
   .container {
     width: 100%;
