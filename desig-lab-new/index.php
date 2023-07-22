@@ -72,7 +72,7 @@
           </div>
           <div class="list-group-item">
             <div id="btn3">
-              <button class="left-side-btn" id="showModal" style="background-color: #f62459">
+              <button class="left-side-btn" id="showModalss" style="background-color: #f62459">
                 Product
               </button>
             </div>
@@ -105,7 +105,7 @@
               <p>Save Design</p>
             </button>
           </div>
-          <div class="list-group-item" id="btn8">
+          <div class="list-group-item" id="btn10">
             <button class="btn-style-remover left-side-box-btn">
               <i class="left-side-icons fas fa-sliders-h"></i>
               <p>Preset</p>

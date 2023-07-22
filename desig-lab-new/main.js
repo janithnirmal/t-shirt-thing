@@ -34,22 +34,22 @@ function tooltip(id, innerText, topShift) {
 //     tooltip("btn4", "What are the materials", 0);
 //   });
 
-//   // controls for left middle box
-//   document.getElementById("btn6").addEventListener("mouseenter", () => {
-//     tooltip("btn6", "Add text", 25);
-//   });
-//   document.getElementById("btn7").addEventListener("mouseenter", () => {
-//     tooltip("btn7", "Add image", 25);
-//   });
-//   document.getElementById("btn8").addEventListener("mouseenter", () => {
-//     tooltip("btn8", "Save Your design", 25);
-//   });
-//   document.getElementById("btn9").addEventListener("mouseenter", () => {
-//     tooltip("btn9", "Print your design", 5);
-//   });
-// } catch (error) {
-//   console.log(error);
-// }
+// controls for left middle box
+document.getElementById("btn6").addEventListener("mouseenter", () => {
+  tooltip("btn6", "Add text", 25);
+});
+document.getElementById("btn7").addEventListener("mouseenter", () => {
+  tooltip("btn7", "Add image", 25);
+});
+document.getElementById("btn8").addEventListener("mouseenter", () => {
+  tooltip("btn8", "Save Your design", 25);
+});
+document.getElementById("btn9").addEventListener("mouseenter", () => {
+  tooltip("btn9", "Print your design", 5);
+});
+document.getElementById("btn10").addEventListener("mouseenter", () => {
+  tooltip("btn10", "Add your prset", 15);
+});
 
 function sectionSwitch(clcikbtn) {
   // for (let index =1; index<=2; index++){
