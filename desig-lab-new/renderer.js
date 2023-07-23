@@ -4,7 +4,7 @@ const dataObject = {
     startY: 100,
     endX: 200,
     endY: 200,
-    thickness: 5,
+    thickness: 3,
     color: "white",
   },
 
@@ -17,7 +17,36 @@ const dataObject = {
   },
   views: {
     active: "front",
-    clothTypeImageUrl: "shirt-front",
+    strips: {
+      neck: [
+        {
+          thickness: 2,
+          color: "red",
+        },
+        {
+          thickness: 3,
+          color: "white",
+        },
+        {
+          thickness: 3,
+          color: "black",
+        },
+      ],
+      arm: [
+        {
+          thickness: 2,
+          color: "white",
+        },
+        {
+          thickness: 2,
+          color: "orange",
+        },
+        {
+          thickness: 3,
+          color: "pink",
+        },
+      ],
+    },
     frontSideObject: {
       imageSections: {
         topLeft: {
@@ -45,32 +74,6 @@ const dataObject = {
           },
         },
       },
-      strips: {
-        neck: [
-          {
-            thickness: 2,
-            color: "red",
-          },
-          {
-            thickness: 3,
-            color: "white",
-          },
-          {
-            thickness: 5,
-            color: "blue",
-          },
-        ],
-        arm: [
-          {
-            thickness: 2,
-            color: "blue",
-          },
-          {
-            thickness: 3,
-            color: "white",
-          },
-        ],
-      },
     },
     backSideObject: {},
     leftSideObject: {},
@@ -81,12 +84,14 @@ const dataObject = {
 // renderer
 function render(dataObject) {
   const container = document.getElementById("canvas");
-  container.innerHTML = "";
+  container.innerHTML = ""; // clean renverer view
 
+  // render view build
   const canvas = document.createElement("canvas");
   canvas.id = "designPanelCanvas";
-  canvas.style.backgroundColor = "blue";
+  // canvas.style.backgroundColor = "blue"; // test canvas bg color
 
+  //  render setup
   canvas.width = parseInt(
     window.getComputedStyle(document.getElementById("canvas")).width
   );
@@ -95,20 +100,39 @@ function render(dataObject) {
   );
   container.appendChild(canvas);
 
-  const newInstanceOfCanvas = document.getElementById("designPanelCanvas");
-  let x;
-  let y;
-  newInstanceOfCanvas.addEventListener("click", (event) => {
-    x = event.clientX - newInstanceOfCanvas.getBoundingClientRect().x;
-    y = event.clientY - newInstanceOfCanvas.getBoundingClientRect().y;
-  });
+  // // recatch renderer
+  // const newInstanceOfCanvas = document.getElementById("designPanelCanvas");
+  // let x;
+  // let y;
+  // newInstanceOfCanvas.addEventListener("click", (event) => {
+  //   x = event.clientX - newInstanceOfCanvas.getBoundingClientRect().x;
+  //   y = event.clientY - newInstanceOfCanvas.getBoundingClientRect().y;
+  // });
 
+  clothRenderer(canvas, dataObject);
+}
+
+//
+//
+//
+//
+//
+
+// image side must be bethween 400, 540
+function clothRenderer(canvas, dataObject) {
   // draw image
   const image = document.createElement("img");
   image.setAttribute(
     "src",
-    "images/" + dataObject.views.clothTypeImageUrl + ".png"
+    "images/cloths/" +
+      dataObject.clothType +
+      "-" +
+      dataObject.views.active +
+      "_" +
+      dataObject.gender +
+      ".png"
   );
+
   let imageWidth = window.getComputedStyle(canvas).width;
   let imageHeight = window.getComputedStyle(canvas).height;
 
@@ -118,39 +142,26 @@ function render(dataObject) {
     ctx.drawImage(image, 0, 0, parseInt(imageWidth), parseInt(imageHeight));
     ctx.filter = "none";
 
-    tShirt(ctx, dataObject);
-    testLineCreator(ctx, dataObject);
-
-    setTimeout(() => {
-      const dataURL = canvas.toDataURL("image/png");
-
-      // Create an image element
-      const image = new Image();
-
-      // Set the source of the image to the data URL
-      image.src = dataURL;
-
-      // Append the image to the document
-      document.body.appendChild(image);
-    }, 5000);
+    if (dataObject.clothType == "t-shirt") {
+      tShirt(ctx, dataObject);
+    }
+    // testLineCreator(ctx, dataObject); // tester
   };
 }
 
-//
-//
-//
-//
-//
-
 //  functions
 // image section functions
+// tshirt
 function tShirt(ctx, dataObject) {
-  if (dataObject.views.active == "front") {
-    // draw line
-    const sideObject = dataObject.views.frontSideObject;
-    const neckStripsArray = sideObject.strips.neck;
-    const armStripsArray = sideObject.strips.arm;
-    console.log(sideObject);
+  const stripObject = dataObject.views.strips;
+  stripDrawerTShirt(ctx, stripObject, dataObject.views.active);
+}
+
+function stripDrawerTShirt(ctx, stripObjects, side) {
+  const neckStripsArray = stripObjects.neck;
+  const armStripsArray = stripObjects.arm;
+
+  if (side == "front") {
     for (let x = 0; x < neckStripsArray.length; x++) {
       if (x == 0) {
         drawLine(
@@ -164,7 +175,7 @@ function tShirt(ctx, dataObject) {
         );
         drawLine(
           ctx,
-          270,
+          272,
           46,
           219,
           83,
@@ -176,30 +187,333 @@ function tShirt(ctx, dataObject) {
           ctx,
           130,
           40,
-          181,
-          80,
-          neckStripsArray[0].thickness,
-          neckStripsArray[0].color
+          182,
+          81,
+          neckStripsArray[1].thickness,
+          neckStripsArray[1].color
+        );
+        drawLine(
+          ctx,
+          268,
+          40,
+          215,
+          78,
+          neckStripsArray[1].thickness,
+          neckStripsArray[1].color
         );
       } else if (x == 2) {
         drawLine(
           ctx,
-          135,
+          133,
           34,
-          187,
+          186,
           75,
+          neckStripsArray[2].thickness,
+          neckStripsArray[2].color
+        );
+        drawLine(
+          ctx,
+          265,
+          34,
+          210,
+          72,
+          neckStripsArray[2].thickness,
+          neckStripsArray[2].color
+        );
+      }
+    }
+
+    for (let x = 0; x < armStripsArray.length; x++) {
+      if (x == 0) {
+        drawLine(
+          ctx,
+          0,
+          241,
+          69,
+          260,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
+        );
+        drawLine(
+          ctx,
+          400,
+          244,
+          329,
+          258,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
+        );
+      } else if (x == 1) {
+        drawLine(
+          ctx,
+          0,
+          236,
+          70,
+          256,
+          armStripsArray[1].thickness,
+          armStripsArray[1].color
+        );
+        drawLine(
+          ctx,
+          400,
+          239,
+          328,
+          254,
+          armStripsArray[1].thickness,
+          armStripsArray[1].color
+        );
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          0,
+          231,
+          71,
+          251,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
+        );
+        drawLine(
+          ctx,
+          399,
+          235,
+          327,
+          250,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
+        );
+      }
+    }
+  } else if (side == "back") {
+    for (let x = 0; x < neckStripsArray.length; x++) {
+      if (x == 0) {
+        drawLine(
+          ctx,
+          140,
+          33,
+          260,
+          35,
           neckStripsArray[0].thickness,
           neckStripsArray[0].color
         );
-      
+      } else if (x == 1) {
+        drawLine(
+          ctx,
+          143,
+          28,
+          257,
+          30,
+          neckStripsArray[1].thickness,
+          neckStripsArray[1].color
+        );
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          146,
+          23,
+          254,
+          25,
+          neckStripsArray[2].thickness,
+          neckStripsArray[2].color
+        );
       }
     }
-  } else if (dataObject.views.active == "back") {
-    console.log("back");
-  } else if (dataObject.views.active == "left") {
-    console.log("left");
-  } else if (dataObject.views.active == "right") {
-    console.log("right");
+
+    for (let x = 0; x < armStripsArray.length; x++) {
+      if (x == 0) {
+        drawLine(
+          ctx,
+          3,
+          241,
+          69,
+          260,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
+        );
+        drawLine(
+          ctx,
+          395,
+          244,
+          325,
+          258,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
+        );
+      } else if (x == 1) {
+        drawLine(
+          ctx,
+          3,
+          236,
+          70,
+          256,
+          armStripsArray[1].thickness,
+          armStripsArray[1].color
+        );
+        drawLine(
+          ctx,
+          395,
+          239,
+          324,
+          254,
+          armStripsArray[1].thickness,
+          armStripsArray[1].color
+        );
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          3,
+          231,
+          71,
+          251,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
+        );
+        drawLine(
+          ctx,
+          394,
+          235,
+          323,
+          250,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
+        );
+      }
+    }
+  } else if (side == "left") {
+    for (let x = 0; x < neckStripsArray.length; x++) {
+      if (x == 0) {
+        drawLine(
+          ctx,
+          156,
+          80,
+          240,
+          28,
+          neckStripsArray[0].thickness,
+          neckStripsArray[0].color
+        );
+      } else if (x == 1) {
+        drawLine(
+          ctx,
+          153,
+          76,
+          238,
+          23,
+          neckStripsArray[1].thickness,
+          neckStripsArray[1].color
+        );
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          149,
+          70,
+          235,
+          18,
+          neckStripsArray[2].thickness,
+          neckStripsArray[2].color
+        );
+      }
+    }
+
+    for (let x = 0; x < armStripsArray.length; x++) {
+      if (x == 0) {
+        drawLine(
+          ctx,
+          169,
+          244,
+          256,
+          244,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
+        );
+      } else if (x == 1) {
+        drawLine(
+          ctx,
+          169,
+          240,
+          256,
+          240,
+          armStripsArray[1].thickness,
+          armStripsArray[1].color
+        );
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          169,
+          236,
+          256,
+          236,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
+        );
+      }
+    }
+  } else if (side == "right") {
+    for (let x = 0; x < neckStripsArray.length; x++) {
+      if (x == 0) {
+        drawLine(
+          ctx,
+          154,
+          32,
+          235,
+          82,
+          neckStripsArray[0].thickness,
+          neckStripsArray[0].color
+        );
+      } else if (x == 1) {
+        drawLine(
+          ctx,
+          156,
+          28,
+          238,
+          78,
+          neckStripsArray[1].thickness,
+          neckStripsArray[1].color
+        );
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          159,
+          23,
+          241,
+          73,
+          neckStripsArray[2].thickness,
+          neckStripsArray[2].color
+        );
+      }
+    }
+
+    for (let x = 0; x < armStripsArray.length; x++) {
+      if (x == 0) {
+        drawLine(
+          ctx,
+          134,
+          244,
+          223,
+          244,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
+        );
+      } else if (x == 1) {
+        drawLine(
+          ctx,
+          134,
+          240,
+          223,
+          240,
+          armStripsArray[1].thickness,
+          armStripsArray[1].color
+        );
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          134,
+          236,
+          223,
+          236,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
+        );
+      }
+    }
   }
 }
 
@@ -214,6 +528,18 @@ function drawLine(ctx, startX, startY, endX, endY, thickness, color) {
   ctx.stroke();
 }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// testers
 function testLineCreator(ctx, dataObject) {
   const testData = dataObject.test;
   drawLine(
@@ -241,17 +567,6 @@ function printImage(canvas) {
   document.body.appendChild(image);
 }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 // test
 document.addEventListener("DOMContentLoaded", () => {
   render(dataObject);
@@ -266,7 +581,7 @@ document.getElementById("colorInput").addEventListener("change", () => {
 });
 
 function viewChange(side) {
-  dataObject.views.clothTypeImageUrl = "shirt-" + side;
+  dataObject.views.active = side;
   render(dataObject);
 }
 
