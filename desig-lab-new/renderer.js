@@ -172,7 +172,26 @@ function tShirt(ctx, dataObject) {
           neckStripsArray[0].color
         );
       } else if (x == 1) {
+        drawLine(
+          ctx,
+          130,
+          40,
+          181,
+          80,
+          neckStripsArray[0].thickness,
+          neckStripsArray[0].color
+        );
       } else if (x == 2) {
+        drawLine(
+          ctx,
+          135,
+          34,
+          187,
+          75,
+          neckStripsArray[0].thickness,
+          neckStripsArray[0].color
+        );
+      
       }
     }
   } else if (dataObject.views.active == "back") {
