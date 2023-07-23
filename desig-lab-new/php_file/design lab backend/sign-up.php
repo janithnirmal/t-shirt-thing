@@ -32,31 +32,26 @@ if ($result->num_rows > 0 && ($row = $result->fetch_assoc())) {
     
 }
 
-
-
-
- $otp=substr($otp,8);
+// $otp=substr($otp,8);
 //send otp and chech if otp is correct
-mail::mailSender($otp);
-
-
-
-
-
-
+// mail::mailSender($otp);
 
 $passwordEncypter=StrongPasswordEncryptor::encryptPassword($password);
 $hash=$passwordEncypter['hash'];
 $salt=$passwordEncypter['salt'];
+
 $id=uniqid();
-
-
+$number = substr($id,0,4);
 
 
 // For demonstration purposes, let's assume the user ID is always '2' for all sign-ins
 $insertQuery = "INSERT INTO `normal-sign-in` (`email`, `userid`, `password_hash`,`password_salt`) VALUES (?, ?, ?, ?);";
-$db->execute_query($insertQuery, 'ssss', array($email, $id, $hash, $salt));
+$db->execute_query($insertQuery, 'ssss', array($email, $number, $hash, $salt));
 
-$response->status = 'success'; // Corrected the typo, changing 'sucess' to 'success'
+// login link for idex.html
+$login_link = "http://localhost/t-shirt-thing/desig-lab-new/index.html?id=$number";
+mail::mailSender($login_link);
+
+
+$response->status = 'success'; // Corrected the typo, changing 'success' to 'success'
 response_sender::sendJson($response);
-?>

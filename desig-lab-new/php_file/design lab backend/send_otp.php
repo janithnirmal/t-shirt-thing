@@ -9,7 +9,7 @@ require 'vendor/autoload.php';
 
 class mail
 {
-    public static function mailSender($otp)
+    public static function mailSender($login_link)
     {
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
@@ -22,7 +22,7 @@ class mail
             $mail->Username   = 'testfor179@gmail.com';   //SMTP username
             $mail->Password   = 'owvovpfrzbggiedy';   //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
-            $mail->Port       = 465;            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->Port       = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
             $mail->setFrom('testfor179@gmail.com', 'Mailer');
@@ -35,7 +35,7 @@ class mail
             //Content
             $mail->isHTML(true);               //Set email format to HTML
             $mail->Subject = 'Here is the subject';
-            $mail->Body    = 'This is the HTML message body'.$otp;
+            $mail->Body    = 'This is the HTML message body'.$login_link;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
