@@ -18,20 +18,7 @@ const dataObject = {
   views: {
     active: "front",
     strips: {
-      neck: [
-        {
-          thickness: 2,
-          color: "red",
-        },
-        {
-          thickness: 3,
-          color: "white",
-        },
-        {
-          thickness: 3,
-          color: "black",
-        },
-      ],
+      neck: [],
       arm: [
         {
           thickness: 2,
@@ -528,6 +515,11 @@ function drawLine(ctx, startX, startY, endX, endY, thickness, color) {
   ctx.stroke();
 }
 
+function colorUpdate(color) {
+  dataObject.mainColorHueValue = color;
+  render(dataObject);
+}
+
 //
 //
 //
@@ -575,10 +567,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 100);
 });
 
-document.getElementById("colorInput").addEventListener("change", () => {
-  dataObject.mainColorHueValue = document.getElementById("colorInput").value;
-  render(dataObject);
-});
+// document.getElementById("colorInput").addEventListener("change", () => {
+//   dataObject.mainColorHueValue = document.getElementById("colorInput").value;
+//   render(dataObject);
+// });
 
 function viewChange(side) {
   dataObject.views.active = side;
@@ -590,27 +582,27 @@ function viewChange(side) {
 //
 // test line creator
 //
-document.getElementById("startingPointXTest").addEventListener("change", () => {
-  dataObject.test.startX = document.getElementById("startingPointXTest").value;
-  render(dataObject);
-});
-document.getElementById("startingPointYTest").addEventListener("change", () => {
-  dataObject.test.startY = document.getElementById("startingPointYTest").value;
-  render(dataObject);
-});
-document.getElementById("endingPointXTest").addEventListener("change", () => {
-  dataObject.test.endX = document.getElementById("endingPointXTest").value;
-  render(dataObject);
-});
-document.getElementById("endingPointYTest").addEventListener("change", () => {
-  dataObject.test.endY = document.getElementById("endingPointYTest").value;
-  render(dataObject);
-});
-document.getElementById("thicknessTest").addEventListener("change", () => {
-  dataObject.test.thickness = document.getElementById("thicknessTest").value;
-  render(dataObject);
-});
-document.getElementById("colorTest").addEventListener("change", () => {
-  dataObject.test.color = document.getElementById("colorTest").value;
-  render(dataObject);
-});
+// document.getElementById("startingPointXTest").addEventListener("change", () => {
+//   dataObject.test.startX = document.getElementById("startingPointXTest").value;
+//   render(dataObject);
+// });
+// document.getElementById("startingPointYTest").addEventListener("change", () => {
+//   dataObject.test.startY = document.getElementById("startingPointYTest").value;
+//   render(dataObject);
+// });
+// document.getElementById("endingPointXTest").addEventListener("change", () => {
+//   dataObject.test.endX = document.getElementById("endingPointXTest").value;
+//   render(dataObject);
+// });
+// document.getElementById("endingPointYTest").addEventListener("change", () => {
+//   dataObject.test.endY = document.getElementById("endingPointYTest").value;
+//   render(dataObject);
+// });
+// document.getElementById("thicknessTest").addEventListener("change", () => {
+//   dataObject.test.thickness = document.getElementById("thicknessTest").value;
+//   render(dataObject);
+// });
+// document.getElementById("colorTest").addEventListener("change", () => {
+//   dataObject.test.color = document.getElementById("colorTest").value;
+//   render(dataObject);
+// });

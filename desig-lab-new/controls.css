@@ -1,9 +1,25 @@
+.tshirt-strip-controller {
+  position: absolute;
+  /* background-color: red; */
+  cursor: pointer;
+}
+
+.tshirt-strip-controller:hover {
+  border: 2px rgba(0, 0, 0, 0.414) dashed;
+}
+
 .tshirt-coller-left {
   width: 20px;
   height: 70px;
-  /* background-color: red; */
   margin-left: 145px;
-  margin-top: 30px;
-  rotate: 130deg;
-  cursor: pointer;
+  margin-top: 28px;
+  rotate: 128deg;
+}
+
+.tshirt-coller-right {
+  width: 20px;
+  height: 70px;
+  margin-left: 228px;
+  margin-top: 23px;
+  rotate: 55deg;
 }

@@ -348,7 +348,7 @@
                   justify-content: center;
                   gap: 10px;
                 ">
-              <div class="size-qty-box1">O items</div>
+              <div class="size-qty-box1">0 items</div>
               <span style="width: 100%">Size & Qty</span>
 
               <i class="fas fa-chevron-down"></i>

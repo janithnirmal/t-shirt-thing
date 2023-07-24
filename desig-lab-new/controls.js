@@ -1,7 +1,12 @@
-function neckControlModelOpen() {
-  dataObject.views.frontSideObject.strips.neck[0].color =
-    document.getElementById("colorTest").value;
-  render(dataObject);
+let tshirtNeckStripControlModel;
+
+function controllerModelOpen(section) {
+  if (section == "neck") {
+    tshirtNeckStripControlModel = new bootstrap.Modal(
+      "#tshirtNeckStripControlModel"
+    );
+    tshirtNeckStripControlModel.show();
+    render(dataObject);
+  } else {
+  }
 }
-
-
