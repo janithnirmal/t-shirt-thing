@@ -1,4 +1,4 @@
-const dataObject = {
+const dataObject = { 
   test: {
     startX: 100,
     startY: 100,
