@@ -47,10 +47,10 @@
 
     </nav>
 
-    <div class="section1">
-        <div class="container section1-layout">
+    <div class="section1 px-3">
+        <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
             <!-- left side panel -->
-            <div class="section1-panel section1-panel-sides side-panel-1 h-100">
+            <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
                 <!-- box 1 -->
                 <div class="basic-styling left-side-box1">
                     <div class="list-group-item">
@@ -91,29 +91,29 @@
                 </div>
 
                 <!-- box 2 -->
-                <div class="basic-styling left-side-box2">
+                <div class="basic-styling left-side-box2 d-flex  flex-md-column justify-content-center align-items-center">
                     <div class="list-group-item" id="btn6">
-                        <button class="btn-style-remover left-side-box-btn">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-t"></i>
-                            <p>Add Text</p>
+                            <p class="p-0 m-0">Add Text</p>
                         </button>
                     </div>
                     <div class="list-group-item" id="btn7">
-                        <button class="btn-style-remover left-side-box-btn">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-image"></i>
-                            <p>Add Image</p>
+                            <p class="p-0 m-0">Add Image</p>
                         </button>
                     </div>
                     <div class="list-group-item" id="btn8">
-                        <button class="btn-style-remover left-side-box-btn">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-download"></i>
-                            <p>Save Design</p>
+                            <p class="p-0 m-0">Save Design</p>
                         </button>
                     </div>
                     <div class="list-group-item" id="btn10">
-                        <button class="btn-style-remover left-side-box-btn">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-sliders-h"></i>
-                            <p>Preset</p>
+                            <p class="p-0 m-0">Preset</p>
                         </button>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
             </div>
 
             <!-- middle panel -->
-            <div class="section1-panel section1-panel-mid side-panel-2 h-100 d-flex justify-content-center align-items-center py-5">
+            <div class="section1-panel section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                 <div class="t-shirt-panel-container">
                     <div class="canvasOverly">
                         <div id="tShirt" class="canvasOverlyInner">
@@ -295,10 +295,10 @@
             </div>
 
             <!-- right side panel -->
-            <div class="section1-panel section1-panel-sides side-panel-3 d-flex flex-lg-column align-items-center h-100 flex-row">
+            <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
 
                 <!-- size & qty -->
-                <div class="basic-styling right-side-box1">
+                <div class="basic-styling right-side-box1 d-none d-md-block">
                     <div class="right-side-box-btn-container">
                         <div class="d-flex-column">
                             <button style="background-color: #2596be" class="right-side-box-btn">
@@ -474,8 +474,8 @@
 
 
                 <!-- navigation control -->
-                <div class="basic-styling right-side-box2  order-md-4 order-3">
-                    <div class="t_changebtnbox d-flex flex-lg-column flex-row" id="viewPortChange">
+                <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
+                    <div class="t_changebtnbox d-flex  flex-row flex-md-column" id="viewPortChange">
                         <button class="t_changebtn t_changebtn1" onclick="tShirtControlViewChanger('front'); viewChange('front');" id="btn9">
                             <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
                             <p class="t_changebtnpara">Front view</p>
