@@ -105,11 +105,6 @@ nav i {
   z-index: 100;
 }
 
-.section1-panel-sides {
-  display: flex;
-  flex-direction: column;
-}
-
 .piority {
   background-color: #0c7ce5;
   border-radius: 7px;
@@ -390,21 +385,7 @@ nav i {
   display: none;
 }
 
-.modal-box {
-  background-color: #fff;
-  width: 400px;
-  border-radius: 5px;
-  text-align: center;
-}
 
-.modal-close {
-  float: right;
-  cursor: pointer;
-}
-.modal {
-  margin-top: 70px;
-  height: 500px;
-}
 
 .progress-bar {
   display: flex;
@@ -529,13 +510,7 @@ nav i {
   font-size: 17px;
   border: none;
 }
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 24px;
-}
+
 #check {
   display: none;
   position: absolute;
@@ -545,21 +520,6 @@ nav i {
   color: #0c7ce5; /* Set the desired icon color */
 }
 
-.modal-box {
-  background-color: #fff;
-  width: 400px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.modal-close {
-  float: right;
-  cursor: pointer;
-}
-.modal {
-  margin-top: 70px;
-  height: 520px;
-}
 
 .progress-bar {
   display: flex;
@@ -682,13 +642,7 @@ nav i {
   font-size: 17px;
   border: none;
 }
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 24px;
-}
+
 #check {
   display: none;
   position: absolute;
@@ -801,7 +755,7 @@ nav i {
 }
 
 .t_changebtnbox {
-  width: 95px;
+  min-width: 95px;
   min-height: 320px;
   border-radius: 8px;
   background-color: white;
@@ -951,7 +905,6 @@ nav i {
 .t-shirt-panel-container {
   width: 400px;
   min-height: 540px;
-  background-color: gray;
 }
 
 .canvasOverly {
@@ -965,6 +918,13 @@ nav i {
   width: 100%;
   height: 100%;
 }
+
+.size-chart-text {
+  font-size: 12px;
+  padding: 5px 7px;
+}
+
+
 
 @media (max-width: 1280px) {
   .container {
