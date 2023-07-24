@@ -1,6 +1,7 @@
 <?php
+session_start();
 
-class UseerAccess
+class UserAccess
 {
     private $sessionVariable = "alg001_user";
 
@@ -27,6 +28,4 @@ class UseerAccess
         return null;
     }
 }
-
-
 ?>

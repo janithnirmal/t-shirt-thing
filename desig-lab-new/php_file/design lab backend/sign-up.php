@@ -13,6 +13,13 @@ if(!isset($_POST['email']) || !isset($_POST['password'])){
 
 $password = $_POST['password'];
 $email = $_POST['email'];
+
+session_start();
+
+// Add data to the session
+$_SESSION['email'] = $email;
+$_SESSION['password'] = $password;
+
 $response = new stdClass();
 $db = new database_driver();
 
