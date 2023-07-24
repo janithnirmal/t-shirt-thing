@@ -135,24 +135,43 @@
                 <div class="t-shirt-panel-container">
                     <div class="canvasOverly">
                         <div id="tShirt" class="canvasOverlyInner">
+                            <!-- strip controls -->
                             <div id="tshirtStripControl1" class="canvasOverlyInner-front d-none bg-primary">
-                                <div class="tshirt-strip-controller tshirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
-                                <div class="tshirt-strip-controller tshirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-strip-controller tshirt-arm-front-left" onclick="controllerModelOpen('arm')"></div> -->
-                                <!-- <div class="tshirt-strip-controller tshirt-arm-front-right" onclick="controllerModelOpen('arm')"></div> -->
+                                <div class="tshirt-controller tshirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
+                                <div class="tshirt-controller tshirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-controller tshirt-arm-front-left" onclick="controllerModelOpen('arm')"></div> -->
+                                <!-- <div class="tshirt-controller tshirt-arm-front-right" onclick="controllerModelOpen('arm')"></div> -->
                             </div>
                             <div id="tshirtStripControl2" class="canvasOverlyInner-back d-none bg-success">
-                                <div class="tshirt-strip-controller tshirt-coller-back" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-strip-controller tshirt-arm-back-right" onclick="controllerModelOpen('arm')"></div> -->
-                                <!-- <div class="tshirt-strip-controller tshirt-arm-back-left" onclick="controllerModelOpen('arm')"></div> -->
+                                <div class="tshirt-controller tshirt-coller-back" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-controller tshirt-arm-back-right" onclick="controllerModelOpen('arm')"></div> -->
+                                <!-- <div class="tshirt-controller tshirt-arm-back-left" onclick="controllerModelOpen('arm')"></div> -->
                             </div>
-                            <div id="tshirtStripControl3" class="canvasOverlyInner-left d-block bg-warning">
-                                <div class="tshirt-strip-controller tshirt-coller-left" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-strip-controller tshirt-arm-left-right" onclick="controllerModelOpen('arm')"></div> -->
+                            <div id="tshirtStripControl3" class="canvasOverlyInner-left d-none bg-warning">
+                                <div class="tshirt-controller tshirt-coller-left" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-controller tshirt-arm-left-right" onclick="controllerModelOpen('arm')"></div> -->
                             </div>
-                            <div id="tshirtStripControl4" class="canvasOverlyInner-right d-none bg-info">
-                                <div class="tshirt-strip-controller tshirt-coller-right" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-strip-controller tshirt-arm-right-right" onclick="controllerModelOpen('arm')"></div> -->
+                            <div id="tshirtStripControl4" class="canvasOverlyInner-right d-block bg-info">
+                                <div class="tshirt-controller tshirt-coller-right" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-controller tshirt-arm-right-right" onclick="controllerModelOpen('arm')"></div> -->
+                            </div>
+
+                            <!-- image controls -->
+                            <div id="tshirtImageControl1" class="canvasOverlyInner-front d-none h-100">
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-front-topleft"></button>
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-front-topright "></button>
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-front-mid"></button>
+                            </div>
+                            <div id="tshirtImageControl2" class="canvasOverlyInner-back d-none h-100">
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-top"></button>
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-bottom"></button>
+                            </div>
+                            <div id="tshirtImageControl3" class="canvasOverlyInner-left d-none h-100">
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-left-hand"></button>
+                            </div>
+                            <div id="tshirtImageControl4" class="canvasOverlyInner-right d-block h-100">
+                                <button class=" tshirt-controller btn-style-remover tshirt-image-control-right-hand"></button>
+
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-const dataObject = { 
+const dataObject = {
   test: {
     startX: 100,
     startY: 100,
@@ -16,7 +16,7 @@ const dataObject = {
     neck: "v",
   },
   views: {
-    active: "left",
+    active: "right",
     strips: {
       neck: [],
       arm: [

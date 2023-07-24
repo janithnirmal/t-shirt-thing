@@ -13,9 +13,13 @@ function controllerModelOpen(section) {
 
 function tShirtControlViewChanger(side) {
   for (let x = 1; x <= 4; x++) {
-    let element = document.getElementById("tshirtStripControl" + x);
-    element.classList.add("d-none");
-    element.classList.remove("d-block");
+    let element1 = document.getElementById("tshirtStripControl" + x);
+    element1.classList.add("d-none");
+    element1.classList.remove("d-block");
+
+    let element2 = document.getElementById("tshirtImageControl" + x);
+    element2.classList.add("d-none");
+    element2.classList.remove("d-block");
   }
 
   let itemNum = 0;
@@ -29,7 +33,15 @@ function tShirtControlViewChanger(side) {
     itemNum = 4;
   }
 
-  let selectedElement = document.getElementById("tshirtStripControl" + itemNum);
-  selectedElement.classList.add("d-block");
-  selectedElement.classList.remove("d-none");
+  let selectedElement1 = document.getElementById(
+    "tshirtStripControl" + itemNum
+  );
+  selectedElement1.classList.add("d-block");
+  selectedElement1.classList.remove("d-none");
+
+  let selectedElement2 = document.getElementById(
+    "tshirtImageControl" + itemNum
+  );
+  selectedElement2.classList.add("d-block");
+  selectedElement2.classList.remove("d-none");
 }
