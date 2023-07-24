@@ -1,11 +1,9 @@
-let tshirtNeckStripControlModel;
+let opendModal;
 
 function controllerModelOpen(section) {
   if (section == "neck") {
-    tshirtNeckStripControlModel = new bootstrap.Modal(
-      "#tshirtNeckStripControlModel"
-    );
-    tshirtNeckStripControlModel.show();
+    opendModal = new bootstrap.Modal("#tshirtNeckStripControlModel");
+    opendModal.show();
     render(dataObject);
   } else {
   }

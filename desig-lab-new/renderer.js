@@ -16,7 +16,7 @@ const dataObject = {
     neck: "v",
   },
   views: {
-    active: "right",
+    active: "front",
     strips: {
       neck: [],
       arm: [
@@ -31,6 +31,12 @@ const dataObject = {
         {
           thickness: 3,
           color: "pink",
+        },
+      ],
+      hip: [
+        {
+          thickness: 3,
+          color: "white",
         },
       ],
     },
@@ -147,6 +153,7 @@ function tShirt(ctx, dataObject) {
 function stripDrawerTShirt(ctx, stripObjects, side) {
   const neckStripsArray = stripObjects.neck;
   const armStripsArray = stripObjects.arm;
+  const hipStripsArray = stripObjects.hip;
 
   if (side == "front") {
     for (let x = 0; x < neckStripsArray.length; x++) {
@@ -433,6 +440,20 @@ function stripDrawerTShirt(ctx, stripObjects, side) {
         );
       }
     }
+
+    for (let x = 1; x <= hipStripsArray.length; x++) {
+      if ((x = 1)) {
+        drawLine(
+          ctx,
+          216,
+          248,
+          205,
+          535,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
+        );
+      }
+    }
   } else if (side == "right") {
     for (let x = 0; x < neckStripsArray.length; x++) {
       if (x == 0) {
@@ -498,6 +519,20 @@ function stripDrawerTShirt(ctx, stripObjects, side) {
           236,
           armStripsArray[2].thickness,
           armStripsArray[2].color
+        );
+      }
+    }
+
+    for (let x = 1; x <= hipStripsArray.length; x++) {
+      if ((x = 1)) {
+        drawLine(
+          ctx,
+          175,
+          248,
+          185,
+          535,
+          armStripsArray[0].thickness,
+          armStripsArray[0].color
         );
       }
     }
