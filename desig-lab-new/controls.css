@@ -8,7 +8,7 @@
   border: 2px rgba(0, 0, 0, 0.414) dashed;
 }
 
-.tshirt-coller-left {
+.tshirt-coller-front-left {
   width: 20px;
   height: 70px;
   margin-left: 145px;
@@ -16,10 +16,34 @@
   rotate: 128deg;
 }
 
-.tshirt-coller-right {
+.tshirt-coller-front-right {
   width: 20px;
   height: 70px;
   margin-left: 228px;
   margin-top: 23px;
   rotate: 55deg;
+}
+
+.tshirt-coller-back {
+  width: 120px;
+  height: 20px;
+  margin-left: 140px;
+  margin-top: 15px;
+  rotate: 0deg;
+}
+
+.tshirt-coller-left {
+  width: 100px;
+  height: 20px;
+  margin-left: 140px;
+  margin-top: 35px;
+  rotate: -30deg;
+}
+
+.tshirt-coller-right {
+  width: 100px;
+  height: 20px;
+  margin-left: 147px;
+  margin-top: 40px;
+  rotate: 30deg;
 }

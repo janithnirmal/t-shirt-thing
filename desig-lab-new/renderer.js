@@ -16,7 +16,7 @@ const dataObject = {
     neck: "v",
   },
   views: {
-    active: "front",
+    active: "left",
     strips: {
       neck: [],
       arm: [

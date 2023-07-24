@@ -30,7 +30,7 @@
             <a href="">
                 <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
             </a>
-            <a href="">DesignLab</a>
+            <a href="">DesignHome</a>
             <a href="">Designs</a>
             <a href="">Orders</a>
             <a href="">Help</a>
@@ -135,10 +135,25 @@
                 <div class="t-shirt-panel-container">
                     <div class="canvasOverly">
                         <div id="tShirt" class="canvasOverlyInner">
-                            <div class="tshirt-strip-controller tshirt-coller-left" onclick="controllerModelOpen('neck')"></div>
-                            <div class="tshirt-strip-controller tshirt-coller-right" onclick="controllerModelOpen('neck')"></div>
-                            <div class="tshirt-strip-controller tshirt-arm-left" onclick="controllerModelOpen('arm')"></div>
-                            <div class="tshirt-strip-controller tshirt-arm-right" onclick="controllerModelOpen('arm')"></div>
+                            <div id="tshirtStripControl1" class="canvasOverlyInner-front d-none bg-primary">
+                                <div class="tshirt-strip-controller tshirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
+                                <div class="tshirt-strip-controller tshirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-strip-controller tshirt-arm-front-left" onclick="controllerModelOpen('arm')"></div> -->
+                                <!-- <div class="tshirt-strip-controller tshirt-arm-front-right" onclick="controllerModelOpen('arm')"></div> -->
+                            </div>
+                            <div id="tshirtStripControl2" class="canvasOverlyInner-back d-none bg-success">
+                                <div class="tshirt-strip-controller tshirt-coller-back" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-strip-controller tshirt-arm-back-right" onclick="controllerModelOpen('arm')"></div> -->
+                                <!-- <div class="tshirt-strip-controller tshirt-arm-back-left" onclick="controllerModelOpen('arm')"></div> -->
+                            </div>
+                            <div id="tshirtStripControl3" class="canvasOverlyInner-left d-block bg-warning">
+                                <div class="tshirt-strip-controller tshirt-coller-left" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-strip-controller tshirt-arm-left-right" onclick="controllerModelOpen('arm')"></div> -->
+                            </div>
+                            <div id="tshirtStripControl4" class="canvasOverlyInner-right d-none bg-info">
+                                <div class="tshirt-strip-controller tshirt-coller-right" onclick="controllerModelOpen('neck')"></div>
+                                <!-- <div class="tshirt-strip-controller tshirt-arm-right-right" onclick="controllerModelOpen('arm')"></div> -->
+                            </div>
                         </div>
                     </div>
                     <div id="canvas" class="t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
@@ -461,19 +476,19 @@
                 <!-- navigation control -->
                 <div class="basic-styling right-side-box2  order-md-4 order-3">
                     <div class="t_changebtnbox d-flex flex-lg-column flex-row" id="viewPortChange">
-                        <button class="t_changebtn t_changebtn1" onclick="viewChange('front');" id="btn9">
+                        <button class="t_changebtn t_changebtn1" onclick="tShirtControlViewChanger('front'); viewChange('front');" id="btn9">
                             <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
                             <p class="t_changebtnpara">Front view</p>
                         </button>
-                        <button class="t_changebtn t_changebtn2" onclick="viewChange('left');">
+                        <button class="t_changebtn t_changebtn2" onclick="tShirtControlViewChanger('left'); viewChange('left');">
                             <div class="p-3 t_changebtnimg t_changebtnimg2"></div>
                             <p class="t_changebtnpara">Left view</p>
                         </button>
-                        <button class="t_changebtn t_changebtn3" onclick="viewChange('back');">
+                        <button class="t_changebtn t_changebtn3" onclick="tShirtControlViewChanger('back'); viewChange('back');">
                             <div class="p-3 t_changebtnimg t_changebtnimg3"></div>
                             <p class="t_changebtnpara">Back view</p>
                         </button>
-                        <button class="t_changebtn t_changebtn4" onclick="viewChange('right');">
+                        <button class="t_changebtn t_changebtn4" onclick="tShirtControlViewChanger('right'); viewChange('right');">
                             <div class="p-3 t_changebtnimg t_changebtnimg4"></div>
                             <p class="t_changebtnpara">Right view</p>
                         </button>
