@@ -859,14 +859,8 @@ nav i {
 } */
 
 .pricetagbtn3box {
-  width: 150px;
-  height: 40px;
   background-color: #e08e4a;
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: 200ms;

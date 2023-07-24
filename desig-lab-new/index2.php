@@ -122,7 +122,7 @@
                 <!-- size & qty -->
                 <div class="left-side-box3">
                     <div class="pricetagcontainer">
-                        <button class="pricetagbtn3box">
+                        <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-1 justify-content-center align-items-center p-2">
                             <img src="images/Cart.png" style="width: 25px; height: 25px" />
                             <p class="pricetagbtn3heading">MIN QTY : 15</p>
                         </button>
