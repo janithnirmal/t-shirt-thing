@@ -8,8 +8,9 @@ class database_driver
     {
         $host = 'localhost'; // update your own
         $user = 'root'; // update your own
-        $password = 'KaviskaDilshan12#$'; // update your own
-        $database = 'designlab'; // update your own
+        $password = 'JanithNirmal12#$'; // update janith
+        // $password = 'KaviskaDilshan12#$'; // update kaviska
+        $database = 't_shirt_design_app_db'; // update your own
 
         // Connect to the database using mysqli
         $this->connection = new mysqli($host, $user, $password, $database);
@@ -58,4 +59,3 @@ class database_driver
         $this->connection->close();
     }
 }
-?>

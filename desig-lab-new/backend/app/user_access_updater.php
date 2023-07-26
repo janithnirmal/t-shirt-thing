@@ -20,7 +20,7 @@ class UserAccess
         unset($_SESSION[$this->sessionVariable]);
     }
 
-    public function getUserId()
+    public function getUserData()
     {
         if ($this->isLoggedIn()) {
             return $_SESSION[$this->sessionVariable];
@@ -28,4 +28,3 @@ class UserAccess
         return null;
     }
 }
-?>

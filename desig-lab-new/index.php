@@ -1,4 +1,14 @@
+<?php
 
+require_once("backend/app/user_access_updater.php");
+
+$loggedUserData = null;
+$access = new UserAccess();
+if ($access->isLoggedIn()) {
+    $loggedUserData = $access->getUserData();
+}
+
+?>
 
 
 
@@ -30,7 +40,7 @@
 </head>
 
 <body>
-    <nav class="d-flex justify-content-between align-items-center">
+    <nav class="d-flex justify-content-between align-items-center px-5">
         <div class=" h-100">
             <a href="">
                 <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
@@ -47,7 +57,17 @@
         <div class="d-flex h-100 justify-content-center">
             <a href=""><img class="nav-img-contact" src="images/nav-image.png" alt="" /></a>
             <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            <a href=""><button class="piority sign-in">Sign In</button></a>
+            <?php
+            if ($loggedUserData) {
+            ?>
+                <div class="rounded-circle bg-primary" style="width: 30px; height: 30px;" id="signInBtn"></div>
+            <?php
+            } else {
+            ?>
+                <button class="btn btn-primary my-2 text-center" id="signInBtn">Sign In</button>
+            <?php
+            }
+            ?>
         </div>
 
     </nav>
@@ -184,7 +204,7 @@
                 </div>
 
                 <!-- model contianer -->
-                <div class="modelContainer ">
+                <div class="modelContainer">
                     <!-- Modal -->
                     <div class="modal fade" id="tshirtNeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -535,6 +555,58 @@
                     <input type="number" value="5" id="thicknessTest">
                     <input type="text" value="white" id="colorTest">
                 </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- models -->
+    <div class="model-container">
+        <div class="modal fade" id="signInModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-1 text-center" id="exampleModalLabel">
+                            Sign In
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                    <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
+                                    <input id="emailInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                    <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                                    <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
+                                </div>
+                            </div>
+                            <div class="col-12 text-end text-primary" style="font-size: 13px;  padding: 0 50px 0px 0px; cursor: pointer;">forgot passowrd?</div>
+                            <div style="padding: 0px 50px 15px 50px;">
+                                <input style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" type="submit" class="text-light col-12 btn" value="SIGN IN" id="signInActionBtn" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="col-12 text-center">
+                            <span style="font-size: 18px">Or Continue with</span>
+                        </div>
+                        <div class="col-12 text-center" style="margin-top: 12px;">
+                            <button class="btn btn-dark btn-lg fs-6 rounded-1" style="padding: 0; width: 120px; height: 36px;">
+                                <a class="text-decoration-none text-white" href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&access_type=online&client_id=792754426124-qjtotmddrjlcjci8emqntv9mre08eq76.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fdesign%2520lab%2520backend%2Fwelcome.php&state&scope=email%20profile&approval_prompt=auto">
+                                    <div style="font-size: 18px; gap: 5px;"><span style="margin-right:14px ;"><i class="fa-brands fa-google"></i></span><span>Google</span></div>
+                                </a>
+                            </button>
+                        </div>
+                        <div class="col-12 text-center" style="margin-top: 70px;">
+                            <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;">Sign Up Now!</span> </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

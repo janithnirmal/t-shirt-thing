@@ -1,116 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-
-    <!-- css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="bootstrap.css" />
-    <!-- <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="dcss.css" />
-    <link rel="stylesheet" href="controls.css" /> -->
-
-    <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js" defer></script>
-    <script src="https://kit.fontawesome.com/f98ce7c376.js" crossorigin="anonymous" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="main.js" defer></script>
-    <script src="renderer.js" defer></script>
-    <script src="controls.js" defer></script>
-</head>
-
-<body class="w-100 " onclick="controllerModelOpen('neck')">
-    test
-    <!-- middle panel -->
-
-    <div class="tshirt-strip-controller tshirt-coller-left" onclick="controllerModelOpen('neck')"></div>
-    <div class="tshirt-strip-controller tshirt-coller-right" onclick="controllerModelOpen('neck')"></div>
-    <div class="tshirt-strip-controller tshirt-arm-left" onclick="controllerModelOpen('arm')"></div>
-    <div class="tshirt-strip-controller tshirt-arm-right" onclick="controllerModelOpen('arm')"></div>
-
-    <!-- model contianer -->
-    <div class="modelContainer bg-danger ">
-        <!-- Modal -->
-        <div class="modal  bg-danger" id="tshirtNeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <!-- <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <div>
-                                            <h5 class="text-center">Edit Cuff\Collar</h5>
-                                            <hr />
-                                            <div class="border border-1 border-dark border-opacity-25 p-2">
-                                                <p class="text-center">Preview</p>
-                                                <div class="bg-primary pt-1 pb-1" style="max-width:280px; height:66px;" id="box"></div>
-                                                <div class="m-1 d-flex-column justify-content-center align-items-center border border-1 border-dark border-opacity-25 p-1">
-                                                    <span>Cuff Color & Lines</span>
-                                                    <div class="d-flex justify-content-center">
-                                                        <div class="border border-1 border-dark border-opacity-25 p-2" onclick="decreaseLine();">-</div>
-                                                        <input class="px-2 w-25" id="lineId" value="0" />
-                                                        <div class="border border-2 p-2">Line</div>
-                                                        <div class="border border-2 p-2" onclick="increaseLine();">+</div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-none" id="customizeArea">
-                                                    <div class="border border-1 border-dark border-opacity-25 p-1 pb-2 mt-1">
-                                                        <div class="text-center pb-2"> <span>Select line</span></div>
-                                                        <select class="border border-0 border-bottom border-3 bo border-dark border-bottom w-100 bg-transparent" id="lineSelecter">
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="border border-1 border-dark border-opacity-25 p-2 pb-2 mt-2">
-                                                        <div class="text-center pb-2"> <span>Line Color& Width</span></div>
-                                                        <div class="d-flex justify-content-center">
-                                                            <div class="d-flex gap-0">
-                                                                <div class="offset-2 col-3"><input type="color" class="px-2 w-50 h-75" id="colorId" value="0" /></div>
-                                                                <div class="d-flex">
-                                                                    <div class="border border-2 p-2" onclick="decreaseWidth();">-</div>
-                                                                    <input class="px-2 w-25" id="widthId" value="0" />
-                                                                    <div class="border border-2 p-2">mm</div>
-                                                                    <div class="border border-2 p-2" onclick="increaseWidth();">+</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="border border-1 border-dark border-opacity-25 p-2 pb-2 mt-2">
-                                                        <div class="text-center pb-2"> <span>Line Gap</span></div>
-                                                        <div class="d-flex justify-content-center">
-                                                            <div class="border border-2 p-1" onclick="decreaseGap();">-</div>
-                                                            <input class="px-2 w-25" id="gapId" value="0" />
-                                                            <div class="border border-2 p-2">mm</div>
-                                                            <div class="border border-2 p-2" onclick="increaseGap();">+</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-center gap-4">
-                                                    <div><i class="bi bi-x text-danger fs-5"></i></div>
-                                                    <div><i class="bi bi-check2 fs-5" style="color:green;"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div> -->
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-1 text-center" id="exampleModalLabel">
+            Sign In
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                    <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
+                    <input style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                    <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                    <input style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
+                </div>
+            </div>
+            <div class="col-12 text-end text-primary" style="font-size: 13px;  padding: 0 50px 0px 0px; cursor: pointer;">forgot passowrd?</div>
+            <div style="padding: 0px 50px 15px 50px;">
+                <input style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" type="submit" class="text-light col-12 btn" value="SIGN IN" />
             </div>
         </div>
     </div>
-</body>
+    <div class="modal-footer">
 
-</html>
+        <div class="col-12 text-center">
+            <span style="font-size: 18px">Or Continue with</span>
+        </div>
+        <div class="col-12 text-center" style="margin-top: 12px;">
+            <button class="btn btn-dark btn-lg fs-6 rounded-1" style="padding: 0; width: 120px; height: 36px;">
+                <div style="font-size: 18px; gap: 5px;"><span style="margin-right:14px ;"><i class="fa-brands fa-google"></i></span><span>Google</span></div>
+            </button>
+        </div>
+        <div class="col-12 text-center" style="margin-top: 70px;">
+            <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;">Sign Up Now!</span> </span>
+        </div>
+    </div>
+</div>
