@@ -207,33 +207,35 @@
 
 let neckLineArray = [];
 
-// listners
-document.getElementById("neckStripCount").addEventListener("change", () => {
-  neckLineArray = [];
-  let count = document.getElementById("neckStripCount").value;
-  let selector = document.getElementById("tshirtNeckLineSelector");
-  selector.innerHTML = "";
-  let defaultOption = document.createElement("option");
-  defaultOption.setAttribute("value", 0);
-  defaultOption.innerText = "No Lines";
-  selector.appendChild(defaultOption);
+try {
+  // listners
+  document.getElementById("neckStripCount").addEventListener("change", () => {
+    neckLineArray = [];
+    let count = document.getElementById("neckStripCount").value;
+    let selector = document.getElementById("tshirtNeckLineSelector");
+    selector.innerHTML = "";
+    let defaultOption = document.createElement("option");
+    defaultOption.setAttribute("value", 0);
+    defaultOption.innerText = "No Lines";
+    selector.appendChild(defaultOption);
 
-  for (let x = 1; x <= count; x++) {
-    let option = document.createElement("option");
-    option.setAttribute("value", x);
-    option.innerText = "Line " + x;
-    selector.appendChild(option);
+    for (let x = 1; x <= count; x++) {
+      let option = document.createElement("option");
+      option.setAttribute("value", x);
+      option.innerText = "Line " + x;
+      selector.appendChild(option);
 
-    let section = document.getElementById("neckLineControlSection" + x);
-    section.classList.remove("d-block");
-    section.classList.add("d-none");
-  }
+      let section = document.getElementById("neckLineControlSection" + x);
+      section.classList.remove("d-block");
+      section.classList.add("d-none");
+    }
 
-  selector.selectedIndex = 0;
-  updateTshirtNeckArray();
+    selector.selectedIndex = 0;
+    updateTshirtNeckArray();
 
-  console.log(neckLineArray);
-});
+    console.log(neckLineArray);
+  });
+} catch (error) {}
 
 function updateTshirtNeckArray() {
   let lineCount = document.getElementById("neckStripCount").value;

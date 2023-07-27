@@ -68,7 +68,7 @@ if (!PasswordHashVerifier::isValid($password, $password_salt, $password_hash)) {
 
 //create a session
 $UseerAccess = new UserAccess();
-$UseerAccess->login($userEmail);
+$UseerAccess->login($row);
 
 
 //send response
