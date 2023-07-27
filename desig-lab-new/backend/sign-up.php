@@ -5,10 +5,10 @@ require_once 'app/passwordEncryptor.php';
 require_once 'send_otp.php';
 
 
-
+$response = new stdClass();
 if(!isset($_POST['email']) || !isset($_POST['password'])){
-    echo("you are doing bad thing");
-    exit;
+    $response->error = 'wrong request';
+    response_sender::sendJson($response);
 }
 
 $password = $_POST['password'];
@@ -20,7 +20,6 @@ session_start();
 $_SESSION['email'] = $email;
 $_SESSION['password'] = $password;
 
-$response = new stdClass();
 $db = new database_driver();
 
 // Check if the email already exists in the database
