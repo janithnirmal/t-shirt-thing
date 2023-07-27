@@ -37,7 +37,7 @@
 
                 <div class="col-6 bg-light h-50 w-100">
                     <div class="row d-flex justify-content-between">
-                        <div class="col-4 p-4 fs-4 fw-bold" style="margin-left: 35px;">BUY LATER</div>
+                        <div class="col-4 p-4 fs-4 fw-bold" style="margin-left: 60px;">BUY LATER</div>
                         <div class="col-4 p-4" style="margin-right: -130px;">0 Products,0 Items</div>
                     </div>
                     <div class="row d-flex justify-content-center">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4  p-2" style="height: 730px; background-color: rgb(212, 210, 210);">
+            <div class="col-4  p-2" style="height: 730px; background-color: rgb(212, 210, 210);max-width:440px">
                 <div class="col-12 h-100  " style="background-color: rgb(241, 236, 236);">
                     <div class="row d-flex justify-content-between">
                         <div class="col-4 p-4 fs-5 fw-bold">TOTAL</div>
@@ -94,6 +94,11 @@
             </div>
         </div>
     </section>
+    <footer class="footer bg-dark text-white">
+    <div class="container text-center">
+      <!-- Footer content goes here --> <p>this is just dummy contenet</p>
+    </div>
+  </footer>
     <script src="https://kit.fontawesome.com/79961d807c.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
