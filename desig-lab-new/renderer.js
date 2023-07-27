@@ -10,6 +10,7 @@ const dataObject = {
 
   gender: "male",
   clothType: "t-shirt",
+  printType: "ScreenPrint",
   mainColorHueValue: 100,
   clothOption: {
     sleves: "long",

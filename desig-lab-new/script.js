@@ -3,10 +3,12 @@ const SERVER_URL =
 
 // signIn
 let signInModel;
-document.getElementById("signInBtn").addEventListener("click", () => {
-  signInModel = new bootstrap.Modal("#signInModel");
-  signInModel.show();
-});
+try {
+  document.getElementById("signInBtn").addEventListener("click", () => {
+    signInModel = new bootstrap.Modal("#signInModel");
+    signInModel.show();
+  });
+} catch (error) {}
 
 // function toggleDropdown() {
 //   var dropdownMenu = document.querySelector(".dropdown-menu");
@@ -69,18 +71,88 @@ function sectionSwitch(clcikbtn) {
   document.getElementById(clcikbtn).style.display = "block";
 }
 
-document.getElementById("signInActionBtn").addEventListener("click", () => {
-  let form = new FormData();
-  form.append("email", document.getElementById("emailInput").value);
-  form.append("password", document.getElementById("passwordInput").value);
+try {
+  document.getElementById("signInActionBtn").addEventListener("click", () => {
+    let form = new FormData();
+    form.append("email", document.getElementById("emailInput").value);
+    form.append("password", document.getElementById("passwordInput").value);
 
-  let request = new XMLHttpRequest();
-  request.onreadystatechange = function () {
-    if (request.readyState == 4) {
-      console.log(request.responseText);
-      window.location.reload();
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        let response = request.responseText;
+        if (response.status == "success") {
+          window.location.reload();
+        } else if (response.status == "failed") {
+          alert(response.error);
+        }
+      }
+    };
+    request.open("POST", SERVER_URL + "backend/sign_in.php", true);
+    request.send(form);
+  });
+} catch (error) {}
+
+// gender
+let genderModel;
+function openGenderModel() {
+  genderModel = new bootstrap.Modal("#genderModel");
+  genderModel.show();
+}
+
+let genderInputs = document.querySelectorAll('input[name="genderRadioInput"]');
+for (let i = 0; i < genderInputs.length; i++) {
+  let input = genderInputs[i];
+  input.addEventListener("change", () => {
+    let selectedOption;
+    if (input.checked) {
+      selectedOption = input.value;
     }
-  };
-  request.open("POST", SERVER_URL + "backend/sign_in.php", true);
-  request.send(form);
-});
+    dataObject.gender = selectedOption;
+
+    let btn = document.getElementById("genderControlBtn");
+    if (selectedOption == "Men") {
+      btn.classList.remove("btn-primary");
+      btn.classList.add("btn-info");
+    } else if (selectedOption == "Women") {
+      btn.classList.remove("btn-info");
+      btn.classList.add("btn-primary");
+    }
+    btn.innerText = selectedOption;
+
+    render(dataObject);
+  });
+}
+
+// print type
+let printTypeModel;
+function openPrintTypeModel() {
+  printTypeModel = new bootstrap.Modal("#printTypeModel");
+  printTypeModel.show();
+}
+
+let printTypeInputs = document.querySelectorAll(
+  'input[name="printTypeRadioInput"]'
+);
+for (let i = 0; i < printTypeInputs.length; i++) {
+  let input = printTypeInputs[i];
+  input.addEventListener("change", () => {
+    let selectedOption;
+    if (input.checked) {
+      selectedOption = input.value;
+    }
+    dataObject.printType = selectedOption;
+
+    let btn = document.getElementById("printTypeControlBtn");
+    if (selectedOption == "Embroidered") {
+      btn.classList.remove("btn-primary");
+      btn.classList.add("btn-info");
+    } else if (selectedOption == "ScreenPrint") {
+      btn.classList.remove("btn-info");
+      btn.classList.add("btn-primary");
+    }
+    btn.innerText = selectedOption;
+
+    render(dataObject);
+  });
+}

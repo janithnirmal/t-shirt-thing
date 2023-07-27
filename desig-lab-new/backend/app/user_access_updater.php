@@ -1,18 +1,20 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 class UserAccess
 {
-    private $sessionVariable = "alg001_user";
+    private $sessionVariable = "design_lab_user";
 
     public function isLoggedIn()
     {
         return isset($_SESSION[$this->sessionVariable]);
     }
 
-    public function login($userId)
+    public function login($data)
     {
-        $_SESSION[$this->sessionVariable] = $userId;
+        $_SESSION[$this->sessionVariable] = $data;
     }
 
     public function logout()

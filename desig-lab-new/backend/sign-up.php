@@ -6,25 +6,26 @@ require_once 'send_otp.php';
 
 
 
-if(!isset($_POST['email']) || !isset($_POST['password'])){
-    echo("you are doing bad thing");
+if (!isset($_POST['email']) || !isset($_POST['password'])) {
+    echo ("Warning! unauthorized acces!");
     exit;
 }
 
 $password = $_POST['password'];
 $email = $_POST['email'];
 
-session_start();
+// session_start();
 
-// Add data to the session
-$_SESSION['email'] = $email;
-$_SESSION['password'] = $password;
+// // Add data to the session
+// $_SESSION['email'] = $email;
+// $_SESSION['password'] = $password;
 
 $response = new stdClass();
-$db = new database_driver();
+$response->status = 'failed'; // Corrected the typo, changing 'success' to 'success'
 
+$db = new database_driver();
 // Check if the email already exists in the database
-$searchQuery = "SELECT email FROM `normal-sign-in` WHERE email = ?";
+$searchQuery = "SELECT email FROM `user` WHERE email = ?";
 $queryResult = $db->execute_query($searchQuery, 's', array($email));
 
 // Extract the statement and the result from the queryResult array
@@ -36,19 +37,18 @@ if ($result->num_rows > 0 && ($row = $result->fetch_assoc())) {
     // The email already exists in the database, show error
     $response->error = 'Email already exists in the database';
     response_sender::sendJson($response);
-    
 }
 
 // $otp=substr($otp,8);
 //send otp and chech if otp is correct
 // mail::mailSender($otp);
 
-$passwordEncypter=StrongPasswordEncryptor::encryptPassword($password);
-$hash=$passwordEncypter['hash'];
-$salt=$passwordEncypter['salt'];
+$passwordEncypter = StrongPasswordEncryptor::encryptPassword($password);
+$hash = $passwordEncypter['hash'];
+$salt = $passwordEncypter['salt'];
 
-$id=uniqid();
-$number = substr($id,0,4);
+$id = uniqid();
+$number = substr($id, 0, 4);
 
 
 // For demonstration purposes, let's assume the user ID is always '2' for all sign-ins
