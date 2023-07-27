@@ -37,37 +37,9 @@ if ($access->isLoggedIn()) {
 
 
 </style>
-<body><nav class="d-flex justify-content-between align-items-center px-5">
-        <div class=" h-100">
-            <a href="">
-                <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
-            </a>
-            <a href="">DesignHome</a>
-            <a href="">Designs</a>
-            <a href="">Orders</a>
-            <a href="">Help</a>
-            <a href="">
-                Reviews
-                <i class="fas fa-star"></i>
-            </a>
-        </div>
-        <div class="d-flex h-100 justify-content-center">
-            <a href=""><img class="nav-img-contact" src="images/nav-image.png" alt="" /></a>
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            <?php
-            if ($loggedUserData) {
-            ?>
-                <div class="rounded-circle bg-primary" style="width: 30px; height: 30px;" id="signInBtn"></div>
-            <?php
-            } else {
-            ?>
-                <button class="btn btn-primary my-2 text-center" id="signInBtn">Sign In</button>
-            <?php
-            }
-            ?>
-        </div>
+<body>
+<?php include 'navbar.php'; ?>
 
-    </nav>
   
 
     <div class="container rounded shaddow  ml-2 mb-3 text-center" style="background-color: white; margin-top:90px;">

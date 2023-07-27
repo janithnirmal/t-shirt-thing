@@ -26,7 +26,7 @@
             <div class="col-8 bg-light p-0" style="height: 730px;">
                 <div class="col-6  bg-light h-50 w-100 ">
                     <div class="row d-flex justify-content-between">
-                        <div class="col-4 p-4 fs-4 fw-bold">MY BAG</div>
+                        <div class="col-4 p-5 fs-4 fw-bold" style="margin-left: 35px;">MY BAG</div>
                         <div class="col-4 p-4" style="margin-right: -130px;">0 Products,0 Items</div>
                     </div>
                     <div class="row d-flex justify-content-center">
@@ -37,7 +37,7 @@
 
                 <div class="col-6 bg-light h-50 w-100">
                     <div class="row d-flex justify-content-between">
-                        <div class="col-4 p-4 fs-4 fw-bold">BUY LATER</div>
+                        <div class="col-4 p-4 fs-4 fw-bold" style="margin-left: 35px;">BUY LATER</div>
                         <div class="col-4 p-4" style="margin-right: -130px;">0 Products,0 Items</div>
                     </div>
                     <div class="row d-flex justify-content-center">
