@@ -45,9 +45,9 @@ if ($access->isLoggedIn()) {
             <a href="">
                 <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
             </a>
-            <a href="">DesignHome</a>
+            <a href="account.php">DesignHome</a>
             <a href="">Designs</a>
-            <a href="">Orders</a>
+            <a href="orders.php">Orders</a>
             <a href="">Help</a>
             <a href="">
                 Reviews
