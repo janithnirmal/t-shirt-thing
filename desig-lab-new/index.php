@@ -167,14 +167,48 @@ if ($access->isLoggedIn()) {
                     </div>
                     <div class="list-group-item">
                         <div id="btn3">
-                            <button class="left-side-btn" id="showModalss" style="background-color: #f62459">
+                            <button class="left-side-btn" id="showModalss" style="background-color: #f62459" onclick="openProductModel();">
                                 Product
                             </button>
+
+                            <div class="produtModelContainer">
+                                <div class="modal" tabindex="-1" id="productControlModel">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="product-control-nav d-flex justify-content-between">
+                                                    <button class="btn-style-remover product-control-nav-section-btn">
+                                                        <div class="product-control-number-icon">1</div>
+                                                        <span class="product-control-number-text fw-light">Start here</span>
+                                                    </button>
+                                                    <button class="btn-style-remover product-control-nav-section-btn">
+                                                        <div class="product-control-number-icon">2</div>
+                                                        <span class="product-control-number-text fw-light">Cloth Template</span>
+                                                    </button>
+                                                    <button class="btn-style-remover product-control-nav-section-btn">
+                                                        <div class="product-control-number-icon">3</div>
+                                                        <span class="product-control-number-text fw-light">Select Template</span>
+                                                    </button>
+                                                </div>
+                                                <div class="product-control-body">
+                                                    <div class="product-control-slider">
+
+                                                    </div>
+                                                </div>
+                                                <div class="product-control-nav-btn">3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="list-group-item">
                         <div id="btn4">
-                            <button class="left-side-btn" style="background-color: #343f86">
+                            <button class="left-side-btn" style="background-color: #343f86" onclick="opemMaterialModel();">
                                 Budget
                             </button>
                             <div id="materialContainer">
@@ -185,13 +219,13 @@ if ($access->isLoggedIn()) {
                                                 <h5 class="modal-title text-center">Select the material of your product</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
-                                                <div class="d-flex justify-content-center gap-3">
-                                                    <button class="btn btn-primary">Budget (220GSM)</button>
+                                            <div class="modal-body text-center">
+                                                <div class="d-flex flex-column justify-content-center align-items-center gap-3">
+                                                    <button style="font-size: 12px; width: max-content;" class="btn btn-primary">Budget (220GSM)</button>
                                                     <p>
                                                         A breathable and extremely comfortable material (220GSM Crocodile material / 190GSM Cotton t-shirt material) designed to last longer without pilling. An excellent choice for profit oriented promotional events in universities, schools and societies etc. (Please contact customer care service for 190GSM crocodile / 170GSM cotton t-shirt material prices)
                                                     </p>
-                                                    <button class="btn btn-info">Corporate (220GSM)</button>
+                                                    <button style="font-size: 12px; width: max-content;" class="btn btn-info">Corporate (220GSM)</button>
                                                     <p>
                                                         An optimized fabric for a premium look and feel with all the positive characteristics budget material has to offer (220GSM crocodile material / 190 GSM cotton t-shirt material). Highly recommended for professionals and business staffs. (Please contact our customer care service for 190GSM crocodile / 170GSM cotton t-shirt material prices)
                                                     </p>
@@ -238,9 +272,9 @@ if ($access->isLoggedIn()) {
                 <!-- size & qty -->
                 <div class="left-side-box3">
                     <div class="pricetagcontainer">
-                        <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-1 justify-content-center align-items-center p-2">
+                        <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center p-2">
                             <img src="images/Cart.png" style="width: 25px; height: 25px" />
-                            <p class="pricetagbtn3heading">MIN QTY : 15</p>
+                            <p class="text-white p-0 m-0">MIN QTY : 15</p>
                         </button>
                     </div>
                 </div>
@@ -477,12 +511,50 @@ if ($access->isLoggedIn()) {
                 <!-- color controls -->
                 <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
                     <div class="dropdown">
-                        <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
+                        <!-- <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px"> -->
+                        <button onclick="openModelColorControl()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
                             <div class="small-box"></div>
                             <span>Color</span> <i class="fas fa-chevron-down"></i>
                         </button>
 
-                        <div class="dropdown-menu1 basic-styling flex-column" id="dropdownContent1">
+                        <div id="colorControlModelContainer">
+                            <div class="modal" tabindex="-1" id="colorControlModel">
+                                <div class="modal-dialog">
+                                    <div class="modal-content  border border-1 border-secondary m-3">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-center">Select A Color</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="d-flex justify-content-center gap-3">
+                                                <div class="color-row" style="max-width: 350px">
+                                                    <div class="color-option" onclick="colorUpdate(0); setColor('red')" style="background-color: red"></div>
+                                                    <div class="color-option" onclick="colorUpdate(230); setColor('blue')" style="background-color: blue"></div>
+                                                    <div class="color-option" onclick="colorUpdate(120); setColor('green')" style="background-color: green"></div>
+                                                    <div class="color-option" onclick="colorUpdate(60); setColor('yellow')" style="background-color: yellow"></div>
+                                                    <div class="color-option" onclick="colorUpdate(35); setColor('orange')" style="background-color: orange"></div>
+                                                    <div class="color-option" onclick="colorUpdate(270); setColor('purple')" style="background-color: purple"></div>
+                                                    <div class="color-option" onclick="colorUpdate(300); setColor('pink')" style="background-color: pink"></div>
+                                                    <div class="color-option" onclick="colorUpdate(160); setColor('teal')" style="background-color: teal"></div>
+                                                    <div class="color-option" onclick="colorUpdate(0); setColor('gray')" style="background-color: gray"></div>
+                                                    <div class="color-option" onclick="colorUpdate(35); setColor('brown')" style="background-color: brown"></div>
+                                                    <div class="color-option" onclick="colorUpdate(180); setColor('cyan')" style="background-color: cyan"></div>
+                                                    <div class="color-option" onclick="colorUpdate(330); setColor('magenta')" style="background-color: magenta"></div>
+                                                    <div class="color-option" onclick="colorUpdate(150); setColor('lime')" style="background-color: lime"></div>
+                                                    <div class="color-option" onclick="colorUpdate(0); setColor('silver')" style="background-color: silver"></div>
+                                                    <div class="color-option" onclick="colorUpdate(280); setColor('indigo')" style="background-color: indigo"></div>
+                                                    <div class="color-option" onclick="colorUpdate(70); setColor('gold')" style="background-color: gold"></div>
+                                                    <div class="color-option" onclick="colorUpdate(40); setColor('maroon')" style="background-color: maroon"></div>
+                                                    <div class="color-option" onclick="colorUpdate(260); setColor('navy')" style="background-color: navy"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="dropdown-menu1 basic-styling flex-column" id="dropdownContent1">
                             <div class="color-row" style="max-width: 350px">
                                 <div class="color-option" onclick="colorUpdate(0); setColor('red')" style="background-color: red"></div>
                                 <div class="color-option" onclick="colorUpdate(230); setColor('blue')" style="background-color: blue"></div>
@@ -494,7 +566,6 @@ if ($access->isLoggedIn()) {
                                 <div class="color-option" onclick="colorUpdate(160); setColor('teal')" style="background-color: teal"></div>
                                 <div class="color-option" onclick="colorUpdate(0); setColor('gray')" style="background-color: gray"></div>
                                 <div class="color-option" onclick="colorUpdate(35); setColor('brown')" style="background-color: brown"></div>
-                                <!-- Add more colors below -->
                                 <div class="color-option" onclick="colorUpdate(180); setColor('cyan')" style="background-color: cyan"></div>
                                 <div class="color-option" onclick="colorUpdate(330); setColor('magenta')" style="background-color: magenta"></div>
                                 <div class="color-option" onclick="colorUpdate(150); setColor('lime')" style="background-color: lime"></div>
@@ -504,7 +575,8 @@ if ($access->isLoggedIn()) {
                                 <div class="color-option" onclick="colorUpdate(40); setColor('maroon')" style="background-color: maroon"></div>
                                 <div class="color-option" onclick="colorUpdate(260); setColor('navy')" style="background-color: navy"></div>
                             </div>
-                        </div>
+                        </div> -->
+
                     </div>
                 </div>
 
@@ -512,14 +584,112 @@ if ($access->isLoggedIn()) {
                 <!-- size & qty -->
                 <div class="basic-styling big-box order-md-2 order-4">
                     <div class="d-flex-column" style="height: 100%">
-                        <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
+                        <!-- <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;"> -->
+                        <button onclick="openSizeQuantityModel();" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
                             <div class="size-qty-box1">0 items</div>
                             <span style="width: 100%">Size & Qty</span>
 
                             <i class="fas fa-chevron-down"></i>
                         </button>
 
-                        <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500">
+                        <div class="modal" tabindex="-1" id="sizeQuantityModel">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Select your combination.</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="align-items-end flex-column">
+                                            <div class="p-2 rounded-3 border border-1 border-secondary w-100">
+                                                <!-- <p class="text-center">Select your combination.</p> -->
+                                                <div class="size-box1 d-flex justify-content-center flex-column gap-3 w-100">
+                                                    <div class="w-100 d-flex">
+                                                        <div class="w-50">
+                                                            <input type="radio" id="combinationMen" name="combinationGender" />
+                                                            <label for="combinationMen" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
+                                                                Men
+                                                            </label>
+                                                        </div>
+                                                        <div class="w-50">
+                                                            <input type="radio" id="combinationWomen" name="combinationGender" />
+                                                            <label for="combinationWomen" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
+                                                                Woman
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-100 d-flex">
+                                                        <div class="w-50">
+                                                            <input type="radio" id="combinationBudget" name="combinationBudget" />
+                                                            <label for="combinationBudget" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
+                                                                Budget
+                                                            </label>
+                                                        </div>
+                                                        <div class="w-50">
+                                                            <input type="radio" id="combinationCoperate" name="combinationBudget" />
+                                                            <label for="combinationCoperate" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
+                                                                Coperate
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="my-2 d-flex flex-column gap-1">
+                                                <div class="w-100 d-flex gap-2">
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">XS</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">S</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                </div>
+                                                <div class="w-100 d-flex gap-2">
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">M</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">L</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                </div>
+                                                <div class="w-100 d-flex gap-2">
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">Xl</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">2XXL</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                </div>
+                                                <div class="w-100 d-flex gap-2">
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">3XXl</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                    <div class="w-50 combination-size d-flex">
+                                                        <div class="combination-size-input p-1">XXl</div>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex gap-2 w-100">
+                                                <button class="size-chart-text btn btn-secondary w-50">Size Chart</button>
+
+                                                <button class="size-chart-text btn btn-dark w-50">Add Quantities</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500">
                             <i class="p-2 fas fa-close" onclick="toggleDropdown2()"></i>
                             <div class="p-2 rounded-3 border border-1 border-secondary w-100">
                                 <p class="text-center">Select your combination.</p>
@@ -603,7 +773,7 @@ if ($access->isLoggedIn()) {
 
                                 <button class="size-chart-text btn btn-dark w-50">Add Quantities</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 

@@ -323,14 +323,14 @@ nav i {
   padding: 10px;
 }
 
-.size-dropdown {
+/* .size-dropdown {
   display: none;
   margin: 10px 0;
   width: 250px;
   height: max-content;
   position: absolute;
   translate: -65% 27%;
-}
+} */
 
 .combination-size input {
   border-radius: 0 3px 3px 0;
@@ -856,9 +856,7 @@ nav i {
   cursor: pointer;
   transition: 200ms;
 }
-.pricetagbtn3heading {
-  color: aliceblue;
-}
+
 .pricetagbtn3box:hover {
   transition: 200ms;
   scale: 103%;
@@ -870,14 +868,20 @@ nav i {
 }
 
 .t-shirt-panel-container {
+  width: 320px; /* 400px */
+  min-height: 432px; /* 540px */
+
   width: 400px;
   min-height: 540px;
 }
 
 .canvasOverly {
   position: absolute;
+  width: 320px;
+  height: 432px;
+
   width: 400px;
-  height: 540px;
+  min-height: 540px;
   /* background-color: rgba(0, 0, 255, 0.585); */
 }
 
@@ -896,6 +900,43 @@ nav i {
   object-fit: cover;
 }
 
+.product-control-body {
+  min-height: 300px;
+}
+
+.product-control-number-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-control-nav-section-btn {
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-control-number-text {
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.product-control-nav-section-btn:focus {
+  background-color: rgba(66, 66, 66, 0.2);
+}
+
+/* responsive */
 @media (max-width: 1280px) {
   .container {
     width: 100%;

@@ -15,14 +15,6 @@ try {
 //   dropdownMenu.classList.toggle("show");
 // }
 
-function setColor(color) {
-  var smallBox = document.querySelector(".small-box");
-  smallBox.style.backgroundColor = color;
-
-  var dropdownContent = document.getElementById("dropdownContent1");
-  dropdownContent.style.display = "none";
-}
-
 // // Function to hide the dropdown menu
 // function hideDropdown() {
 //   var dropdownMenu = document.querySelector(".dropdown-menu");
@@ -111,14 +103,15 @@ for (let i = 0; i < genderInputs.length; i++) {
     dataObject.gender = selectedOption;
 
     let btn = document.getElementById("genderControlBtn");
-    if (selectedOption == "Men") {
-      btn.classList.remove("btn-primary");
-      btn.classList.add("btn-info");
-    } else if (selectedOption == "Women") {
+    if (selectedOption == "male") {
       btn.classList.remove("btn-info");
       btn.classList.add("btn-primary");
+      btn.innerText = "Men";
+    } else if (selectedOption == "female") {
+      btn.classList.remove("btn-primary");
+      btn.classList.add("btn-info");
+      btn.innerText = "Women";
     }
-    btn.innerText = selectedOption;
 
     render(dataObject);
   });
@@ -155,4 +148,40 @@ for (let i = 0; i < printTypeInputs.length; i++) {
 
     render(dataObject);
   });
+}
+
+// color type
+let colorControlModelModel;
+function openModelColorControl() {
+  colorControlModelModel = new bootstrap.Modal("#colorControlModel");
+  colorControlModelModel.show();
+}
+
+function setColor(color) {
+  var smallBox = document.querySelector(".small-box");
+  smallBox.style.backgroundColor = color;
+
+  colorControlModelModel.hide();
+  // var dropdownContent = document.getElementById("dropdownContent1");
+  // dropdownContent.style.display = "none";
+}
+
+// material control
+let materialControlModel;
+function opemMaterialModel() {
+  materialControlModel = new bootstrap.Modal("#materialModel");
+  materialControlModel.show();
+}
+
+// material control
+let sizeQuantityModel;
+function openSizeQuantityModel() {
+  sizeQuantityModel = new bootstrap.Modal("#sizeQuantityModel");
+  sizeQuantityModel.show();
+}
+
+let productControlModel;
+function openProductModel() {
+  productControlModel = new bootstrap.Modal("#productControlModel");
+  productControlModel.show();
 }
