@@ -421,7 +421,7 @@
 
                             </div>
                         </div>
-                        <div id="singlet" class="canvasOverlyInner">
+                        <div id="singlet" class="canvasOverlyInner d-none">
                             <!-- strip controls -->
 
 
@@ -442,7 +442,7 @@
 
                             </div>
                         </div>
-                        <div id="jacket" class="canvasOverlyInner">
+                        <div id="jacket" class="canvasOverlyInner d-none">
                             <!-- strip controls -->
 
 
