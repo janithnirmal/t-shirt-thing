@@ -44,8 +44,8 @@ if ($access->isLoggedIn()) {
 <body>
     <?php include 'navbar.php'; ?>
 
-    <div class="section1 px-3 bg-dark">
-        <div class="container bg-dark section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
+    <div class="section1 px-3">
+        <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
             <!-- left side panel -->
             <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
                 <!-- box 1 -->
@@ -174,32 +174,32 @@ if ($access->isLoggedIn()) {
                                                             <div class="product-control-card-item">
                                                                 <span>Polo T Shirt</span>
                                                                 <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
-                                                                <button onclick="changeProduct('polo-t-shirt');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('polo-t-shirt'); updateControlLayoutBaseVariable('tshirt');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Cotten T Shirt</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="changeProduct('cotton-t-shirt')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('cotton-t-shirt'); updateControlLayoutBaseVariable('tshirt');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Bottom</span>
                                                                 <img class="product-control-item-img" src="images/cloths/bottom-front_male.png" />
-                                                                <button onclick="changeProduct('bottom')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('bottom'); updateControlLayoutBaseVariable('bottom');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Jacket</span>
                                                                 <img class="product-control-item-img" src="images/cloths/jacket-front_male.png" />
-                                                                <button onclick="changeProduct('jacket')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('jacket'); updateControlLayoutBaseVariable('jacket');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Shorts</span>
                                                                 <img class="product-control-item-img" src="images/cloths/short-front_male.png" />
-                                                                <button onclick="changeProduct('short')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('short'); updateControlLayoutBaseVariable('short');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Singlet</span>
                                                                 <img class="product-control-item-img" src="images/cloths/singlet-front_male.png" />
-                                                                <button onclick="changeProduct('singlet')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('singlet'); updateControlLayoutBaseVariable('singlet');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -336,7 +336,7 @@ if ($access->isLoggedIn()) {
             <div class="section1-panel section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                 <div class="t-shirt-panel-container">
                     <div class="canvasOverly">
-                        <div id="tShirt" class="canvasOverlyInner">
+                        <div id="tshirt" class="canvasOverlyInner d-block">
                             <!-- strip controls -->
                             <div id="tshirtStripControl1" class="canvasOverlyInner-front d-block">
                                 <div class="tshirt-controller tshirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
@@ -376,10 +376,9 @@ if ($access->isLoggedIn()) {
 
                             </div>
                         </div>
-                        <div id="short" class="canvasOverlyInner">
+                        <div id="short" class="canvasOverlyInner d-none">
                             <!-- strip controls -->
-                           
-                            
+
 
                             <!-- image controls -->
                             <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
@@ -399,10 +398,10 @@ if ($access->isLoggedIn()) {
 
                             </div>
                         </div>
-                        <div id="bottom" class="canvasOverlyInner">
+                        <div id="bottom" class="canvasOverlyInner d-none">
                             <!-- strip controls -->
-                           
-                            
+
+
 
                             <!-- image controls -->
                             <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
@@ -422,7 +421,7 @@ if ($access->isLoggedIn()) {
 
                             </div>
                         </div>
-                        <div id="jacket" class="canvasOverlyInner">
+                        <div id="jacket" class="canvasOverlyInner d-none">
                             <!-- strip controls -->
 
 

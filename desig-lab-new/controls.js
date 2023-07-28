@@ -148,6 +148,22 @@ function openProductModel() {
   document
     .getElementById("productControlNavigationChangeGender")
     .classList.add("product-control-nav-section-btn-clicked");
+
+  document.getElementById("productControlNavigationChangeGender").click();
+
+  document
+    .getElementById("productControlNavigationChangeSleeves")
+    .classList.remove("d-flex");
+  document
+    .getElementById("productControlNavigationChangeSleeves")
+    .classList.add("d-none");
+
+  document
+    .getElementById("productControlNavigationChangeTemplate")
+    .classList.remove("d-flex");
+  document
+    .getElementById("productControlNavigationChangeTemplate")
+    .classList.add("d-none");
 }
 
 function productControlNavigationChange(option) {
@@ -217,4 +233,17 @@ function sleeveSelection(type) {
 
   dataObject.clothOption.sleves = type;
   render(dataObject);
+}
+
+function updateControlLayoutBaseVariable(value) {
+  let elements = document.querySelectorAll(".canvasOverlyInner");
+  elements.forEach((element) => {
+    if (value !== element.id) {
+      element.classList.add("d-none");
+      element.classList.remove("d-block");
+    } else {
+      element.classList.add("d-block");
+      element.classList.remove("d-none");
+    }
+  });
 }
