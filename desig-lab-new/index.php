@@ -133,41 +133,42 @@ if ($access->isLoggedIn()) {
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="product-control-nav d-flex justify-content-between">
-                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('gender');">
+                                                <div class="product-control-nav d-flex justify-content-center">
+                                                    <button id="productControlNavigationChangeGender" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Gender');">
                                                         <div class="product-control-number-icon">1</div>
                                                         <span class="product-control-number-text fw-light">Start here</span>
                                                     </button>
-                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('type');">
+                                                    <button id="productControlNavigationChangeType" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Type');">
                                                         <div class="product-control-number-icon">2</div>
                                                         <span class="product-control-number-text fw-light">Cloth Template</span>
                                                     </button>
-                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('sleeves');">
+                                                    <button id="productControlNavigationChangeSleeves" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Sleeves');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
-                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('template');">
+                                                    <button id="productControlNavigationChangeTemplate" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Template');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
                                                 </div>
+                                                <hr>
                                                 <div class="product-control-body overflow-auto">
-                                                    <div id="productControlGenderSelectSection" class="d-none flex-column ">
+                                                    <div id="productControlGenderSelectSection" class="d-flex flex-column  product-control-section">
                                                         <span class="text-center w-100 py-2">Let's Start Here...</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
                                                                 <span>Men</span>
-                                                                <img class="product-control-item-img" src="images/cloths/t-shirt-front_male.png" />
+                                                                <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
                                                                 <button onclick="changeGender('male');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Women</span>
-                                                                <img class="product-control-item-img" src="images/cloths/t-shirt-front_female.png" />
+                                                                <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_female.png" />
                                                                 <button onclick="changeGender('female')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="productControlClothTypeSelectSection" class="d-none flex-column">
+                                                    <div id="productControlTypeSelectSection" class="d-none flex-column product-control-section">
                                                         <span class="text-center w-100 py-2">Great! Now it's time to select what you want..</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -202,7 +203,7 @@ if ($access->isLoggedIn()) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="productControlSleeveSelectSection" class="d-none flex-column">
+                                                    <div id="productControlSleevesSelectSection" class="d-none flex-column product-control-section">
                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -217,7 +218,7 @@ if ($access->isLoggedIn()) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="productControlTemplateSelectSection" class="d-flex flex-column">
+                                                    <div id="productControlTemplateSelectSection" class="d-none flex-column product-control-section">
                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">

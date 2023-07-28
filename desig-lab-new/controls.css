@@ -2,7 +2,7 @@
   position: absolute;
   /* background-color: red; */
   cursor: pointer;
-  border: 2px rgba(0, 0, 0, 0.1) dashed;
+  border: 2px rgba(0, 0, 0, 0.3) dashed;
 }
 
 .tshirt-controller:hover,

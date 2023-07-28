@@ -144,6 +144,30 @@ let productControlModel;
 function openProductModel() {
   productControlModel = new bootstrap.Modal("#productControlModel");
   productControlModel.show();
+
+  document
+    .getElementById("productControlNavigationChangeGender")
+    .classList.add("product-control-nav-section-btn-clicked");
+}
+
+function productControlNavigationChange(option) {
+  let items = document.querySelectorAll(".product-control-nav-section-btn");
+  items.forEach((element) => {
+    if (element.id !== "productControlNavigationChange" + option) {
+      element.classList.remove("product-control-nav-section-btn-clicked");
+    } else {
+      element.classList.add("product-control-nav-section-btn-clicked");
+    }
+  });
+
+  let sections = document.querySelectorAll(".product-control-section");
+  sections.items.forEach((element) => {
+    if (element.id !== "productControl" + option + "SelectSection") {
+      element.classList.remove("d-flex");
+    } else {
+      element.classList.add("d-block");
+    }
+  });
 }
 
 function changeGender(gender) {
