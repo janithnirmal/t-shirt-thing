@@ -153,7 +153,7 @@ if ($access->isLoggedIn()) {
                                                 </div>
                                                 <hr>
                                                 <div class="product-control-body overflow-auto">
-                                                    <div id="productControlGenderSelectSection" class="d-flex flex-column  product-control-section">
+                                                    <div id="productControlGenderSelectSection" class="d-none flex-column  product-control-section">
                                                         <span class="text-center w-100 py-2">Let's Start Here...</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -168,7 +168,7 @@ if ($access->isLoggedIn()) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="productControlTypeSelectSection" class="d-none flex-column product-control-section">
+                                                    <div id="productControlTypeSelectSection" class="d-flex flex-column product-control-section">
                                                         <span class="text-center w-100 py-2">Great! Now it's time to select what you want..</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
