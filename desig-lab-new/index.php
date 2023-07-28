@@ -1,12 +1,12 @@
 <?php
 
-require_once("backend/app/user_access_updater.php");
+// require_once("backend/app/user_access_updater.php");
 
-$loggedUserData = null;
-$access = new UserAccess();
-if ($access->isLoggedIn()) {
-    $loggedUserData = $access->getUserData();
-}
+// $loggedUserData = null;
+// $access = new UserAccess();
+// if ($access->isLoggedIn()) {
+//     $loggedUserData = $access->getUserData();
+// }
 
 
 
@@ -423,8 +423,8 @@ if ($access->isLoggedIn()) {
                         </div>
                         <div id="singlet" class="canvasOverlyInner">
                             <!-- strip controls -->
-                           
-                            
+
+
 
                             <!-- image controls -->
                             <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
