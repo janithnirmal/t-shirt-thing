@@ -9,7 +9,9 @@
 .tshirt-controller:focus {
   border: 2px rgba(49, 49, 49, 0.414) dashed;
 }
-
+#tShirt{
+  display: none;
+}
 .tshirt-coller-front-left {
   width: 20px;
   height: 70px;
@@ -94,4 +96,23 @@
   margin-left: 135px;
   width: 85px;
   height: 100px;
+}
+.jacket-image-control-front-topleft{
+  margin-top: 93px;
+  margin-left: 100px;
+  width: 85px;
+  height: 100px; 
+}
+.jacket-image-control-front-topright{
+  margin-top: 93px;
+  margin-left: 210px;
+  width: 85px;
+  height: 100px;
+
+}
+.jacket-image-control-front-mid {
+  margin-left: 125px;
+  margin-top: 250px;
+  width: 150px;
+  height: 200px;
 }

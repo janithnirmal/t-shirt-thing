@@ -416,6 +416,28 @@ if ($access->isLoggedIn()) {
 
                             </div>
                         </div>
+                        <div id="jacket" class="canvasOverlyInner">
+                            <!-- strip controls -->
+                            
+
+                            <!-- image controls -->
+                            <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
+                                <button class="tshirt-controller btn-style-remover jacket-image-control-front-topleft"></button>
+                                <button class="tshirt-controller btn-style-remover jacket-image-control-front-topright "></button>
+                                <button class="tshirt-controller btn-style-remover jacket-image-control-front-mid"></button>
+                            </div>
+                            <div id="tshirtImageControl2" class="canvasOverlyInner-back d-none">
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-top"></button>
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-bottom"></button>
+                            </div>
+                            <div id="tshirtImageControl3" class="canvasOverlyInner-left d-none">
+                                <button class="tshirt-controller btn-style-remover tshirt-image-control-left-hand"></button>
+                            </div>
+                            <div id="tshirtImageControl4" class="canvasOverlyInner-right d-none">
+                                <button class=" tshirt-controller btn-style-remover tshirt-image-control-right-hand"></button>
+
+                            </div>
+                        </div>
                     </div>
                     <div id="canvas" class="t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
                 </div>
