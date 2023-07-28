@@ -12,6 +12,8 @@ const dataObject = {
   clothType: "polo-t-shirt",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
+  mainColorSaturateValue: 1,
+  mainColorLevelValue: 1,
   clothOption: {
     sleves: "long",
     neck: "v",
@@ -132,7 +134,14 @@ function clothRenderer(canvas, dataObject) {
 
   const ctx = canvas.getContext("2d");
   image.onload = function () {
-    ctx.filter = "hue-rotate(" + dataObject.mainColorHueValue + "deg)"; // Apply the hue-rotate filter to the canvas context
+    ctx.filter =
+      "hue-rotate(" +
+      dataObject.mainColorHueValue +
+      "deg) saturate(" +
+      dataObject.mainColorSaturateValue +
+      ") brightness(" +
+      dataObject.mainColorLevelValue +
+      ") "; // Apply the hue-rotate filter to the canvas context
     ctx.drawImage(image, 0, 0, parseInt(imageWidth), parseInt(imageHeight));
     ctx.filter = "none";
 
@@ -554,8 +563,10 @@ function drawLine(ctx, startX, startY, endX, endY, thickness, color) {
   ctx.stroke();
 }
 
-function colorUpdate(color) {
-  dataObject.mainColorHueValue = color;
+function colorUpdate(hue, saturation, value) {
+  dataObject.mainColorHueValue = hue;
+  dataObject.mainColorSaturateValue = saturation;
+  dataObject.mainColorLevelValue = value;
   render(dataObject);
 }
 

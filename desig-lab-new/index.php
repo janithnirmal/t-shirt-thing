@@ -668,24 +668,24 @@
                                         <div class="modal-body">
                                             <div class="d-flex justify-content-center gap-3">
                                                 <div class="color-row" style="max-width: 350px">
-                                                    <div class="color-option" onclick="colorUpdate(0); setColor('red')" style="background-color: red"></div>
-                                                    <div class="color-option" onclick="colorUpdate(230); setColor('blue')" style="background-color: blue"></div>
-                                                    <div class="color-option" onclick="colorUpdate(120); setColor('green')" style="background-color: green"></div>
-                                                    <div class="color-option" onclick="colorUpdate(60); setColor('yellow')" style="background-color: yellow"></div>
-                                                    <div class="color-option" onclick="colorUpdate(35); setColor('orange')" style="background-color: orange"></div>
-                                                    <div class="color-option" onclick="colorUpdate(270); setColor('purple')" style="background-color: purple"></div>
-                                                    <div class="color-option" onclick="colorUpdate(300); setColor('pink')" style="background-color: pink"></div>
-                                                    <div class="color-option" onclick="colorUpdate(160); setColor('teal')" style="background-color: teal"></div>
-                                                    <div class="color-option" onclick="colorUpdate(0); setColor('gray')" style="background-color: gray"></div>
-                                                    <div class="color-option" onclick="colorUpdate(35); setColor('brown')" style="background-color: brown"></div>
-                                                    <div class="color-option" onclick="colorUpdate(180); setColor('cyan')" style="background-color: cyan"></div>
-                                                    <div class="color-option" onclick="colorUpdate(330); setColor('magenta')" style="background-color: magenta"></div>
-                                                    <div class="color-option" onclick="colorUpdate(150); setColor('lime')" style="background-color: lime"></div>
-                                                    <div class="color-option" onclick="colorUpdate(0); setColor('silver')" style="background-color: silver"></div>
-                                                    <div class="color-option" onclick="colorUpdate(280); setColor('indigo')" style="background-color: indigo"></div>
-                                                    <div class="color-option" onclick="colorUpdate(70); setColor('gold')" style="background-color: gold"></div>
-                                                    <div class="color-option" onclick="colorUpdate(40); setColor('maroon')" style="background-color: maroon"></div>
-                                                    <div class="color-option" onclick="colorUpdate(260); setColor('navy')" style="background-color: navy"></div>
+                                                    <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('red')" style="background-color: red"></div>
+                                                    <div class="color-option" onclick="colorUpdate(230, 1, 1); setColor('blue')" style="background-color: blue"></div>
+                                                    <div class="color-option" onclick="colorUpdate(120, 1, 1); setColor('green')" style="background-color: green"></div>
+                                                    <div class="color-option" onclick="colorUpdate(60, 1.4, 1.8); setColor('yellow')" style="background-color: yellow"></div>
+                                                    <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('orange')" style="background-color: orange"></div>
+                                                    <div class="color-option" onclick="colorUpdate(270, 1, 1); setColor('purple')" style="background-color: purple"></div>
+                                                    <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('pink')" style="background-color: pink"></div>
+                                                    <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('teal')" style="background-color: teal"></div>
+                                                    <div class="color-option" onclick="colorUpdate(0, 0, 50); setColor('gray')" style="background-color: gray"></div>
+                                                    <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('brown')" style="background-color: brown"></div>
+                                                    <div class="color-option" onclick="colorUpdate(180, 1, 1); setColor('cyan')" style="background-color: cyan"></div>
+                                                    <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('magenta')" style="background-color: magenta"></div>
+                                                    <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('lime')" style="background-color: lime"></div>
+                                                    <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('silver')" style="background-color: silver"></div>
+                                                    <div class="color-option" onclick="colorUpdate(280, 1, 1); setColor('indigo')" style="background-color: indigo"></div>
+                                                    <div class="color-option" onclick="colorUpdate(70, 1, 1); setColor('gold')" style="background-color: gold"></div>
+                                                    <div class="color-option" onclick="colorUpdate(40, 1, 1); setColor('maroon')" style="background-color: maroon"></div>
+                                                    <div class="color-option" onclick="colorUpdate(260, 1, 1); setColor('navy')" style="background-color: navy"></div>
                                                 </div>
                                             </div>
                                         </div>
