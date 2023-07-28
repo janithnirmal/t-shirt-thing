@@ -9,7 +9,7 @@ const dataObject = {
   },
 
   gender: "male",
-  clothType: "polo-t-shirt",
+  clothType: "bottom",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
   clothOption: {
