@@ -161,31 +161,60 @@ function productControlNavigationChange(option) {
   });
 
   let sections = document.querySelectorAll(".product-control-section");
-  sections.items.forEach((element) => {
+  sections.forEach((element) => {
     if (element.id !== "productControl" + option + "SelectSection") {
+      element.classList.add("d-none");
       element.classList.remove("d-flex");
     } else {
-      element.classList.add("d-block");
+      element.classList.add("d-flex");
+      element.classList.remove("d-none");
     }
   });
 }
 
 function changeGender(gender) {
+  document.getElementById("productControlNavigationChangeType").click();
   dataObject.gender = gender;
   render(dataObject);
 }
 
 function changeProduct(type) {
+  let sleeveBtn = document.getElementById(
+    "productControlNavigationChangeSleeves"
+  );
+  if (type == "polo-t-shirt") {
+    sleeveBtn.classList.add("d-flex");
+    sleeveBtn.classList.remove("d-none");
+    sleeveBtn.click();
+  } else if (type == "cotton-t-shirt") {
+    sleeveBtn.classList.add("d-flex");
+    sleeveBtn.classList.remove("d-none");
+    sleeveBtn.click();
+  } else {
+    sleeveBtn.classList.add("d-none");
+    sleeveBtn.classList.remove("d-flex");
+    productControlModel.hide();
+  }
+
   dataObject.clothType = type;
   render(dataObject);
 }
 
 function templateSection(type) {
+  productControlModel.hide();
   dataObject.clothOption.neck = type;
   render(dataObject);
 }
 
 function sleeveSelection(type) {
+  let sleeveBtn = document.getElementById(
+    "productControlNavigationChangeTemplate"
+  );
+
+  sleeveBtn.classList.add("d-flex");
+  sleeveBtn.classList.remove("d-none");
+  sleeveBtn.click();
+
   dataObject.clothOption.sleves = type;
   render(dataObject);
 }
