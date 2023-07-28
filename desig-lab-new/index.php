@@ -8,6 +8,8 @@ if ($access->isLoggedIn()) {
     $loggedUserData = $access->getUserData();
 }
 
+
+
 ?>
 
 
@@ -39,7 +41,7 @@ if ($access->isLoggedIn()) {
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="bg-dark">
     <nav class="d-flex justify-content-between align-items-center px-5">
         <div class=" h-100">
             <a href="">
@@ -90,8 +92,8 @@ if ($access->isLoggedIn()) {
 
     </nav>
 
-    <div class="section1 px-3">
-        <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
+    <div class="section1 px-3 bg-dark">
+        <div class="container bg-dark section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
             <!-- left side panel -->
             <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
                 <!-- box 1 -->
@@ -180,25 +182,122 @@ if ($access->isLoggedIn()) {
                                             </div>
                                             <div class="modal-body">
                                                 <div class="product-control-nav d-flex justify-content-between">
-                                                    <button class="btn-style-remover product-control-nav-section-btn">
+                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('gender');">
                                                         <div class="product-control-number-icon">1</div>
                                                         <span class="product-control-number-text fw-light">Start here</span>
                                                     </button>
-                                                    <button class="btn-style-remover product-control-nav-section-btn">
+                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('type');">
                                                         <div class="product-control-number-icon">2</div>
                                                         <span class="product-control-number-text fw-light">Cloth Template</span>
                                                     </button>
-                                                    <button class="btn-style-remover product-control-nav-section-btn">
+                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('sleeves');">
+                                                        <div class="product-control-number-icon">3</div>
+                                                        <span class="product-control-number-text fw-light">Select Template</span>
+                                                    </button>
+                                                    <button class="btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('template');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
                                                 </div>
-                                                <div class="product-control-body">
-                                                    <div class="product-control-slider">
-
+                                                <div class="product-control-body overflow-auto">
+                                                    <div id="productControlGenderSelectSection" class="d-none flex-column ">
+                                                        <span class="text-center w-100 py-2">Let's Start Here...</span>
+                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                            <div class="product-control-card-item">
+                                                                <span>Men</span>
+                                                                <img class="product-control-item-img" src="images/cloths/t-shirt-front_male.png" />
+                                                                <button onclick="changeGender('male');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Women</span>
+                                                                <img class="product-control-item-img" src="images/cloths/t-shirt-front_female.png" />
+                                                                <button onclick="changeGender('female')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="productControlClothTypeSelectSection" class="d-none flex-column">
+                                                        <span class="text-center w-100 py-2">Great! Now it's time to select what you want..</span>
+                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                            <div class="product-control-card-item">
+                                                                <span>Polo T Shirt</span>
+                                                                <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
+                                                                <button onclick="changeProduct('polo-t-shirt');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Cotten T Shirt</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="changeProduct('cotton-t-shirt')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Bottom</span>
+                                                                <img class="product-control-item-img" src="images/cloths/bottom-front_male.png" />
+                                                                <button onclick="changeProduct('bottom')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Jacket</span>
+                                                                <img class="product-control-item-img" src="images/cloths/jacket-front_male.png" />
+                                                                <button onclick="changeProduct('jacket')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Shorts</span>
+                                                                <img class="product-control-item-img" src="images/cloths/short-front_male.png" />
+                                                                <button onclick="changeProduct('short')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Singlet</span>
+                                                                <img class="product-control-item-img" src="images/cloths/singlet-front_male.png" />
+                                                                <button onclick="changeProduct('singlet')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="productControlSleeveSelectSection" class="d-none flex-column">
+                                                        <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
+                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                            <div class="product-control-card-item">
+                                                                <span>Short Sleeves</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="sleeveSelection('shortSleeves');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Long Sleeves</span>
+                                                                <img class="product-control-item-img" src="images/cloths/long-cotton-t-shirt-front_male.png" />
+                                                                <button onclick="sleeveSelection('longSleeves')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="productControlTemplateSelectSection" class="d-flex flex-column">
+                                                        <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
+                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                            <div class="product-control-card-item">
+                                                                <span>V Neck</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="templateSection('vneck');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Round Neck</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="templateSection('roundneck')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Collar + 3 Buttons</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="templateSection('collar2buttons');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Collar + 3 Buttons </span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="templateSection('collar3buttons')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="product-control-nav-btn">3</div>
+                                                <div class="product-control-footer">
+                                                    <hr>
+                                                    <div class="product-control-nav-btn d-flex justify-content-between py-2">
+                                                        <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Previous</div>
+                                                        <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Next</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

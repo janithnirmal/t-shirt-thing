@@ -2,11 +2,12 @@
   position: absolute;
   /* background-color: red; */
   cursor: pointer;
+  border: 2px rgba(0, 0, 0, 0.1) dashed;
 }
 
 .tshirt-controller:hover,
 .tshirt-controller:focus {
-  border: 2px rgba(0, 0, 0, 0.414) dashed;
+  border: 2px rgba(49, 49, 49, 0.414) dashed;
 }
 
 .tshirt-coller-front-left {

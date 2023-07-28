@@ -9,7 +9,7 @@ const dataObject = {
   },
 
   gender: "male",
-  clothType: "t-shirt",
+  clothType: "long-cotton-t-shirt",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
   clothOption: {
@@ -136,8 +136,11 @@ function clothRenderer(canvas, dataObject) {
     ctx.drawImage(image, 0, 0, parseInt(imageWidth), parseInt(imageHeight));
     ctx.filter = "none";
 
-    if (dataObject.clothType == "t-shirt") {
-      tShirt(ctx, dataObject);
+    if (
+      dataObject.clothType == "polo-t-shirt" ||
+      dataObject.clothType == "cotton-t-shirt"
+    ) {
+      poloTShirt(ctx, dataObject);
     }
     // testLineCreator(ctx, dataObject); // tester
   };
@@ -145,13 +148,13 @@ function clothRenderer(canvas, dataObject) {
 
 //  functions
 // image section functions
-// tshirt
-function tShirt(ctx, dataObject) {
+// poloTShirt
+function poloTShirt(ctx, dataObject) {
   const stripObject = dataObject.views.strips;
-  stripDrawerTShirt(ctx, stripObject, dataObject.views.active);
+  stripDrawerpoloTShirt(ctx, stripObject, dataObject.views.active);
 }
 
-function stripDrawerTShirt(ctx, stripObjects, side) {
+function stripDrawerpoloTShirt(ctx, stripObjects, side) {
   const neckStripsArray = stripObjects.neck;
   const armStripsArray = stripObjects.arm;
   const hipStripsArray = stripObjects.hip;

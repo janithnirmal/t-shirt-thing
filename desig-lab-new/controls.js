@@ -43,3 +43,125 @@ function tShirtControlViewChanger(side) {
   selectedElement2.classList.add("d-block");
   selectedElement2.classList.remove("d-none");
 }
+
+// gender
+let genderModel;
+function openGenderModel() {
+  genderModel = new bootstrap.Modal("#genderModel");
+  genderModel.show();
+}
+
+let genderInputs = document.querySelectorAll('input[name="genderRadioInput"]');
+for (let i = 0; i < genderInputs.length; i++) {
+  let input = genderInputs[i];
+  input.addEventListener("change", () => {
+    let selectedOption;
+    if (input.checked) {
+      selectedOption = input.value;
+    }
+    dataObject.gender = selectedOption;
+
+    let btn = document.getElementById("genderControlBtn");
+    if (selectedOption == "male") {
+      btn.classList.remove("btn-info");
+      btn.classList.add("btn-primary");
+      btn.innerText = "Men";
+    } else if (selectedOption == "female") {
+      btn.classList.remove("btn-primary");
+      btn.classList.add("btn-info");
+      btn.innerText = "Women";
+    }
+
+    render(dataObject);
+  });
+}
+
+// print type
+let printTypeModel;
+function openPrintTypeModel() {
+  printTypeModel = new bootstrap.Modal("#printTypeModel");
+  printTypeModel.show();
+}
+
+let printTypeInputs = document.querySelectorAll(
+  'input[name="printTypeRadioInput"]'
+);
+for (let i = 0; i < printTypeInputs.length; i++) {
+  let input = printTypeInputs[i];
+  input.addEventListener("change", () => {
+    let selectedOption;
+    if (input.checked) {
+      selectedOption = input.value;
+    }
+    dataObject.printType = selectedOption;
+
+    let btn = document.getElementById("printTypeControlBtn");
+    if (selectedOption == "Embroidered") {
+      btn.classList.remove("btn-primary");
+      btn.classList.add("btn-info");
+    } else if (selectedOption == "ScreenPrint") {
+      btn.classList.remove("btn-info");
+      btn.classList.add("btn-primary");
+    }
+    btn.innerText = selectedOption;
+
+    render(dataObject);
+  });
+}
+
+// color type
+let colorControlModelModel;
+function openModelColorControl() {
+  colorControlModelModel = new bootstrap.Modal("#colorControlModel");
+  colorControlModelModel.show();
+}
+
+function setColor(color) {
+  var smallBox = document.querySelector(".small-box");
+  smallBox.style.backgroundColor = color;
+
+  colorControlModelModel.hide();
+  // var dropdownContent = document.getElementById("dropdownContent1");
+  // dropdownContent.style.display = "none";
+}
+
+// material control
+let materialControlModel;
+function opemMaterialModel() {
+  materialControlModel = new bootstrap.Modal("#materialModel");
+  materialControlModel.show();
+}
+
+// material control
+let sizeQuantityModel;
+function openSizeQuantityModel() {
+  sizeQuantityModel = new bootstrap.Modal("#sizeQuantityModel");
+  sizeQuantityModel.show();
+}
+
+// product controls
+let productControlModel;
+function openProductModel() {
+  productControlModel = new bootstrap.Modal("#productControlModel");
+  productControlModel.show();
+}
+
+function changeGender(gender) {
+  dataObject.gender = gender;
+  render(dataObject);
+}
+
+function changeProduct(type) {
+  dataObject.clothType = type;
+  render(dataObject);
+}
+
+function templateSection(type) {
+  dataObject.clothOption.neck = type;
+  render(dataObject);
+}
+
+function sleeveSelection(type) {
+  dataObject.clothOption.sleves = type;
+  render(dataObject);
+}
