@@ -779,37 +779,37 @@
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">XS</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xs" />
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">S</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="s" />
                                                     </div>
                                                 </div>
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">M</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="m"/>
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">L</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="l" />
                                                     </div>
                                                 </div>
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">Xl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xl"/>
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">2XXL</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="2xl"/>
                                                     </div>
                                                 </div>
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">3XXl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="3xl"/>
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">XXl</div>
@@ -821,7 +821,7 @@
                                             <div class="d-flex gap-2 w-100">
                                                 <button class="size-chart-text btn btn-secondary w-50">Size Chart</button>
 
-                                                <button class="size-chart-text btn btn-dark w-50">Add Quantities</button>
+                                                <button class="size-chart-text btn btn-dark w-50" onclick="size()">Add Quantities</button>
                                             </div>
                                         </div>
                                     </div>
