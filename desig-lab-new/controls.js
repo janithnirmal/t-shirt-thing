@@ -213,6 +213,7 @@ function changeProduct(type) {
   }
 
   dataObject.clothType = type;
+  document.getElementById("clothTypeIndicationBtn").innerText = type;
   render(dataObject);
 }
 

@@ -52,7 +52,7 @@
                 <div class="basic-styling left-side-box1">
                     <div class="list-group-item">
                         <div id="btn1">
-                            <button class="left-side-btn" style="background-color: #6c7a89">
+                            <button id="clothTypeIndicationBtn" class="left-side-btn" style="background-color: #6c7a89">
                                 Polo Tshirt
                             </button>
                         </div>
@@ -625,16 +625,16 @@
                         </div>
 
                         <div class="d-flex-column">
-                            <button style="background-color: #1f3a93" class="right-side-box-btn">
+                            <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
                                 Coparate
                             </button>
-                            <button style="background-color: #1f3a93" class="right-side-box-btn">
+                            <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
                                 Coparate
                             </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn">
+                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
                                 Budget
                             </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn">
+                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
                                 Budget
                             </button>
                         </div>
@@ -676,7 +676,7 @@
                                                     <div class="color-option" onclick="colorUpdate(270, 1, 1); setColor('purple')" style="background-color: purple"></div>
                                                     <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('pink')" style="background-color: pink"></div>
                                                     <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('teal')" style="background-color: teal"></div>
-                                                    <div class="color-option" onclick="colorUpdate(0, 0, 50); setColor('gray')" style="background-color: gray"></div>
+                                                    <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('gray')" style="background-color: gray"></div>
                                                     <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('brown')" style="background-color: brown"></div>
                                                     <div class="color-option" onclick="colorUpdate(180, 1, 1); setColor('cyan')" style="background-color: cyan"></div>
                                                     <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('magenta')" style="background-color: magenta"></div>

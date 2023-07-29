@@ -656,3 +656,19 @@ function viewChange(side) {
 //   dataObject.test.color = document.getElementById("colorTest").value;
 //   render(dataObject);
 // });
+
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// image renderer
+// 
+// 
+// 
+// 
+// 
+
