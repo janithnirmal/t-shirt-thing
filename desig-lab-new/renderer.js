@@ -638,6 +638,36 @@ function viewChange(side) {
   dataObject.views.active = side;
   render(dataObject);
 }
+function changeProduct(dress){
+  dataObject.clothType=dress;
+  render(dataObject);
+
+}
+function size() {
+  // Assuming you have an object named dataObject defined before this function is called
+  // If not, create it using: var dataObject = { sizeQuntity: {} };
+  
+  var xs = document.getElementById('xs').value;
+  var s = document.getElementById('s').value;
+  var m = document.getElementById('m').value;
+  var l = document.getElementById('l').value;
+  var xl = document.getElementById('xl').value;
+  var doublexl = document.getElementById('2xl').value; // Note: '2xl' is not a valid ID in HTML, but we keep it as it is.
+  var thribblexl = document.getElementById('3xl').value; // Note: '3xl' is not a valid ID in HTML, but we keep it as it is.
+
+  dataObject.sizeQuntity.xs = xs;
+  dataObject.sizeQuntity.s = s;
+  dataObject.sizeQuntity.m = m;
+  dataObject.sizeQuntity.l = l;
+  dataObject.sizeQuntity.xl = xl;
+  dataObject.sizeQuntity.doublexxl = doublexl;
+  dataObject.sizeQuntity.thribblexxl = thribblexl;
+
+  console.log(dataObject.sizeQuntity);
+
+  
+}
+
 
 //
 //
