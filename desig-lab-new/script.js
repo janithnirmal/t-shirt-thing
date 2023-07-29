@@ -118,4 +118,5 @@ function openSavedDesignModal() {
 
   request.open("GET", SERVER_URL + "backend/save_design_api.php", true);
   request.send();
+  console.log("send");
 }

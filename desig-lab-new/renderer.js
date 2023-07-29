@@ -7,17 +7,17 @@ const dataObject = {
     thickness: 3,
     color: "white",
   },
-  sizeQuntity:{
-    gender:null,
-    matirial:null,
-    xs:null,
-    s:null,
-    m:null,
-    l:null,
-    xl:null,
-    xxl:null,
-    doublexxl:null,
-    thribblexxl:null,
+  sizeQuntity: {
+    gender: null,
+    matirial: null,
+    xs: null,
+    s: null,
+    m: null,
+    l: null,
+    xl: null,
+    xxl: null,
+    doublexxl: null,
+    thribblexxl: null,
   },
 
   gender: "male",
@@ -638,22 +638,21 @@ function viewChange(side) {
   dataObject.views.active = side;
   render(dataObject);
 }
-function changeProduct(dress){
-  dataObject.clothType=dress;
+function changeProduct(dress) {
+  dataObject.clothType = dress;
   render(dataObject);
-
 }
 function size() {
   // Assuming you have an object named dataObject defined before this function is called
   // If not, create it using: var dataObject = { sizeQuntity: {} };
-  
-  var xs = document.getElementById('xs').value;
-  var s = document.getElementById('s').value;
-  var m = document.getElementById('m').value;
-  var l = document.getElementById('l').value;
-  var xl = document.getElementById('xl').value;
-  var doublexl = document.getElementById('2xl').value; // Note: '2xl' is not a valid ID in HTML, but we keep it as it is.
-  var thribblexl = document.getElementById('3xl').value; // Note: '3xl' is not a valid ID in HTML, but we keep it as it is.
+
+  var xs = document.getElementById("xs").value;
+  var s = document.getElementById("s").value;
+  var m = document.getElementById("m").value;
+  var l = document.getElementById("l").value;
+  var xl = document.getElementById("xl").value;
+  var doublexl = document.getElementById("2xl").value; // Note: '2xl' is not a valid ID in HTML, but we keep it as it is.
+  var thribblexl = document.getElementById("3xl").value; // Note: '3xl' is not a valid ID in HTML, but we keep it as it is.
 
   dataObject.sizeQuntity.xs = xs;
   dataObject.sizeQuntity.s = s;
@@ -664,8 +663,6 @@ function size() {
   dataObject.sizeQuntity.thribblexxl = thribblexl;
 
   console.log(dataObject.sizeQuntity);
-
-  
 }
 
 //
@@ -713,34 +710,67 @@ function size() {
 //
 
 function saveCurrentDesign() {
-  const canvas = document.getElementById("designPanelCanvas");
-
+  let dataURLFront;
+  let dataURLBack;
+  let dataURLLeft;
+  let dataURLRight;
   // front
   dataObject.views.active = "front";
-  let dataURLFront = canvas.toDataURL();
-  render(dataObject);
-  // back
-  dataObject.views.active = "back";
-  let dataURLBack = canvas.toDataURL();
   render(dataObject);
 
-  // left
-  dataObject.views.active = "left";
-  let dataURLLeft = canvas.toDataURL();
-  render(dataObject);
+  setTimeout(() => {
+    dataURLFront = generateFront();
+    dataObject.views.active = "back";
+    render(dataObject);
+  }, 2000);
 
-  // right
-  dataObject.views.active = "right";
-  let dataURLRight = canvas.toDataURL();
-  render(dataObject);
+  setTimeout(() => {
+    dataURLBack = generateBack();
+    dataObject.views.active = "left";
+    render(dataObject);
+  }, 4000);
 
-  let imagesObject = {
-    front: dataURLFront,
-    back: dataURLBack,
-    left: dataURLLeft,
-    right: dataURLRight,
-  };
+  setTimeout(() => {
+    dataURLLeft = generateLeft();
+    dataObject.views.active = "right";
+    render(dataObject);
+  }, 6000);
 
-  dataObject.views.active = "front";
-  console.log(imagesObject);
+  setTimeout(() => {
+    dataURLRight = generateRight();
+
+    let imageObject = {
+      dataURLFront: dataURLFront,
+      dataURLBack: dataURLBack,
+      dataURLLeft: dataURLLeft,
+      dataURLRight: dataURLRight,
+    };
+
+    let form = new FormData();
+    form.append("imageObject", JSON.stringify(imageObject));
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        let response = request.responseText;
+        console.log(response);
+      }
+    };
+
+    request.open("POST", SERVER_URL + "backend/save_design_api.php", true);
+    request.send(form);
+  }, 8000);
+}
+
+function generateFront() {
+  return document.getElementById("designPanelCanvas").toDataURL();
+}
+function generateBack() {
+  return document.getElementById("designPanelCanvas").toDataURL();
+}
+function generateRight() {
+  return document.getElementById("designPanelCanvas").toDataURL();
+}
+function generateLeft() {
+  return document.getElementById("designPanelCanvas").toDataURL();
 }
