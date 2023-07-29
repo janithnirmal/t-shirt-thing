@@ -700,5 +700,6 @@ function saveCurrentDesign() {
     right: dataURLRight,
   };
 
+  dataObject.views.active = "front";
   console.log(imagesObject);
 }
