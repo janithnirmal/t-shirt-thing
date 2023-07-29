@@ -120,3 +120,48 @@ function openSavedDesignModal() {
   request.send();
   console.log("send");
 }
+
+function userData(){
+  var firstNameInput = document.getElementById("firstNameInput");
+  var lastNameInput = document.getElementById("lastNameInput");
+  var telephoneInput = document.getElementById("telephoneInput");
+  var addressInput = document.getElementById("addressInput");
+  var address2Input = document.getElementById("address2Input");
+  var cityInput = document.getElementById("cityInput");
+  var provinceInput = document.getElementById("provinceInput");
+  var postalCodeInput = document.getElementById("postalCodeInput");
+
+  var formData = {
+    firstName: firstNameInput.value,
+    lastName: lastNameInput.value,
+    telephone: telephoneInput.value,
+    address: addressInput.value,
+    address2: address2Input.value,
+    city: cityInput.value,
+    province: provinceInput.value,
+    postalCode: postalCodeInput.value
+};
+
+
+    let form = new FormData();
+    form.append("formData", JSON.stringify(formData));
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        let response = request.responseText;
+        console.log(response);
+      }
+    };
+
+    request.open("POST", SERVER_URL + "backend/user_data_save.php", true);
+    request.send(form);
+
+
+
+
+
+
+
+
+}

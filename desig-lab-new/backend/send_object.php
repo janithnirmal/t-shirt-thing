@@ -11,98 +11,17 @@ require("send_otp.php");
 $responseObject = new stdClass();
 $responseObject->status = "failed";
 
-$jsonData = '{
-    "test": {
-      "startX": 100,
-      "startY": 100,
-      "endX": 200,
-      "endY": 200,
-      "thickness": 3,
-      "color": "white"
-    },
-    "sizeQuntity": {
-      "gender": null,
-      "matirial": null,
-      "xs": null,
-      "s": null,
-      "m": null,
-      "l": null,
-      "xl": null,
-      "xxl": null,
-      "doublexxl": null,
-      "thribblexxl": null
-    },
-    "gender": "male",
-    "clothType": "polo-t-shirt",
-    "printType": "ScreenPrint",
-    "mainColorHueValue": 100,
-    "mainColorSaturateValue": 1,
-    "mainColorLevelValue": 1,
-    "clothOption": {
-      "sleves": "long",
-      "neck": "v"
-    },
-    "views": {
-      "active": "front",
-      "strips": {
-        "neck": [],
-        "arm": [
-          {
-            "thickness": 2,
-            "color": "white"
-          },
-          {
-            "thickness": 2,
-            "color": "orange"
-          },
-          {
-            "thickness": 3,
-            "color": "pink"
-          }
-        ],
-        "hip": [
-          {
-            "thickness": 3,
-            "color": "white"
-          }
-        ]
-      },
-      "frontSideObject": {
-        "imageSections": {
-          "topLeft": {
-            "imgUri": null,
-            "position": {},
-            "size": {
-              "width": 50,
-              "height": 50
-            }
-          },
-          "topRight": {
-            "imgUri": null,
-            "position": {},
-            "size": {
-              "width": 50,
-              "height": 50
-            }
-          },
-          "center": {
-            "imgUri": null,
-            "position": {},
-            "size": {
-              "width": 50,
-              "height": 50
-            }
-          }
-        }
-      },
-      "backSideObject": {},
-      "leftSideObject": {},
-      "rightSideObject": {}
-    }
-  }';
 
-// Decode the JSON data into a PHP associative array
-$orderDetails = json_decode($jsonData, true);
+  $access = new UserAccess();
+  if (!$access->isLoggedIn()) {
+      $responseObject->error = "Invalid Access";
+      response_sender::sendJson($responseObject);
+      die();
+  }
+  
+$orderDetails = json_decode($_POST["orderDetails"], true);
+
+
 
 $printType = $orderDetails['printType'];
 $sleeves = $orderDetails['clothOption']['sleves'];
