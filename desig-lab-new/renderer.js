@@ -657,18 +657,48 @@ function viewChange(side) {
 //   render(dataObject);
 // });
 
-
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+//
+//
+//
+//
+//
+//
+//
 // image renderer
-// 
-// 
-// 
-// 
-// 
+//
+//
+//
+//
+//
 
+function saveCurrentDesign() {
+  const canvas = document.getElementById("designPanelCanvas");
+
+  // front
+  dataObject.views.active = "front";
+  let dataURLFront = canvas.toDataURL();
+  render(dataObject);
+  // back
+  dataObject.views.active = "back";
+  let dataURLBack = canvas.toDataURL();
+  render(dataObject);
+
+  // left
+  dataObject.views.active = "left";
+  let dataURLLeft = canvas.toDataURL();
+  render(dataObject);
+
+  // right
+  dataObject.views.active = "right";
+  let dataURLRight = canvas.toDataURL();
+  render(dataObject);
+
+  let imagesObject = {
+    front: dataURLFront,
+    back: dataURLBack,
+    left: dataURLLeft,
+    right: dataURLRight,
+  };
+
+  console.log(imagesObject);
+}

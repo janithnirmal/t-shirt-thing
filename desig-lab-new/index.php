@@ -307,7 +307,7 @@
                         </button>
                     </div>
                     <div class="list-group-item" id="btn8">
-                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="saveCurrentDesign();">
                             <i class="left-side-icons fas fa-download"></i>
                             <p class="p-0 m-0">Save Design</p>
                         </button>

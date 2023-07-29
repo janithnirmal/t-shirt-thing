@@ -85,10 +85,37 @@ try {
   });
 } catch (error) {}
 
-
 // document.addEventListener("DOMContentLoaded", () => {
 //   openProductModel();
 //   setInterval(() => {
 //     window.location.reload();
 //   }, 3000);
 // });
+
+// saved design model open
+let savedDesignModel;
+function openSavedDesignModal() {
+  let container = document.getElementById("savedDesignModelContentContainer");
+  container.innerHTML = "";
+
+  savedDesignModel = new bootstrap.Modal("#savedDesignModel");
+  savedDesignModel.show();
+
+  let request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      let response = request.responseText;
+      let responeArray = JSON.parse(response).data;
+      for (let x = 0; x < responeArray.length; x++) {
+        let designData = responeArray[x];
+        let resultDesign = document.createElement("div");
+        resultDesign.classList.add("saved-design-item");
+        resultDesign.innerText = designData;
+        container.appendChild(resultDesign);
+      }
+    }
+  };
+
+  request.open("GET", SERVER_URL + "backend/save_design_api.php", true);
+  request.send();
+}
