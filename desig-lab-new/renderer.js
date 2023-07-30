@@ -7,19 +7,7 @@ const dataObject = {
     thickness: 3,
     color: "white",
   },
-  sizeQuntity: {
-    gender: null,
-    matirial: null,
-    xs: null,
-    s: null,
-    m: null,
-    l: null,
-    xl: null,
-    xxl: null,
-    doublexxl: null,
-    thribblexxl: null,
-  },
-
+  sizeQuntitySets: [],
   gender: "male",
   clothType: "polo-t-shirt",
   printType: "ScreenPrint",
@@ -642,97 +630,95 @@ function changeProduct(dress) {
   dataObject.clothType = dress;
   render(dataObject);
 }
+// Create an array to store the data sets
+const dataSets = [];
+
+// Function to save the data
+// Function to save the data in sizeQuntity object
 function size() {
-  // Assuming you have an object named dataObject defined before this function is called
-  // If not, create it using: var dataObject = { sizeQuntity: {} };
-
+  // Get the values
   var xs = parseInt(document.getElementById("xs").value);
-var s = parseInt(document.getElementById("s").value);
-var m = parseInt(document.getElementById("m").value);
-var l = parseInt(document.getElementById("l").value);
-var xl = parseInt(document.getElementById("xl").value);
-var doublexl = parseInt(document.getElementById("2xl").value);
-var thribblexl = parseInt(document.getElementById("3xl").value);
-  
+  var s = parseInt(document.getElementById("s").value);
+  var m = parseInt(document.getElementById("m").value);
+  var l = parseInt(document.getElementById("l").value);
+  var xl = parseInt(document.getElementById("xl").value);
+  var doublexl = parseInt(document.getElementById("2xl").value);
+  var thribblexl = parseInt(document.getElementById("3xl").value);
+  // Get the selected gender and budget
+  const selectedGender = getSelectedGender();
+  const selectedBudget = getSelectedBudget();
 
-  
-    // Get all the radio button elements for gender selection
-    const genderRadios = document.querySelectorAll('input[name="combinationGender"]');
+  // Create a new data object to store the current data
+  const newData = {
+    timestamp: Date.now(), // Add a timestamp to identify this data set
+    gender: selectedGender,
+    matirial: selectedBudget,
+    xs: xs,
+    s: s,
+    m: m,
+    l: l,
+    xl: xl,
+    doublexxl: doublexl,
+    thribblexxl: thribblexl,
+  };
 
-    // Get all the radio button elements for budget selection
-    const budgetRadios = document.querySelectorAll('input[name="combinationBudget"]');
+  // Push the new data object into the sizeQuntitySets array
+  dataObject.sizeQuntitySets.push(newData);
 
-    // Function to get the value of the selected radio button for gender
-    function getSelectedGender() {
-        let selectedGender = "";
-        genderRadios.forEach((radio) => {
-            if (radio.checked) {
-                selectedGender = radio.id;
-            }
-        });
-        return selectedGender;
-    }
-
-    // Function to get the value of the selected radio button for budget
-    function getSelectedBudget() {
-        let selectedBudget = "";
-        budgetRadios.forEach((radio) => {
-            if (radio.checked) {
-                selectedBudget = radio.id;
-            }
-        });
-        return selectedBudget;
-    }
-
-    // Example of how to use the functions:
-    const selectedGender = getSelectedGender();
-    const selectedBudget = getSelectedBudget();
-
-    console.log("Selected Gender:", selectedGender);
-    console.log("Selected Budget:", selectedBudget);
-
-    dataObject.sizeQuntity.xs = xs;
-    dataObject.sizeQuntity.gender = selectedGender;
-    dataObject.sizeQuntity.matirial = selectedBudget;
-
-    xs = isNaN(xs) ? 0 : xs;
-    s = isNaN(s) ? 0 : s;
-    m = isNaN(m) ? 0 : m;
-    l = isNaN(l) ? 0 : l;
-    xl = isNaN(xl) ? 0 : xl;
-    doublexl = isNaN(doublexl) ? 0 : doublexl;
-    thribblexl = isNaN(thribblexl) ? 0 : thribblexl;
+  xs = isNaN(xs) ? 0 : xs;
+  s = isNaN(s) ? 0 : s;
+  m = isNaN(m) ? 0 : m;
+  l = isNaN(l) ? 0 : l;
+  xl = isNaN(xl) ? 0 : xl;
+  doublexl = isNaN(doublexl) ? 0 : doublexl;
+  thribblexl = isNaN(thribblexl) ? 0 : thribblexl;
 
 
-  dataObject.sizeQuntity.s = s;
-  dataObject.sizeQuntity.m = m;
-  dataObject.sizeQuntity.l = l;
-  dataObject.sizeQuntity.xl = xl;
-  dataObject.sizeQuntity.doublexxl = doublexl;
-  dataObject.sizeQuntity.thribblexxl = thribblexl;
-
+  // Calculate and display the total
   var total = xs + s + m + l + xl + doublexl + thribblexl;
-
   const sizeItemsDiv = document.getElementById('sizeItems');
   sizeItemsDiv.textContent = total;
 
+  // Optional: Log the updated dataObject to the console
+  console.log(dataObject);
+  // Clear the input fields
+  document.getElementById("xs").value = "";
+  document.getElementById("s").value = "";
+  document.getElementById("m").value = "";
+  document.getElementById("l").value = "";
+  document.getElementById("xl").value = "";
+  document.getElementById("2xl").value = "";
+  document.getElementById("3xl").value = "";
 
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-  console.log(dataObject.sizeQuntity);
+  window.alert('data added sucess fully')
 }
+
+// Function to get the value of the selected radio button for gender
+function getSelectedGender() {
+  let selectedGender = "";
+  const genderRadios = document.querySelectorAll('input[name="combinationGender"]');
+  genderRadios.forEach((radio) => {
+    if (radio.checked) {
+      selectedGender = radio.id;
+    }
+  });
+  return selectedGender;
+}
+
+// Function to get the value of the selected radio button for budget
+function getSelectedBudget() {
+  let selectedBudget = "";
+  const budgetRadios = document.querySelectorAll('input[name="combinationBudget"]');
+  budgetRadios.forEach((radio) => {
+    if (radio.checked) {
+      selectedBudget = radio.id;
+    }
+  });
+  return selectedBudget;
+}
+
+
+
 // Get the element with the ID 'sizeItems'
 
 
