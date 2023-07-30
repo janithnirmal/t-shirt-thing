@@ -6,6 +6,15 @@ class response_sender {
 
         echo(json_encode($responseObject));
         exit();
+
+        
+
+
     }
 
 }
+
+
+
+?>
+

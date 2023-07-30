@@ -23,6 +23,7 @@ if ($access->isLoggedIn()) {
     <link rel="stylesheet" href="dcss.css" />
     <link rel="stylesheet" href="controls.css" />
   <script src="https://kit.fontawesome.com/f98ce7c376.js" crossorigin="anonymous" defer></script>
+  <script src="script.js" defer></script>
   
     <!-- Other meta tags and stylesheets may be present here -->
   
@@ -49,46 +50,32 @@ if ($access->isLoggedIn()) {
              <p class="text-center py-2"><i class="fas fa-user px-3" ></i>Profile</p>
         </div>
         <div class="container w-75"> 
-        <form class="mx-5 ">
-            <div class="form-inline d-flex flex-row" >
-            <input type="email" class=" w-50 mx-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name" style="border: none; border-bottom: 1px solid black; border-radius: 0px; outline: none; background-color: white;">
+        <form class="mx-5">
+    <div class="form-inline d-flex flex-row">
+        <input type="email" class="w-50 mx-2" id="firstNameInput" aria-describedby="emailHelp" placeholder="First Name" style="border: none; border-bottom: 1px solid black; border-radius: 0px; outline: none; background-color: white;">
+        <input type="email" class="w-50" id="lastNameInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Last Name">
+    </div>
+    <div class="form-inline d-flex flex-row mt-3">
+        <input type="email" class="w-50 mx-2" id="telephoneInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Telephone">
+        <button type="button" class="btn btn-danger" style="width: 100px;">Edit</button>
+    </div>
+    <div class="form-inline d-flex flex-row mt-5">
+        <input type="email" class="bs w-100 mx-2" id="addressInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address">
+    </div>
+    <div class="form-inline d-flex flex-row mt-5">
+        <input type="email" class="w-100 mx-2" id="address2Input" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address 2">
+    </div>
+    <div class="form-inline d-flex flex-row mt-5">
+        <input type="email" class="w-50 mx-2" id="cityInput" aria-describedby="emailHelp" placeholder="City" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
+        <input type="email" class="w-50 mx-2" id="provinceInput" aria-describedby="emailHelp" placeholder="Province" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
+        <input type="email" class="w-50" id="postalCodeInput" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Postal Code">
+    </div>
+    <div class="form-inline d-flex flex-row mt-5 mb-3" style="margin-left: 35%;">
+        <button type="button" class="btn btn-danger mb-3 mx-2 pl-5" style="width: 100px;">Cancel</button>
+        <button type="button" class="btn btn-info text-white mb-3 mx-2" style="width: 100px;" onclick="userData()">Save</button>
+    </div>
+</form>
 
-              <input type="email" class=" w-50 "style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Last Name">
-            </div>
-            <div class="form-inline d-flex flex-row mt-3" >
-                
-                <input type="email" class=" w-50 mx-2"  style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telephone">
-                <button type="button" class="btn btn-danger" style="width: 100px;">Edit</button>
-
-              </div>
-              <div class="form-inline d-flex flex-row mt-5" >
-                
-                <input type="email" class="bs w-100 mx-2"  style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adress">
-                
-
-              </div>
-              <div class="form-inline d-flex flex-row mt-5" >
-                
-                <input type="email" class=" w-100 mx-2"  style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adress 2" >
-                
-
-              </div>
-
-              <div class="form-inline d-flex flex-row mt-5" >
-                <input type="email" class=" w-50 mx-2  " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="City" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
-                <input type="email" class=" w-50 mx-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Province" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
-              <input type="email" class=" w-50 "style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Postal Code">
-            </div>
-            <div class="form-inline d-flex flex-row mt-5 mb-3" style="margin-left: 35%;">
-                <button type="button" class="btn btn-danger mb-3 mx-2 pl-5" style="width: 100px;">Cancle</button>
-                <button type="button" class="btn btn-info text-white mb-3 mx-2" style="width: 100px;">Save</button>
-                
-            </div>
-  
-
-           
-            
-          </form>
         </div>
           
     </div>

@@ -1,20 +1,8 @@
 <?php
 
-// // get the request data
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     // Check if email and password are empty
-//     if (empty($_POST["orderDetails"])) {
-//         $responseObject->error = "Invalid Request";
-//         echo (json_encode($responseObject));
-//         die();
-//     } else {
-//         $signUpData = $_POST['signUpData'];
-//     }
-// } else {
-//     $responseObject->error = "Invalid Request Type";
-//     echo (json_encode($responseObject));
-//     die();
-// }
+require_once("app/user_access_updater.php");
+require_once("app/database_driver.php");
+require_once("app/response_sender.php");
 
 
 // image saving 
@@ -25,5 +13,25 @@ foreach ($imageObject as $key => $value) {
     $path = "saved_design_images/email" . $key . uniqid() . ".png";
     file_put_contents($path, $imageData);
 }
+$responseObject = new stdClass();
+$responseObject->status = "failed";
+$access = new UserAccess();
+if (!$access->isLoggedIn()) {
+    $responseObject->error = "Invalid Access";
+    response_sender::sendJson($responseObject);
+    
+}
+$loggedUserData = $access->getUserData();
+
+// get the users saved design list
+$db = new database_driver();
+
+$currentDateTime = date('Y-m-d H:i:s');
+$insertQuery = "INSERT INTO `saved_designs` (`saved_datetime`, `user_email`, `design_data`) VALUES (?, ?, ?);";
+$db->execute_query($insertQuery, 'ssss', array($currentDateTime, $loggedUserData["email"], $imageData));
+
+$responseObject->error = "sucess";
+response_sender::sendJson($responseObject);
+
 
 echo ("success");
