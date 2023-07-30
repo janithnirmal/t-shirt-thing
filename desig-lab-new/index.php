@@ -46,7 +46,7 @@ require_once("./backend/config.php");
 </head>
 
 <body>
-    <?php include 'navbar-temp.php'; ?>
+    <?php include 'navbar.php'; ?>
 
     <div class="section1 px-3">
         <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
@@ -293,7 +293,7 @@ require_once("./backend/config.php");
                     </div>
                     <div class="list-group-item">
                         <div id="btn4">
-                            <button class="left-side-btn" style="background-color: #343f86" onclick="opemMaterialModel();">
+                            <button class="d-none left-side-btn" style="background-color: #343f86" onclick="opemMaterialModel();">
                                 Budget
                             </button>
                             <div id="materialContainer">
@@ -759,7 +759,7 @@ require_once("./backend/config.php");
                     <div class="d-flex-column" style="height: 100%">
                         <!-- <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;"> -->
                         <button onclick="openSizeQuantityModel();" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
-                            <div class="size-qty-box1">0 items</div>
+                            <div class="size-qty-box1" id="sizeItems"></div>
                             <span style="width: 100%">Size & Qty</span>
 
                             <i class="fas fa-chevron-down"></i>

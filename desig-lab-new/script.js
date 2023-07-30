@@ -1,5 +1,7 @@
+// const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
-  "http://localhost/t-shirt-thing/desig-lab-new/";
+  //"http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; // janith
+  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 
 // signIn
 let signInModel;
@@ -8,7 +10,7 @@ try {
     signInModel = new bootstrap.Modal("#signInModel");
     signInModel.show();
   });
-} catch (error) { }
+} catch (error) {}
 
 // function toggleDropdown() {
 //   var dropdownMenu = document.querySelector(".dropdown-menu");
@@ -83,7 +85,7 @@ try {
     request.open("POST", SERVER_URL + "backend/sign_in.php", true);
     request.send(form);
   });
-} catch (error) { }
+} catch (error) {}
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   openProductModel();
@@ -106,18 +108,27 @@ function openSavedDesignModal() {
     if (request.readyState == 4) {
       let response = request.responseText;
       try {
-        let responeArray = JSON.parse(response).data;
-        for (let x = 0; x < responeArray.length; x++) {
-          let designData = JSON.parse(responeArray[x]);
+        let responseObject = JSON.parse(response).data;
+        responseObject.forEach((element) => {
+          let id = element.id;
+          let designData = JSON.parse(element.design_data);
+
           let resultDesign = document.createElement("div");
           resultDesign.classList.add("saved-design-item");
           resultDesign.innerText =
-            designData.clothType + " - " + designData.gender;
+            id + designData.clothType + " - " + designData.gender;
+
+          let image = document.createElement("img");
+          image.src = "backend/saved_design_images/" + id + "dataURLFront.png";
+          image.classList.add("saved-design-item-images");
+          resultDesign.appendChild(image);
+
           container.appendChild(resultDesign);
-          console.log(designData);
-        }
+        });
+
+        console.log(responseObject);
       } catch (error) {
-        console.log(error);
+        console.log(response);
       }
     }
   };
@@ -125,7 +136,6 @@ function openSavedDesignModal() {
   request.open("GET", SERVER_URL + "backend/get_saved_design_api.php", true);
   request.send();
 }
-
 
 function userData() {
   var firstNameInput = document.getElementById("firstNameInput");
@@ -145,9 +155,8 @@ function userData() {
     address2: address2Input.value,
     city: cityInput.value,
     province: provinceInput.value,
-    postalCode: postalCodeInput.value
+    postalCode: postalCodeInput.value,
   };
-
 
   let form = new FormData();
   form.append("formData", JSON.stringify(formData));
@@ -160,15 +169,12 @@ function userData() {
     }
   };
 
-  request.open("POST", "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/user_data_save.php", true);
+  request.open(
+    "POST",
+    "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/user_data_save.php",
+    true
+  );
   request.send(form);
-
-
-
-
-
-
-
 }
 
 function SignIn() {
@@ -185,10 +191,13 @@ function SignIn() {
       } else {
         console.log(responseObject);
       }
-
     }
   };
 
   request.open("POST", SERVER_URL + "backend/sign_in.php", true);
   request.send(form);
+}
+
+function updateDataObject(dataObject) {
+  dataObject = dataObject;
 }
