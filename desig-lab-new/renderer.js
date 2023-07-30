@@ -755,18 +755,19 @@ function saveCurrentDesign() {
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState == 4) {
-        try {
-          let response = JSON.parse(request.responseText);
-          if (response.status == "success") {
-            alert("Successfully saved");
-          } else if (response.status == "failed") {
-            alert(response.error);
-          }
-        } catch (error) {
-          console.log(error);
-        }
-        dataObject.views.active = "front";
-        render(dataObject);
+        console.log(request.responseText);
+        // try {
+        //   let response = JSON.parse(request.responseText);
+        //   if (response.status == "success") {
+        //     alert("Successfully saved");
+        //   } else if (response.status == "failed") {
+        //     alert(response.error);
+        //   }
+        // } catch (error) {
+        //   console.log(error);
+        // }
+        // dataObject.views.active = "front";
+        // render(dataObject);
       }
     };
 

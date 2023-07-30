@@ -196,3 +196,7 @@ function SignIn() {
   request.open("POST", SERVER_URL + "backend/sign_in.php", true);
   request.send(form);
 }
+
+function updateDataObject(dataObject) {
+  dataObject = dataObject;
+}

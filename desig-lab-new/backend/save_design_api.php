@@ -26,14 +26,10 @@ $uid = uniqid();
 
 $db = new database_driver();
 $currentDateTime = date('Y-m-d H:i:s');
-$insertQuery = "INSERT INTO `saved_designs` (`id`, `saved_datetime`, `user_email`, `design_data`) VALUES (?, ?, ?);";
-$db->execute_query($insertQuery, 'sss', array($uid, $currentDateTime, $loggedUserData["email"], $designData));
+$insertQuery = "INSERT INTO `saved_designs` (`id`, `saved_datetime`, `user_email`, `design_data`) VALUES (?, ?, ?, ?);";
+$db->execute_query($insertQuery, 'ssss', array($uid, $currentDateTime, $loggedUserData["email"], $designData));
 
 
-$searchQuery = "SELECT * FROM `saved_designs` WHERE `id` = ? ";
-$resultSet =  $db->execute_query($searchQuery, "s", $uid);
-
-$data = $resultSet["result"]->fetch_assoc();
 
 // image saving 
 $imageObject =  json_decode($_POST["imageObject"]);

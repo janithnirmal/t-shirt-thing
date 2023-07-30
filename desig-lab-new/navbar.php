@@ -12,10 +12,10 @@ if ($access->isLoggedIn()) {
 
 <nav class="d-flex justify-content-between align-items-center px-5">
     <div class=" h-100">
-        <a href="">
+        <a href="index.php">
             <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
         </a>
-        <a href="account.php">DesignHome</a>
+        <a href="index.php">DesignHome</a>
         <button class="btn-style-remover text-secondary" href="#" onclick="openSavedDesignModal();">Designs</button>
         <a href="orders.php">Orders</a>
         <a href="">Help</a>
