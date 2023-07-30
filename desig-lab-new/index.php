@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <?php include 'navbar-temp.php'; ?>
+    <?php include 'navbar.php'; ?>
 
     <div class="section1 px-3">
         <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
@@ -289,7 +289,7 @@
                     </div>
                     <div class="list-group-item">
                         <div id="btn4">
-                            <button class="left-side-btn" style="background-color: #343f86" onclick="opemMaterialModel();">
+                            <button class="d-none left-side-btn" style="background-color: #343f86" onclick="opemMaterialModel();">
                                 Budget
                             </button>
                             <div id="materialContainer">
@@ -1011,12 +1011,13 @@
                             <div class="col-12">
                                 <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
                                     <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+
                                     <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
                                 </div>
                             </div>
                             <div class="col-12 text-end text-primary" style="font-size: 13px;  padding: 0 50px 0px 0px; cursor: pointer;">forgot passowrd?</div>
                             <div style="padding: 0px 50px 15px 50px;">
-                                <input style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" type="submit" class="text-light col-12 btn" value="SIGN IN" id="signInActionBtn" />
+                                <button onclick="SignIn();" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
                             </div>
                         </div>
                     </div>

@@ -187,7 +187,8 @@ function productControlNavigationChange(option) {
         "productControlNavigationChangeTemplate"
       );
 
-      button2.classList.add
+      button2.classList.add("d-none");
+      button2.classList.remove("d-flex");
       document
         .getElementById("productControlNavigationChangeTshirtButtons")
         .classList.remove("d-flex");

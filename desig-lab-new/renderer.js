@@ -178,7 +178,7 @@ function poloTShirt(ctx, dataObject) {
 function stripDrawerpoloTShirt(ctx, stripObjects, side) {
   const neckStripsArray = stripObjects.neck;
   const armStripsArray = stripObjects.arm;
-  const hipStripsArray = stripObjects.hip;
+  const sidesStripsArray = stripObjects.sides;
 
   if (side == "front") {
     for (let x = 0; x < neckStripsArray.length; x++) {
@@ -466,7 +466,7 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       }
     }
 
-    for (let x = 1; x <= hipStripsArray.length; x++) {
+    for (let x = 1; x <= sidesStripsArray.length; x++) {
       if ((x = 1)) {
         drawLine(
           ctx,
@@ -548,7 +548,7 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       }
     }
 
-    for (let x = 1; x <= hipStripsArray.length; x++) {
+    for (let x = 1; x <= sidesStripsArray.length; x++) {
       if ((x = 1)) {
         drawLine(
           ctx,
@@ -826,18 +826,19 @@ function saveCurrentDesign() {
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState == 4) {
-        try {
-          let response = JSON.parse(request.responseText);
-          if (response.status == "success") {
-            alert("Successfully saved");
-          } else if (response.status == "failed") {
-            alert(response.error);
-          }
-        } catch (error) {
-          console.log(error);
-        }
-        dataObject.views.active = "front";
-        render(dataObject);
+        console.log(request.responseText);
+        // try {
+        //   let response = JSON.parse(request.responseText);
+        //   if (response.status == "success") {
+        //     alert("Successfully saved");
+        //   } else if (response.status == "failed") {
+        //     alert(response.error);
+        //   }
+        // } catch (error) {
+        //   console.log(error);
+        // }
+        // dataObject.views.active = "front";
+        // render(dataObject);
       }
     };
 
