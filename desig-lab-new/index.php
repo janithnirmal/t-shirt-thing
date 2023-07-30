@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <?php include 'navbar-temp.php'; ?>
+    <?php include 'navbar.php'; ?>
 
     <div class="section1 px-3">
         <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
