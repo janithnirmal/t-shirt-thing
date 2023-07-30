@@ -126,6 +126,7 @@ function openSavedDesignModal() {
   request.send();
 }
 
+
 function userData() {
   var firstNameInput = document.getElementById("firstNameInput");
   var lastNameInput = document.getElementById("lastNameInput");
@@ -144,20 +145,28 @@ function userData() {
     address2: address2Input.value,
     city: cityInput.value,
     province: provinceInput.value,
-    postalCode: postalCodeInput.value,
-  };
+    postalCode: postalCodeInput.value
+};
 
-  let form = new FormData();
-  form.append("formData", JSON.stringify(formData));
 
-  let request = new XMLHttpRequest();
-  request.onreadystatechange = function () {
-    if (request.readyState == 4) {
-      let response = request.responseText;
-      console.log(response);
-    }
-  };
+    let form = new FormData();
+    form.append("formData", JSON.stringify(formData));
 
-  request.open("POST", SERVER_URL + "backend/user_data_save.php", true);
-  request.send(form);
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        let response = request.responseText;
+        console.log(response);
+      }
+    };
+
+    request.open("POST","http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/user_data_save.php", true);
+    request.send(form);
+
+
+
+
+
+
+  
 }

@@ -6,9 +6,10 @@ require_once("app/response_sender.php");
 
 $responseObject = new stdClass();
 $responseObject->status = "failed";
+
 $access = new UserAccess();
 if (!$access->isLoggedIn()) {
-    $responseObject->error = "Invalid Access";
+    $responseObject->error = "Invalid Access please log in";
     response_sender::sendJson($responseObject);
     die();
 }
