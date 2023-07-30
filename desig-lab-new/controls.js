@@ -176,7 +176,21 @@ function productControlNavigationChange(option) {
     }
 
     if (option == "Type") {
+      document
+        .getElementById("productControlNavigationChangeTshirtButtons")
+        .classList.add("d-none");
+      document
+        .getElementById("productControlNavigationChangeTshirtButtons")
+        .classList.remove("d-flex");
 
+      let button2 = document.getElementById(
+        "productControlNavigationChangeTemplate"
+      );
+
+      button2.classList.add
+      document
+        .getElementById("productControlNavigationChangeTshirtButtons")
+        .classList.remove("d-flex");
     }
   });
 
