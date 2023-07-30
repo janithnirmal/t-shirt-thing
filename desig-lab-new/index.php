@@ -789,7 +789,7 @@
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">M</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="m"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="m" />
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">L</div>
@@ -799,17 +799,17 @@
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">Xl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xl"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xl" />
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">2XXL</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="2xl"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="2xl" />
                                                     </div>
                                                 </div>
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">3XXl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="3xl"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="3xl" />
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">XXl</div>
@@ -1012,6 +1012,20 @@
         </div>
     </div>
 
+    <!-- toasts -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
 
 </body>
 
