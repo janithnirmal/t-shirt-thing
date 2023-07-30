@@ -48,7 +48,7 @@ require_once("./backend/config.php");
 <body>
     <?php include 'navbar.php'; ?>
 
-    <div class="section1 px-3">
+    <div class="section1 px-3" style="height: 100vh;">
         <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
             <!-- left side panel -->
             <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
@@ -676,7 +676,7 @@ require_once("./backend/config.php");
                             <span class="right-side-box-num" id="mc" style="font-size: 10px;"></span>
                             <span class="right-side-box-num" id="mb" style="font-size: 10px;"> </span>
                             <span class="right-side-box-num" id="wb" style="font-size: 10px;"></span>
-                            <span class="right-side-box-num"  id="wc" style="font-size: 10px;"></span>
+                            <span class="right-side-box-num" id="wc" style="font-size: 10px;"></span>
                         </div>
                     </div>
                 </div>
@@ -1047,10 +1047,10 @@ require_once("./backend/config.php");
         </div>
     </div>
 
-    <footer class="footer bg-dark text-white  mt-2 w-100" style="bottom: 0;">
+    <footer class="footer bg-dark text-white  mt-2 " style="bottom: 0; width:100%;">
         <div class="container text-center">
             <!-- Footer content goes here -->
-            <p>this is just dummy contenet</p>
+            <p>this is just dummy content</p>
         </div>
     </footer>
 
