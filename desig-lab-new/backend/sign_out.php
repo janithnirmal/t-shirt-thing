@@ -19,3 +19,4 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $UserAccess= new UserAccess();
 $UserAccess->logout();
 
+
