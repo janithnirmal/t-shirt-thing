@@ -146,6 +146,10 @@
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
+                                                    <button id="productControlNavigationChangeTshirtButtons" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('TshirtButtons');">
+                                                        <div class="product-control-number-icon">3</div>
+                                                        <span class="product-control-number-text fw-light">Select Template</span>
+                                                    </button>
                                                     <button id="productControlNavigationChangeTemplate" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Template');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
@@ -240,6 +244,31 @@
                                                                 <span>Collar + 3 Buttons </span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="templateSection('collar3buttons')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="productControlTshirtButtonsSection" class="d-none flex-column product-control-section">
+                                                        <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
+                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                            <div class="product-control-card-item">
+                                                                <span>2 Buttons Only</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('2buttons');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>2 Buttons + Open</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('2buttonsopen')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>3 Buttons Only</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('3buttons');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>3 Buttons + Open</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('3buttonopen')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1011,6 +1040,13 @@
             </div>
         </div>
     </div>
+
+    <footer class="footer bg-dark text-white position-absolute mt-2 w-100" style="bottom: 0;">
+        <div class="container text-center">
+            <!-- Footer content goes here -->
+            <p>this is just dummy contenet</p>
+        </div>
+    </footer>
 
     <!-- toasts -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">

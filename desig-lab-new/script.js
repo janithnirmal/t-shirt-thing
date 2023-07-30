@@ -105,23 +105,28 @@ function openSavedDesignModal() {
   request.onreadystatechange = function () {
     if (request.readyState == 4) {
       let response = request.responseText;
-      let responeArray = JSON.parse(response).data;
-      for (let x = 0; x < responeArray.length; x++) {
-        let designData = responeArray[x];
-        let resultDesign = document.createElement("div");
-        resultDesign.classList.add("saved-design-item");
-        resultDesign.innerText = designData;
-        container.appendChild(resultDesign);
+      try {
+        let responeArray = JSON.parse(response).data;
+        for (let x = 0; x < responeArray.length; x++) {
+          let designData = JSON.parse(responeArray[x]);
+          let resultDesign = document.createElement("div");
+          resultDesign.classList.add("saved-design-item");
+          resultDesign.innerText =
+            designData.clothType + " - " + designData.gender;
+          container.appendChild(resultDesign);
+          console.log(designData);
+        }
+      } catch (error) {
+        console.log(error);
       }
     }
   };
 
-  request.open("GET", SERVER_URL + "backend/save_design_api.php", true);
+  request.open("GET", SERVER_URL + "backend/get_saved_design_api.php", true);
   request.send();
-  console.log("send");
 }
 
-function userData(){
+function userData() {
   var firstNameInput = document.getElementById("firstNameInput");
   var lastNameInput = document.getElementById("lastNameInput");
   var telephoneInput = document.getElementById("telephoneInput");
@@ -139,29 +144,20 @@ function userData(){
     address2: address2Input.value,
     city: cityInput.value,
     province: provinceInput.value,
-    postalCode: postalCodeInput.value
-};
+    postalCode: postalCodeInput.value,
+  };
 
+  let form = new FormData();
+  form.append("formData", JSON.stringify(formData));
 
-    let form = new FormData();
-    form.append("formData", JSON.stringify(formData));
+  let request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      let response = request.responseText;
+      console.log(response);
+    }
+  };
 
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-      if (request.readyState == 4) {
-        let response = request.responseText;
-        console.log(response);
-      }
-    };
-
-    request.open("POST", SERVER_URL + "backend/user_data_save.php", true);
-    request.send(form);
-
-
-
-
-
-
-
-
+  request.open("POST", SERVER_URL + "backend/user_data_save.php", true);
+  request.send(form);
 }

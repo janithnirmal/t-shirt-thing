@@ -48,7 +48,7 @@ const dataObject = {
           color: "pink",
         },
       ],
-      hip: [
+      sides: [
         {
           thickness: 3,
           color: "white",
@@ -665,7 +665,6 @@ function size() {
   console.log(dataObject.sizeQuntity);
 }
 
-
 //
 //
 //
@@ -751,12 +750,21 @@ function saveCurrentDesign() {
 
     let form = new FormData();
     form.append("imageObject", JSON.stringify(imageObject));
+    form.append("design_json", JSON.stringify(dataObject));
 
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState == 4) {
-        let response = request.responseText;
-        alert(response);
+        try {
+          let response = JSON.parse(request.responseText);
+          if (response.status == "success") {
+            alert("Successfully saved");
+          } else if (response.status == "failed") {
+            alert(response.error);
+          }
+        } catch (error) {
+          console.log(error);
+        }
         dataObject.views.active = "front";
         render(dataObject);
       }
