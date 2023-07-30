@@ -146,6 +146,10 @@
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
+                                                    <button id="productControlNavigationChangeTshirtButtons" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('TshirtButtons');">
+                                                        <div class="product-control-number-icon">3</div>
+                                                        <span class="product-control-number-text fw-light">Select Template</span>
+                                                    </button>
                                                     <button id="productControlNavigationChangeTemplate" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Template');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
@@ -240,6 +244,31 @@
                                                                 <span>Collar + 3 Buttons </span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="templateSection('collar3buttons')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="productControlTshirtButtonsSection" class="d-none flex-column product-control-section">
+                                                        <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
+                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                            <div class="product-control-card-item">
+                                                                <span>2 Buttons Only</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('2buttons');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>2 Buttons + Open</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('2buttonsopen')" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>3 Buttons Only</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('3buttons');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>3 Buttons + Open</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="tShirtButtonNeckSection('3buttonopen')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -789,7 +818,7 @@
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">M</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="m"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="m" />
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">L</div>
@@ -799,17 +828,17 @@
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">Xl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xl"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xl" />
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">2XXL</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="2xl"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="2xl" />
                                                     </div>
                                                 </div>
                                                 <div class="w-100 d-flex gap-2">
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">3XXl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="3xl"/>
+                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="3xl" />
                                                     </div>
                                                     <div class="w-50 combination-size d-flex">
                                                         <div class="combination-size-input p-1">XXl</div>
@@ -1012,6 +1041,27 @@
         </div>
     </div>
 
+    <footer class="footer bg-dark text-white position-absolute mt-2 w-100" style="bottom: 0;">
+        <div class="container text-center">
+            <!-- Footer content goes here -->
+            <p>this is just dummy contenet</p>
+        </div>
+    </footer>
+
+    <!-- toasts -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
 
 </body>
 

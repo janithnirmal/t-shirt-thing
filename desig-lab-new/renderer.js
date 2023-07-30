@@ -48,7 +48,7 @@ const dataObject = {
           color: "pink",
         },
       ],
-      hip: [
+      sides: [
         {
           thickness: 3,
           color: "white",
@@ -665,7 +665,6 @@ function size() {
   console.log(dataObject.sizeQuntity);
 }
 
-
 //
 //
 //
@@ -711,6 +710,8 @@ function size() {
 //
 
 function saveCurrentDesign() {
+  renderStartEffects();
+
   let dataURLFront;
   let dataURLBack;
   let dataURLLeft;
@@ -749,17 +750,29 @@ function saveCurrentDesign() {
 
     let form = new FormData();
     form.append("imageObject", JSON.stringify(imageObject));
+    form.append("design_json", JSON.stringify(dataObject));
 
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState == 4) {
-        let response = request.responseText;
-        console.log(response);
+        try {
+          let response = JSON.parse(request.responseText);
+          if (response.status == "success") {
+            alert("Successfully saved");
+          } else if (response.status == "failed") {
+            alert(response.error);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+        dataObject.views.active = "front";
+        render(dataObject);
       }
     };
 
     request.open("POST", SERVER_URL + "backend/save_design_api.php", true);
     request.send(form);
+    renderEndEffects();
   }, 8000);
 }
 
@@ -774,4 +787,24 @@ function generateRight() {
 }
 function generateLeft() {
   return document.getElementById("designPanelCanvas").toDataURL();
+}
+
+function renderStartEffects() {
+  document.querySelectorAll(".section1-panel-sides").forEach((element) => {
+    element.classList.add("d-none");
+    element.classList.remove("d-flex");
+  });
+
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
+    document.getElementById("renderStartToastMessage")
+  );
+
+  toastBootstrap.show();
+}
+
+function renderEndEffects() {
+  document.querySelectorAll(".section1-panel-sides").forEach((element) => {
+    element.classList.add("d-flex");
+    element.classList.remove("d-none");
+  });
 }

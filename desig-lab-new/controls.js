@@ -174,6 +174,10 @@ function productControlNavigationChange(option) {
     } else {
       element.classList.add("product-control-nav-section-btn-clicked");
     }
+
+    if (option == "Type") {
+
+    }
   });
 
   let sections = document.querySelectorAll(".product-control-section");
