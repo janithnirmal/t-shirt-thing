@@ -40,7 +40,8 @@ if ($access->isLoggedIn()) {
             <i class="fas fa-bell px-3"></i>
             <?php if ($loggedUserData["image_url"]) {
             ?>
-                <img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn">
+                <img class="rounded-circle bg-primary profile-picture "  style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn">
+                <button onclick="logout()">logout</button>
             <?php
             } else {
             ?>
@@ -72,3 +73,24 @@ if ($access->isLoggedIn()) {
         </div>
     </div>
 </div>
+
+<script>
+    function logout() {
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = () => {
+    if (request.readyState == 4 && request.status == 200) {
+      responseObject = JSON.parse(request.responseText);
+      if (responseObject.status === "success") {
+        window.location.reload();
+      } else {
+        console.log(responseObject);
+      }
+    }
+  };
+
+  request.open("POST", "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/sign_out.php", true);
+  request.send();
+}
+
+
+</script>

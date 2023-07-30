@@ -201,3 +201,7 @@ function SignIn() {
 function updateDataObject(dataObject) {
   dataObject = dataObject;
 }
+
+function logout(){
+  console.log("hi bitcj")
+}

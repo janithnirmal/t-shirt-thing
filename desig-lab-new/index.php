@@ -647,10 +647,10 @@ require_once("./backend/config.php");
                                 Men
                             </button>
                             <button style="background-color: #8e48ae" class="right-side-box-btn">
-                                Woman
+                                Men
                             </button>
                             <button style="background-color: #4482c9" class="right-side-box-btn">
-                                Men
+                                Woman
                             </button>
                             <button style="background-color: #8e44ad" class="right-side-box-btn">
                                 Woman
@@ -662,21 +662,21 @@ require_once("./backend/config.php");
                                 Coparate
                             </button>
                             <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                Budget
+                            </button>
+                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                Budget
+                            </button>
+                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
                                 Coparate
-                            </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Budget
-                            </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Budget
                             </button>
                         </div>
 
                         <div class="d-flex-column">
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
+                            <span class="right-side-box-num" id="mc" style="font-size: 10px;"></span>
+                            <span class="right-side-box-num" id="mb" style="font-size: 10px;"> </span>
+                            <span class="right-side-box-num" id="wb" style="font-size: 10px;"></span>
+                            <span class="right-side-box-num"  id="wc" style="font-size: 10px;"></span>
                         </div>
                     </div>
                 </div>
