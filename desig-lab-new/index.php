@@ -755,7 +755,7 @@
                     <div class="d-flex-column" style="height: 100%">
                         <!-- <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;"> -->
                         <button onclick="openSizeQuantityModel();" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
-                            <div class="size-qty-box1">0 items</div>
+                            <div class="size-qty-box1" id="sizeItems"></div>
                             <span style="width: 100%">Size & Qty</span>
 
                             <i class="fas fa-chevron-down"></i>
