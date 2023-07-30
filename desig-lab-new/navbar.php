@@ -32,8 +32,8 @@ if ($access->isLoggedIn()) {
         </div>
     </div>
     <div class="d-flex h-100 justify-content-center align-items-center nav-bar-button-section">
-        <a href=""><img class="nav-img-contact" src="images/nav-image.png" alt="" /></a>
-        <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+        <a href=""><img class="nav-img-contact navbar-talk-image" src="images/nav-image.png" alt="" /></a>
+        <a href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a>
         <?php
         if ($loggedUserData) {
         ?>
@@ -48,7 +48,10 @@ if ($access->isLoggedIn()) {
             <?php if ($loggedUserData["image_url"]) {
             ?>
                 <img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn">
-                <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6" onclick="logout()">logout</button>
+                <div onclick="logout()">
+                    <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6" >logout</button>
+                    <div  class="navbar-signouticon"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i></div>
+                </div>
             <?php
             } else {
             ?>
@@ -59,7 +62,10 @@ if ($access->isLoggedIn()) {
         <?php
         } else {
         ?>
-            <button class="btn btn-primary py-1 text-center" id="signInBtn">Sign In</button>
+            <div id="signInBtn">
+                <button class="btn-style-signIn btn btn-primary py-1 text-center">Sign In</button>
+                <div class="navbar-signInicon"> <i class="fa-solid fa-right-to-bracket fa-lg " style="color: #ffffff;"></i></div>
+            </div>
         <?php
         }
         ?>

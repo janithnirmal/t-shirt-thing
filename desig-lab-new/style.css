@@ -1009,7 +1009,12 @@ nav i {
   text-align: center;
   margin-right: 10px;
 }
-
+.navbar-signInicon{
+  display: none;
+}
+.navbar-signouticon{
+  display: none;
+}
 /* responsive */
 @media (max-width: 1280px) {
   .container {
@@ -1060,6 +1065,24 @@ nav i {
   }
 
   .menu-hamberger-icon {
+    display: block;
+  }
+  .navbar-talk-image{
+    display: none;
+  }
+  .btn-style-remover{
+    display: none;
+  }
+  .btn-style-signIn{
+    display: none;
+  }
+  .navbar-signInicon{
+    display: block;
+    margin-left: 11px;
+
+  }
+
+  .navbar-signouticon{
     display: block;
   }
 }
