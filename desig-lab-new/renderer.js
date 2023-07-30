@@ -679,6 +679,27 @@ function size() {
   const sizeItemsDiv = document.getElementById('sizeItems');
   sizeItemsDiv.textContent = total;
 
+  if(newData.gender=='combinationMen' && newData.matirial=='combinationBudget'){
+    const sizeItemsDiv = document.getElementById('mb');
+    sizeItemsDiv.textContent = total;
+    
+  }
+  if(newData.gender=='combinationMen' && newData.matirial=='combinationCoperate'){
+    const sizeItemsDiv = document.getElementById('mc');
+    sizeItemsDiv.textContent = total;
+    
+  }
+  if(newData.gender=='combinationWomen' && newData.matirial=='combinationBudget'){
+    const sizeItemsDiv = document.getElementById('wb');
+    sizeItemsDiv.textContent = total;
+    
+  }
+  if(newData.gender=='combinationWomen' && newData.matirial=='combinationCoperate'){
+    const sizeItemsDiv = document.getElementById('wc');
+    sizeItemsDiv.textContent = total;
+    
+  }
+
   // Optional: Log the updated dataObject to the console
   console.log(dataObject);
   // Clear the input fields
