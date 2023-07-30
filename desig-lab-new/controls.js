@@ -174,26 +174,22 @@ function productControlNavigationChange(option) {
     } else {
       element.classList.add("product-control-nav-section-btn-clicked");
     }
-
-    if (option == "Type") {
-      document
-        .getElementById("productControlNavigationChangeTshirtButtons")
-        .classList.add("d-none");
-      document
-        .getElementById("productControlNavigationChangeTshirtButtons")
-        .classList.remove("d-flex");
-
-      let button2 = document.getElementById(
-        "productControlNavigationChangeTemplate"
-      );
-
-      button2.classList.add("d-none");
-      button2.classList.remove("d-flex");
-      document
-        .getElementById("productControlNavigationChangeTshirtButtons")
-        .classList.remove("d-flex");
-    }
   });
+
+  if (option == "Type" || option == "Gender") {
+    items.forEach((element) => {
+      if (
+        element.dataset.btntype == "Gender" ||
+        element.dataset.btntype == "Type"
+      ) {
+        element.classList.add("d-none");
+        element.classList.remove("d-flex");
+      } else {
+        element.classList.add("d-flex");
+        element.classList.remove("d-none");
+      }
+    });
+  }
 
   let sections = document.querySelectorAll(".product-control-section");
   sections.forEach((element) => {
@@ -217,10 +213,15 @@ function changeProduct(type) {
   let sleeveBtn = document.getElementById(
     "productControlNavigationChangeSleeves"
   );
+
+  let tShirtButton = document.getElementById(
+    "productControlNavigationChangeTshirtButtons"
+  );
+
   if (type == "polo-t-shirt") {
-    sleeveBtn.classList.add("d-flex");
-    sleeveBtn.classList.remove("d-none");
-    sleeveBtn.click();
+    tShirtButton.classList.add("d-flex");
+    tShirtButton.classList.remove("d-none");
+    tShirtButton.click();
   } else if (type == "cotton-t-shirt") {
     sleeveBtn.classList.add("d-flex");
     sleeveBtn.classList.remove("d-none");

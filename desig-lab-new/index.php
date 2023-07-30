@@ -138,23 +138,23 @@ require_once("./backend/config.php");
                                             </div>
                                             <div class="modal-body">
                                                 <div class="product-control-nav d-flex justify-content-center">
-                                                    <button id="productControlNavigationChangeGender" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Gender');">
+                                                    <button data-btntype="Gender" id="productControlNavigationChangeGender" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Gender');">
                                                         <div class="product-control-number-icon">1</div>
                                                         <span class="product-control-number-text fw-light">Start here</span>
                                                     </button>
-                                                    <button id="productControlNavigationChangeType" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Type');">
+                                                    <button data-btntype="Type" id="productControlNavigationChangeType" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Type');">
                                                         <div class="product-control-number-icon">2</div>
                                                         <span class="product-control-number-text fw-light">Cloth Template</span>
                                                     </button>
-                                                    <button id="productControlNavigationChangeSleeves" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Sleeves');">
+                                                    <button data-btntype="Sleeves" id="productControlNavigationChangeSleeves" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Sleeves');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
-                                                    <button id="productControlNavigationChangeTshirtButtons" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('TshirtButtons');">
+                                                    <button data-btntype="TshirtButtons" id="productControlNavigationChangeTshirtButtons" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('TshirtButtons');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
-                                                    <button id="productControlNavigationChangeTemplate" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Template');">
+                                                    <button data-btntype="Template" id="productControlNavigationChangeTemplate" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Template');">
                                                         <div class="product-control-number-icon">3</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
@@ -251,7 +251,7 @@ require_once("./backend/config.php");
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="productControlTshirtButtonsSection" class="d-none flex-column product-control-section">
+                                                    <div id="productControlTshirtButtonsSelectSection" class="d-none flex-column product-control-section">
                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -647,10 +647,10 @@ require_once("./backend/config.php");
                                 Men
                             </button>
                             <button style="background-color: #8e48ae" class="right-side-box-btn">
-                                Woman
+                                Men
                             </button>
                             <button style="background-color: #4482c9" class="right-side-box-btn">
-                                Men
+                                Woman
                             </button>
                             <button style="background-color: #8e44ad" class="right-side-box-btn">
                                 Woman
@@ -662,21 +662,21 @@ require_once("./backend/config.php");
                                 Coparate
                             </button>
                             <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                Budget
+                            </button>
+                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                Budget
+                            </button>
+                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
                                 Coparate
-                            </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Budget
-                            </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Budget
                             </button>
                         </div>
 
                         <div class="d-flex-column">
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
-                            <span class="right-side-box-num"><input class="style-remover" type="radio" /></span>
+                            <span class="right-side-box-num" id="mc" style="font-size: 10px;"></span>
+                            <span class="right-side-box-num" id="mb" style="font-size: 10px;"> </span>
+                            <span class="right-side-box-num" id="wb" style="font-size: 10px;"></span>
+                            <span class="right-side-box-num"  id="wc" style="font-size: 10px;"></span>
                         </div>
                     </div>
                 </div>
@@ -1031,7 +1031,7 @@ require_once("./backend/config.php");
                             <span style="font-size: 18px">Or Continue with</span>
                         </div>
                         <div class="col-12 text-center" style="margin-top: 12px;">
-                            <button class="btn btn-dark btn-lg fs-6 rounded-1" onclick="window.location = '<?php echo $Google_login_btn?>'" style="padding: 0; width: 120px; height: 36px;">
+                            <button class="btn btn-dark btn-lg fs-6 rounded-1" onclick="window.location = '<?php echo $Google_login_btn ?>'" style="padding: 0; width: 120px; height: 36px;">
                                 <!-- <a class="text-decoration-none text-white" >
                                     <div style="font-size: 18px; gap: 5px;"><span style="margin-right:14px ;"><i class="fa-brands fa-google"></i></span><span>Google</span></div>
                                 </a> -->
