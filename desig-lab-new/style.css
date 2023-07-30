@@ -987,6 +987,29 @@ nav i {
   object-fit: contain;
 }
 
+.navbar-link-container {
+  position: relative;
+}
+.nav-bar-button-section {
+  z-index: 100;
+  display: flex;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+}
+
+.menu-hamberger-icon {
+  margin: 0;
+  padding: 0;
+  display: none;
+  font-size: 24px;
+  text-align: center;
+  margin-right: 10px;
+}
+
 /* responsive */
 @media (max-width: 1280px) {
   .container {
@@ -1016,5 +1039,27 @@ nav i {
   }
   .side-panel-3 {
     order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-link-container {
+    z-index: 10;
+    position: absolute;
+    height: 92vh;
+    width: 80%;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    margin-top: 8vh;
+    justify-content: start;
+    align-items: start;
+    padding: 10px 30px;
+    display: none;
+  }
+
+  .menu-hamberger-icon {
+    display: block;
   }
 }

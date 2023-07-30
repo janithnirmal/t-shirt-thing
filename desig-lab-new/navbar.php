@@ -11,20 +11,27 @@ if ($access->isLoggedIn()) {
 ?>
 
 <nav class="d-flex justify-content-between align-items-center px-5">
-    <div class=" h-100">
-        <a href="index.php">
-            <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
-        </a>
-        <a href="index.php">DesignHome</a>
-        <button class="btn-style-remover text-secondary" href="#" onclick="openSavedDesignModal();">Designs</button>
-        <a href="orders.php">Orders</a>
-        <a href="">Help</a>
-        <a href="">
-            Reviews
-            <i class="fas fa-star"></i>
-        </a>
+    <div class=" h-100 d-flex  justify-content-between align-items-center">
+        <div class="d-flex h-100 justify-content-center align-items-center">
+            <div class="menu-hamberger-icon">
+                <i class="fas fa-bars " onclick="openNavigationSideBar()"></i>
+            </div>
+            <a href="index.php" class="logo">
+                <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
+            </a>
+        </div>
+        <div class="navbar-link-container">
+            <a href="index.php">DesignHome</a>
+            <button class="btn-style-remover text-secondary" href="#" onclick="openSavedDesignModal();">Designs</button>
+            <a href="orders.php">Orders</a>
+            <a href="">Help</a>
+            <a href="">
+                Reviews
+                <i class="fas fa-star"></i>
+            </a>
+        </div>
     </div>
-    <div class="d-flex h-100 justify-content-center align-items-center">
+    <div class="d-flex h-100 justify-content-center align-items-center nav-bar-button-section">
         <a href=""><img class="nav-img-contact" src="images/nav-image.png" alt="" /></a>
         <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
         <?php
@@ -40,8 +47,8 @@ if ($access->isLoggedIn()) {
             <i class="fas fa-bell px-3"></i>
             <?php if ($loggedUserData["image_url"]) {
             ?>
-                <img class="rounded-circle bg-primary profile-picture "  style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn">
-                <button onclick="logout()">logout</button>
+                <img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn">
+                <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6" onclick="logout()">logout</button>
             <?php
             } else {
             ?>
@@ -76,21 +83,19 @@ if ($access->isLoggedIn()) {
 
 <script>
     function logout() {
-  const request = new XMLHttpRequest();
-  request.onreadystatechange = () => {
-    if (request.readyState == 4 && request.status == 200) {
-      responseObject = JSON.parse(request.responseText);
-      if (responseObject.status === "success") {
-        window.location.reload();
-      } else {
-        console.log(responseObject);
-      }
+        const request = new XMLHttpRequest();
+        request.onreadystatechange = () => {
+            if (request.readyState == 4 && request.status == 200) {
+                responseObject = JSON.parse(request.responseText);
+                if (responseObject.status === "success") {
+                    window.location.reload();
+                } else {
+                    console.log(responseObject);
+                }
+            }
+        };
+
+        request.open("POST", "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/sign_out.php", true);
+        request.send();
     }
-  };
-
-  request.open("POST", "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/sign_out.php", true);
-  request.send();
-}
-
-
 </script>

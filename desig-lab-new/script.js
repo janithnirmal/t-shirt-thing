@@ -1,7 +1,7 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
   "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; // janith
-  // "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
+// "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 
 // signIn
 let signInModel;
@@ -202,6 +202,16 @@ function updateDataObject(dataObject) {
   dataObject = dataObject;
 }
 
-function logout(){
-  console.log("hi bitcj")
+function logout() {
+  console.log("hi bitcj");
+}
+
+function openNavigationSideBar() {
+  let sidebar = document.querySelector(".navbar-link-container");
+  let currentStatus = window.getComputedStyle(sidebar);
+  if (currentStatus.display == "none") {
+    sidebar.style.display = "flex";
+  } else {
+    sidebar.style.display = "none";
+  }
 }
