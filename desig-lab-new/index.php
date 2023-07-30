@@ -1042,7 +1042,7 @@
         </div>
     </div>
 
-    <footer class="footer bg-dark text-white position-absolute mt-2 w-100" style="bottom: 0;">
+    <footer class="footer bg-dark text-white  mt-2 w-100" style="bottom: 0;">
         <div class="container text-center">
             <!-- Footer content goes here -->
             <p>this is just dummy contenet</p>
