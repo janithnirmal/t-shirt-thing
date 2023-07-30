@@ -646,15 +646,64 @@ function size() {
   // Assuming you have an object named dataObject defined before this function is called
   // If not, create it using: var dataObject = { sizeQuntity: {} };
 
-  var xs = document.getElementById("xs").value;
-  var s = document.getElementById("s").value;
-  var m = document.getElementById("m").value;
-  var l = document.getElementById("l").value;
-  var xl = document.getElementById("xl").value;
-  var doublexl = document.getElementById("2xl").value; // Note: '2xl' is not a valid ID in HTML, but we keep it as it is.
-  var thribblexl = document.getElementById("3xl").value; // Note: '3xl' is not a valid ID in HTML, but we keep it as it is.
+  var xs = parseInt(document.getElementById("xs").value);
+var s = parseInt(document.getElementById("s").value);
+var m = parseInt(document.getElementById("m").value);
+var l = parseInt(document.getElementById("l").value);
+var xl = parseInt(document.getElementById("xl").value);
+var doublexl = parseInt(document.getElementById("2xl").value);
+var thribblexl = parseInt(document.getElementById("3xl").value);
+  
 
-  dataObject.sizeQuntity.xs = xs;
+  
+    // Get all the radio button elements for gender selection
+    const genderRadios = document.querySelectorAll('input[name="combinationGender"]');
+
+    // Get all the radio button elements for budget selection
+    const budgetRadios = document.querySelectorAll('input[name="combinationBudget"]');
+
+    // Function to get the value of the selected radio button for gender
+    function getSelectedGender() {
+        let selectedGender = "";
+        genderRadios.forEach((radio) => {
+            if (radio.checked) {
+                selectedGender = radio.id;
+            }
+        });
+        return selectedGender;
+    }
+
+    // Function to get the value of the selected radio button for budget
+    function getSelectedBudget() {
+        let selectedBudget = "";
+        budgetRadios.forEach((radio) => {
+            if (radio.checked) {
+                selectedBudget = radio.id;
+            }
+        });
+        return selectedBudget;
+    }
+
+    // Example of how to use the functions:
+    const selectedGender = getSelectedGender();
+    const selectedBudget = getSelectedBudget();
+
+    console.log("Selected Gender:", selectedGender);
+    console.log("Selected Budget:", selectedBudget);
+
+    dataObject.sizeQuntity.xs = xs;
+    dataObject.sizeQuntity.gender = selectedGender;
+    dataObject.sizeQuntity.matirial = selectedBudget;
+
+    xs = isNaN(xs) ? 0 : xs;
+    s = isNaN(s) ? 0 : s;
+    m = isNaN(m) ? 0 : m;
+    l = isNaN(l) ? 0 : l;
+    xl = isNaN(xl) ? 0 : xl;
+    doublexl = isNaN(doublexl) ? 0 : doublexl;
+    thribblexl = isNaN(thribblexl) ? 0 : thribblexl;
+
+
   dataObject.sizeQuntity.s = s;
   dataObject.sizeQuntity.m = m;
   dataObject.sizeQuntity.l = l;
@@ -662,8 +711,30 @@ function size() {
   dataObject.sizeQuntity.doublexxl = doublexl;
   dataObject.sizeQuntity.thribblexxl = thribblexl;
 
+  var total = xs + s + m + l + xl + doublexl + thribblexl;
+
+  const sizeItemsDiv = document.getElementById('sizeItems');
+  sizeItemsDiv.textContent = total;
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
   console.log(dataObject.sizeQuntity);
 }
+// Get the element with the ID 'sizeItems'
+
 
 //
 //
