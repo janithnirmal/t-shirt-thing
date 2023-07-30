@@ -52,8 +52,8 @@ $number = substr($id, 0, 4);
 
 
 // For demonstration purposes, let's assume the user ID is always '2' for all sign-ins
-$insertQuery = "INSERT INTO `normal-sign-in` (`email`, `userid`, `password_hash`,`password_salt`) VALUES (?, ?, ?, ?);";
-$db->execute_query($insertQuery, 'ssss', array($email, $number, $hash, $salt));
+$insertQuery = "INSERT INTO `user` (`email`, `password_hash`,`password_salt`) VALUES (?, ?, ?, ?);";
+$db->execute_query($insertQuery, 'ssss', array($email, $hash, $salt));
 
 // login link for idex.html
 $login_link = "http://localhost/t-shirt-thing/desig-lab-new/index.html?id=$number";

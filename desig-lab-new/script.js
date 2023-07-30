@@ -1,5 +1,5 @@
 const SERVER_URL =
-  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/";
+  "http://localhost/t-shirt-thing/desig-lab-new/";
 
 // signIn
 let signInModel;
@@ -8,7 +8,7 @@ try {
     signInModel = new bootstrap.Modal("#signInModel");
     signInModel.show();
   });
-} catch (error) {}
+} catch (error) { }
 
 // function toggleDropdown() {
 //   var dropdownMenu = document.querySelector(".dropdown-menu");
@@ -83,7 +83,7 @@ try {
     request.open("POST", SERVER_URL + "backend/sign_in.php", true);
     request.send(form);
   });
-} catch (error) {}
+} catch (error) { }
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   openProductModel();
@@ -146,27 +146,49 @@ function userData() {
     city: cityInput.value,
     province: provinceInput.value,
     postalCode: postalCodeInput.value
-};
+  };
 
 
-    let form = new FormData();
-    form.append("formData", JSON.stringify(formData));
+  let form = new FormData();
+  form.append("formData", JSON.stringify(formData));
 
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-      if (request.readyState == 4) {
-        let response = request.responseText;
-        console.log(response);
+  let request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      let response = request.responseText;
+      console.log(response);
+    }
+  };
+
+  request.open("POST", "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/user_data_save.php", true);
+  request.send(form);
+
+
+
+
+
+
+
+}
+
+function SignIn() {
+  let form = new FormData();
+  form.append("email", document.getElementById("emailInput").value);
+  form.append("password", document.getElementById("passwordInput").value);
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = () => {
+    if (request.readyState == 4 && request.status == 200) {
+      responseObject = JSON.parse(request.responseText);
+      if (responseObject.status === "success") {
+        window.location.reload();
+      } else {
+        console.log(responseObject);
       }
-    };
 
-    request.open("POST","http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/user_data_save.php", true);
-    request.send(form);
+    }
+  };
 
-
-
-
-
-
-  
+  request.open("POST", SERVER_URL + "backend/sign_in.php", true);
+  request.send(form);
 }
