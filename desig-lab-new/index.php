@@ -289,7 +289,7 @@
                     </div>
                     <div class="list-group-item">
                         <div id="btn4">
-                            <button class="left-side-btn" style="background-color: #343f86" onclick="opemMaterialModel();">
+                            <button class="d-none left-side-btn" style="background-color: #343f86" onclick="opemMaterialModel();">
                                 Budget
                             </button>
                             <div id="materialContainer">

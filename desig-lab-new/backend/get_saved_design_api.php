@@ -25,7 +25,7 @@ $result_set = $db_response["result"];
 $responseDesignsArray = array();
 for ($i = 0; $i < $result_set->num_rows; $i++) {
     $row = $result_set->fetch_assoc();
-    array_push($responseDesignsArray, $row["design_data"]);
+    array_push($responseDesignsArray, $row);
 }
 
 
