@@ -154,7 +154,7 @@ function userData(){
       }
     };
 
-    request.open("POST", SERVER_URL + "backend/user_data_save.php", true);
+    request.open("POST","http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/user_data_save.php", true);
     request.send(form);
 
 
