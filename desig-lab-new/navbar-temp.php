@@ -31,13 +31,11 @@ if ($access->isLoggedIn()) {
         if ($loggedUserData) {
         ?>
             <span class="text-danger">Hi, <?php
-                                            // if ($loggedUserData["firstname"]) {
-                                            //     echo (substr($loggedUserData["firstname"], 0, 7) . "...");
-                                            // } else {
-                                            //     echo (substr($loggedUserData["email"], 0, 7) . "...");
-                                            // }
-                                            echo "Kasun Madushan"
-
+                                            if ($loggedUserData["firstname"]) {
+                                                echo (substr($loggedUserData["firstname"], 0, 7) . "...");
+                                            } else {
+                                                echo (substr($loggedUserData["email"], 0, 7) . "...");
+                                            }
                                             ?></span>
             <i class="fas fa-bell px-3"></i>
             <?php if ($loggedUserData["image_url"]) {
