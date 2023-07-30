@@ -28,12 +28,15 @@ if (isset($token["error"]) != "invalid_grant") {
      $lastName = $user_info["lastName"];
      $picture = $user_info["picture"];
 
+     //create a session
+     $userAccess = new UserAccess();
+
      $response = new stdClass();
      $response->status = 'failed'; // Corrected the typo, changing 'success' to 'success'
 
      $dataBase = new database_driver();
-     $searchQuery = "SELECT email FROM `user` WHERE email = ?";
-     $queryResult =  $dataBase->execute_query($searchQuery, 's', array($email));
+     $searchQuery = "SELECT * FROM `user` WHERE email = ?";
+     $queryResult =  $dataBase->execute_query($searchQuery, 's', [$email]);
 
 
      // Extract the statement and the result from the queryResult array
@@ -43,8 +46,8 @@ if (isset($token["error"]) != "invalid_grant") {
      // Fetch the row from the result
      if ($result->num_rows > 0 && ($row = $result->fetch_assoc())) {
           // The email already exists in the database, show error
-          $response->error = 'Email already exists in the database';
-          response_sender::sendJson($response);
+          $userAccess->login($row);
+          echo "<script>window.location.href = 'http://localhost/t-shirt-thing/desig-lab-new/index.php';</script>";
      }
 
      $password = uniqid();
@@ -64,13 +67,9 @@ if (isset($token["error"]) != "invalid_grant") {
 
 
      // Fetch the row from the result
-     $row = $result['result']->fetch_assoc();
+     $row2 = $result['result']->fetch_assoc();
 
-
-
-     //create a session
-     $userAccess = new UserAccess();
-     $userAccess->login($row);
+     $userAccess->login($row2);
 
      echo "<script>window.location.href = 'http://localhost/t-shirt-thing/desig-lab-new/index.php';</script>";
 } else {
