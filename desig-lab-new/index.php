@@ -1,4 +1,5 @@
 <?php
+require_once("./backend/config.php");
 
 // require_once("backend/app/user_access_updater.php");
 
@@ -21,6 +22,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <title>Document</title>
 
     <!-- css -->
@@ -39,6 +41,8 @@
     <script src="popup.js" defer></script>
     <script src="main.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </head>
 
 <body>
@@ -1027,10 +1031,11 @@
                             <span style="font-size: 18px">Or Continue with</span>
                         </div>
                         <div class="col-12 text-center" style="margin-top: 12px;">
-                            <button class="btn btn-dark btn-lg fs-6 rounded-1" style="padding: 0; width: 120px; height: 36px;">
-                                <a class="text-decoration-none text-white" href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&access_type=online&client_id=792754426124-qjtotmddrjlcjci8emqntv9mre08eq76.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fdesign%2520lab%2520backend%2Fwelcome.php&state&scope=email%20profile&approval_prompt=auto">
+                            <button class="btn btn-dark btn-lg fs-6 rounded-1" onclick="window.location = '<?php echo $Google_login_btn?>'" style="padding: 0; width: 120px; height: 36px;">
+                                <!-- <a class="text-decoration-none text-white" >
                                     <div style="font-size: 18px; gap: 5px;"><span style="margin-right:14px ;"><i class="fa-brands fa-google"></i></span><span>Google</span></div>
-                                </a>
+                                </a> -->
+                                GOOGLE
                             </button>
                         </div>
                         <div class="col-12 text-center" style="margin-top: 70px;">
@@ -1063,6 +1068,7 @@
             </div>
         </div>
     </div>
+
 
 </body>
 
