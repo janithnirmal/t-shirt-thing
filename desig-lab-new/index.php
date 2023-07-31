@@ -369,7 +369,7 @@ require_once("./backend/config.php");
             <div class="section1-panel section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                 <div class="t-shirt-panel-container">
                     <div class="canvasOverly">
-                        <div id="tshirt" class="canvasOverlyInner d-block">
+                        <div id="tshirtPolo" class="canvasOverlyInner d-block">
                             <!-- strip controls -->
                             <div id="tshirtStripControl1" class="canvasOverlyInner-front d-block">
                                 <div class="tshirt-controller tshirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
@@ -503,19 +503,19 @@ require_once("./backend/config.php");
 
                 <!-- model contianer -->
                 <div class="modelContainer">
-                    <!-- Modal -->
-                    <div class="modal fade" id="tshirtNeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <!-- Modal - polo neck strip -->
+                    <div class="modal fade" id="tshirtPoloNeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Neck Strip Lines</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
 
                                     <div class="p-2">
                                         <div class="fs-5 text-center">Line Count</div>
-                                        <input type="number" class=" form-control" value="0" min="0" max="3" id="neckStripCount" />
+                                        <input type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" id="neckStripCount" />
                                     </div>
                                     <div class="p-2">
                                         <div class="fs-5 text-center">Selected Line</div>
@@ -568,62 +568,79 @@ require_once("./backend/config.php");
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="updateTshirtNeckArray()">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal - polo side strip -->
+                    <div class="modal fade" id="tshirtPoloSideStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Side Strip Lines</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
 
-                                    <!-- <div class="d-flex justify-content-center align-items-center">
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Line Count</div>
+                                        <input type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" id="neckStripCount" />
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Selected Line</div>
+                                        <select id="tshirtNeckLineSelector" class="form-control">
+                                            <option value="0">No Lines</option>
+                                        </select>
+                                    </div>
+                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection1">
                                         <div>
-                                            <h5 class="text-center">Edit Cuff\Collar</h5>
-                                            <hr />
-                                            <div class="border border-1 border-dark border-opacity-25 p-2">
-                                                <p class="text-center">Preview</p>
-                                                <div class="bg-primary pt-1 pb-1" style="max-width:280px; height:66px;" id="box"></div>
-                                                <div class="m-1 d-flex-column justify-content-center align-items-center border border-1 border-dark border-opacity-25 p-1">
-                                                    <span>Cuff Color & Lines</span>
-                                                    <div class="d-flex justify-content-center">
-                                                        <div class="border border-1 border-dark border-opacity-25 p-2" onclick="decreaseLine();">-</div>
-                                                        <input class="px-2 w-25" id="lineId" value="0" />
-                                                        <div class="border border-2 p-2">Line</div>
-                                                        <div class="border border-2 p-2" onclick="increaseLine();">+</div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-none" id="customizeArea">
-                                                    <div class="border border-1 border-dark border-opacity-25 p-1 pb-2 mt-1">
-                                                        <div class="text-center pb-2"> <span>Select line</span></div>
-                                                        <select class="border border-0 border-bottom border-3 bo border-dark border-bottom w-100 bg-transparent" id="lineSelecter">
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="border border-1 border-dark border-opacity-25 p-2 pb-2 mt-2">
-                                                        <div class="text-center pb-2"> <span>Line Color& Width</span></div>
-                                                        <div class="d-flex justify-content-center">
-                                                            <div class="d-flex gap-0">
-                                                                <div class="offset-2 col-3"><input type="color" class="px-2 w-50 h-75" id="colorId" value="0" /></div>
-                                                                <div class="d-flex">
-                                                                    <div class="border border-2 p-2" onclick="decreaseWidth();">-</div>
-                                                                    <input class="px-2 w-25" id="widthId" value="0" />
-                                                                    <div class="border border-2 p-2">mm</div>
-                                                                    <div class="border border-2 p-2" onclick="increaseWidth();">+</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="border border-1 border-dark border-opacity-25 p-2 pb-2 mt-2">
-                                                        <div class="text-center pb-2"> <span>Line Gap</span></div>
-                                                        <div class="d-flex justify-content-center">
-                                                            <div class="border border-2 p-1" onclick="decreaseGap();">-</div>
-                                                            <input class="px-2 w-25" id="gapId" value="0" />
-                                                            <div class="border border-2 p-2">mm</div>
-                                                            <div class="border border-2 p-2" onclick="increaseGap();">+</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-center gap-4">
-                                                    <div><i class="bi bi-x text-danger fs-5"></i></div>
-                                                    <div><i class="bi bi-check2 fs-5" style="color:green;"></i></div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="tshirtNeckStripColor1" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="tshirtNeckStripThickness1" type="number" class="form-control" min="0" max="3">
                                                 </div>
                                             </div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input type="number" class="form-control" min="0" max="3">
+                                            </div>
                                         </div>
-                                    </div> -->
+                                    </div>
+                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection2">
+                                        <div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="tshirtNeckStripColor2" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="tshirtNeckStripThickness2" type="number" class="form-control" min="0" max="3">
+                                                </div>
+                                            </div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input type="number" class="form-control" min="0" max="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection3">
+                                        <div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="tshirtNeckStripColor3" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="tshirtNeckStripThickness3" type="number" class="form-control" min="0" max="3">
+                                                </div>
+                                            </div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input type="number" class="form-control" min="0" max="3">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -2,10 +2,13 @@ let opendModal;
 
 function controllerModelOpen(section) {
   if (section == "neck") {
-    opendModal = new bootstrap.Modal("#tshirtNeckStripControlModel");
+    opendModal = new bootstrap.Modal("#tshirtPoloNeckStripControlModel");
     opendModal.show();
     render(dataObject);
-  } else {
+  } else if (section == "sides") {
+    opendModal = new bootstrap.Modal("#tshirtPoloSideStripControlModel");
+    opendModal.show();
+    render(dataObject);
   }
 }
 
@@ -275,3 +278,12 @@ function tShirtButtonNeckSection(buttonType) {
   render(dataObject);
   console.log(dataObject.clothOption.buttons);
 }
+
+// let neckStripModels = document.querySelectorAll(
+//   ".strip-control-modal-line-neck-line-count"
+// );
+// array.forEach((element) => {
+//   element.addEventListener("change", () => {
+//     dataObject.views.strips.neck.push(element.value);
+//   });
+// });
