@@ -443,9 +443,11 @@ require_once("./backend/config.php");
                             </div>
                             <div data-controlside="left" id="short-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 short-3
+                                <div class="controller-indication-design short-leg-left"></div>
                             </div>
                             <div data-controlside="right" id="short-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 short-4
+                                <div class="controller-indication-design short-leg-right"></div>
                             </div>
                         </div>
                         <div id="bottom" class="canvasOverlyInner  d-none">
@@ -457,9 +459,12 @@ require_once("./backend/config.php");
                             </div>
                             <div data-controlside="left" id="bottom-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 bottom-3
+                                <div class="controller-indication-design bottom-leg-left"></div>
+                                
                             </div>
                             <div data-controlside="right" id="bottom-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 bottom-4
+                                <div class="controller-indication-design bottom-leg-right"></div>
                             </div>
                         </div>
                         <div id="singlet" class="canvasOverlyInner  d-none">
@@ -485,9 +490,13 @@ require_once("./backend/config.php");
                             </div>
                             <div data-controlside="left" id="jacket-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 jacket-3
+                                <div class="controller-indication-design jacket-arm-left-top"></div>
+                                <div class="controller-indication-design jacket-arm-left-bottom"></div>
                             </div>
                             <div data-controlside="right" id="jacket-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 jacket-4
+                                <div class="controller-indication-design jacket-arm-right-top"></div>
+                                <div class="controller-indication-design jacket-arm-right-bottom"></div>
                             </div>
                         </div>
                     </div>
