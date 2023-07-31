@@ -1019,6 +1019,10 @@ nav i {
 .navbar-signouticon {
   display: none;
 }
+.footer{
+  width: 100%;
+  /* height: 100px; */
+}
 /* responsive */
 @media (max-width: 1280px) {
   .container {
@@ -1148,6 +1152,11 @@ nav i {
     height: 80px;
     /* margin-left: 1px; */
   }
+  .footer{
+    margin-top: 260px;
+    width: 150%;
+    /* height: 100px; */
+  }
 }
 @media (max-width: 320px) {
   .section1-layout {
@@ -1169,5 +1178,8 @@ nav i {
     height: 80px;
     width: 70px;
     font-size: 11px;
+  }
+  .footer{
+    width: 170%;
   }
 }

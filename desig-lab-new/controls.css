@@ -1,6 +1,6 @@
 .controller-indication-design {
   position: absolute;
-  background-color: red;
+  /* background-color: red; */
   cursor: pointer;
   border: 2px rgba(0, 0, 0, 0.3) dashed;
 }
