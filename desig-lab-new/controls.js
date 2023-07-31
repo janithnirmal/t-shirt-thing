@@ -1,17 +1,4 @@
-let opendModal;
-
-function controllerModelOpen(section) {
-  if (section == "neck") {
-    opendModal = new bootstrap.Modal("#tshirtPoloNeckStripControlModel");
-    opendModal.show();
-    render(dataObject);
-  } else if (section == "sides") {
-    opendModal = new bootstrap.Modal("#tshirtPoloSideStripControlModel");
-    opendModal.show();
-    render(dataObject);
-  }
-}
-
+//  other controls
 // gender
 let genderModel;
 function openGenderModel() {
@@ -100,7 +87,7 @@ function opemMaterialModel() {
   materialControlModel.show();
 }
 
-// material control
+// size & quantity control
 let sizeQuantityModel;
 function openSizeQuantityModel() {
   sizeQuantityModel = new bootstrap.Modal("#sizeQuantityModel");
@@ -233,15 +220,7 @@ function tShirtButtonNeckSection(buttonType) {
   console.log(dataObject.clothOption.buttons);
 }
 
-// let neckStripModels = document.querySelectorAll(
-//   ".strip-control-modal-line-neck-line-count"
-// );
-// array.forEach((element) => {
-//   element.addEventListener("change", () => {
-//     dataObject.views.strips.neck.push(element.value);
-//   });
-// });
-
+// view side updater
 function viewChange(side) {
   dataObject.views.active = side;
   render(dataObject);
@@ -276,4 +255,113 @@ function controlSideSetionOpener(item) {
       element.classList.remove("d-block");
     }
   });
+}
+
+//
+//
+//
+// strip line controllers
+let opendModal;
+function controllerModelOpen(section) {
+  if (section == "neck") {
+    opendModal = new bootstrap.Modal("#NeckStripControlModel");
+    opendModal.show();
+    render(dataObject);
+  } else if (section == "sides") {
+    opendModal = new bootstrap.Modal("#SideStripControlModel");
+    opendModal.show();
+    render(dataObject);
+  } else if (section == "arm") {
+    opendModal = new bootstrap.Modal("#HandStripControlModel");
+    opendModal.show();
+    render(dataObject);
+  }
+}
+
+// neck strip control section
+let neckStripArray = [];
+let selectedNeckLine;
+function neckLineCounter(event) {
+  let count = event.target.value;
+  neckStripArray = [];
+  selectedNeckLine = 0;
+
+  for (let x = 0; x < count; x++) {
+    let lineObejct = {
+      color: "white",
+      thickness: "2",
+    };
+    neckStripArray.push(lineObejct);
+  }
+
+  let NeckLineSelector = document.getElementById("NeckLineSelector");
+  NeckLineSelector.innerHTML = "";
+
+  let option = document.createElement("option");
+  option.value = 0;
+  option.innerText = "No Lines";
+  NeckLineSelector.appendChild(option);
+  for (let i = 1; i <= neckStripArray.length; i++) {
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerText = "Line " + i;
+    NeckLineSelector.appendChild(option);
+  }
+
+  // color thicknes section opener
+  let section = document.getElementById("neckLineControlSection");
+  if (count == 0) {
+    section.classList.add("d-none");
+    section.classList.remove("d-block");
+  } else {
+    section.classList.add("d-block");
+    section.classList.remove("d-none");
+  }
+}
+
+function selectNeckLine(event) {
+  selectedNeckLine = event.target.value - 1;
+}
+
+function updateNeckStripData(event, type) {
+  let value = event.target.value;
+  if (type == "color") {
+    neckStripArray[selectedNeckLine].color = value;
+  } else if (type == "thickness") {
+    neckStripArray[selectedNeckLine].thickness = value;
+  }
+}
+
+function updateNeckLineData() {
+  dataObject.views.strips.neck = neckStripArray;
+  render(dataObject);
+}
+
+// let selectedArmLine;
+// let selectedSidesLine;
+// function chagneSelectedLine(type) {
+//   if (type == "neck") {
+//     let value = document.getElementById("NeckLineSelector").value;
+//     selectedNeckLine = value;
+//     document.getElementById("neckLineControlSection1");
+//   } else if (type == "arm") {
+//     let value = document.getElementById("ArmLineSelector").value;
+//     selectedArmLine = value;
+//   } else if (type == "sides") {
+//     let value = document.getElementById("SidesLineSelector").value;
+//     selectedSidesLine = value;
+//   }
+// }
+
+//
+//
+//
+//
+// test
+document.addEventListener("DOMContentLoaded", () => {
+  controllerModelOpen("neck");
+});
+
+function consolelog(params) {
+  console.log(params);
 }
