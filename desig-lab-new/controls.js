@@ -12,41 +12,6 @@ function controllerModelOpen(section) {
   }
 }
 
-function tShirtControlViewChanger(side) {
-  for (let x = 1; x <= 4; x++) {
-    let element1 = document.getElementById("tshirtStripControl" + x);
-    element1.classList.add("d-none");
-    element1.classList.remove("d-block");
-
-    let element2 = document.getElementById("tshirtImageControl" + x);
-    element2.classList.add("d-none");
-    element2.classList.remove("d-block");
-  }
-
-  let itemNum = 0;
-  if (side == "front") {
-    itemNum = 1;
-  } else if (side == "back") {
-    itemNum = 2;
-  } else if (side == "left") {
-    itemNum = 3;
-  } else if (side == "right") {
-    itemNum = 4;
-  }
-
-  let selectedElement1 = document.getElementById(
-    "tshirtStripControl" + itemNum
-  );
-  selectedElement1.classList.add("d-block");
-  selectedElement1.classList.remove("d-none");
-
-  let selectedElement2 = document.getElementById(
-    "tshirtImageControl" + itemNum
-  );
-  selectedElement2.classList.add("d-block");
-  selectedElement2.classList.remove("d-none");
-}
-
 // gender
 let genderModel;
 function openGenderModel() {
@@ -238,6 +203,8 @@ function changeProduct(type) {
   dataObject.clothType = type;
   document.getElementById("clothTypeIndicationBtn").innerText = type;
   render(dataObject);
+
+  changeControlViewSection(type);
 }
 
 function templateSection(type) {
@@ -259,19 +226,6 @@ function sleeveSelection(type) {
   render(dataObject);
 }
 
-function updateControlLayoutBaseVariable(value) {
-  let elements = document.querySelectorAll(".canvasOverlyInner");
-  elements.forEach((element) => {
-    if (value !== element.id) {
-      element.classList.add("d-none");
-      element.classList.remove("d-block");
-    } else {
-      element.classList.add("d-block");
-      element.classList.remove("d-none");
-    }
-  });
-}
-
 function tShirtButtonNeckSection(buttonType) {
   dataObject.clothOption.buttons = buttonType;
   productControlModel.hide();
@@ -287,3 +241,39 @@ function tShirtButtonNeckSection(buttonType) {
 //     dataObject.views.strips.neck.push(element.value);
 //   });
 // });
+
+function viewChange(side) {
+  dataObject.views.active = side;
+  render(dataObject);
+
+  changeControlViewSection(dataObject.clothType);
+}
+
+function changeControlViewSection(type) {
+  let elements = document.querySelectorAll(".canvasOverlyInner");
+  elements.forEach((element) => {
+    if (type !== element.id) {
+      element.classList.add("d-none");
+      element.classList.remove("d-block");
+    } else {
+      element.classList.add("d-block");
+      element.classList.remove("d-none");
+      controlSideSetionOpener(element);
+    }
+  });
+}
+
+function controlSideSetionOpener(item) {
+  let currentSide = dataObject.views.active;
+
+  let elements = item.querySelectorAll(".control-sectinos-sides");
+  elements.forEach((element) => {
+    if (element.dataset.controlside == currentSide) {
+      element.classList.add("d-block");
+      element.classList.remove("d-none");
+    } else {
+      element.classList.add("d-none");
+      element.classList.remove("d-block");
+    }
+  });
+}

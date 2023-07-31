@@ -208,8 +208,8 @@ function logout() {
 
 function openNavigationSideBar() {
   let sidebar = document.querySelector(".navbar-link-container");
-  window.addEventListener("resize",()=>{
-    if (parseInt(window.innerWidth)> 768) {
+  window.addEventListener("resize", () => {
+    if (parseInt(window.innerWidth) > 768) {
       sidebar.style.display = "flex";
     }
   });

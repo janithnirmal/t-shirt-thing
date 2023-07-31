@@ -1,7 +1,7 @@
 const dataObject = {
   sizeQuntitySets: [],
   gender: "male",
-  clothType: "bottom",
+  clothType: "jacket",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
   mainColorSaturateValue: 1,
@@ -60,7 +60,7 @@ function render(dataObject) {
   // render view build
   const canvas = document.createElement("canvas");
   canvas.id = "designPanelCanvas";
-  canvas.style.backgroundColor = "blue"; // test canvas bg color
+  // canvas.style.backgroundColor = "blue"; // test canvas bg color
 
   //  render setup
   canvas.width = parseInt(
@@ -96,12 +96,12 @@ function clothRenderer(canvas, dataObject) {
   image.setAttribute(
     "src",
     "images/cloths/" +
-    dataObject.clothType +
-    "-" +
-    dataObject.views.active +
-    "_" +
-    dataObject.gender +
-    ".png"
+      dataObject.clothType +
+      "-" +
+      dataObject.views.active +
+      "_" +
+      dataObject.gender +
+      ".png"
   );
 
   let imageWidth = window.getComputedStyle(canvas).width;
@@ -550,7 +550,7 @@ function stripDrawerBottom(ctx, stripObjects, side) {
   } else if (side == "back") {
   } else if (side == "left") {
     for (let x = 0; x <= sidesStripsArray.length; x++) {
-      if ((x == 0)) {
+      if (x == 0) {
         drawLine(
           ctx,
           197,
@@ -616,7 +616,7 @@ function stripDrawerShort(ctx, stripObjects, side) {
   } else if (side == "back") {
   } else if (side == "left") {
     for (let x = 0; x <= sidesStripsArray.length; x++) {
-      if ((x == 0)) {
+      if (x == 0) {
         drawLine(
           ctx,
           210,
@@ -634,7 +634,7 @@ function stripDrawerShort(ctx, stripObjects, side) {
           210,
           490,
           armStripsArray[1].thickness,
-          armStripsArray[1].color,
+          armStripsArray[1].color
         );
       }
     }
@@ -682,7 +682,7 @@ function stripDrawerJacket(ctx, stripObjects, side) {
   } else if (side == "back") {
   } else if (side == "left") {
     for (let x = 0; x <= sidesStripsArray.length; x++) {
-      if ((x == 0)) {
+      if (x == 0) {
         drawLine(
           ctx,
           210,
@@ -767,9 +767,6 @@ function stripDrawerJacket(ctx, stripObjects, side) {
   }
 }
 
-
-
-
 // draw lines
 function drawLine(ctx, startX, startY, endX, endY, thickness, color) {
   // Set line attributes
@@ -840,10 +837,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   render(dataObject);
 // });
 
-function viewChange(side) {
-  dataObject.views.active = side;
-  render(dataObject);
-}
 function changeProduct(dress) {
   dataObject.clothType = dress;
   render(dataObject);

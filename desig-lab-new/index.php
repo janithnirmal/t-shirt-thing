@@ -182,32 +182,32 @@ require_once("./backend/config.php");
                                                             <div class="product-control-card-item">
                                                                 <span>Polo T Shirt</span>
                                                                 <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
-                                                                <button onclick="changeProduct('polo-t-shirt'); updateControlLayoutBaseVariable('tshirt');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('polo-t-shirt'); " class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Cotten T Shirt</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="changeProduct('cotton-t-shirt'); updateControlLayoutBaseVariable('tshirt');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('cotton-t-shirt');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Bottom</span>
                                                                 <img class="product-control-item-img" src="images/cloths/bottom-front_male.png" />
-                                                                <button onclick="changeProduct('bottom'); updateControlLayoutBaseVariable('bottom');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('bottom'); " class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Jacket</span>
                                                                 <img class="product-control-item-img" src="images/cloths/jacket-front_male.png" />
-                                                                <button onclick="changeProduct('jacket'); updateControlLayoutBaseVariable('jacket');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('jacket'); " class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Shorts</span>
                                                                 <img class="product-control-item-img" src="images/cloths/short-front_male.png" />
-                                                                <button onclick="changeProduct('short'); updateControlLayoutBaseVariable('short');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('short');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>Singlet</span>
                                                                 <img class="product-control-item-img" src="images/cloths/singlet-front_male.png" />
-                                                                <button onclick="changeProduct('singlet'); updateControlLayoutBaseVariable('singlet');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="changeProduct('singlet'); " class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -366,145 +366,109 @@ require_once("./backend/config.php");
             </div>
 
             <!-- middle panel -->
-            <div class="section1-panel section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
-                <div class="t-shirt-panel-container">
+            <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
+                <div class="t-shirt-panel-container ">
                     <div class="canvasOverly">
-                        <div id="tshirtPolo" class="canvasOverlyInner d-block">
-                            <!-- strip controls -->
-                            <div id="tshirtStripControl1" class="canvasOverlyInner-front d-block">
-                                <div class="tshirt-controller tshirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
-                                <div class="tshirt-controller tshirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-controller tshirt-arm-front-left" onclick="controllerModelOpen('arm')"></div> -->
-                                <!-- <div class="tshirt-controller tshirt-arm-front-right" onclick="controllerModelOpen('arm')"></div> -->
-                            </div>
-                            <div id="tshirtStripControl2" class="canvasOverlyInner-back d-none">
-                                <div class="tshirt-controller tshirt-coller-back" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-controller tshirt-arm-back-right" onclick="controllerModelOpen('arm')"></div> -->
-                                <!-- <div class="tshirt-controller tshirt-arm-back-left" onclick="controllerModelOpen('arm')"></div> -->
-                            </div>
-                            <div id="tshirtStripControl3" class="canvasOverlyInner-left d-none">
-                                <div class="tshirt-controller tshirt-coller-left" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-controller tshirt-arm-left-right" onclick="controllerModelOpen('arm')"></div> -->
-                            </div>
-                            <div id="tshirtStripControl4" class="canvasOverlyInner-right d-none">
-                                <div class="tshirt-controller tshirt-coller-right" onclick="controllerModelOpen('neck')"></div>
-                                <!-- <div class="tshirt-controller tshirt-arm-right-right" onclick="controllerModelOpen('arm')"></div> -->
-                            </div>
+                        <div id="polo-t-shirt" class="canvasOverlyInner  d-block">
+                            <div data-controlside="front" id="polo-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                <div class="strip-controls">
+                                    <!-- stips neck-->
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-left"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-right"></div>
 
-                            <!-- image controls -->
-                            <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-front-topleft"></button>
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-front-topright "></button>
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-front-mid"></button>
-                            </div>
-                            <div id="tshirtImageControl2" class="canvasOverlyInner-back d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-top"></button>
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-bottom"></button>
-                            </div>
-                            <div id="tshirtImageControl3" class="canvasOverlyInner-left d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-left-hand"></button>
-                            </div>
-                            <div id="tshirtImageControl4" class="canvasOverlyInner-right d-none">
-                                <button class=" tshirt-controller btn-style-remover tshirt-image-control-right-hand"></button>
+                                    <!-- strips arm -->
 
+                                    <!-- strips sides -->
+                                </div>
+                            </div>
+                            <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                polo-2
+                            </div>
+                            <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                polo-3
+                            </div>
+                            <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                polo-4
                             </div>
                         </div>
-                        <div id="short" class="canvasOverlyInner d-none">
-                            <!-- strip controls -->
-
-
-                            <!-- image controls -->
-                            <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
-                                <button class="tshirt-controller btn-style-remover short-image-control-front-topleft"></button>
-                                <button class="tshirt-controller btn-style-remover short-image-control-front-topright "></button>
-                                <button class="tshirt-controller btn-style-remover short-image-control-front-mid"></button>
+                        <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
+                            <div data-controlside="front" id="cotton-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                cotton-1
                             </div>
-                            <div id="tshirtImageControl2" class="canvasOverlyInner-back d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-top"></button>
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-bottom"></button>
+                            <div data-controlside="back" id="cotton-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                cotton-2
                             </div>
-                            <div id="tshirtImageControl3" class="canvasOverlyInner-left d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-left-hand"></button>
+                            <div data-controlside="left" id="cotton-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                cotton-3
                             </div>
-                            <div id="tshirtImageControl4" class="canvasOverlyInner-right d-none">
-                                <button class=" tshirt-controller btn-style-remover tshirt-image-control-right-hand"></button>
-
+                            <div data-controlside="right" id="cotton-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                cotton-4
                             </div>
                         </div>
-                        <div id="bottom" class="canvasOverlyInner d-none">
-                            <!-- strip controls -->
-
-
-
-                            <!-- image controls -->
-                            <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
-                                <button class="tshirt-controller btn-style-remover bottom-image-control-front-topleft"></button>
-                                <button class="tshirt-controller btn-style-remover bottom-image-control-front-topright "></button>
-                                <button class="tshirt-controller btn-style-remover bottom-image-control-front-mid"></button>
+                        <div id="short" class="canvasOverlyInner  d-none">
+                            <div data-controlside="front" id="short-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                short-1
                             </div>
-                            <div id="tshirtImageControl2" class="canvasOverlyInner-back d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-top"></button>
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-bottom"></button>
+                            <div data-controlside="back" id="short-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                short-2
                             </div>
-                            <div id="tshirtImageControl3" class="canvasOverlyInner-left d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-left-hand"></button>
+                            <div data-controlside="left" id="short-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                short-3
                             </div>
-                            <div id="tshirtImageControl4" class="canvasOverlyInner-right d-none">
-                                <button class=" tshirt-controller btn-style-remover tshirt-image-control-right-hand"></button>
-
+                            <div data-controlside="right" id="short-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                short-4
                             </div>
                         </div>
-                        <div id="singlet" class="canvasOverlyInner d-none">
-                            <!-- strip controls -->
-
-
-
-                            <!-- image controls -->
-                            <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
-                                <button class="tshirt-controller btn-style-remover singlet-image-control-front-mid"></button>
+                        <div id="bottom" class="canvasOverlyInner  d-none">
+                            <div data-controlside="front" id="bottom-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                bottom-1
                             </div>
-                            <div id="tshirtImageControl2" class="canvasOverlyInner-back d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-top"></button>
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-bottom"></button>
+                            <div data-controlside="back" id="bottom-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                bottom-2
                             </div>
-                            <div id="tshirtImageControl3" class="canvasOverlyInner-left d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-left-hand"></button>
+                            <div data-controlside="left" id="bottom-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                bottom-3
                             </div>
-                            <div id="tshirtImageControl4" class="canvasOverlyInner-right d-none">
-                                <button class=" tshirt-controller btn-style-remover tshirt-image-control-right-hand"></button>
-
+                            <div data-controlside="right" id="bottom-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                bottom-4
                             </div>
                         </div>
-                        <div id="jacket" class="canvasOverlyInner d-none">
-                            <!-- strip controls -->
-
-
-                            <!-- image controls -->
-                            <div id="tshirtImageControl1" class="canvasOverlyInner-front d-block">
-                                <button class="tshirt-controller btn-style-remover jacket-image-control-front-topleft"></button>
-                                <button class="tshirt-controller btn-style-remover jacket-image-control-front-topright "></button>
-                                <button class="tshirt-controller btn-style-remover jacket-image-control-front-mid"></button>
+                        <div id="singlet" class="canvasOverlyInner  d-none">
+                            <div data-controlside="front" id="singlet-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                singlet-1
                             </div>
-                            <div id="tshirtImageControl2" class="canvasOverlyInner-back d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-top"></button>
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-back-bottom"></button>
+                            <div data-controlside="back" id="singlet-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                singlet-2
                             </div>
-                            <div id="tshirtImageControl3" class="canvasOverlyInner-left d-none">
-                                <button class="tshirt-controller btn-style-remover tshirt-image-control-left-hand"></button>
+                            <div data-controlside="left" id="singlet-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                singlet-3
                             </div>
-                            <div id="tshirtImageControl4" class="canvasOverlyInner-right d-none">
-                                <button class=" tshirt-controller btn-style-remover tshirt-image-control-right-hand"></button>
-
+                            <div data-controlside="right" id="singlet-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                singlet-4
+                            </div>
+                        </div>
+                        <div id="jacket" class="canvasOverlyInner  d-none">
+                            <div data-controlside="front" id="jacket-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                jacket-1
+                            </div>
+                            <div data-controlside="back" id="jacket-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                jacket-2
+                            </div>
+                            <div data-controlside="left" id="jacket-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                jacket-3
+                            </div>
+                            <div data-controlside="right" id="jacket-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                jacket-4
                             </div>
                         </div>
                     </div>
-                    <div id="canvas" class="t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
+                    <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
                 </div>
 
                 <!-- model contianer -->
                 <div class="modelContainer">
                     <!-- Modal - polo neck strip -->
-                    <div class="modal fade" id="tshirtPoloNeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="polo-t-shirt-NeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -577,7 +541,80 @@ require_once("./backend/config.php");
                         </div>
                     </div>
                     <!-- modal - polo side strip -->
-                    <div class="modal fade" id="tshirtPoloSideStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="polo-t-shirt-HandStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Side Strip Lines</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Line Count</div>
+                                        <input type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" id="neckStripCount" />
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Selected Line</div>
+                                        <select id="tshirtNeckLineSelector" class="form-control">
+                                            <option value="0">No Lines</option>
+                                        </select>
+                                    </div>
+                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection1">
+                                        <div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="tshirtNeckStripColor1" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="tshirtNeckStripThickness1" type="number" class="form-control" min="0" max="3">
+                                                </div>
+                                            </div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input type="number" class="form-control" min="0" max="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection2">
+                                        <div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="tshirtNeckStripColor2" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="tshirtNeckStripThickness2" type="number" class="form-control" min="0" max="3">
+                                                </div>
+                                            </div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input type="number" class="form-control" min="0" max="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection3">
+                                        <div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="tshirtNeckStripColor3" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="tshirtNeckStripThickness3" type="number" class="form-control" min="0" max="3">
+                                                </div>
+                                            </div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input type="number" class="form-control" min="0" max="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="updateTshirtNeckArray()">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal - polo side strip -->
+                    <div class="modal fade" id="polo-t-shirt-SideStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -743,30 +780,6 @@ require_once("./backend/config.php");
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="dropdown-menu1 basic-styling flex-column" id="dropdownContent1">
-                            <div class="color-row" style="max-width: 350px">
-                                <div class="color-option" onclick="colorUpdate(0); setColor('red')" style="background-color: red"></div>
-                                <div class="color-option" onclick="colorUpdate(230); setColor('blue')" style="background-color: blue"></div>
-                                <div class="color-option" onclick="colorUpdate(120); setColor('green')" style="background-color: green"></div>
-                                <div class="color-option" onclick="colorUpdate(60); setColor('yellow')" style="background-color: yellow"></div>
-                                <div class="color-option" onclick="colorUpdate(35); setColor('orange')" style="background-color: orange"></div>
-                                <div class="color-option" onclick="colorUpdate(270); setColor('purple')" style="background-color: purple"></div>
-                                <div class="color-option" onclick="colorUpdate(300); setColor('pink')" style="background-color: pink"></div>
-                                <div class="color-option" onclick="colorUpdate(160); setColor('teal')" style="background-color: teal"></div>
-                                <div class="color-option" onclick="colorUpdate(0); setColor('gray')" style="background-color: gray"></div>
-                                <div class="color-option" onclick="colorUpdate(35); setColor('brown')" style="background-color: brown"></div>
-                                <div class="color-option" onclick="colorUpdate(180); setColor('cyan')" style="background-color: cyan"></div>
-                                <div class="color-option" onclick="colorUpdate(330); setColor('magenta')" style="background-color: magenta"></div>
-                                <div class="color-option" onclick="colorUpdate(150); setColor('lime')" style="background-color: lime"></div>
-                                <div class="color-option" onclick="colorUpdate(0); setColor('silver')" style="background-color: silver"></div>
-                                <div class="color-option" onclick="colorUpdate(280); setColor('indigo')" style="background-color: indigo"></div>
-                                <div class="color-option" onclick="colorUpdate(70); setColor('gold')" style="background-color: gold"></div>
-                                <div class="color-option" onclick="colorUpdate(40); setColor('maroon')" style="background-color: maroon"></div>
-                                <div class="color-option" onclick="colorUpdate(260); setColor('navy')" style="background-color: navy"></div>
-                            </div>
-                        </div> -->
-
                     </div>
                 </div>
 
@@ -971,41 +984,24 @@ require_once("./backend/config.php");
                 <!-- navigation control -->
                 <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
                     <div class="t_changebtnbox d-flex  flex-row flex-md-column" id="viewPortChange">
-                        <button class="t_changebtn t_changebtn1" onclick="tShirtControlViewChanger('front'); viewChange('front');" id="btn9">
+                        <button class="t_changebtn t_changebtn1" onclick="viewChange('front');" id="btn9">
                             <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
                             <p class="t_changebtnpara">Front view</p>
                         </button>
-                        <button class="t_changebtn t_changebtn2" onclick="tShirtControlViewChanger('left'); viewChange('left');">
+                        <button class="t_changebtn t_changebtn2" onclick="viewChange('left');">
                             <div class="p-3 t_changebtnimg t_changebtnimg2"></div>
                             <p class="t_changebtnpara">Left view</p>
                         </button>
-                        <button class="t_changebtn t_changebtn3" onclick="tShirtControlViewChanger('back'); viewChange('back');">
+                        <button class="t_changebtn t_changebtn3" onclick="viewChange('back');">
                             <div class="p-3 t_changebtnimg t_changebtnimg3"></div>
                             <p class="t_changebtnpara">Back view</p>
                         </button>
-                        <button class="t_changebtn t_changebtn4" onclick="tShirtControlViewChanger('right'); viewChange('right');">
+                        <button class="t_changebtn t_changebtn4" onclick="viewChange('right');">
                             <div class="p-3 t_changebtnimg t_changebtnimg4"></div>
                             <p class="t_changebtnpara">Right view</p>
                         </button>
                     </div>
                 </div>
-
-                <!-- <input type="number" id="colorInput">
-                <div class="d-flex flex-column">
-                    <button onclick="viewChange('front');">front</button>
-                    <button onclick="viewChange('back');">back</button>
-                    <button onclick="viewChange('left');">Left</button>
-                    <button onclick="viewChange('right');">right</button>
-                </div>
-                <div class="my-2 d-flex flex-column">
-                    <h6 class="text-center fw-bold text-dark">Tester</h6>
-                    <input type="number" value="100" id="startingPointXTest">
-                    <input type="number" value="100" id="startingPointYTest">
-                    <input type="number" value="200" id="endingPointXTest">
-                    <input type="number" value="200" id="endingPointYTest">
-                    <input type="number" value="5" id="thicknessTest">
-                    <input type="text" value="white" id="colorTest">
-                </div> -->
             </div>
         </div>
     </div>
