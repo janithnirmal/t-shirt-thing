@@ -2,12 +2,15 @@
   position: absolute;
   /* background-color: red; */
   cursor: pointer;
-  border: 2px rgba(0, 0, 0, 0.3) dashed;
+  border: 2px rgba(0, 0, 0, 0.7) dashed;
+  transition: 400ms;
 }
 
 .controller-indication-design:hover,
 .controller-indication-design:focus {
-  border: 2px rgba(49, 49, 49, 0.414) dashed;
+  border: 2px rgba(49, 49, 49, 0.9) dashed;
+  scale: 105%;
+  transition: 400ms;
 }
 #polo-t-Shirt {
   display: none;
@@ -60,76 +63,70 @@
   margin-top: 40px;
   rotate: 30deg;
 }
-.polo-t-shirt-coller-front-right-arm{
+.polo-t-shirt-front-right-arm {
   width: 80px;
   height: 20px;
   margin-left: -9px;
   margin-top: 235px;
   rotate: 14deg;
-
 }
-.polo-t-shirt-coller-front-left-arm{
+.polo-t-shirt-front-left-arm {
   width: 80px;
   height: 20px;
   margin-left: 325px;
   margin-top: 235px;
   rotate: -14deg;
-
 }
-.polo-t-shirt-coller-back-right-arm{
+.polo-t-shirt-back-right-arm {
   width: 80px;
   height: 20px;
   margin-left: -4px;
   margin-top: 207px;
   rotate: 14deg;
-
 }
-.polo-t-shirt-coller-back-left-arm{
+.polo-t-shirt-back-left-arm {
   width: 80px;
   height: 20px;
   margin-left: 320px;
   margin-top: 207px;
   rotate: -14deg;
-
 }
-.polo-t-shirt-coller-left-arm{
+.polo-t-shirt-left-arm {
   width: 100px;
   height: 20px;
   margin-left: 165px;
   margin-top: 207px;
   rotate: 1deg;
-
 }
-.polo-t-shirt-coller-left{
+.polo-t-shirt-coller-left {
   width: 105px;
   height: 30px;
   margin-left: 140px;
   margin-top: 10px;
   rotate: -30deg;
 }
-.polo-t-shirt-left-straight-line{
+.polo-t-shirt-left-straight-line {
   width: 5px;
   height: 300px;
   margin-left: 207px;
   margin-top: 220px;
   rotate: 3deg;
 }
-.polo-t-shirt-coller-right-arm{
+.polo-t-shirt-right-arm {
   width: 100px;
   height: 20px;
   margin-left: 125px;
   margin-top: 207px;
   rotate: 1deg;
-
 }
-.polo-t-shirt-coller-right{
+.polo-t-shirt-coller-right {
   width: 105px;
   height: 30px;
   margin-left: 147px;
   margin-top: 10px;
   rotate: 30deg;
 }
-.polo-t-shirt-right-straight-line{
+.polo-t-shirt-right-straight-line {
   width: 8px;
   height: 300px;
   margin-left: 178px;
@@ -232,40 +229,40 @@
 }
 
 /* bottom controls  */
-.bottom-leg-left{
+.bottom-leg-left {
   margin-left: 195px;
   margin-top: 3px;
   width: 12px;
   height: 492px;
   rotate: -2deg;
 }
-.bottom-leg-right{
+.bottom-leg-right {
   margin-left: 183px;
   margin-top: 3px;
   width: 12px;
   height: 492px;
   rotate: 2deg;
 }
-.jacket-arm-left-top{
+.jacket-arm-left-top {
   margin-left: 209px;
   margin-top: 69px;
   width: 12px;
   height: 207px;
 }
-.jacket-arm-left-bottom{
+.jacket-arm-left-bottom {
   margin-left: 170px;
   margin-top: 266px;
   width: 12px;
   height: 201px;
   rotate: 24deg;
 }
-.jacket-arm-right-top{
+.jacket-arm-right-top {
   margin-left: 179px;
   margin-top: 69px;
   width: 12px;
   height: 207px;
 }
-.jacket-arm-right-bottom{
+.jacket-arm-right-bottom {
   margin-left: 218px;
   margin-top: 266px;
   width: 12px;
@@ -273,14 +270,14 @@
   rotate: -24deg;
 }
 
-.short-leg-left{
+.short-leg-left {
   margin-left: 204px;
   margin-top: 65px;
   width: 13px;
   height: 402px;
   rotate: 2deg;
 }
-.short-leg-right{
+.short-leg-right {
   margin-left: 181px;
   margin-top: 65px;
   width: 13px;

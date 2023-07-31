@@ -373,15 +373,15 @@ require_once("./backend/config.php");
                             <div data-controlside="front" id="polo-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
                                 <div class="strip-controls">
                                     <!-- stips neck-->
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-left"></div>
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-right"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
 
 
 
 
                                     <!-- strips arm -->
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-left-arm"></div>
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-right-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-front-left-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-front-right-arm"></div>
 
 
 
@@ -391,31 +391,27 @@ require_once("./backend/config.php");
                             <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
                                 polo-2
                                 <!--strips neck-->
-                                <div class="controller-indication-design polo-t-shirt-coller-back"></div>
-
-                                    <!-- strips arm -->
-                                    <div class="controller-indication-design polo-t-shirt-coller-back-left-arm"></div>
-                                    <div class="controller-indication-design polo-t-shirt-coller-back-right-arm"></div>
-
-
-
+                                <div class="controller-indication-design polo-t-shirt-coller-back" onclick="controllerModelOpen('neck')"></div>
+                                <!-- strips arm -->
+                                <div class="controller-indication-design polo-t-shirt-back-left-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-back-right-arm"></div>
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 polo-3
                                 <!-- stips neck-->
-                                <div class="controller-indication-design polo-t-shirt-coller-left"></div>
+                                <div class="controller-indication-design polo-t-shirt-coller-left" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-coller-left-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-left-arm"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-left-straight-line"></div>
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 polo-4
                                 <!-- stips neck-->
-                                <div class="controller-indication-design polo-t-shirt-coller-right"></div>
+                                <div class="controller-indication-design polo-t-shirt-coller-right" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-coller-right-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-right-arm"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-right-straight-line"></div>
                             </div>
@@ -555,7 +551,7 @@ require_once("./backend/config.php");
             <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
 
                 <!-- size & qty -->
-                <div class="basic-styling right-side-box1 d-none d-md-block">
+                <div class="basic-styling right-side-box1 ">
                     <div class="right-side-box-btn-container">
                         <div class="d-flex-column">
                             <button style="background-color: #2596be" class="right-side-box-btn">
