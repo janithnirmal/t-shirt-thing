@@ -155,7 +155,7 @@ require_once("./backend/config.php");
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
                                                     <button data-btntype="Template" id="productControlNavigationChangeTemplate" class="d-none btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Template');">
-                                                        <div class="product-control-number-icon">3</div>
+                                                        <div class="product-control-number-icon">4</div>
                                                         <span class="product-control-number-text fw-light">Select Template</span>
                                                     </button>
                                                 </div>
@@ -257,33 +257,33 @@ require_once("./backend/config.php");
                                                             <div class="product-control-card-item">
                                                                 <span>2 Buttons Only</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('2buttons');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="tShirtButtonNeckSection('2 Buttons + Only');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>2 Buttons + Open</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('2buttonsopen')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="tShirtButtonNeckSection('2 Buttons + Open')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>3 Buttons Only</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('3buttons');" class="btn btn-secondary">Select</button>
+                                                                <button onclick="tShirtButtonNeckSection('3 Buttons Only');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>3 Buttons + Open</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('3buttonopen')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="tShirtButtonNeckSection('3 Buttons + Open')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="product-control-footer">
+                                                <!-- <div class="product-control-footer">
                                                     <hr>
                                                     <div class="product-control-nav-btn d-flex justify-content-between py-2">
                                                         <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Previous</div>
                                                         <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Next</div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>

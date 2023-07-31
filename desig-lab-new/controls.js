@@ -182,11 +182,11 @@ function productControlNavigationChange(option) {
         element.dataset.btntype == "Gender" ||
         element.dataset.btntype == "Type"
       ) {
-        element.classList.add("d-none");
-        element.classList.remove("d-flex");
-      } else {
         element.classList.add("d-flex");
         element.classList.remove("d-none");
+      } else {
+        element.classList.add("d-none");
+        element.classList.remove("d-flex");
       }
     });
   }
@@ -267,4 +267,11 @@ function updateControlLayoutBaseVariable(value) {
       element.classList.remove("d-none");
     }
   });
+}
+
+function tShirtButtonNeckSection(buttonType) {
+  dataObject.clothOption.buttons = buttonType;
+  productControlModel.hide();
+  render(dataObject);
+  console.log(dataObject.clothOption.buttons);
 }

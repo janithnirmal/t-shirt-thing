@@ -25,7 +25,7 @@ if ($access->isLoggedIn()) {
             <button class="btn-style-remover text-secondary" href="#" onclick="openSavedDesignModal();">Designs</button>
             <a href="orders.php">Orders</a>
             <a href="">Help</a>
-            <a href="">
+            <a href="" class="d-none">
                 Reviews
                 <i class="fas fa-star"></i>
             </a>

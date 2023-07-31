@@ -1,12 +1,4 @@
 const dataObject = {
-  test: {
-    startX: 100,
-    startY: 100,
-    endX: 200,
-    endY: 200,
-    thickness: 3,
-    color: "white",
-  },
   sizeQuntitySets: [],
   gender: "male",
   clothType: "polo-t-shirt",
@@ -17,6 +9,7 @@ const dataObject = {
   clothOption: {
     sleves: "long",
     neck: "v",
+    buttons: "2 Buttons Only",
   },
   views: {
     active: "front",
@@ -43,37 +36,6 @@ const dataObject = {
         },
       ],
     },
-    frontSideObject: {
-      imageSections: {
-        topLeft: {
-          imgUri: null,
-          position: {},
-          size: {
-            width: 50,
-            height: 50,
-          },
-        },
-        topRight: {
-          imgUri: null,
-          position: {},
-          size: {
-            width: 50,
-            height: 50,
-          },
-        },
-        center: {
-          imgUri: null,
-          position: {},
-          size: {
-            width: 50,
-            height: 50,
-          },
-        },
-      },
-    },
-    backSideObject: {},
-    leftSideObject: {},
-    rightSideObject: {},
   },
 };
 
