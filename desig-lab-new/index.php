@@ -376,19 +376,48 @@ require_once("./backend/config.php");
                                     <div class="controller-indication-design polo-t-shirt-coller-front-left"></div>
                                     <div class="controller-indication-design polo-t-shirt-coller-front-right"></div>
 
-                                    <!-- strips arm -->
 
-                                    <!-- strips sides -->
+
+
+                                    <!-- strips arm -->
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-left-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-right-arm"></div>
+
+
+
+                                    <!-- strips box -->
                                 </div>
                             </div>
                             <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
                                 polo-2
+                                <!--strips neck-->
+                                <div class="controller-indication-design polo-t-shirt-coller-back"></div>
+
+                                    <!-- strips arm -->
+                                    <div class="controller-indication-design polo-t-shirt-coller-back-left-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-back-right-arm"></div>
+
+
+
+
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 polo-3
+                                <!-- stips neck-->
+                                <div class="controller-indication-design polo-t-shirt-coller-left"></div>
+                                <!-- strips arm -->
+                                <div class="controller-indication-design polo-t-shirt-coller-left-arm"></div>
+                                <!-- straight line -->
+                                <div class="controller-indication-design polo-t-shirt-left-straight-line"></div>
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 polo-4
+                                <!-- stips neck-->
+                                <div class="controller-indication-design polo-t-shirt-coller-right"></div>
+                                <!-- strips arm -->
+                                <div class="controller-indication-design polo-t-shirt-coller-right-arm"></div>
+                                <!-- straight line -->
+                                <div class="controller-indication-design polo-t-shirt-right-straight-line"></div>
                             </div>
                         </div>
                         <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
@@ -414,9 +443,11 @@ require_once("./backend/config.php");
                             </div>
                             <div data-controlside="left" id="short-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 short-3
+                                <div class="controller-indication-design short-leg-left"></div>
                             </div>
                             <div data-controlside="right" id="short-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 short-4
+                                <div class="controller-indication-design short-leg-right"></div>
                             </div>
                         </div>
                         <div id="bottom" class="canvasOverlyInner  d-none">
@@ -428,9 +459,12 @@ require_once("./backend/config.php");
                             </div>
                             <div data-controlside="left" id="bottom-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 bottom-3
+                                <div class="controller-indication-design bottom-leg-left"></div>
+
                             </div>
                             <div data-controlside="right" id="bottom-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 bottom-4
+                                <div class="controller-indication-design bottom-leg-right"></div>
                             </div>
                         </div>
                         <div id="singlet" class="canvasOverlyInner  d-none">
@@ -456,9 +490,13 @@ require_once("./backend/config.php");
                             </div>
                             <div data-controlside="left" id="jacket-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 jacket-3
+                                <div class="controller-indication-design jacket-arm-left-top"></div>
+                                <div class="controller-indication-design jacket-arm-left-bottom"></div>
                             </div>
                             <div data-controlside="right" id="jacket-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 jacket-4
+                                <div class="controller-indication-design jacket-arm-right-top"></div>
+                                <div class="controller-indication-design jacket-arm-right-bottom"></div>
                             </div>
                         </div>
                     </div>
@@ -883,7 +921,7 @@ require_once("./backend/config.php");
         </div>
     </div>
 
-    <footer class="footer bg-dark text-white  mt-2 " style="bottom: 0; width:100%;">
+    <footer class="footer  position-absolute bg-dark text-white mt-sm-4">
         <div class="container text-center">
             <!-- Footer content goes here -->
             <p>this is just dummy content</p>

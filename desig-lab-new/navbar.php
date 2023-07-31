@@ -34,7 +34,11 @@ if ($access->isLoggedIn()) {
         </div>
     </div>
     <div class="d-flex h-100 justify-content-center align-items-center nav-bar-button-section">
-        <a href=""><img class="nav-img-contact navbar-talk-image" src="images/nav-image.png" alt="" /></a>
+        <a href=""><img class="nav-img-contact navbar-talk-image" src="images/contact.png" alt="" /></a>
+        <div class="nav-contact-para d-flex flex-column ">
+            <span class="nav-contact-para1">(+94)70 1234567</span>
+            <span class="nav-contact-para2">Talk to an Expert</span>
+        </div>
         <a href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a>
         <?php
         if ($loggedUserData) {
