@@ -1179,4 +1179,7 @@ nav i {
     width: 70px;
     font-size: 11px;
   }
+  .footer{
+    width: 170%;
+  }
 }
