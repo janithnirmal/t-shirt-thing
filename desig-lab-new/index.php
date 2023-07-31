@@ -460,7 +460,7 @@ require_once("./backend/config.php");
                             <div data-controlside="left" id="bottom-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 bottom-3
                                 <div class="controller-indication-design bottom-leg-left"></div>
-                                
+
                             </div>
                             <div data-controlside="right" id="bottom-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 bottom-4
@@ -1098,7 +1098,7 @@ require_once("./backend/config.php");
         </div>
     </div>
 
-    <footer class="footer bg-dark text-white  mt-2 " style="bottom: 0; width:100%;">
+    <footer class="footer  position-absolute bg-dark text-white mt-sm-4">
         <div class="container text-center">
             <!-- Footer content goes here -->
             <p>this is just dummy content</p>
