@@ -1,7 +1,7 @@
 const dataObject = {
   sizeQuntitySets: [],
   gender: "male",
-  clothType: "jacket",
+  clothType: "polo-t-shirt",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
   mainColorSaturateValue: 1,
