@@ -108,9 +108,9 @@
   rotate: -30deg;
 }
 .polo-t-shirt-left-straight-line{
-  width: 5px;
+  width: 20px;
   height: 300px;
-  margin-left: 207px;
+  margin-left: 200px;
   margin-top: 220px;
   rotate: 3deg;
 }
@@ -130,9 +130,9 @@
   rotate: 30deg;
 }
 .polo-t-shirt-right-straight-line{
-  width: 8px;
+  width: 20px;
   height: 300px;
-  margin-left: 178px;
+  margin-left: 170px;
   margin-top: 220px;
   rotate: -3deg;
 }
@@ -274,16 +274,16 @@
 }
 
 .short-leg-left{
-  margin-left: 204px;
+  margin-left: 200px;
   margin-top: 65px;
-  width: 13px;
+  width: 25px;
   height: 402px;
   rotate: 2deg;
 }
 .short-leg-right{
-  margin-left: 181px;
+  margin-left: 175px;
   margin-top: 65px;
-  width: 13px;
+  width: 25px;
   height: 402px;
   rotate: -2deg;
 }
