@@ -414,9 +414,11 @@ require_once("./backend/config.php");
                             </div>
                             <div data-controlside="left" id="short-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 short-3
+                                <div class="controller-indication-design short-leg-left"></div>
                             </div>
                             <div data-controlside="right" id="short-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 short-4
+                                <div class="controller-indication-design short-leg-right"></div>
                             </div>
                         </div>
                         <div id="bottom" class="canvasOverlyInner  d-none">

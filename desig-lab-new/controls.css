@@ -197,3 +197,18 @@
   height: 201px;
   rotate: -24deg;
 }
+
+.short-leg-left{
+  margin-left: 204px;
+  margin-top: 65px;
+  width: 13px;
+  height: 402px;
+  rotate: 2deg;
+}
+.short-leg-right{
+  margin-left: 181px;
+  margin-top: 65px;
+  width: 13px;
+  height: 402px;
+  rotate: -2deg;
+}
