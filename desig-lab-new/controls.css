@@ -155,3 +155,45 @@
   width: 180px;
   height: 180px;
 }
+
+/* bottom controls  */
+.bottom-leg-left{
+  margin-left: 195px;
+  margin-top: 3px;
+  width: 11px;
+  height: 492px;
+  rotate: -2deg;
+}
+.bottom-leg-right{
+  margin-left: 183px;
+  margin-top: 3px;
+  width: 11px;
+  height: 492px;
+  rotate: 2deg;
+}
+.jacket-arm-left-top{
+  margin-left: 209px;
+  margin-top: 69px;
+  width: 12px;
+  height: 207px;
+}
+.jacket-arm-left-bottom{
+  margin-left: 170px;
+  margin-top: 266px;
+  width: 12px;
+  height: 201px;
+  rotate: 24deg;
+}
+.jacket-arm-right-top{
+  margin-left: 179px;
+  margin-top: 69px;
+  width: 12px;
+  height: 207px;
+}
+.jacket-arm-right-bottom{
+  margin-left: 218px;
+  margin-top: 266px;
+  width: 12px;
+  height: 201px;
+  rotate: -24deg;
+}
