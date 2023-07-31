@@ -42,6 +42,17 @@ for (let i = 0; i < genderInputs.length; i++) {
 
     render(dataObject);
   });
+
+
+
+
+
+
+
+
+
+
+  
 }
 
 // print type

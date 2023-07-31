@@ -53,9 +53,9 @@ if ($access->isLoggedIn()) {
             <i class="fas fa-bell px-3"></i>
             <?php if ($loggedUserData["image_url"]) {
             ?>
-                <img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn">
-                <div onclick="logout()">
-                    <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6">logout</button>
+                <a href="account.php"><img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn"></a>
+                <div >
+                    <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6" onclick="logout()">logout</button>
                     <div class="navbar-signouticon"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i></div>
                 </div>
             <?php
