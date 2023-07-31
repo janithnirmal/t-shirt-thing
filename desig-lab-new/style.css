@@ -43,11 +43,15 @@ nav a:nth-child(7) {
 }
 
 .nav-img-contact {
-  height: 40px;
-  margin-top: -10px;
-  margin-right: 0;
+  height: 30px;
 }
-
+.nav-contact-para{
+  font-size: 12px;
+  color: white;
+}
+.nav-contact-para1{
+  cursor: pointer;
+}
 nav a {
   color: #989da0;
   text-align: center;
@@ -1073,7 +1077,9 @@ nav i {
     margin-left: -30px;
   }
   .navbar-talk-image {
-    display: none;
+    /* display: none; */
+    width: 30px;
+    height: 30px;
   }
   .btn-style-remover {
     display: none;
@@ -1102,7 +1108,12 @@ nav i {
   .cart-side-radioAmount{
     text-align: end;
   }
-  
+  .nav-contact-para1{
+    display: none;
+  }
+  .nav-contact-para2{
+    display: none;
+  }
 }
 
 @media (max-width: 426px) {
@@ -1124,6 +1135,19 @@ nav i {
   .cart-left-productPara{
     font-size: 12px;
   }
+  .left-side-btn {
+    width: 80px;
+    font-size: 12px;
+  }
+  .pricetagbtn3box{
+    height: 90px;
+    width: 80px;
+  }
+  .big-box {
+    width: 80px;
+    height: 80px;
+    /* margin-left: 1px; */
+  }
 }
 @media (max-width: 320px) {
   .section1-layout {
@@ -1136,5 +1160,14 @@ nav i {
   }
   .cart-right-box{
     width: fit-content;
+  }
+  .left-side-btn {
+    width: 70px;
+    font-size: 11px;
+  }
+  .pricetagbtn3box{
+    height: 80px;
+    width: 70px;
+    font-size: 11px;
   }
 }
