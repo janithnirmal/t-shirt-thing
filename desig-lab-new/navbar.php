@@ -16,9 +16,11 @@ if ($access->isLoggedIn()) {
             <div class="menu-hamberger-icon">
                 <i class="fas fa-bars " onclick="openNavigationSideBar()"></i>
             </div>
-            <a href="index.php" class="logo">
-                <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
-            </a>
+            <div class="nav-logo-container">
+                <a href="index.php" class="logo">
+                    <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
+                </a>
+            </div>
         </div>
         <div class="navbar-link-container">
             <a href="index.php">DesignHome</a>
@@ -49,8 +51,8 @@ if ($access->isLoggedIn()) {
             ?>
                 <img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn">
                 <div onclick="logout()">
-                    <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6" >logout</button>
-                    <div  class="navbar-signouticon"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i></div>
+                    <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6">logout</button>
+                    <div class="navbar-signouticon"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i></div>
                 </div>
             <?php
             } else {

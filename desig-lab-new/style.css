@@ -740,8 +740,8 @@ nav i {
 }
 .t_changebtn {
   background-color: white;
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 65px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -751,8 +751,8 @@ nav i {
 }
 .t_changebtnimg {
   transform: translateY(7px);
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   background-size: cover;
 }
 .t_changebtnimg1 {
@@ -768,8 +768,8 @@ nav i {
   background-image: url("images/Rightside1.png");
 }
 .t_changebtnpara {
-  margin-top: 14px;
-  font-size: 12px;
+  margin-top: 8px;
+  font-size: 10px;
 }
 .t_changebtn:hover {
   background-color: rgb(244, 244, 244);
@@ -1009,10 +1009,10 @@ nav i {
   text-align: center;
   margin-right: 10px;
 }
-.navbar-signInicon{
+.navbar-signInicon {
   display: none;
 }
-.navbar-signouticon{
+.navbar-signouticon {
   display: none;
 }
 /* responsive */
@@ -1020,6 +1020,7 @@ nav i {
   .container {
     width: 100%;
   }
+  
 }
 
 @media (max-width: 998px) {
@@ -1045,9 +1046,12 @@ nav i {
   .side-panel-3 {
     order: 3;
   }
+  
 }
 
 @media (max-width: 768px) {
+  
+
   .navbar-link-container {
     z-index: 10;
     position: absolute;
@@ -1066,23 +1070,71 @@ nav i {
 
   .menu-hamberger-icon {
     display: block;
+    margin-left: -30px;
   }
-  .navbar-talk-image{
+  .navbar-talk-image {
     display: none;
   }
-  .btn-style-remover{
+  .btn-style-remover {
     display: none;
   }
-  .btn-style-signIn{
+  .btn-style-signIn {
     display: none;
   }
-  .navbar-signInicon{
+  .navbar-signInicon {
     display: block;
     margin-left: 11px;
-
   }
 
-  .navbar-signouticon{
+  .navbar-signouticon {
     display: block;
+  }
+  .t_changebtn {
+    width: 65px;
+    height: 65px;
+  }
+  .cart-side-coupen{
+    flex-direction: column;
+  }
+  .cart-side-radiopayment{
+    flex-direction: column;
+  }
+  .cart-side-radioAmount{
+    text-align: end;
+  }
+  
+}
+
+@media (max-width: 426px) {
+  .section1-layout {
+    min-width: 150%;
+    height: max-content;
+    background-color: white;
+  }
+  .cart-main-container{
+    display: flex;
+    flex-direction:column;
+  }
+  .cart-left-box{
+    min-width: 100%;
+  }
+  .cart-right-box{
+    width: fit-content;
+  }
+  .cart-left-productPara{
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  .section1-layout {
+    min-width: 170%;
+    height: max-content;
+    background-color: white;
+  }
+  .cart-left-box{
+    width: fit-content;
+  }
+  .cart-right-box{
+    width: fit-content;
   }
 }

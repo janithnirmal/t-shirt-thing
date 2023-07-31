@@ -536,7 +536,7 @@ function bottom(ctx, dataObject) {
 }
 
 function stripDrawerBottom(ctx, stripObjects, side) {
-  alert("success");
+  // alert("success");
 
   const neckStripsArray = stripObjects.neck;
   const armStripsArray = stripObjects.arm;
