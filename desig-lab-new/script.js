@@ -1,7 +1,7 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
-  //"http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
- "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
+  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
+//  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 
 // signIn
 let signInModel;
@@ -87,14 +87,8 @@ try {
   });
 } catch (error) {}
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   openProductModel();
-//   setInterval(() => {
-//     window.location.reload();
-//   }, 3000);
-// });
-
-// saved design model open
+//  malindu
+// saved design model open function
 let savedDesignModel;
 function openSavedDesignModal() {
   let container = document.getElementById("savedDesignModelContentContainer");
@@ -138,7 +132,7 @@ function openSavedDesignModal() {
 }
 
 function userData() {
-  console.log('gf')
+  console.log("gf");
   var firstNameInput = document.getElementById("firstNameInput");
   var lastNameInput = document.getElementById("lastNameInput");
   var telephoneInput = document.getElementById("telephoneInput");
@@ -204,8 +198,6 @@ function updateDataObject(dataObject) {
 }
 
 function logout() {
-  
-
   const request = new XMLHttpRequest();
   request.onreadystatechange = () => {
     if (request.readyState == 4 && request.status == 200) {
@@ -218,7 +210,11 @@ function logout() {
     }
   };
 
-  request.open("POST","http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/sign_out.php", true);
+  request.open(
+    "POST",
+    "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/sign_out.php",
+    true
+  );
   request.send();
 }
 
