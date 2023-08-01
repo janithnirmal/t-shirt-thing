@@ -571,6 +571,70 @@ function cancelLineData() {
 //
 //
 //
+//
+
+const canvass = new fabric.Canvas("canvass");
+let textTop = 150;
+let textLeft = 150;
+let selectedText = null;
+let texts = []; // Array to store added texts
+
+function addText() {
+  const inputText = document.getElementById("text-input").value;
+  const sizeText = document.getElementById("size-input").value;
+  const colorText = document.getElementById("color-input").value;
+  const textColor = colorText; // Default color
+
+  const text = new fabric.Text(inputText, {
+    left: textLeft,
+    top: textTop,
+    fontFamily: "Arial",
+    fontSize: sizeText,
+    fill: textColor,
+  });
+
+  canvass.add(text);
+  texts.push(text); // Add the text to the texts array
+  canvass.renderAll();
+}
+
+function deleteAllItems() {
+  canvass.clear(); // Remove all objects from the canvas
+  texts = []; // Clear the texts array
+}
+
+// Handle changes to text position inside the box
+canvass.on("object:moving", (e) => {
+  const target = e.target;
+  if (target.type === "text") {
+    textLeft = target.left;
+    textTop = target.top;
+  }
+});
+// text adding feature popup size incrasing
+let currentFontSize = 16; // Initial font size in pixels
+
+function increaseFontSize() {
+  currentFontSize += 1; // Increase font size by 1 pixels
+  applyFontSize();
+}
+
+function decreaseFontSize() {
+  currentFontSize -= 1; // Decrease font size by 1 pixels
+  applyFontSize();
+}
+
+function applyFontSize() {
+  const textContent = document.getElementById("text-pop-sizebtn1");
+  // textContent.style.fontSize = `${currentFontSize}px`;
+  textContent.innerHTML = currentFontSize;
+}
+
+//
+//
+//
+//
+//
 // test
 document.addEventListener("DOMContentLoaded", () => {
   controllerModelOpen("neck");

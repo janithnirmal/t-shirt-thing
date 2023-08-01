@@ -337,7 +337,7 @@ require_once("./backend/config.php");
                         <!-- controls for adding text -->
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
                             <!-- Modal -->
-                            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content" style="background-color: #e3e8ce;">
                                         <div class="modal-header">
@@ -438,7 +438,7 @@ require_once("./backend/config.php");
                                                     <div class="p-0">
                                                         <div class="card d-flex flex-column  align-items-center" style="background-color: #e3e8ce;">
                                                             <div class="fs-6">Font Style </div>
-                                                            <div class="p-3 gap-4" >
+                                                            <div class="p-3 gap-4">
                                                                 <button class="text-pop-bottomicon fw-bold">B</button>
                                                                 <button class="text-pop-bottomicon"><img src="images/text_popup_underline.png" class="text-pop-bottomiconimage" alt=""></button>
                                                                 <button class="text-pop-bottomicon"><img src="images/text_popup_italic.png" class="text-pop-bottomiconimage" alt=""></button>
@@ -514,15 +514,15 @@ require_once("./backend/config.php");
 
                                     <!-- image box -->
                                     <div class="controller-indication-design polo-t-shirt-front-image-middle">
-  <canvas id="canvass" width="400" height="400"></canvas>
-  <input type="text" id="text-input" placeholder="Add text here">
-  <input type="number" id="size-input" placeholder="Add size">
-  <input type="color" id="color-input" value="#000000"> <!-- Color input field -->
-  <button onclick="addText()">Add Text</button>
-  <button onclick="deleteAllItems()">Delete All</button>
+                                        <canvas id="canvass" width="400" height="400"></canvas>
+                                        <input type="text" id="text-input" placeholder="Add text here">
+                                        <input type="number" id="size-input" placeholder="Add size">
+                                        <input type="color" id="color-input" value="#000000"> <!-- Color input field -->
+                                        <button onclick="addText()">Add Text</button>
+                                        <button onclick="deleteAllItems()">Delete All</button>
 
 
-</div>
+                                    </div>
 
 
                                 </div>
