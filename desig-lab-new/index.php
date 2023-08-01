@@ -328,10 +328,135 @@ require_once("./backend/config.php");
                 <!-- box 2 -->
                 <div class="basic-styling left-side-box2 d-flex  flex-md-column justify-content-center align-items-center">
                     <div class="list-group-item" id="btn6">
-                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="left-side-icons fas fa-t"></i>
                             <p class="p-0 m-0">Add Text</p>
                         </button>
+                        <!-- controls for adding text -->
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+                            <!-- Modal -->
+                            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style="background-color: #e3e8ce;">
+                                        <div class="modal-header">
+                                            <p class="modal-title fs-3 fw-bold text-center" id="exampleModalLabel">Edit Text</p>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-12">
+                                                <button class="w-100 card d-flex flex-column align-items-center p-2" style="background-color: #e3e8ce;">
+                                                    <div class="fs-6">Text</div>
+                                                    <textarea class="edit-text-textarea form-control w-100" col="1" id="floatingInput" name="" placeholder="Your Text"></textarea>
+                                                </button>
+                                            </div>
+
+                                            <div class="card mt-4" style="background-color: #e3e8ce;">
+                                                <div class="form-group d-flex flex-column align-items-center p-2">
+                                                    <label for="fontSelector" class="fs-6 py-2">Font</label>
+                                                    <select class="form-control" id="fontSelector" style="background-color: #e3e8ce;">
+                                                        <option value="Arial">Arial</option>
+                                                        <option value="Helvetica">Helvetica</option>
+                                                        <option value="Times New Roman">Times New Roman</option>
+                                                        <option value="Courier New">Courier New</option>
+                                                        <option value="Verdana">Verdana</option>
+                                                        <!-- Add more font options here -->
+                                                    </select>
+                                                </div>
+
+                                                <button onclick="openModelColorControl()" class="w-100 size-qty-box2 btn-style-remover">
+                                                    <div class="d-flex flex-column align-items-center justify-content-center p-1">
+                                                        <div class="fs-6 p-3">Font Color</div>
+                                                        <div class="small-box"></div>
+                                                    </div>
+                                                </button>
+
+                                                <div id="colorControlModelContainer">
+                                                    <div class="modal" tabindex="-1" id="colorControlModel">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content  border border-1 border-secondary m-3">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title text-center">Select A Color</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="d-flex justify-content-center gap-3">
+                                                                        <div class="color-row" style="max-width: 350px">
+                                                                            <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('red')" style="background-color: red"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(230, 1, 1); setColor('blue')" style="background-color: blue"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(120, 1, 1); setColor('green')" style="background-color: green"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(60, 1.4, 1.8); setColor('yellow')" style="background-color: yellow"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('orange')" style="background-color: orange"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(270, 1, 1); setColor('purple')" style="background-color: purple"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('pink')" style="background-color: pink"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('teal')" style="background-color: teal"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('gray')" style="background-color: gray"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('brown')" style="background-color: brown"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(180, 1, 1); setColor('cyan')" style="background-color: cyan"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('magenta')" style="background-color: magenta"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('lime')" style="background-color: lime"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('silver')" style="background-color: silver"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(280, 1, 1); setColor('indigo')" style="background-color: indigo"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(70, 1, 1); setColor('gold')" style="background-color: gold"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(40, 1, 1); setColor('maroon')" style="background-color: maroon"></div>
+                                                                            <div class="color-option" onclick="colorUpdate(260, 1, 1); setColor('navy')" style="background-color: navy"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <div class="row m-0">
+                                                    <div class="p-0">
+                                                        <div class="card" style="background-color: #e3e8ce;">
+                                                            <div class="card-body d-flex flex-column align-items-center">
+                                                                <h3 class="card-title fs-6 py-2">Font Size</h3>
+                                                                <div class="btn-group" role="group" aria-label="Font Size Controls">
+                                                                    <button type="button" class="card rounded-0 text-pop-sizebtn btn" onclick="decreaseFontSize()">-</button>
+                                                                    <button class="card text-pop-sizebtn1 rounded-0 fs-6 btn" id="text-pop-sizebtn1">16</button>
+                                                                    <button class="card text-pop-sizebtn2 rounded-0 fs-6  fw-bold btn">px</button>
+                                                                    <button type="button" class="card text-pop-sizebtn rounded-0 btn" onclick="increaseFontSize()">+</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <script>
+
+                                            </script>
+
+
+                                            <div class="mt-4">
+                                                <div class="row m-0">
+                                                    <div class="p-0">
+                                                        <div class="card d-flex flex-column  align-items-center" style="background-color: #e3e8ce;">
+                                                            <div class="fs-6">Font Style </div>
+                                                            <div class="p-3 gap-4" >
+                                                                <button class="text-pop-bottomicon fw-bold">B</button>
+                                                                <button class="text-pop-bottomicon"><img src="images/text_popup_underline.png" class="text-pop-bottomiconimage" alt=""></button>
+                                                                <button class="text-pop-bottomicon"><img src="images/text_popup_italic.png" class="text-pop-bottomiconimage" alt=""></button>
+                                                                <button class="text-pop-bottomicon">S</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer d-flex  justify-content-center">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="list-group-item" id="btn7">
                         <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
