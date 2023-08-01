@@ -261,6 +261,12 @@ function addText() {
 
   canvass.add(text);
   texts.push(text); // Add the text to the texts array
+  
+
+
+
+
+
   canvass.renderAll();
 }
 
@@ -277,6 +283,43 @@ canvass.on("object:moving", (e) => {
     textTop = target.top;
   }
 });
+
+function addImage() {
+  const imageUrl = "p2.jpg"; // URL of the image you want to add
+
+  fabric.Image.fromURL(imageUrl, function (img) {
+    // Callback function to handle the loaded image
+    img.set({
+      left: 100,
+      top: 100,
+      width: 100, // Set the desired width of the image
+      height: 100, // Set the desired height of the image
+    });
+
+    canvass.add(img);
+
+    canvass.renderAll();
+  }, {
+    crossOrigin: "Anonymous", // Set the crossOrigin property to "Anonymous"
+    // Other options, if needed
+  });
+}
+
+// Call addImage() function to add the image to the canvas
+addImage();
+
+
+
+
+
+
+
+
+
+
+
+
+
 // text adding feature popup size incrasing
 let currentFontSize = 16; // Initial font size in pixels
 
@@ -296,3 +339,5 @@ function applyFontSize() {
     // textContent.style.fontSize = `${currentFontSize}px`;
     textContent.innerHTML = currentFontSize;
 } 
+
+
