@@ -268,6 +268,9 @@ let selectedneckLine = 0;
 //
 let temporyArmLineArray = []; // temp data holder
 let selectedArmLine = 0;
+//
+let temporysidesLineArray = []; // temp data holder
+let selectedsidesLine = 0;
 
 //
 //
@@ -285,14 +288,19 @@ function controllerModelOpen(section) {
     stripLineEditModal.show();
     render(dataObject);
   } else if (section == "sides") {
-    stripLineEditModal = new bootstrap.Modal("#SideStripControlModel");
+    temporysidesLineArray = dataObject.views.strips.sides;
+    document.getElementById("sidesStripLineControlCountInput").value =
+      temporysidesLineArray.length;
+    sidesStripLinePreviewUpdater();
+
+    stripLineEditModal = new bootstrap.Modal("#sidesStripControlModel");
     stripLineEditModal.show();
     render(dataObject);
   } else if (section == "arm") {
     temporyArmLineArray = dataObject.views.strips.arm;
     document.getElementById("armStripLineControlCountInput").value =
       temporyArmLineArray.length;
-    neckStripLinePreviewUpdater();
+    armStripLinePreviewUpdater();
 
     stripLineEditModal = new bootstrap.Modal("#armStripControlModel");
     stripLineEditModal.show();
@@ -313,7 +321,7 @@ function neckLineCounter(event) {
     temporyneckLineArray.push(lineObejct);
   }
 
-  selectedLineUpdater();
+  selectedLineUpdaterneck();
 
   // color thicknes section opener
   let section = document.getElementById("neckLineControlSection");
@@ -327,7 +335,7 @@ function neckLineCounter(event) {
   neckStripLinePreviewUpdater();
 }
 
-function selectedLineUpdater() {
+function selectedLineUpdaterneck() {
   let neckLineSelector = document.getElementById("neckLineSelector");
   neckLineSelector.innerHTML = "";
 
@@ -429,7 +437,7 @@ function cancelLineData() {
 //
 //
 //
-// neck strip control section
+// arm strip control section
 function armLineCounter(event) {
   let count = event.target.value;
   temporyArmLineArray = [];
@@ -443,7 +451,7 @@ function armLineCounter(event) {
     temporyArmLineArray.push(lineObejct);
   }
 
-  selectedLineUpdater();
+  selectedLineUpdaterarm();
 
   // color thicknes section opener
   let section = document.getElementById("armLineControlSection");
@@ -457,7 +465,7 @@ function armLineCounter(event) {
   armStripLinePreviewUpdater();
 }
 
-function selectedLineUpdater() {
+function selectedLineUpdaterarm() {
   let armLineSelector = document.getElementById("armLineSelector");
   armLineSelector.innerHTML = "";
 
@@ -546,6 +554,136 @@ function cancelLineData() {
 
   selectedArmLine = 0;
   armStripLinePreviewUpdater();
+
+  stripLineEditModal.hide();
+  render(dataObject);
+}
+
+//
+//
+//
+//
+//
+//
+// sides strip control section
+function sidesLineCounter(event) {
+  let count = event.target.value;
+  temporysidesLineArray = [];
+  selectedsidesLine = 0;
+
+  for (let x = 0; x < count; x++) {
+    let lineObejct = {
+      color: "#ffffff",
+      thickness: "2",
+    };
+    temporysidesLineArray.push(lineObejct);
+  }
+
+  selectedLineUpdatersides();
+
+  // color thicknes section opener
+  let section = document.getElementById("sidesLineControlSection");
+  if (count == 0 || selectedsidesLine == 0) {
+    section.classList.add("d-none");
+    section.classList.remove("d-block");
+  } else {
+    section.classList.add("d-block");
+    section.classList.remove("d-none");
+  }
+  sidesStripLinePreviewUpdater();
+}
+
+function selectedLineUpdatersides() {
+  let sidesLineSelector = document.getElementById("sidesLineSelector");
+  sidesLineSelector.innerHTML = "";
+
+  let option = document.createElement("option");
+  option.value = 0;
+  option.innerText = "No Lines";
+  sidesLineSelector.appendChild(option);
+  for (let i = 1; i <= temporysidesLineArray.length; i++) {
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerText = "Line " + i;
+    sidesLineSelector.appendChild(option);
+  }
+}
+
+function selectsidesLine(event) {
+  let value = event.target.value;
+  selectedsidesLine = value - 1;
+
+  let sidesLineControlSection = document.getElementById(
+    "sidesLineControlSection"
+  );
+  if (value == 0) {
+    sidesLineControlSection.classList.add("d-none");
+    sidesLineControlSection.classList.remove("d-block");
+  } else {
+    // color input preview
+    let sidesStripLinePreviewColorInput = document.getElementById(
+      "sidesStripLinePreviewColorInput"
+    );
+    sidesStripLinePreviewColorInput.value =
+      temporysidesLineArray[selectedsidesLine].color;
+
+    // thickness update
+    let sidesStripLinePreviewThicknessInput = document.getElementById(
+      "sidesStripLinePreviewThicknessInput"
+    );
+    sidesStripLinePreviewThicknessInput.value =
+      temporysidesLineArray[selectedsidesLine].thickness;
+
+    sidesLineControlSection.classList.add("d-block");
+    sidesLineControlSection.classList.remove("d-none");
+  }
+
+  sidesStripLinePreviewUpdater();
+}
+
+function updatesidesStripData(event, type) {
+  let value = event.target.value;
+  if (type == "color") {
+    temporysidesLineArray[selectedsidesLine].color = value;
+  } else if (type == "thickness") {
+    temporysidesLineArray[selectedsidesLine].thickness = value;
+  }
+
+  sidesStripLinePreviewUpdater();
+}
+
+function sidesStripLinePreviewUpdater() {
+  let sidesStripLinePreviewContainer = document.getElementById(
+    "sidesStripLinePreviewContainer"
+  );
+  sidesStripLinePreviewContainer.innerHTML = "";
+
+  temporysidesLineArray.forEach((element) => {
+    let color = element.color;
+    let thickness = element.thickness * 2;
+
+    let line = document.createElement("div");
+    line.classList.add("line-control-preview");
+    line.style.height = thickness + "px";
+    line.style.backgroundColor = color;
+    sidesStripLinePreviewContainer.appendChild(line);
+  });
+}
+sidesStripLinePreviewUpdater();
+
+function updatesidesLineData() {
+  dataObject.views.strips.sides = temporysidesLineArray;
+  stripLineEditModal.hide();
+  render(dataObject);
+}
+
+function cancelLineData() {
+  temporysidesLineArray = dataObject.views.strips.sides;
+  document.getElementById("sidesStripLineControlCountInput").value =
+    temporysidesLineArray.length;
+
+  selectedsidesLine = 0;
+  sidesStripLinePreviewUpdater();
 
   stripLineEditModal.hide();
   render(dataObject);

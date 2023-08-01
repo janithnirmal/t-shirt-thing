@@ -35,7 +35,7 @@ if ($access->isLoggedIn()) {
     </div>
     <div class="d-flex h-100 justify-content-center align-items-center nav-bar-button-section">
         <a href=""><img class="nav-img-contact navbar-talk-image" src="images/contact.png" alt="" /></a>
-        <div class="nav-contact-para d-flex flex-column ">
+        <div class="nav-contact-para d-lg-flex d-none  flex-column ">
             <span class="nav-contact-para1">(+94)70 1234567</span>
             <span class="nav-contact-para2">Talk to an Expert</span>
         </div>
@@ -43,18 +43,18 @@ if ($access->isLoggedIn()) {
         <?php
         if ($loggedUserData) {
         ?>
-            <span class="text-danger nav-profile-para">Hi, <?php
-                                            if ($loggedUserData["firstname"]) {
-                                                echo (substr($loggedUserData["firstname"], 0, 7) . "...");
-                                            } else {
-                                                echo (substr($loggedUserData["email"], 0, 7) . "...");
-                                            }
-                                            ?></span>
-            <i class="  ></i>
+            <span class="text-danger nav-profile-para d-none d-lg-block">Hi, <?php
+                                                                                if ($loggedUserData["firstname"]) {
+                                                                                    echo (substr($loggedUserData["firstname"], 0, 7) . "...");
+                                                                                } else {
+                                                                                    echo (substr($loggedUserData["email"], 0, 7) . "...");
+                                                                                }
+                                                                                ?></span>
+            <i class=""></i>
             <?php if ($loggedUserData["image_url"]) {
             ?>
                 <a href="account.php"><img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn"></a>
-                <div >
+                <div>
                     <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6" onclick="logout()">logout</button>
                     <div class="navbar-signouticon"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i></div>
                 </div>

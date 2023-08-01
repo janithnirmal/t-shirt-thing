@@ -365,7 +365,7 @@ require_once("./backend/config.php");
                                                     </select>
                                                 </div>
 
-                                                <button onclick="openModelColorControl()" class="w-100 size-qty-box2 btn-style-remover">
+                                                <button onclick="" class="w-100 size-qty-box2 btn-style-remover">
                                                     <div class="d-flex flex-column align-items-center justify-content-center p-1">
                                                         <div class="fs-6 p-3">Font Color</div>
                                                         <div class="small-box"></div>
@@ -373,7 +373,7 @@ require_once("./backend/config.php");
                                                 </button>
 
                                                 <div id="colorControlModelContainer">
-                                                    <div class="modal" tabindex="-1" id="colorControlModel">
+                                                    <!-- <div class="modal" tabindex="-1" id="colorControlModel">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content  border border-1 border-secondary m-3">
                                                                 <div class="modal-header">
@@ -406,7 +406,7 @@ require_once("./backend/config.php");
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
 
@@ -514,7 +514,7 @@ require_once("./backend/config.php");
 
                                     <!-- image box -->
                                     <div class="controller-indication-design polo-t-shirt-front-image-middle">
-                                        <canvas id="canvass" width="400" height="400"></canvas>
+                                        <canvas id="canvass" width="220" height="300"></canvas>
                                         <input type="text" id="text-input" placeholder="Add text here">
                                         <input type="number" id="size-input" placeholder="Add size">
                                         <input type="color" id="color-input" value="#000000"> <!-- Color input field -->
@@ -528,7 +528,6 @@ require_once("./backend/config.php");
                                 </div>
                             </div>
                             <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                                polo-2
                                 <!--strips neck-->
                                 <div class="controller-indication-design polo-t-shirt-coller-back" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
@@ -537,101 +536,79 @@ require_once("./backend/config.php");
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                polo-3
                                 <!-- stips neck-->
                                 <div class="controller-indication-design polo-t-shirt-coller-left" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
                                 <div class="controller-indication-design polo-t-shirt-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- straight line -->
-                                <div class="controller-indication-design polo-t-shirt-left-straight-line"></div>
+                                <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                polo-4
                                 <!-- stips neck-->
                                 <div class="controller-indication-design polo-t-shirt-coller-right" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
                                 <div class="controller-indication-design polo-t-shirt-right-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- straight line -->
-                                <div class="controller-indication-design polo-t-shirt-right-straight-line"></div>
+                                <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
                             </div>
                         </div>
                         <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
                             <div data-controlside="front" id="cotton-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                                cotton-1
                             </div>
                             <div data-controlside="back" id="cotton-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                                cotton-2
                             </div>
                             <div data-controlside="left" id="cotton-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                cotton-3
                             </div>
                             <div data-controlside="right" id="cotton-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                cotton-4
                             </div>
                         </div>
                         <div id="short" class="canvasOverlyInner  d-none">
                             <div data-controlside="front" id="short-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                                short-1
                             </div>
                             <div data-controlside="back" id="short-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                                short-2
                             </div>
                             <div data-controlside="left" id="short-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                short-3
-                                <div class="controller-indication-design short-leg-left"></div>
+                                <div class="controller-indication-design short-leg-left" onclick="controllerModelOpen('sides')"></div>
                             </div>
                             <div data-controlside="right" id="short-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                short-4
-                                <div class="controller-indication-design short-leg-right"></div>
+                                <div class="controller-indication-design short-leg-right" onclick="controllerModelOpen('sides')"></div>
                             </div>
                         </div>
                         <div id="bottom" class="canvasOverlyInner  d-none">
                             <div data-controlside="front" id="bottom-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                                bottom-1
                             </div>
                             <div data-controlside="back" id="bottom-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                                bottom-2
                             </div>
                             <div data-controlside="left" id="bottom-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                bottom-3
-                                <div class="controller-indication-design bottom-leg-left"></div>
+                                <div class="controller-indication-design bottom-leg-left" onclick="controllerModelOpen('sides')"></div>
 
                             </div>
                             <div data-controlside="right" id="bottom-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                bottom-4
-                                <div class="controller-indication-design bottom-leg-right"></div>
+                                <div class="controller-indication-design bottom-leg-right" onclick="controllerModelOpen('sides')"></div>
                             </div>
                         </div>
                         <div id="singlet" class="canvasOverlyInner  d-none">
                             <div data-controlside="front" id="singlet-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                                singlet-1
                             </div>
                             <div data-controlside="back" id="singlet-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                                singlet-2
                             </div>
                             <div data-controlside="left" id="singlet-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                singlet-3
                             </div>
                             <div data-controlside="right" id="singlet-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                singlet-4
                             </div>
                         </div>
                         <div id="jacket" class="canvasOverlyInner  d-none">
                             <div data-controlside="front" id="jacket-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                                jacket-1
                             </div>
                             <div data-controlside="back" id="jacket-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                                jacket-2
                             </div>
                             <div data-controlside="left" id="jacket-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                jacket-3
-                                <div class="controller-indication-design jacket-arm-left-top"></div>
-                                <div class="controller-indication-design jacket-arm-left-bottom"></div>
+                                <div class="controller-indication-design jacket-arm-left-top" onclick="controllerModelOpen('arm')"></div>
+                                <div class="controller-indication-design jacket-arm-left-bottom" onclick="controllerModelOpen('arm')"></div>
                             </div>
                             <div data-controlside="right" id="jacket-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                jacket-4
-                                <div class="controller-indication-design jacket-arm-right-top"></div>
-                                <div class="controller-indication-design jacket-arm-right-bottom"></div>
+                                <div class="controller-indication-design jacket-arm-right-top" onclick="controllerModelOpen('arm')"></div>
+                                <div class="controller-indication-design jacket-arm-right-bottom" onclick="controllerModelOpen('arm')"></div>
                             </div>
                         </div>
                     </div>
@@ -662,7 +639,7 @@ require_once("./backend/config.php");
                                     </div>
                                     <div class="p-2">
                                         <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="neckLineSelector" class="form-control" onchange="neckLine(event)">
+                                        <select id="neckLineSelector" class="form-control" onchange="selectneckLine(event)">
                                             <option value="0">No Lines</option>
                                         </select>
                                     </div>
@@ -671,24 +648,25 @@ require_once("./backend/config.php");
                                             <div class="p-2">
                                                 <div class="fs-5 text-center">Line Color & Thickness</div>
                                                 <div class="d-flex justify-content-between">
-                                                    <input id="neckStripLinePreviewColorInput" onchange="neckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="neckStripLinePreviewThicknessInput" onchange="neckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
+                                                    <input id="neckStripLinePreviewColorInput" onchange="updateneckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="neckStripLinePreviewThicknessInput" onchange="updateneckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
                                                 </div>
                                             </div>
                                             <!-- <div class="p-2">
                                                 <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="neckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                                <input onchange="updateneckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
                                             </div> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="neckLineData()">Save changes</button>
+                                    <button type="button" class="btn btn-primary" onclick="updateneckLineData()">Save changes</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <!-- Modal - polo arm strip -->
                     <div class="modal fade" id="armStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -734,6 +712,56 @@ require_once("./backend/config.php");
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
                                     <button type="button" class="btn btn-primary" onclick="updatearmLineData()">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal - polo sides strip -->
+                    <div class="modal fade" id="sidesStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5">Sides Strip Lines</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="d-flex justify-content-center align-items-center p-3 my-3">
+                                        <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="sidesStripLinePreviewContainer">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Line Count</div>
+                                        <input id="sidesStripLineControlCountInput" onchange="sidesLineCounter(event)" type="number" class=" form-control strip-control-modal-line-sides-line-count" value="0" min="0" max="3" />
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Selected Line</div>
+                                        <select id="sidesLineSelector" class="form-control" onchange="selectsidesLine(event)">
+                                            <option value="0">No Lines</option>
+                                        </select>
+                                    </div>
+                                    <div class="tshirt-sides-line-control-container d-none" id="sidesLineControlSection">
+                                        <div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="sidesStripLinePreviewColorInput" onchange="updatesidesStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="sidesStripLinePreviewThicknessInput" onchange="updatesidesStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
+                                                </div>
+                                            </div>
+                                            <!-- <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input onchange="updatesidesStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="updatesidesLineData()">Save changes</button>
                                 </div>
                             </div>
                         </div>

@@ -35,17 +35,17 @@ const dataObject = {
         },
         {
           thickness: 2,
-          color: "#FF6E38",
+          color: "#F938FF",
         },
         {
           thickness: 3,
-          color: "#F938FF",
+          color: "#FF6E38",
         },
       ],
       sides: [
         {
           thickness: 3,
-          color: "white",
+          color: "#FF6E38",
         },
       ],
     },
@@ -557,8 +557,8 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           213,
           520,
-          armStripsArray[0].thickness,
-          armStripsArray[0].color
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[0].color
         );
       } else if (x == 1) {
         drawLine(
@@ -567,8 +567,8 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           203,
           520,
-          armStripsArray[1].thickness,
-          armStripsArray[1].color
+          sidesStripsArray[1].thickness,
+          sidesStripsArray[1].color
         );
       }
     }
@@ -581,8 +581,8 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           185,
           520,
-          neckStripsArray[0].thickness,
-          neckStripsArray[0].color
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[0].color
         );
       } else if (x == 1) {
         drawLine(
@@ -591,8 +591,8 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           175,
           520,
-          neckStripsArray[1].thickness,
-          neckStripsArray[1].color
+          sidesStripsArray[1].thickness,
+          sidesStripsArray[1].color
         );
       }
     }
@@ -623,8 +623,8 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           200,
           490,
-          armStripsArray[0].thickness,
-          armStripsArray[0].color
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[0].color
         );
       } else if (x == 1) {
         drawLine(
@@ -633,8 +633,8 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           210,
           490,
-          armStripsArray[1].thickness,
-          armStripsArray[1].color
+          sidesStripsArray[1].thickness,
+          sidesStripsArray[1].color
         );
       }
     }
@@ -647,8 +647,8 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           200,
           490,
-          neckStripsArray[0].thickness,
-          neckStripsArray[0].color
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[0].color
         );
       } else if (x == 1) {
         drawLine(
@@ -657,8 +657,8 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           190,
           490,
-          neckStripsArray[1].thickness,
-          neckStripsArray[1].color
+          sidesStripsArray[1].thickness,
+          sidesStripsArray[1].color
         );
       }
     }
@@ -681,7 +681,7 @@ function stripDrawerJacket(ctx, stripObjects, side) {
   if (side == "front") {
   } else if (side == "back") {
   } else if (side == "left") {
-    for (let x = 0; x <= sidesStripsArray.length; x++) {
+    for (let x = 0; x <= armStripsArray.length; x++) {
       if (x == 0) {
         drawLine(
           ctx,
@@ -723,7 +723,7 @@ function stripDrawerJacket(ctx, stripObjects, side) {
       }
     }
   } else if (side == "right") {
-    for (let x = 0; x < neckStripsArray.length; x++) {
+    for (let x = 0; x < armStripsArray.length; x++) {
       if (x == 0) {
         drawLine(
           ctx,
