@@ -17,29 +17,29 @@ const dataObject = {
       neck: [
         {
           thickness: 2,
-          color: "white",
+          color: "#ffffff",
         },
         {
           thickness: 2,
-          color: "orange",
+          color: "#008000",
         },
         {
           thickness: 3,
-          color: "pink",
+          color: "#A2FF1C",
         },
       ],
       arm: [
         {
           thickness: 2,
-          color: "white",
+          color: "#ffffff",
         },
         {
           thickness: 2,
-          color: "orange",
+          color: "#FF6E38",
         },
         {
           thickness: 3,
-          color: "pink",
+          color: "#F938FF",
         },
       ],
       sides: [

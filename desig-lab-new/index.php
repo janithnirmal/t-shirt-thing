@@ -380,8 +380,8 @@ require_once("./backend/config.php");
 
 
                                     <!-- strips arm -->
-                                    <div class="controller-indication-design polo-t-shirt-front-left-arm"></div>
-                                    <div class="controller-indication-design polo-t-shirt-front-right-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-front-left-arm" onclick="controllerModelOpen('arm');"></div>
+                                    <div class="controller-indication-design polo-t-shirt-front-right-arm" onclick="controllerModelOpen('arm');"></div>
 
 
 
@@ -393,8 +393,8 @@ require_once("./backend/config.php");
                                 <!--strips neck-->
                                 <div class="controller-indication-design polo-t-shirt-coller-back" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-back-left-arm"></div>
-                                <div class="controller-indication-design polo-t-shirt-back-right-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
+                                <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
@@ -402,7 +402,7 @@ require_once("./backend/config.php");
                                 <!-- stips neck-->
                                 <div class="controller-indication-design polo-t-shirt-coller-left" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-left-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-left-straight-line"></div>
                             </div>
@@ -411,7 +411,7 @@ require_once("./backend/config.php");
                                 <!-- stips neck-->
                                 <div class="controller-indication-design polo-t-shirt-coller-right" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-right-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-right-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-right-straight-line"></div>
                             </div>
@@ -502,7 +502,7 @@ require_once("./backend/config.php");
                 <!-- model contianer -->
                 <div class="modelContainer">
                     <!-- Modal - polo neck strip -->
-                    <div class="modal fade" id="NeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="neckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -511,13 +511,19 @@ require_once("./backend/config.php");
                                 </div>
                                 <div class="modal-body">
 
+                                    <div class="d-flex justify-content-center align-items-center p-3 my-3">
+                                        <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="neckStripLinePreviewContainer">
+
+                                        </div>
+                                    </div>
+
                                     <div class="p-2">
                                         <div class="fs-5 text-center">Line Count</div>
-                                        <input onchange="neckLineCounter(event)" type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" />
+                                        <input id="neckStripLineControlCountInput" onchange="neckLineCounter(event)" type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" />
                                     </div>
                                     <div class="p-2">
                                         <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="NeckLineSelector" class="form-control" onchange="selectNeckLine(event)">
+                                        <select id="neckLineSelector" class="form-control" onchange="neckLine(event)">
                                             <option value="0">No Lines</option>
                                         </select>
                                     </div>
@@ -526,20 +532,69 @@ require_once("./backend/config.php");
                                             <div class="p-2">
                                                 <div class="fs-5 text-center">Line Color & Thickness</div>
                                                 <div class="d-flex justify-content-between">
-                                                    <input onchange="updateNeckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input onchange="updateNeckStripData(event, 'thickness')" type="number" class="form-control" min="0" max="3">
+                                                    <input id="neckStripLinePreviewColorInput" onchange="neckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="neckStripLinePreviewThicknessInput" onchange="neckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
                                                 </div>
                                             </div>
                                             <!-- <div class="p-2">
                                                 <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="updateNeckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                                <input onchange="neckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
                                             </div> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="updateNeckLineData()">Save changes</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="neckLineData()">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal - polo arm strip -->
+                    <div class="modal fade" id="armStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5">arm Strip Lines</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="d-flex justify-content-center align-items-center p-3 my-3">
+                                        <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="armStripLinePreviewContainer">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Line Count</div>
+                                        <input id="armStripLineControlCountInput" onchange="armLineCounter(event)" type="number" class=" form-control strip-control-modal-line-arm-line-count" value="0" min="0" max="3" />
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="fs-5 text-center">Selected Line</div>
+                                        <select id="armLineSelector" class="form-control" onchange="selectarmLine(event)">
+                                            <option value="0">No Lines</option>
+                                        </select>
+                                    </div>
+                                    <div class="tshirt-arm-line-control-container d-none" id="armLineControlSection">
+                                        <div>
+                                            <div class="p-2">
+                                                <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <input id="armStripLinePreviewColorInput" onchange="updatearmStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input id="armStripLinePreviewThicknessInput" onchange="updatearmStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
+                                                </div>
+                                            </div>
+                                            <!-- <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input onchange="updatearmStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="updatearmLineData()">Save changes</button>
                                 </div>
                             </div>
                         </div>
