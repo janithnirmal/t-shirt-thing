@@ -428,9 +428,6 @@ require_once("./backend/config.php");
                                                 </div>
                                             </div>
 
-                                            <script>
-
-                                            </script>
 
 
                                             <div class="mt-4">
@@ -511,18 +508,26 @@ require_once("./backend/config.php");
                                     <div class="controller-indication-design polo-t-shirt-front-right-arm" onclick="controllerModelOpen('arm');"></div>
 
 
-
                                     <!-- image box -->
                                     <div class="controller-indication-design polo-t-shirt-front-image-middle">
-                                        <canvas id="canvass" width="220" height="300"></canvas>
+
+
+                                        <canvas id="canvass" width="400" height="400"></canvas>
                                         <input type="text" id="text-input" placeholder="Add text here">
                                         <input type="number" id="size-input" placeholder="Add size">
-                                        <input type="color" id="color-input" value="#000000"> <!-- Color input field -->
+                                        <input type="color" id="color-input" value="#000000">
+                                        <input type="file" id="image-input" accept="image/*" style="display: none;"> <!-- Hidden file input -->
                                         <button onclick="addText()">Add Text</button>
                                         <button onclick="deleteAllItems()">Delete All</button>
 
 
+
                                     </div>
+
+
+
+
+
 
 
                                 </div>
