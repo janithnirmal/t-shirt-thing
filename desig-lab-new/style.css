@@ -1023,6 +1023,39 @@ nav i {
   width: 100%;
   /* height: 100px; */
 }
+.edit-text-textarea{
+  border: none;
+  background-color: #e3e8ce;
+  border-bottom: 3px solid black;
+}
+.text-pop-sizebtn1{
+  width: 70px;
+}
+.text-pop-sizebtn2{
+  width: 40px;
+  background-color: #e0e0e0;
+}
+.text-pop-sizebtn{
+
+  background-color: #e0e0e0;
+}
+.text-pop-bottomicon{
+  font-size: 17px;
+  background-color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+}
+.text-pop-bottomicon2{
+  padding: 6px;
+  width: 6px;
+  height: 6px;
+}
+.text-pop-bottomiconimage{
+  width: 25px;
+  height: 25px;
+}
 /* responsive */
 @media (max-width: 1280px) {
   .container {
