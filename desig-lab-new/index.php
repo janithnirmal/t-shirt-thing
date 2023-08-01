@@ -339,7 +339,7 @@ require_once("./backend/config.php");
                                 <div class="modal-dialog">
                                     <div class="modal-content" style="background-color: #e3e8ce;">
                                         <div class="modal-header">
-                                            <p class="modal-title fs-3 text-center" id="exampleModalLabel">Edit Text</p>
+                                            <p class="modal-title fs-3 fw-bold text-center" id="exampleModalLabel">Edit Text</p>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
