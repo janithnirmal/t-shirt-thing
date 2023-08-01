@@ -1,7 +1,7 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
-  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
-//  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
+//  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
+ "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 
 // signIn
 let signInModel;
@@ -232,3 +232,48 @@ function openNavigationSideBar() {
     sidebar.style.display = "none";
   }
 }
+
+
+
+
+
+
+
+const canvass = new fabric.Canvas("canvass");
+let textTop = 150;
+let textLeft = 150;
+let selectedText = null;
+let texts = []; // Array to store added texts
+
+function addText() {
+  const inputText = document.getElementById("text-input").value;
+  const sizeText = document.getElementById("size-input").value;
+  const colorText = document.getElementById("color-input").value;
+  const textColor = colorText; // Default color
+
+  const text = new fabric.Text(inputText, {
+    left: textLeft,
+    top: textTop,
+    fontFamily: "Arial",
+    fontSize: sizeText,
+    fill: textColor,
+  });
+
+  canvass.add(text);
+  texts.push(text); // Add the text to the texts array
+  canvass.renderAll();
+}
+
+function deleteAllItems() {
+  canvass.clear(); // Remove all objects from the canvas
+  texts = []; // Clear the texts array
+}
+
+// Handle changes to text position inside the box
+canvass.on("object:moving", (e) => {
+  const target = e.target;
+  if (target.type === "text") {
+    textLeft = target.left;
+    textTop = target.top;
+  }
+});

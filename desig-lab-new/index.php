@@ -36,6 +36,8 @@ require_once("./backend/config.php");
     <script src="https://kit.fontawesome.com/f98ce7c376.js" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+
     <script src="renderer.js" defer></script>
     <script src="controls.js" defer></script>
     <script src="popup.js" defer></script>
@@ -385,7 +387,19 @@ require_once("./backend/config.php");
 
 
 
-                                    <!-- strips box -->
+                                    <!-- image box -->
+                                    <div class="controller-indication-design polo-t-shirt-front-image-middle">
+  <canvas id="canvass" width="400" height="400"></canvas>
+  <input type="text" id="text-input" placeholder="Add text here">
+  <input type="number" id="size-input" placeholder="Add size">
+  <input type="color" id="color-input" value="#000000"> <!-- Color input field -->
+  <button onclick="addText()">Add Text</button>
+  <button onclick="deleteAllItems()">Delete All</button>
+
+
+</div>
+
+
                                 </div>
                             </div>
                             <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
