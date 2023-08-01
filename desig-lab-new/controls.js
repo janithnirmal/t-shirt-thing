@@ -29,17 +29,6 @@ for (let i = 0; i < genderInputs.length; i++) {
 
     render(dataObject);
   });
-
-
-
-
-
-
-
-
-
-
-  
 }
 
 // print type
@@ -271,80 +260,294 @@ function controlSideSetionOpener(item) {
 //
 //
 //
+//
+//
+//
+let temporyneckLineArray = []; // temp data holder
+let selectedneckLine = 0;
+//
+let temporyArmLineArray = []; // temp data holder
+let selectedArmLine = 0;
+
+//
+//
+// neck strip control section
 // strip line controllers
-let opendModal;
+let stripLineEditModal;
 function controllerModelOpen(section) {
   if (section == "neck") {
-    opendModal = new bootstrap.Modal("#NeckStripControlModel");
-    opendModal.show();
+    temporyneckLineArray = dataObject.views.strips.neck;
+    document.getElementById("neckStripLineControlCountInput").value =
+      temporyneckLineArray.length;
+    neckStripLinePreviewUpdater();
+
+    stripLineEditModal = new bootstrap.Modal("#neckStripControlModel");
+    stripLineEditModal.show();
     render(dataObject);
   } else if (section == "sides") {
-    opendModal = new bootstrap.Modal("#SideStripControlModel");
-    opendModal.show();
+    stripLineEditModal = new bootstrap.Modal("#SideStripControlModel");
+    stripLineEditModal.show();
     render(dataObject);
   } else if (section == "arm") {
-    opendModal = new bootstrap.Modal("#HandStripControlModel");
-    opendModal.show();
+    temporyArmLineArray = dataObject.views.strips.arm;
+    document.getElementById("armStripLineControlCountInput").value =
+      temporyArmLineArray.length;
+    neckStripLinePreviewUpdater();
+
+    stripLineEditModal = new bootstrap.Modal("#armStripControlModel");
+    stripLineEditModal.show();
     render(dataObject);
   }
 }
 
-// neck strip control section
-let neckStripArray = [];
-let selectedNeckLine;
 function neckLineCounter(event) {
   let count = event.target.value;
-  neckStripArray = [];
-  selectedNeckLine = 0;
+  temporyneckLineArray = [];
+  selectedneckLine = 0;
 
   for (let x = 0; x < count; x++) {
     let lineObejct = {
-      color: "white",
+      color: "#ffffff",
       thickness: "2",
     };
-    neckStripArray.push(lineObejct);
+    temporyneckLineArray.push(lineObejct);
   }
 
-  let NeckLineSelector = document.getElementById("NeckLineSelector");
-  NeckLineSelector.innerHTML = "";
-
-  let option = document.createElement("option");
-  option.value = 0;
-  option.innerText = "No Lines";
-  NeckLineSelector.appendChild(option);
-  for (let i = 1; i <= neckStripArray.length; i++) {
-    let option = document.createElement("option");
-    option.value = i;
-    option.innerText = "Line " + i;
-    NeckLineSelector.appendChild(option);
-  }
+  selectedLineUpdater();
 
   // color thicknes section opener
   let section = document.getElementById("neckLineControlSection");
-  if (count == 0) {
+  if (count == 0 || selectedneckLine == 0) {
     section.classList.add("d-none");
     section.classList.remove("d-block");
   } else {
     section.classList.add("d-block");
     section.classList.remove("d-none");
   }
+  neckStripLinePreviewUpdater();
 }
 
-function selectNeckLine(event) {
-  selectedNeckLine = event.target.value - 1;
-}
+function selectedLineUpdater() {
+  let neckLineSelector = document.getElementById("neckLineSelector");
+  neckLineSelector.innerHTML = "";
 
-function updateNeckStripData(event, type) {
-  let value = event.target.value;
-  if (type == "color") {
-    neckStripArray[selectedNeckLine].color = value;
-  } else if (type == "thickness") {
-    neckStripArray[selectedNeckLine].thickness = value;
+  let option = document.createElement("option");
+  option.value = 0;
+  option.innerText = "No Lines";
+  neckLineSelector.appendChild(option);
+  for (let i = 1; i <= temporyneckLineArray.length; i++) {
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerText = "Line " + i;
+    neckLineSelector.appendChild(option);
   }
 }
 
-function updateNeckLineData() {
-  dataObject.views.strips.neck = neckStripArray;
+function selectneckLine(event) {
+  let value = event.target.value;
+  selectedneckLine = value - 1;
+
+  let neckLineControlSection = document.getElementById(
+    "neckLineControlSection"
+  );
+  if (value == 0) {
+    neckLineControlSection.classList.add("d-none");
+    neckLineControlSection.classList.remove("d-block");
+  } else {
+    // color input preview
+    let neckStripLinePreviewColorInput = document.getElementById(
+      "neckStripLinePreviewColorInput"
+    );
+    neckStripLinePreviewColorInput.value =
+      temporyneckLineArray[selectedneckLine].color;
+
+    // thickness update
+    let neckStripLinePreviewThicknessInput = document.getElementById(
+      "neckStripLinePreviewThicknessInput"
+    );
+    neckStripLinePreviewThicknessInput.value =
+      temporyneckLineArray[selectedneckLine].thickness;
+
+    neckLineControlSection.classList.add("d-block");
+    neckLineControlSection.classList.remove("d-none");
+  }
+
+  neckStripLinePreviewUpdater();
+}
+
+function updateneckStripData(event, type) {
+  let value = event.target.value;
+  if (type == "color") {
+    temporyneckLineArray[selectedneckLine].color = value;
+  } else if (type == "thickness") {
+    temporyneckLineArray[selectedneckLine].thickness = value;
+  }
+
+  neckStripLinePreviewUpdater();
+}
+
+function neckStripLinePreviewUpdater() {
+  let neckStripLinePreviewContainer = document.getElementById(
+    "neckStripLinePreviewContainer"
+  );
+  neckStripLinePreviewContainer.innerHTML = "";
+
+  temporyneckLineArray.forEach((element) => {
+    let color = element.color;
+    let thickness = element.thickness * 2;
+
+    let line = document.createElement("div");
+    line.classList.add("line-control-preview");
+    line.style.height = thickness + "px";
+    line.style.backgroundColor = color;
+    neckStripLinePreviewContainer.appendChild(line);
+  });
+}
+neckStripLinePreviewUpdater();
+
+function updateneckLineData() {
+  dataObject.views.strips.neck = temporyneckLineArray;
+  stripLineEditModal.hide();
+  render(dataObject);
+}
+
+function cancelLineData() {
+  temporyneckLineArray = dataObject.views.strips.neck;
+  document.getElementById("neckStripLineControlCountInput").value =
+    temporyneckLineArray.length;
+
+  selectedneckLine = 0;
+  neckStripLinePreviewUpdater();
+
+  stripLineEditModal.hide();
+  render(dataObject);
+}
+
+//
+//
+//
+//
+//
+//
+// neck strip control section
+function armLineCounter(event) {
+  let count = event.target.value;
+  temporyArmLineArray = [];
+  selectedArmLine = 0;
+
+  for (let x = 0; x < count; x++) {
+    let lineObejct = {
+      color: "#ffffff",
+      thickness: "2",
+    };
+    temporyArmLineArray.push(lineObejct);
+  }
+
+  selectedLineUpdater();
+
+  // color thicknes section opener
+  let section = document.getElementById("armLineControlSection");
+  if (count == 0 || selectedArmLine == 0) {
+    section.classList.add("d-none");
+    section.classList.remove("d-block");
+  } else {
+    section.classList.add("d-block");
+    section.classList.remove("d-none");
+  }
+  armStripLinePreviewUpdater();
+}
+
+function selectedLineUpdater() {
+  let armLineSelector = document.getElementById("armLineSelector");
+  armLineSelector.innerHTML = "";
+
+  let option = document.createElement("option");
+  option.value = 0;
+  option.innerText = "No Lines";
+  armLineSelector.appendChild(option);
+  for (let i = 1; i <= temporyArmLineArray.length; i++) {
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerText = "Line " + i;
+    armLineSelector.appendChild(option);
+  }
+}
+
+function selectarmLine(event) {
+  let value = event.target.value;
+  selectedArmLine = value - 1;
+
+  let armLineControlSection = document.getElementById("armLineControlSection");
+  if (value == 0) {
+    armLineControlSection.classList.add("d-none");
+    armLineControlSection.classList.remove("d-block");
+  } else {
+    // color input preview
+    let armStripLinePreviewColorInput = document.getElementById(
+      "armStripLinePreviewColorInput"
+    );
+    armStripLinePreviewColorInput.value =
+      temporyArmLineArray[selectedArmLine].color;
+
+    // thickness update
+    let armStripLinePreviewThicknessInput = document.getElementById(
+      "armStripLinePreviewThicknessInput"
+    );
+    armStripLinePreviewThicknessInput.value =
+      temporyArmLineArray[selectedArmLine].thickness;
+
+    armLineControlSection.classList.add("d-block");
+    armLineControlSection.classList.remove("d-none");
+  }
+
+  armStripLinePreviewUpdater();
+}
+
+function updatearmStripData(event, type) {
+  let value = event.target.value;
+  if (type == "color") {
+    temporyArmLineArray[selectedArmLine].color = value;
+  } else if (type == "thickness") {
+    temporyArmLineArray[selectedArmLine].thickness = value;
+  }
+
+  armStripLinePreviewUpdater();
+}
+
+function armStripLinePreviewUpdater() {
+  let armStripLinePreviewContainer = document.getElementById(
+    "armStripLinePreviewContainer"
+  );
+  armStripLinePreviewContainer.innerHTML = "";
+
+  temporyArmLineArray.forEach((element) => {
+    let color = element.color;
+    let thickness = element.thickness * 2;
+
+    let line = document.createElement("div");
+    line.classList.add("line-control-preview");
+    line.style.height = thickness + "px";
+    line.style.backgroundColor = color;
+    armStripLinePreviewContainer.appendChild(line);
+  });
+}
+armStripLinePreviewUpdater();
+
+function updatearmLineData() {
+  dataObject.views.strips.arm = temporyArmLineArray;
+  stripLineEditModal.hide();
+  render(dataObject);
+}
+
+function cancelLineData() {
+  temporyArmLineArray = dataObject.views.strips.arm;
+  document.getElementById("armStripLineControlCountInput").value =
+    temporyArmLineArray.length;
+
+  selectedArmLine = 0;
+  armStripLinePreviewUpdater();
+
+  stripLineEditModal.hide();
   render(dataObject);
 }
 
