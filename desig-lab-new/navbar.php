@@ -43,14 +43,14 @@ if ($access->isLoggedIn()) {
         <?php
         if ($loggedUserData) {
         ?>
-            <span class="text-danger">Hi, <?php
+            <span class="text-danger nav-profile-para">Hi, <?php
                                             if ($loggedUserData["firstname"]) {
                                                 echo (substr($loggedUserData["firstname"], 0, 7) . "...");
                                             } else {
                                                 echo (substr($loggedUserData["email"], 0, 7) . "...");
                                             }
                                             ?></span>
-            <i class="fas fa-bell px-3"></i>
+            <i class="  ></i>
             <?php if ($loggedUserData["image_url"]) {
             ?>
                 <a href="account.php"><img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn"></a>

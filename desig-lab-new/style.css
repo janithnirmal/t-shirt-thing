@@ -1151,6 +1151,9 @@ nav i {
   .nav-contact-para2{
     display: none;
   }
+  .nav-profile-para{
+    display: none;
+  }
 }
 
 @media (max-width: 426px) {
