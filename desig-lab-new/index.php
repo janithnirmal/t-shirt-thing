@@ -515,15 +515,15 @@ require_once("./backend/config.php");
                             <div data-controlside="front" id="polo-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
                                 <div class="strip-controls">
                                     <!-- stips neck-->
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-left"></div>
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-right"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
 
 
 
 
                                     <!-- strips arm -->
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-left-arm"></div>
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-right-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-front-left-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-front-right-arm"></div>
 
 
 
@@ -535,9 +535,9 @@ require_once("./backend/config.php");
                                 <!--strips neck-->
                                 <div class="controller-indication-design polo-t-shirt-coller-back"></div>
 
-                                <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-coller-back-left-arm"></div>
-                                <div class="controller-indication-design polo-t-shirt-coller-back-right-arm"></div>
+                                    <!-- strips arm -->
+                                    <div class="controller-indication-design polo-t-shirt-coller-back-left-arm"></div>
+                                    <div class="controller-indication-design polo-t-shirt-coller-back-right-arm"></div>
 
 
 
@@ -546,18 +546,18 @@ require_once("./backend/config.php");
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 polo-3
                                 <!-- stips neck-->
-                                <div class="controller-indication-design polo-t-shirt-coller-left"></div>
+                                <div class="controller-indication-design polo-t-shirt-coller-left" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-coller-left-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-left-arm"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-left-straight-line"></div>
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 polo-4
                                 <!-- stips neck-->
-                                <div class="controller-indication-design polo-t-shirt-coller-right"></div>
+                                <div class="controller-indication-design polo-t-shirt-coller-right" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-coller-right-arm"></div>
+                                <div class="controller-indication-design polo-t-shirt-right-arm"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-right-straight-line"></div>
                             </div>
@@ -648,233 +648,56 @@ require_once("./backend/config.php");
                 <!-- model contianer -->
                 <div class="modelContainer">
                     <!-- Modal - polo neck strip -->
-                    <div class="modal fade" id="polo-t-shirt-NeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="NeckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Neck Strip Lines</h1>
+                                    <h1 class="modal-title fs-5">Neck Strip Lines</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
 
                                     <div class="p-2">
                                         <div class="fs-5 text-center">Line Count</div>
-                                        <input type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" id="neckStripCount" />
+                                        <input onchange="neckLineCounter(event)" type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" />
                                     </div>
                                     <div class="p-2">
                                         <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="tshirtNeckLineSelector" class="form-control">
+                                        <select id="NeckLineSelector" class="form-control" onchange="selectNeckLine(event)">
                                             <option value="0">No Lines</option>
                                         </select>
                                     </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection1">
+                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection">
                                         <div>
                                             <div class="p-2">
                                                 <div class="fs-5 text-center">Line Color & Thickness</div>
                                                 <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor1" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness1" type="number" class="form-control" min="0" max="3">
+                                                    <input onchange="updateNeckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                    <input onchange="updateNeckStripData(event, 'thickness')" type="number" class="form-control" min="0" max="3">
                                                 </div>
                                             </div>
-                                            <div class="p-2">
+                                            <!-- <div class="p-2">
                                                 <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection2">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor2" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness2" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection3">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor3" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness3" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
+                                                <input onchange="updateNeckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="updateTshirtNeckArray()">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- modal - polo side strip -->
-                    <div class="modal fade" id="polo-t-shirt-HandStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Side Strip Lines</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Line Count</div>
-                                        <input type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" id="neckStripCount" />
-                                    </div>
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="tshirtNeckLineSelector" class="form-control">
-                                            <option value="0">No Lines</option>
-                                        </select>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection1">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor1" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness1" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection2">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor2" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness2" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection3">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor3" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness3" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="updateTshirtNeckArray()">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- modal - polo side strip -->
-                    <div class="modal fade" id="polo-t-shirt-SideStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Side Strip Lines</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Line Count</div>
-                                        <input type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" id="neckStripCount" />
-                                    </div>
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="tshirtNeckLineSelector" class="form-control">
-                                            <option value="0">No Lines</option>
-                                        </select>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection1">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor1" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness1" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection2">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor2" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness2" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection3">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="tshirtNeckStripColor3" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="tshirtNeckStripThickness3" type="number" class="form-control" min="0" max="3">
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input type="number" class="form-control" min="0" max="3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="updateTshirtNeckArray()">Save changes</button>
+                                    <button type="button" class="btn btn-primary" onclick="updateNeckLineData()">Save changes</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <!-- right side panel -->
             <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
 
                 <!-- size & qty -->
-                <div class="basic-styling right-side-box1 d-none d-md-block">
+                <div class="basic-styling right-side-box1 ">
                     <div class="right-side-box-btn-container">
                         <div class="d-flex-column">
                             <button style="background-color: #2596be" class="right-side-box-btn">

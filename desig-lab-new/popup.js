@@ -207,106 +207,106 @@
 
 let neckLineArray = [];
 
-try {
-  // listners
-  document.getElementById("neckStripCount").addEventListener("change", () => {
-    neckLineArray = [];
-    let count = document.getElementById("neckStripCount").value;
-    let selector = document.getElementById("tshirtNeckLineSelector");
-    selector.innerHTML = "";
-    let defaultOption = document.createElement("option");
-    defaultOption.setAttribute("value", 0);
-    defaultOption.innerText = "No Lines";
-    selector.appendChild(defaultOption);
+// try {
+//   // listners
+//   document.getElementById("neckStripCount").addEventListener("change", () => {
+//     neckLineArray = [];
+//     let count = document.getElementById("neckStripCount").value;
+//     let selector = document.getElementById("tshirtNeckLineSelector");
+//     selector.innerHTML = "";
+//     let defaultOption = document.createElement("option");
+//     defaultOption.setAttribute("value", 0);
+//     defaultOption.innerText = "No Lines";
+//     selector.appendChild(defaultOption);
 
-    for (let x = 1; x <= count; x++) {
-      let option = document.createElement("option");
-      option.setAttribute("value", x);
-      option.innerText = "Line " + x;
-      selector.appendChild(option);
+//     for (let x = 1; x <= count; x++) {
+//       let option = document.createElement("option");
+//       option.setAttribute("value", x);
+//       option.innerText = "Line " + x;
+//       selector.appendChild(option);
 
-      let section = document.getElementById("neckLineControlSection" + x);
-      section.classList.remove("d-block");
-      section.classList.add("d-none");
-    }
+//       let section = document.getElementById("neckLineControlSection" + x);
+//       section.classList.remove("d-block");
+//       section.classList.add("d-none");
+//     }
 
-    selector.selectedIndex = 0;
-    updateTshirtNeckArray();
+//     selector.selectedIndex = 0;
+//     updateTshirtNeckArray();
 
-    console.log(neckLineArray);
-  });
-} catch (error) {}
+//     console.log(neckLineArray);
+//   });
+// } catch (error) {}
 
-function updateTshirtNeckArray() {
-  let lineCount = document.getElementById("neckStripCount").value;
+// function updateTshirtNeckArray() {
+//   let lineCount = document.getElementById("neckStripCount").value;
 
-  if (lineCount == 0) {
-    neckLineArray = [];
-  } else {
-    for (let index = 1; index <= lineCount; index++) {
-      let lineColor = document.getElementById(
-        "tshirtNeckStripColor" + index
-      ).value;
+//   if (lineCount == 0) {
+//     neckLineArray = [];
+//   } else {
+//     for (let index = 1; index <= lineCount; index++) {
+//       let lineColor = document.getElementById(
+//         "tshirtNeckStripColor" + index
+//       ).value;
 
-      let lienThickness = document.getElementById(
-        "tshirtNeckStripThickness" + index
-      ).value;
-      const lineObject = {
-        color: lineColor,
-        thickness: lienThickness,
-      };
-      neckLineArray.push(lineObject);
-    }
-    dataObject.views.strips.neck = neckLineArray;
-    render(dataObject);
-  }
-}
+//       let lienThickness = document.getElementById(
+//         "tshirtNeckStripThickness" + index
+//       ).value;
+//       const lineObject = {
+//         color: lineColor,
+//         thickness: lienThickness,
+//       };
+//       neckLineArray.push(lineObject);
+//     }
+//     dataObject.views.strips.neck = neckLineArray;
+//     render(dataObject);
+//   }
+// }
 
-document
-  .getElementById("tshirtNeckLineSelector")
-  .addEventListener("change", () => {
-    let selectedOption = document.getElementById(
-      "tshirtNeckLineSelector"
-    ).value;
+// document
+//   .getElementById("tshirtNeckLineSelector")
+//   .addEventListener("change", () => {
+//     let selectedOption = document.getElementById(
+//       "tshirtNeckLineSelector"
+//     ).value;
 
-    if (selectedOption != 0) {
-      let section = document.getElementById(
-        "neckLineControlSection" + selectedOption
-      );
+//     if (selectedOption != 0) {
+//       let section = document.getElementById(
+//         "neckLineControlSection" + selectedOption
+//       );
 
-      for (let x = 1; x <= 3; x++) {
-        document
-          .getElementById("neckLineControlSection" + x)
-          .classList.remove("d-block");
-        document
-          .getElementById("neckLineControlSection" + x)
-          .classList.add("d-none");
-      }
+//       for (let x = 1; x <= 3; x++) {
+//         document
+//           .getElementById("neckLineControlSection" + x)
+//           .classList.remove("d-block");
+//         document
+//           .getElementById("neckLineControlSection" + x)
+//           .classList.add("d-none");
+//       }
 
-      section.classList.remove("d-none");
-      section.classList.add("d-block");
-    } else {
-      for (let x = 1; x <= 3; x++) {
-        document
-          .getElementById("neckLineControlSection" + x)
-          .classList.remove("d-block");
-        document
-          .getElementById("neckLineControlSection" + x)
-          .classList.add("d-none");
-      }
-    }
+//       section.classList.remove("d-none");
+//       section.classList.add("d-block");
+//     } else {
+//       for (let x = 1; x <= 3; x++) {
+//         document
+//           .getElementById("neckLineControlSection" + x)
+//           .classList.remove("d-block");
+//         document
+//           .getElementById("neckLineControlSection" + x)
+//           .classList.add("d-none");
+//       }
+//     }
 
-    updateTshirtNeckArray();
-  });
+//     updateTshirtNeckArray();
+//   });
 
-let inputElements = document.querySelectorAll(
-  ".tshirt-neck-line-control-container input"
-);
+// let inputElements = document.querySelectorAll(
+//   ".tshirt-neck-line-control-container input"
+// );
 
-for (let i = 0; i < inputElements.length; i++) {
-  const element = inputElements[i];
+// for (let i = 0; i < inputElements.length; i++) {
+//   const element = inputElements[i];
 
-  element.addEventListener("change", () => {
-    updateTshirtNeckArray();
-  });
-}
+//   element.addEventListener("change", () => {
+//     updateTshirtNeckArray();
+//   });
+// }
