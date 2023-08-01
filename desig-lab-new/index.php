@@ -427,24 +427,7 @@ require_once("./backend/config.php");
                                             </div>
 
                                             <script>
-                                                let currentFontSize = 16; // Initial font size in pixels
 
-                                                function increaseFontSize() {
-                                                    currentFontSize += 1; // Increase font size by 1 pixels
-                                                    applyFontSize();
-
-                                                }
-
-                                                function decreaseFontSize() {
-                                                    currentFontSize -= 1; // Decrease font size by 1 pixels
-                                                    applyFontSize();
-                                                }
-
-                                                function applyFontSize() {
-                                                    const textContent = document.getElementById("text-pop-sizebtn1");
-                                                    // textContent.style.fontSize = `${currentFontSize}px`;
-                                                    textContent.innerHTML = currentFontSize;
-                                                }
                                             </script>
 
 
