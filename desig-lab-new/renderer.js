@@ -1063,8 +1063,8 @@ function saveCurrentDesign() {
         // } catch (error) {
         //   console.log(error);
         // }
-        // dataObject.views.active = "front";
-        // render(dataObject);
+        dataObject.views.active = "front";
+        render(dataObject);
       }
     };
 
