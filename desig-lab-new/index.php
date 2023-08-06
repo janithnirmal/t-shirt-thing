@@ -509,20 +509,24 @@ require_once("./backend/config.php");
 
 
                                     <!-- image box -->
-                                    <div class="controller-indication-design polo-t-shirt-front-image-middle">
 
-
-                                        <canvas id="canvass" width="400" height="400"></canvas>
-                                        <input type="text" id="text-input" placeholder="Add text here">
-                                        <input type="number" id="size-input" placeholder="Add size">
-                                        <input type="color" id="color-input" value="#000000">
-                                        <input type="file" id="image-input" accept="image/*" style="display: none;"> <!-- Hidden file input -->
-                                        <button onclick="addText()">Add Text</button>
-                                        <button onclick="deleteAllItems()">Delete All</button>
-
-
+                                    <div class="controller-indication-design polo-t-shirt-front-image-middle"  ondblclick="openImageModel();poloMiddle()">
+                                        <canvas id="canvass" width="220px" height="300px" ></canvas>
+                                              
 
                                     </div>
+
+                                    <div class="controller-indication-design polo-t-shirt-front-image-top-left" ondblclick="openImageModel();poloTopLeft()">
+                                        <canvas id="canvaso" width="85px" height="100px"></canvas>
+                                        
+                                    </div>
+                                    <div class="controller-indication-design polo-t-shirt-front-image-top-right" ondblclick="openImageModel();poloTopRight()">
+                                        <canvas id="canvas-polo-top-right" width="85px" height="100px"></canvas>
+                                        
+                                    </div>
+
+
+
 
 
 
@@ -538,6 +542,12 @@ require_once("./backend/config.php");
                                 <!-- strips arm -->
                                 <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
+                                <!-- image controll -->
+                                <div class="controller-indication-design polo-t-shirt-back-image-middle"  ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
+                                        <canvas id="canvas-polo-back-middle" width="220px" height="300px" ></canvas>
+                                              
+
+                                    </div>
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
@@ -617,6 +627,7 @@ require_once("./backend/config.php");
                             </div>
                         </div>
                     </div>
+                    <div class="image-text-container"></div>
                     <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
                 </div>
 
@@ -1143,13 +1154,49 @@ require_once("./backend/config.php");
             </div>
         </div>
     </div>
+<!--image-->
+<div id="imageModelContainer">
+                                <div class="modal" tabindex="-1" id="imageModel">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content  border border-1 border-secondary m-3">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <input type="text" id="text-input" placeholder="Add text here" >
+                                            <input type="color" id="color-input" value="#000000" > <!-- Color input field -->
+                                            <input type="number" id="font-size-input" placeholder="Font Size" value="30">
+  <select id="font-family-input">
+    <option value="Arial">Arial</option>
+    <option value="Helvetica">Helvetica</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <!-- Add more font options here as needed -->
+  </select> 
+  <label for="bold-input">Bold</label>
+  <input type="checkbox" id="bold-input">
+  <label for="italic-input">Italic</label>
+  <input type="checkbox" id="italic-input">
+  <label for="underline-input">Underline</label>
+  <input type="checkbox" id="underline-input">
+  <label for="crossline-input">Crossline</label>
+  <input type="checkbox" id="crossline-input">
+  <input type="file" id="imageInput">
+    <button onclick="uploadImage();addStaticImage()">Upload</button>
 
-    <footer class="footer  position-absolute bg-dark text-white mt-sm-4">
-        <div class="container text-center">
-            <!-- Footer content goes here -->
-            <p>this is just dummy content</p>
-        </div>
-    </footer>
+  <button onclick="addText()" id="addingText">
+                                                add text
+                                            </button>
+                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
 
     <!-- toasts -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">

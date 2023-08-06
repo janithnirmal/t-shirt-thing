@@ -148,6 +148,24 @@
   width: 85px;
   height: 100px;
 }
+.polo-t-shirt-front-image-top-left{
+  margin-top: 93px;
+  margin-left: 77px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-front-image-top-right{
+  margin-top: 93px;
+  margin-left: 235px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-back-image-middle{
+  margin-left: 90px;
+  margin-top: 200px;
+  width: 220px;
+  height: 300px;
+}
 /* polo-t-shirt image box  styles*/
 .polo-t-shirt-image-control-front-topleft {
   margin-top: 93px;

@@ -1,22 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+function uploadImage() {
+  const imageInput = document.getElementById("imageInput");
+  const file = imageInput.files[0];
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Text Render Text</title>
+  if (!file) {
+      alert("Please select an image.");
+      return;
+  }
 
-    <link rel="stylesheet" href="imageTextRender.css">
-    <link rel="stylesheet" href="bootstrap.css">
-    <script src="imageTextRender.js" defer></script>
-</head>
+  const formData = new FormData();
+  formData.append("image", file);
 
-<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  fetch("upload.php", {
+      method: "POST",
+      body: formData
+  })
 
-    <div id="imageRenderContainer" style="width: 400px; height: 540px; background-color: gray; position: relative;">
+  .then(response => response.text())
+  
+  .then(result => {
+      console.log(result);
+      console.log("Image Name: " + file.name);
+  })
+  .catch(error => console.error("Error uploading image:", error));
+  imageName=file.name;
+  return imageName
+}
 
-    </div>
 
-</body>
 
-</html>
+
+function addStaticImage() {
+  console.log("ihi")
+  const imgPath = "uploads/"+imageName; // Replace this with the correct path to your image
+  const imgObj = new Image();
+  
+  imgObj.onload = function () {
+    const image = new fabric.Image(imgObj, {
+      left: 50,
+      top: 50,
+      scaleX: 0.4,
+      scaleY: 0.4,
+    });
+
+    canvass.add(image);
+    canvass.renderAll();
+  };
+
+  imgObj.src = imgPath;
+}

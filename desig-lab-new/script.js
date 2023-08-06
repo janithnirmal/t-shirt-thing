@@ -233,7 +233,342 @@ function openNavigationSideBar() {
   }
 }
 
+function pointsToPixels(points) {
+  return points * 1.33;
+}
+
+
+ 
+const canvass = new fabric.Canvas("canvass");
+let textTop = 150;
+let textLeft = 150;
+let textColor = "#000000"; // Default color
+
+function addText() {
+  const inputText = document.getElementById("text-input").value;
+  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+    const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
+  const fontFamily = document.getElementById("font-family-input").value;
+  const isBold = document.getElementById("bold-input").checked;
+      const isItalic = document.getElementById("italic-input").checked;
+      const isUnderline = document.getElementById("underline-input").checked;
+      const isCrossline = document.getElementById("crossline-input").checked;
+      const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+      const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
+  const text = new fabric.Text(inputText, {
+    left: textLeft,
+    top: textTop,
+    fontFamily: fontFamily,
+    fontSize: fontSizePixels,
+    fill: textColor, // Use the selected color
+    fontWeight: isBold ? "bold" : "normal",
+    fontStyle: isItalic ? "italic" : "normal",
+    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+
+  });
+  if (isCrossline) {
+    const rectHeight = 2; // You can adjust the height of the crossline here
+    const rect = new fabric.Rect({
+      left: textLeft,
+      top: textTop + fontSizePixels / 2 - rectHeight / 2,
+      width: text.width,
+      height: rectHeight,
+      fill: textColorCanvaso,
+    });
+    canvass.add(rect);
+  }
+  if (isUnderline) {
+    const rectsHeight = 2; // You can adjust the height of the crossline here
+    const rects = new fabric.Rect({
+      left: textLeft,
+      top: textTop + fontSizePixels  - rectsHeight ,
+      width: text.width,
+      height: rectsHeight,
+      fill: textColorCanvaso,
+    });
+    canvass.add(rects);
+  }
+  canvass.add(text);
+  canvass.renderAll();
+}
+
+canvass.on("object:moving", (e) => {
+  const target = e.target;
+  if (target.type === "text") {
+    textLeft = target.left;
+    textTop = target.top;
+  }
+});
+
+document.getElementById("color-input").addEventListener("change", (e) => {
+  textColor = e.target.value;
+});
+
+//image undex2.php
+
+
+const canvaso = new fabric.Canvas("canvaso");
+let textTopCanvaso = 10;
+let textLeftCanvaso = 10;
+let textColorCanvaso = "#000000"; // Default color
+
+function addTextTopPoloLeft() {
+  const inputText = document.getElementById("text-input").value;
+  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+    const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
+  const fontFamily = document.getElementById("font-family-input").value;
+  const isBold = document.getElementById("bold-input").checked;
+      const isItalic = document.getElementById("italic-input").checked;
+      const isUnderline = document.getElementById("underline-input").checked;
+      const isCrossline = document.getElementById("crossline-input").checked;
+      const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+      const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
+
+  const text = new fabric.Text(inputText, {
+    left: textLeftCanvaso,
+    top: textTopCanvaso,
+    fontFamily: fontFamily,
+    fontSize: fontSizePixels,
+    fill: textColor, // Use the selected color
+    fontWeight: isBold ? "bold" : "normal",
+    fontStyle: isItalic ? "italic" : "normal",
+    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+  });
+  if (isCrossline) {
+    const rectHeight = 2; // You can adjust the height of the crossline here
+    const rect = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels / 2 - rectHeight / 2,
+      width: text.width,
+      height: rectHeight,
+      fill: textColorCanvaso,
+    });
+    canvaso.add(rect);
+  }
+  if (isUnderline) {
+    const rectsHeight = 2; // You can adjust the height of the crossline here
+    const rects = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      width: text.width,
+      height: rectsHeight,
+      fill: textColorCanvaso,
+    });
+    canvaso.add(rects);
+  }
+  canvaso.add(text);
+  canvaso.renderAll();
+}
+
+canvaso.on("object:moving", (e) => {
+  const target = e.target;
+  if (target.type === "text") {
+    textLeftCanvaso = target.left;
+    textTopCanvaso = target.top;
+  }
+});
+
+document.getElementById("color-input").addEventListener("change", (e) => {
+  textColorCanvaso = e.target.value;
+});
+
+
+const canvasPoloTopRight = new fabric.Canvas("canvas-polo-top-right");
+function addTextTopPoloRight() {
+  const inputText = document.getElementById("text-input").value;
+  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
+const fontFamily = document.getElementById("font-family-input").value;
+const isBold = document.getElementById("bold-input").checked;
+    const isItalic = document.getElementById("italic-input").checked;
+    const isUnderline = document.getElementById("underline-input").checked;
+    const isCrossline = document.getElementById("crossline-input").checked;
+    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
+
+
+  const text = new fabric.Text(inputText, {
+    left: textLeftCanvaso,
+    top: textTopCanvaso,
+    fontFamily: fontFamily,
+    fontSize: fontSizePixels,
+    fill: textColor, // Use the selected color
+    fontWeight: isBold ? "bold" : "normal",
+    fontStyle: isItalic ? "italic" : "normal",
+    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+  });
+  if (isCrossline) {
+    const rectHeight = 2; // You can adjust the height of the crossline here
+    const rect = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels / 2 - rectHeight / 2,
+      width: text.width,
+      height: rectHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloTopRight.add(rect);
+  }
+  if (isUnderline) {
+    const rectsHeight = 2; // You can adjust the height of the crossline here
+    const rects = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      width: text.width,
+      height: rectsHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloTopRight.add(rects);
+  }
+  canvasPoloTopRight.add(text);
+  canvasPoloTopRight.renderAll();
+}
+
+
+
+const canvasPoloBackMiddle = new fabric.Canvas("canvas-polo-back-middle");
+function addTextPoloBackMiddle() {
+  const inputText = document.getElementById("text-input").value;
+  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
+const fontFamily = document.getElementById("font-family-input").value;
+const isBold = document.getElementById("bold-input").checked;
+    const isItalic = document.getElementById("italic-input").checked;
+    const isUnderline = document.getElementById("underline-input").checked;
+    const isCrossline = document.getElementById("crossline-input").checked;
+    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
+
+
+  const text = new fabric.Text(inputText, {
+    left: textLeftCanvaso,
+    top: textTopCanvaso,
+    fontFamily: fontFamily,
+    fontSize: fontSizePixels,
+    fill: textColor, // Use the selected color
+    fontWeight: isBold ? "bold" : "normal",
+    fontStyle: isItalic ? "italic" : "normal",
+    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+  });
+  if (isCrossline) {
+    const rectHeight = 2; // You can adjust the height of the crossline here
+    const rect = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels / 2 - rectHeight / 2,
+      width: text.width,
+      height: rectHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloBackMiddle.add(rect);
+  }
+  if (isUnderline) {
+    const rectsHeight = 2; // You can adjust the height of the crossline here
+    const rects = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      width: text.width,
+      height: rectsHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloBackMiddle.add(rects);
+  }
+  canvasPoloBackMiddle.add(text);
+  canvasPoloBackMiddle.renderAll();
+}
 
 
 
 
+function uploadImage() {
+  const imageInput = document.getElementById("imageInput");
+  const file = imageInput.files[0];
+
+  if (!file) {
+      alert("Please select an image.");
+      return;
+  }
+
+  const formData = new FormData();
+  formData.append("image", file);
+
+  fetch("upload.php", {
+      method: "POST",
+      body: formData
+  })
+
+  .then(response => response.text())
+  
+  .then(result => {
+      console.log(result);
+      console.log("Image Name: " + file.name);
+  })
+  .catch(error => console.error("Error uploading image:", error));
+  imageName=file.name;
+  return imageName
+}
+
+
+
+
+function addStaticImage() {
+  console.log("ihi")
+  const imgPath = "uploads/"+imageName; // Replace this with the correct path to your image
+  const imgObj = new Image();
+  
+  imgObj.onload = function () {
+    const image = new fabric.Image(imgObj, {
+      left: 50,
+      top: 50,
+      scaleX: 0.4,
+      scaleY: 0.4,
+    });
+
+    canvass.add(image);
+    canvass.renderAll();
+  };
+
+  imgObj.src = imgPath;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let imageModel;
+function openImageModel() {
+  imageModel = new bootstrap.Modal("#imageModel");
+  imageModel.show();
+}
+
+
+
+
+
+function poloMiddle(){
+  document.getElementById('addingText').setAttribute("onclick", "addText()");
+  }
+  function poloTopLeft(){
+    document.getElementById('addingText').setAttribute("onclick", " addTextTopPoloLeft()")
+  
+  }
+  
+  function poloTopRight(){
+    document.getElementById('addingText').setAttribute("onclick", " addTextTopPoloRight()")
+    
+  }
+  function changeCanvasPoloBackMiddle(){
+    document.getElementById('addingText').setAttribute("onclick", " addTextPoloBackMiddle()")
+
+  }
