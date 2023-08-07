@@ -1,7 +1,7 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
-  //"http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
- "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
+  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
+//  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
@@ -715,7 +715,6 @@ function uploadImage() {
   imageName = file.name;
   return imageName;
 }
-
 
 function addStaticImage() {
   console.log("ihi");
