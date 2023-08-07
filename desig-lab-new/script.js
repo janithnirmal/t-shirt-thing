@@ -492,6 +492,163 @@ function addTextPoloBackMiddle() {
   canvasPoloBackMiddle.renderAll();
 }
 
+const canvasPoloBackTop = new fabric.Canvas("canvas-polo-back-top");
+function addTextPoloBackTop() {
+  const inputText = document.getElementById("text-input").value;
+  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
+const fontFamily = document.getElementById("font-family-input").value;
+const isBold = document.getElementById("bold-input").checked;
+    const isItalic = document.getElementById("italic-input").checked;
+    const isUnderline = document.getElementById("underline-input").checked;
+    const isCrossline = document.getElementById("crossline-input").checked;
+    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
+
+
+  const text = new fabric.Text(inputText, {
+    left: textLeftCanvaso,
+    top: textTopCanvaso,
+    fontFamily: fontFamily,
+    fontSize: fontSizePixels,
+    fill: textColor, // Use the selected color
+    fontWeight: isBold ? "bold" : "normal",
+    fontStyle: isItalic ? "italic" : "normal",
+    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+  });
+  if (isCrossline) {
+    const rectHeight = 2; // You can adjust the height of the crossline here
+    const rect = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels / 2 - rectHeight / 2,
+      width: text.width,
+      height: rectHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloBackTop.add(rect);
+  }
+  if (isUnderline) {
+    const rectsHeight = 2; // You can adjust the height of the crossline here
+    const rects = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      width: text.width,
+      height: rectsHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloBackTop.add(rects);
+  }
+  canvasPoloBackTop.add(text);
+  canvasPoloBackTop.renderAll();
+}
+
+
+const canvasPoloLeftImage = new fabric.Canvas("canvas-polo-left-image");
+function addTextcanvasPoloLeftImage() {
+  const inputText = document.getElementById("text-input").value;
+  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
+const fontFamily = document.getElementById("font-family-input").value;
+const isBold = document.getElementById("bold-input").checked;
+    const isItalic = document.getElementById("italic-input").checked;
+    const isUnderline = document.getElementById("underline-input").checked;
+    const isCrossline = document.getElementById("crossline-input").checked;
+    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
+
+
+  const text = new fabric.Text(inputText, {
+    left: textLeftCanvaso,
+    top: textTopCanvaso,
+    fontFamily: fontFamily,
+    fontSize: fontSizePixels,
+    fill: textColor, // Use the selected color
+    fontWeight: isBold ? "bold" : "normal",
+    fontStyle: isItalic ? "italic" : "normal",
+    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+  });
+  if (isCrossline) {
+    const rectHeight = 2; // You can adjust the height of the crossline here
+    const rect = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels / 2 - rectHeight / 2,
+      width: text.width,
+      height: rectHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloLeftImage.add(rect);
+  }
+  if (isUnderline) {
+    const rectsHeight = 2; // You can adjust the height of the crossline here
+    const rects = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      width: text.width,
+      height: rectsHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloLeftImage.add(rects);
+  }
+  canvasPoloLeftImage.add(text);
+  canvasPoloLeftImage.renderAll();
+}
+
+const canvasPoloRightImage = new fabric.Canvas("canvas-polo-right-image");
+function addTextcanvasPoloRightImage() {
+  const inputText = document.getElementById("text-input").value;
+  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
+const fontFamily = document.getElementById("font-family-input").value;
+const isBold = document.getElementById("bold-input").checked;
+    const isItalic = document.getElementById("italic-input").checked;
+    const isUnderline = document.getElementById("underline-input").checked;
+    const isCrossline = document.getElementById("crossline-input").checked;
+    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
+
+
+  const text = new fabric.Text(inputText, {
+    left: textLeftCanvaso,
+    top: textTopCanvaso,
+    fontFamily: fontFamily,
+    fontSize: fontSizePixels,
+    fill: textColor, // Use the selected color
+    fontWeight: isBold ? "bold" : "normal",
+    fontStyle: isItalic ? "italic" : "normal",
+    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+  });
+  if (isCrossline) {
+    const rectHeight = 2; // You can adjust the height of the crossline here
+    const rect = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels / 2 - rectHeight / 2,
+      width: text.width,
+      height: rectHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloRightImage.add(rect);
+  }
+  if (isUnderline) {
+    const rectsHeight = 2; // You can adjust the height of the crossline here
+    const rects = new fabric.Rect({
+      left: textLeftCanvaso,
+      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      width: text.width,
+      height: rectsHeight,
+      fill: textColorCanvaso,
+    });
+    canvasPoloRightImage.add(rects);
+  }
+  canvasPoloRightImage.add(text);
+  canvasPoloRightImage.renderAll();
+}
+
+
+
+
+
+
+
 function uploadImage() {
   const imageInput = document.getElementById("imageInput");
   const file = imageInput.files[0];
@@ -554,13 +711,37 @@ function poloTopLeft() {
     .setAttribute("onclick", " addTextTopPoloLeft()");
 }
 
-function poloTopRight() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", " addTextTopPoloRight()");
-}
-function changeCanvasPoloBackMiddle() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", " addTextPoloBackMiddle()");
-}
+
+
+
+function poloMiddle(){
+  document.getElementById('addingText').setAttribute("onclick", "addText()");
+  }
+  function poloTopLeft(){
+    document.getElementById('addingText').setAttribute("onclick", " addTextTopPoloLeft()")
+  
+  }
+  
+  function poloTopRight(){
+    document.getElementById('addingText').setAttribute("onclick", " addTextTopPoloRight()")
+    
+  }
+  function changeCanvasPoloBackMiddle(){
+    document.getElementById('addingText').setAttribute("onclick", " addTextPoloBackMiddle()")
+
+  }
+  function changeCanvasPoloBackTop(){
+    document.getElementById('addingText').setAttribute("onclick", "addTextPoloBackTop()")
+
+  }
+  function changeCanvasPoloLeftImage(){
+    document.getElementById('addingText').setAttribute("onclick", "addTextcanvasPoloLeftImage()")
+
+  }
+  function changeCanvasPoloRightImage(){
+    document.getElementById('addingText').setAttribute("onclick", "addTextcanvasPoloRightImage()")
+
+  }
+
+
+  

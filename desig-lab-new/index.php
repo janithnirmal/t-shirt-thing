@@ -543,20 +543,27 @@ require_once("./backend/config.php");
                                 <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
-                                    <canvas id="canvas-polo-back-middle" width="220px" height="300px"></canvas>
-
-
-                                </div>
+                                <div class="controller-indication-design polo-t-shirt-back-image-middle"  ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
+                                        <canvas id="canvas-polo-back-middle" width="220px" height="300px" ></canvas>                                              
+                                    </div>
+                                    <div class="controller-indication-design polo-t-shirt-back-image-top"  ondblclick="openImageModel();changeCanvasPoloBackTop()">
+                                        <canvas id="canvas-polo-back-top" width="200px" height="50px" ></canvas>                                              
+                                    </div>    
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                 <!-- stips neck-->
+
                                 <div class="controller-indication-design polo-t-shirt-coller-left" onclick="controllerModelOpen('neck')"></div>
                                 <!-- strips arm -->
                                 <div class="controller-indication-design polo-t-shirt-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
+                                <!-- image controll -->
+                                <div class="controller-indication-design polo-t-shirt-left-image"  ondblclick="openImageModel();changeCanvasPoloLeftImage()">
+                                        <canvas id="canvas-polo-left-image" width="85px" height="100px" ></canvas>                                              
+                                    </div>
+
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                 <!-- stips neck-->
@@ -565,6 +572,10 @@ require_once("./backend/config.php");
                                 <div class="controller-indication-design polo-t-shirt-right-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
+                                <!-- image controll -->
+                                <div class="controller-indication-design polo-t-shirt-right-image"  ondblclick="openImageModel();changeCanvasPoloRightImage()">
+                                        <canvas id="canvas-polo-right-image" width="75px" height="100px" ></canvas>                                              
+                                    </div>
                             </div>
                         </div>
                         <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">

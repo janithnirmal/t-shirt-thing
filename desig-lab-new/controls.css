@@ -47,7 +47,7 @@
   width: 120px;
   height: 20px;
   margin-left: 140px;
-  margin-top: -6px;
+  margin-top: 15px;
   rotate: 0deg;
 }
 
@@ -84,28 +84,28 @@
   width: 80px;
   height: 20px;
   margin-left: -4px;
-  margin-top: 207px;
+  margin-top: 230px;
   rotate: 14deg;
 }
 .polo-t-shirt-back-left-arm {
   width: 80px;
   height: 20px;
   margin-left: 320px;
-  margin-top: 207px;
+  margin-top: 230px;
   rotate: -14deg;
 }
 .polo-t-shirt-left-arm {
   width: 100px;
   height: 20px;
   margin-left: 165px;
-  margin-top: 207px;
+  margin-top: 227px;
   rotate: 1deg;
 }
 .polo-t-shirt-coller-left {
   width: 105px;
   height: 30px;
   margin-left: 140px;
-  margin-top: 10px;
+  margin-top: 30px;
   rotate: -30deg;
 }
 .polo-t-shirt-left-straight-line {
@@ -119,16 +119,10 @@
   width: 100px;
   height: 20px;
   margin-left: 125px;
-  margin-top: 207px;
+  margin-top: 227px;
   rotate: 1deg;
 }
-.polo-t-shirt-coller-right {
-  width: 105px;
-  height: 30px;
-  margin-left: 147px;
-  margin-top: 10px;
-  rotate: 30deg;
-}
+
 .polo-t-shirt-right-straight-line {
   width: 20px;
   height: 300px;
@@ -165,6 +159,27 @@
   margin-top: 200px;
   width: 220px;
   height: 300px;
+}
+.polo-t-shirt-back-image-top{
+  margin-left: 100px;
+  margin-top: 77px;
+  width: 200px;
+  height: 50px;
+  
+}
+.polo-t-shirt-left-image{
+  margin-top: 120px;
+  margin-left: 175px;
+  width: 85px;
+  height: 100px;
+  
+}
+.polo-t-shirt-right-image{
+  margin-top: 120px;
+  margin-left: 140px;
+  width: 75px;
+  height: 100px;
+  
 }
 /* polo-t-shirt image box  styles*/
 .polo-t-shirt-image-control-front-topleft {
