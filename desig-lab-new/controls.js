@@ -296,8 +296,8 @@ function controllerModelOpen(section) {
       temporysidesLineArray.length;
     sidesStripLinePreviewUpdater();
 
-    selectedneckLine = 0;
-    selectedLineUpdaterneck();
+    selectarmLine = 0;
+    selectedLineUpdatersides();
 
     stripLineEditModal = new bootstrap.Modal("#sidesStripControlModel");
     stripLineEditModal.show();
@@ -308,8 +308,8 @@ function controllerModelOpen(section) {
       temporyArmLineArray.length;
     armStripLinePreviewUpdater();
 
-    selectedneckLine = 0;
-    selectedLineUpdaterneck();
+    selectedArmLine = 0;
+    selectedLineUpdaterarm();
 
     stripLineEditModal = new bootstrap.Modal("#armStripControlModel");
     stripLineEditModal.show();

@@ -3,6 +3,31 @@ const SERVER_URL =
   "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
 //  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 
+// sign in view opned section name
+let openedSigninViewName = "sign-in";
+function signInModalViewChanger() {
+  const signIn = document.getElementById("signInModalSignInSection");
+  const signUp = document.getElementById("signInModalSignUpSection");
+
+  if (openedSigninViewName == "sign-in") {
+    signIn.classList.add("d-none");
+    signIn.classList.remove("d-block");
+
+    signUp.classList.remove("d-none");
+    signUp.classList.add("d-block");
+
+    openedSigninViewName = "sign-up";
+  } else if (openedSigninViewName == "sign-up") {
+    signUp.classList.add("d-none");
+    signUp.classList.remove("d-block");
+
+    signIn.classList.remove("d-none");
+    signIn.classList.add("d-block");
+
+    openedSigninViewName = "sign-in";
+  }
+}
+
 // signIn
 let signInModel;
 try {
