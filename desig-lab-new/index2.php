@@ -1,62 +1,24 @@
-function uploadImage() {
-  const imageInput = document.getElementById("imageInput");
-  const file = imageInput.files[0];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  function createDeleteButton() {
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("btn", "btn-default");
+    deleteButton.innerText = "Delete";
 
-  if (!file) {
-      alert("Please select an image.");
-      return;
+    // Append the button to the body element
+    document.body.appendChild(deleteButton);
   }
 
-  const formData = new FormData();
-  formData.append("image", file);
-
-  fetch("upload.php", {
-      method: "POST",
-      body: formData
-  })
-
-  .then(response => response.text())
-  
-  .then(result => {
-      console.log(result);
-      console.log("Image Name: " + file.name);
-  })
-  .catch(error => console.error("Error uploading image:", error));
-  imageName=file.name;
-  return imageName
-}
-
-
-
-
-function addStaticImage() {
-  console.log("ihi")
-  const imgPath = "uploads/"+imageName; // Replace this with the correct path to your image
-  const imgObj = new Image();
-  
-  imgObj.onload = function () {
-    const image = new fabric.Image(imgObj, {
-      left: 50,
-      top: 50,
-      scaleX: 0.4,
-      scaleY: 0.4,
-    });
-
-    canvass.add(image);
-    canvass.renderAll();
-  };
-
-  imgObj.src = imgPath;
-}
-
-
-
-
-
-
-
-
-
-
-
-
+  // Call the function to create and append the button
+  createDeleteButton();
+</script>
+</body>
+</html>
