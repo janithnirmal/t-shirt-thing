@@ -102,34 +102,43 @@ function openSavedDesignModal() {
     if (request.readyState == 4) {
       let response = request.responseText;
       try {
-        let responseObject = JSON.parse(response).data;
-        responseObject.forEach((element) => {
-          let id = element.id;
-          let designData = JSON.parse(element.design_data);
+        let responseObject = JSON.parse(response);
 
-          let resultDesign = document.createElement("div");
-          resultDesign.classList.add("saved-design-item");
-          resultDesign.addEventListener("click", () => {
-            loadSavedDesign(designData);
+        if (responseObject.status == "success") {
+          responseObject.data.forEach((element) => {
+            let id = element.id;
+            let designData = JSON.parse(element.design_data);
+
+            let resultDesign = document.createElement("div");
+            resultDesign.classList.add("saved-design-item");
+            resultDesign.addEventListener("click", () => {
+              loadSavedDesign(designData);
+            });
+
+            const div = document.createElement("div");
+            div.classList.add("saved-design-list-view-details");
+            div.innerHTML = `
+            <span class="fw-bold fs-5">${designData.clothType}</span>
+            <br />
+            <span class="">${designData.printType}</span>
+            `;
+            resultDesign.appendChild(div);
+
+            let image = document.createElement("img");
+            image.width = "200px";
+            image.src =
+              "backend/saved_design_images/" + id + "dataURLFront.png";
+            image.classList.add("saved-design-item-images");
+            resultDesign.appendChild(image);
+
+            container.appendChild(resultDesign);
           });
-
-          const div = document.createElement("div");
-          div.classList.add("saved-design-list-view-details");
-          div.innerHTML = `
-          <span class="fw-bold fs-5">${designData.clothType}</span>
-          <br />
-          <span class="">${designData.printType}</span>
-          `;
-          resultDesign.appendChild(div);
-
-          let image = document.createElement("img");
-          image.width = "200px";
-          image.src = "backend/saved_design_images/" + id + "dataURLFront.png";
-          image.classList.add("saved-design-item-images");
-          resultDesign.appendChild(image);
-
-          container.appendChild(resultDesign);
-        });
+        } else if (responseObject.status == "failed") {
+          console.log(responseObject.error);
+          container.innerText = "Please sign in to watch saved designs......";
+        } else {
+          console.log(responseObject);
+        }
       } catch (error) {
         console.log(response);
       }
@@ -214,21 +223,23 @@ function updateDataObject(dataObject) {
 function logout() {
   const request = new XMLHttpRequest();
   request.onreadystatechange = () => {
-    if (request.readyState == 4 && request.status == 200) {
-      responseObject = JSON.parse(request.responseText);
-      if (responseObject.status === "success") {
-        window.location.reload();
-      } else {
-        console.log(responseObject);
+    if (request.readyState == 4) {
+      let response = request.responseText;
+      try {
+        responseObject = JSON.parse(response);
+        if (responseObject.status === "success") {
+          window.location.reload();
+          console.log(responseObject);
+        } else {
+          console.log(responseObject);
+        }
+      } catch (error) {
+        console.log(response);
       }
     }
   };
 
-  request.open(
-    "POST",
-    "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/sign_out.php",
-    true
-  );
+  request.open("POST", SERVER_URL + "backend/sign_out.php", true);
   request.send();
 }
 
@@ -495,16 +506,18 @@ function addTextPoloBackMiddle() {
 const canvasPoloBackTop = new fabric.Canvas("canvas-polo-back-top");
 function addTextPoloBackTop() {
   const inputText = document.getElementById("text-input").value;
-  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePoints = parseFloat(
+    document.getElementById("font-size-input").value
+  );
   const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
-const fontFamily = document.getElementById("font-family-input").value;
-const isBold = document.getElementById("bold-input").checked;
-    const isItalic = document.getElementById("italic-input").checked;
-    const isUnderline = document.getElementById("underline-input").checked;
-    const isCrossline = document.getElementById("crossline-input").checked;
-    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
-    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
-
+  const fontFamily = document.getElementById("font-family-input").value;
+  const isBold = document.getElementById("bold-input").checked;
+  const isItalic = document.getElementById("italic-input").checked;
+  const isUnderline = document.getElementById("underline-input").checked;
+  const isCrossline = document.getElementById("crossline-input").checked;
+  const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+  const textDecoration =
+    (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
 
   const text = new fabric.Text(inputText, {
     left: textLeftCanvaso,
@@ -531,7 +544,7 @@ const isBold = document.getElementById("bold-input").checked;
     const rectsHeight = 2; // You can adjust the height of the crossline here
     const rects = new fabric.Rect({
       left: textLeftCanvaso,
-      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      top: textTopCanvaso + fontSizePixels - rectsHeight,
       width: text.width,
       height: rectsHeight,
       fill: textColorCanvaso,
@@ -542,20 +555,21 @@ const isBold = document.getElementById("bold-input").checked;
   canvasPoloBackTop.renderAll();
 }
 
-
 const canvasPoloLeftImage = new fabric.Canvas("canvas-polo-left-image");
 function addTextcanvasPoloLeftImage() {
   const inputText = document.getElementById("text-input").value;
-  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePoints = parseFloat(
+    document.getElementById("font-size-input").value
+  );
   const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
-const fontFamily = document.getElementById("font-family-input").value;
-const isBold = document.getElementById("bold-input").checked;
-    const isItalic = document.getElementById("italic-input").checked;
-    const isUnderline = document.getElementById("underline-input").checked;
-    const isCrossline = document.getElementById("crossline-input").checked;
-    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
-    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
-
+  const fontFamily = document.getElementById("font-family-input").value;
+  const isBold = document.getElementById("bold-input").checked;
+  const isItalic = document.getElementById("italic-input").checked;
+  const isUnderline = document.getElementById("underline-input").checked;
+  const isCrossline = document.getElementById("crossline-input").checked;
+  const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+  const textDecoration =
+    (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
 
   const text = new fabric.Text(inputText, {
     left: textLeftCanvaso,
@@ -582,7 +596,7 @@ const isBold = document.getElementById("bold-input").checked;
     const rectsHeight = 2; // You can adjust the height of the crossline here
     const rects = new fabric.Rect({
       left: textLeftCanvaso,
-      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      top: textTopCanvaso + fontSizePixels - rectsHeight,
       width: text.width,
       height: rectsHeight,
       fill: textColorCanvaso,
@@ -596,16 +610,18 @@ const isBold = document.getElementById("bold-input").checked;
 const canvasPoloRightImage = new fabric.Canvas("canvas-polo-right-image");
 function addTextcanvasPoloRightImage() {
   const inputText = document.getElementById("text-input").value;
-  const fontSizePoints = parseFloat(document.getElementById("font-size-input").value);
+  const fontSizePoints = parseFloat(
+    document.getElementById("font-size-input").value
+  );
   const fontSizePixels = pointsToPixels(fontSizePoints); // Convert points
-const fontFamily = document.getElementById("font-family-input").value;
-const isBold = document.getElementById("bold-input").checked;
-    const isItalic = document.getElementById("italic-input").checked;
-    const isUnderline = document.getElementById("underline-input").checked;
-    const isCrossline = document.getElementById("crossline-input").checked;
-    const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
-    const textDecoration = (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
-
+  const fontFamily = document.getElementById("font-family-input").value;
+  const isBold = document.getElementById("bold-input").checked;
+  const isItalic = document.getElementById("italic-input").checked;
+  const isUnderline = document.getElementById("underline-input").checked;
+  const isCrossline = document.getElementById("crossline-input").checked;
+  const fontStyle = (isBold ? "bold " : "") + (isItalic ? "italic " : "");
+  const textDecoration =
+    (isUnderline ? "underline " : "") + (isCrossline ? "line-through" : "");
 
   const text = new fabric.Text(inputText, {
     left: textLeftCanvaso,
@@ -632,7 +648,7 @@ const isBold = document.getElementById("bold-input").checked;
     const rectsHeight = 2; // You can adjust the height of the crossline here
     const rects = new fabric.Rect({
       left: textLeftCanvaso,
-      top: textTopCanvaso + fontSizePixels  - rectsHeight ,
+      top: textTopCanvaso + fontSizePixels - rectsHeight,
       width: text.width,
       height: rectsHeight,
       fill: textColorCanvaso,
@@ -642,12 +658,6 @@ const isBold = document.getElementById("bold-input").checked;
   canvasPoloRightImage.add(text);
   canvasPoloRightImage.renderAll();
 }
-
-
-
-
-
-
 
 function uploadImage() {
   const imageInput = document.getElementById("imageInput");
@@ -711,37 +721,37 @@ function poloTopLeft() {
     .setAttribute("onclick", " addTextTopPoloLeft()");
 }
 
+function poloMiddle() {
+  document.getElementById("addingText").setAttribute("onclick", "addText()");
+}
+function poloTopLeft() {
+  document
+    .getElementById("addingText")
+    .setAttribute("onclick", " addTextTopPoloLeft()");
+}
 
-
-
-function poloMiddle(){
-  document.getElementById('addingText').setAttribute("onclick", "addText()");
-  }
-  function poloTopLeft(){
-    document.getElementById('addingText').setAttribute("onclick", " addTextTopPoloLeft()")
-  
-  }
-  
-  function poloTopRight(){
-    document.getElementById('addingText').setAttribute("onclick", " addTextTopPoloRight()")
-    
-  }
-  function changeCanvasPoloBackMiddle(){
-    document.getElementById('addingText').setAttribute("onclick", " addTextPoloBackMiddle()")
-
-  }
-  function changeCanvasPoloBackTop(){
-    document.getElementById('addingText').setAttribute("onclick", "addTextPoloBackTop()")
-
-  }
-  function changeCanvasPoloLeftImage(){
-    document.getElementById('addingText').setAttribute("onclick", "addTextcanvasPoloLeftImage()")
-
-  }
-  function changeCanvasPoloRightImage(){
-    document.getElementById('addingText').setAttribute("onclick", "addTextcanvasPoloRightImage()")
-
-  }
-
-
-  
+function poloTopRight() {
+  document
+    .getElementById("addingText")
+    .setAttribute("onclick", " addTextTopPoloRight()");
+}
+function changeCanvasPoloBackMiddle() {
+  document
+    .getElementById("addingText")
+    .setAttribute("onclick", " addTextPoloBackMiddle()");
+}
+function changeCanvasPoloBackTop() {
+  document
+    .getElementById("addingText")
+    .setAttribute("onclick", "addTextPoloBackTop()");
+}
+function changeCanvasPoloLeftImage() {
+  document
+    .getElementById("addingText")
+    .setAttribute("onclick", "addTextcanvasPoloLeftImage()");
+}
+function changeCanvasPoloRightImage() {
+  document
+    .getElementById("addingText")
+    .setAttribute("onclick", "addTextcanvasPoloRightImage()");
+}
