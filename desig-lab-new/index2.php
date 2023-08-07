@@ -48,3 +48,15 @@ function addStaticImage() {
 
   imgObj.src = imgPath;
 }
+
+
+
+
+
+
+
+
+
+
+
+
