@@ -1,4 +1,4 @@
-const dataObject = {
+let dataObject = {
   sizeQuntitySets: [],
   gender: "male",
   clothType: "polo-t-shirt",
@@ -1045,6 +1045,7 @@ function saveCurrentDesign() {
       dataURLRight: dataURLRight,
     };
 
+    dataObject.views.active = "front"; // set default view
     let form = new FormData();
     form.append("imageObject", JSON.stringify(imageObject));
     form.append("design_json", JSON.stringify(dataObject));
@@ -1053,17 +1054,16 @@ function saveCurrentDesign() {
     request.onreadystatechange = function () {
       if (request.readyState == 4) {
         console.log(request.responseText);
-        // try {
-        //   let response = JSON.parse(request.responseText);
-        //   if (response.status == "success") {
-        //     alert("Successfully saved");
-        //   } else if (response.status == "failed") {
-        //     alert(response.error);
-        //   }
-        // } catch (error) {
-        //   console.log(error);
-        // }
-        dataObject.views.active = "front";
+        try {
+          let response = JSON.parse(request.responseText);
+          if (response.status == "success") {
+            alert("Successfully saved");
+          } else if (response.status == "failed") {
+            alert(response.error);
+          }
+        } catch (error) {
+          console.log(error);
+        }
         render(dataObject);
       }
     };

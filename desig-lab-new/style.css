@@ -982,22 +982,36 @@ nav i {
 
 .saved-design-item {
   border-radius: 20px;
-  padding: 30px 20px;
+  padding: 10px;
   background-color: gray;
   color: white;
   min-height: 70px;
   margin: 20px 0;
+  color: black;
+  transition: 400ms;
+  cursor: pointer;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  gap: 10px;
+}
+
+.saved-design-item:hover {
+  scale: 103%;
+  transition: 400ms;
 }
 
 .saved-design-item-images {
   width: 150px;
   height: 200px;
   object-fit: contain;
+}
+
+.saved-design-list-view-details {
+  border-radius: 20px;
+  background-color: rgb(207, 207, 207);
+  padding: 10px 20px;
+  flex-grow: 2;
 }
 
 .navbar-link-container {
@@ -1063,14 +1077,6 @@ nav i {
 .text-pop-bottomiconimage {
   width: 25px;
   height: 25px;
-}
-
-.saved-design-list-view-details {
-  width: 100%;
-  border-radius: 100px;
-  background-color: rgb(69, 69, 255);
-  padding: 10px 20px;
-  margin: 10px 0;
 }
 
 /* responsive */

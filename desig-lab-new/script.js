@@ -109,10 +109,17 @@ function openSavedDesignModal() {
 
           let resultDesign = document.createElement("div");
           resultDesign.classList.add("saved-design-item");
+          resultDesign.addEventListener("click", () => {
+            loadSavedDesign(designData);
+          });
 
           const div = document.createElement("div");
           div.classList.add("saved-design-list-view-details");
-          div.innerHTML = designData.clothType;
+          div.innerHTML = `
+          <span class="fw-bold fs-5">${designData.clothType}</span>
+          <br />
+          <span class="">${designData.printType}</span>
+          `;
           resultDesign.appendChild(div);
 
           let image = document.createElement("img");
@@ -123,8 +130,6 @@ function openSavedDesignModal() {
 
           container.appendChild(resultDesign);
         });
-
-        console.log(responseObject);
       } catch (error) {
         console.log(response);
       }
@@ -133,6 +138,11 @@ function openSavedDesignModal() {
 
   request.open("GET", SERVER_URL + "backend/get_saved_design_api.php", true);
   request.send();
+}
+
+function loadSavedDesign(dataSet) {
+  dataObject = dataSet;
+  render(dataObject);
 }
 
 function userData() {
