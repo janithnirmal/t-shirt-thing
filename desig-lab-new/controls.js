@@ -284,6 +284,9 @@ function controllerModelOpen(section) {
       temporyneckLineArray.length;
     neckStripLinePreviewUpdater();
 
+    selectedneckLine = 0;
+    selectedLineUpdaterneck();
+
     stripLineEditModal = new bootstrap.Modal("#neckStripControlModel");
     stripLineEditModal.show();
     render(dataObject);
@@ -293,6 +296,9 @@ function controllerModelOpen(section) {
       temporysidesLineArray.length;
     sidesStripLinePreviewUpdater();
 
+    selectarmLine = 0;
+    selectedLineUpdatersides();
+
     stripLineEditModal = new bootstrap.Modal("#sidesStripControlModel");
     stripLineEditModal.show();
     render(dataObject);
@@ -301,6 +307,9 @@ function controllerModelOpen(section) {
     document.getElementById("armStripLineControlCountInput").value =
       temporyArmLineArray.length;
     armStripLinePreviewUpdater();
+
+    selectedArmLine = 0;
+    selectedLineUpdaterarm();
 
     stripLineEditModal = new bootstrap.Modal("#armStripControlModel");
     stripLineEditModal.show();
@@ -711,40 +720,24 @@ function cancelLineData() {
 //
 //
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // text adding feature popup size incrasing
 let currentFontSize = 16; // Initial font size in pixels
 
 function increaseFontSize() {
-    currentFontSize += 1; // Increase font size by 1 pixels
-    applyFontSize();
-
+  currentFontSize += 1; // Increase font size by 1 pixels
+  applyFontSize();
 }
 
 function decreaseFontSize() {
-    currentFontSize -= 1; // Decrease font size by 1 pixels
-    applyFontSize();
+  currentFontSize -= 1; // Decrease font size by 1 pixels
+  applyFontSize();
 }
 
 function applyFontSize() {
-    const textContent = document.getElementById("text-pop-sizebtn1");
-    // textContent.style.fontSize = `${currentFontSize}px`;
-    textContent.innerHTML = currentFontSize;
-} 
-
+  const textContent = document.getElementById("text-pop-sizebtn1");
+  // textContent.style.fontSize = `${currentFontSize}px`;
+  textContent.innerHTML = currentFontSize;
+}
 
 //
 //

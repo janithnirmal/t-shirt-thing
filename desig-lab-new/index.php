@@ -543,12 +543,12 @@ require_once("./backend/config.php");
                                 <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-back-image-middle"  ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
-                                        <canvas id="canvas-polo-back-middle" width="220px" height="300px" ></canvas>                                              
-                                    </div>
-                                    <div class="controller-indication-design polo-t-shirt-back-image-top"  ondblclick="openImageModel();changeCanvasPoloBackTop()">
-                                        <canvas id="canvas-polo-back-top" width="200px" height="50px" ></canvas>                                              
-                                    </div>    
+                                <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
+                                    <canvas id="canvas-polo-back-middle" width="220px" height="300px"></canvas>
+                                </div>
+                                <div class="controller-indication-design polo-t-shirt-back-image-top" ondblclick="openImageModel();changeCanvasPoloBackTop()">
+                                    <canvas id="canvas-polo-back-top" width="200px" height="50px"></canvas>
+                                </div>
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
@@ -560,9 +560,9 @@ require_once("./backend/config.php");
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-left-image"  ondblclick="openImageModel();changeCanvasPoloLeftImage()">
-                                        <canvas id="canvas-polo-left-image" width="85px" height="100px" ></canvas>                                              
-                                    </div>
+                                <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
+                                    <canvas id="canvas-polo-left-image" width="85px" height="100px"></canvas>
+                                </div>
 
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
@@ -573,9 +573,9 @@ require_once("./backend/config.php");
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-right-image"  ondblclick="openImageModel();changeCanvasPoloRightImage()">
-                                        <canvas id="canvas-polo-right-image" width="75px" height="100px" ></canvas>                                              
-                                    </div>
+                                <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
+                                    <canvas id="canvas-polo-right-image" width="75px" height="100px"></canvas>
+                                </div>
                             </div>
                         </div>
                         <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
@@ -1124,7 +1124,7 @@ require_once("./backend/config.php");
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
+                        <div class="row" id="signInModalSignInSection">
                             <div class="col-12">
                                 <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
                                     <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
@@ -1143,6 +1143,24 @@ require_once("./backend/config.php");
                                 <button onclick="SignIn();" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
                             </div>
                         </div>
+
+                        <div class="row d-none" id="signInModalSignUpSection">
+                            <div class="col-12">
+                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                    <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
+                                    <input id="emailInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                    <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                                    <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
+                                </div>
+                            </div>
+                            <div style="padding: 0px 50px 15px 50px;">
+                                <button style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
 
@@ -1158,7 +1176,7 @@ require_once("./backend/config.php");
                             </button>
                         </div>
                         <div class="col-12 text-center" style="margin-top: 70px;">
-                            <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;">Sign Up Now!</span> </span>
+                            <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;" id="signInUpChangeBtn" onclick="signInModalViewChanger();">Sign Up Now!</span> </span>
                         </div>
                     </div>
                 </div>
