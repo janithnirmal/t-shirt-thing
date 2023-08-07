@@ -7,9 +7,9 @@ let dataObject = {
   mainColorSaturateValue: 1,
   mainColorLevelValue: 1,
   clothOption: {
-    sleves: "long",
-    neck: "v",
-    buttons: "2 Buttons Only",
+    sleves: "shortSleeves",
+    neck: "vneck",
+    buttons: null,
   },
   views: {
     active: "front",
@@ -93,16 +93,36 @@ function render(dataObject) {
 function clothRenderer(canvas, dataObject) {
   // draw image
   const image = document.createElement("img");
-  image.setAttribute(
-    "src",
-    "images/cloths/" +
-      dataObject.clothType +
-      "-" +
-      dataObject.views.active +
-      "_" +
-      dataObject.gender +
-      ".png"
-  );
+  let imageUrlStart = "images/cloths/" + dataObject.clothType + "-";
+  let imageUrlEnd = dataObject.views.active + "_" + dataObject.gender + ".png";
+
+  let imageUrl = "";
+
+  if (dataObject.clothType == "polo-t-shirt") {
+    imageUrl = imageUrlStart + imageUrlEnd;
+  } else if (dataObject.clothType == "cotton-t-shirt") {
+    if (dataObject.clothOption.sleves) {
+      if (dataObject.clothOption.neck) {
+        imageUrl =
+          imageUrlStart +
+          dataObject.clothOption.sleves +
+          "-" +
+          dataObject.clothOption.neck +
+          "-" +
+          imageUrlEnd;
+      } else {
+        imageUrl =
+          imageUrlStart + dataObject.clothOption.sleves + "-" + imageUrlEnd;
+      }
+    } else {
+      imageUrl =
+        imageUrlStart + dataObject.clothOption.sleves + "-" + imageUrlEnd;
+    }
+  } else {
+    imageUrl = imageUrlStart + imageUrlEnd;
+  }
+
+  image.setAttribute("src", imageUrl);
 
   let imageWidth = window.getComputedStyle(canvas).width;
   let imageHeight = window.getComputedStyle(canvas).height;
