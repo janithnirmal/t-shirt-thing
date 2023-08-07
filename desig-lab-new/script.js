@@ -684,6 +684,10 @@ function addTextcanvasPoloRightImage() {
   canvasPoloRightImage.renderAll();
 }
 
+
+
+
+
 function uploadImage() {
   const imageInput = document.getElementById("imageInput");
   const file = imageInput.files[0];
@@ -705,6 +709,7 @@ function uploadImage() {
     .then((result) => {
       console.log(result);
       console.log("Image Name: " + file.name);
+      window.alert("image uploaded click add image button")
     })
     .catch((error) => console.error("Error uploading image:", error));
   imageName = file.name;
@@ -723,6 +728,23 @@ function addStaticImage() {
       scaleX: 0.4,
       scaleY: 0.4,
     });
+
+    const deleteButton = document.createElement("button");
+    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>'; // Font Awesome trash icon
+
+    // Position the delete button at the top-right corner of the image
+    deleteButton.style.position = "absolute";
+    deleteButton.style.top = "250px"; // Adjust the top position according to your preference
+    deleteButton.style.left = "50px"; // Adjust the left position according to your preference
+
+    deleteButton.classList.add("btn", "btn-default");
+
+    deleteButton.addEventListener("click", function () {
+      canvass.remove(image);
+      deleteButton.remove();
+    });
+
+    document.body.appendChild(deleteButton);
 
     canvass.add(image);
     canvass.renderAll();
