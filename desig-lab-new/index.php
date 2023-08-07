@@ -513,7 +513,6 @@ require_once("./backend/config.php");
                                     <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
                                         <canvas id="canvass" width="220px" height="300px"></canvas>
 
-
                                     </div>
 
                                     <div class="controller-indication-design polo-t-shirt-front-image-top-left" ondblclick="openImageModel();poloTopLeft()">
@@ -522,7 +521,6 @@ require_once("./backend/config.php");
                                     </div>
                                     <div class="controller-indication-design polo-t-shirt-front-image-top-right" ondblclick="openImageModel();poloTopRight()">
                                         <canvas id="canvas-polo-top-right" width="85px" height="100px"></canvas>
-
                                     </div>
 
 
@@ -1229,8 +1227,9 @@ require_once("./backend/config.php");
     <div class="mb-3">
         <input type="file" id="imageInput" class="form-control">
     </div>
-    <button onclick="uploadImage();addStaticImage()" class="btn btn-primary mb-3">Upload</button>
-    <button onclick="addText()" id="addingText" class="btn btn-success">
+    <button onclick="uploadImage()" class="btn btn-primary  mx-2">Upload</button>
+    <button onclick="addStaticImage()" class="btn btn-primary  mx-2" id="adding image">Add image</button>
+    <button onclick="addText()" id="addingText" class="btn btn-success mx-2">
         Add Text
     </button>
 </div>
