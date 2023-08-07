@@ -510,19 +510,19 @@ require_once("./backend/config.php");
 
                                     <!-- image box -->
 
-                                    <div class="controller-indication-design polo-t-shirt-front-image-middle"  ondblclick="openImageModel();poloMiddle()">
-                                        <canvas id="canvass" width="220px" height="300px" ></canvas>
-                                              
+                                    <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
+                                        <canvas id="canvass" width="220px" height="300px"></canvas>
+
 
                                     </div>
 
                                     <div class="controller-indication-design polo-t-shirt-front-image-top-left" ondblclick="openImageModel();poloTopLeft()">
                                         <canvas id="canvaso" width="85px" height="100px"></canvas>
-                                        
+
                                     </div>
                                     <div class="controller-indication-design polo-t-shirt-front-image-top-right" ondblclick="openImageModel();poloTopRight()">
                                         <canvas id="canvas-polo-top-right" width="85px" height="100px"></canvas>
-                                        
+
                                     </div>
 
 
@@ -1165,44 +1165,44 @@ require_once("./backend/config.php");
             </div>
         </div>
     </div>
-<!--image-->
-<div id="imageModelContainer">
-                                <div class="modal" tabindex="-1" id="imageModel">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content  border border-1 border-secondary m-3">
-                                            <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                            <input type="text" id="text-input" placeholder="Add text here" >
-                                            <input type="color" id="color-input" value="#000000" > <!-- Color input field -->
-                                            <input type="number" id="font-size-input" placeholder="Font Size" value="30">
-  <select id="font-family-input">
-    <option value="Arial">Arial</option>
-    <option value="Helvetica">Helvetica</option>
-    <option value="Times New Roman">Times New Roman</option>
-    <!-- Add more font options here as needed -->
-  </select> 
-  <label for="bold-input">Bold</label>
-  <input type="checkbox" id="bold-input">
-  <label for="italic-input">Italic</label>
-  <input type="checkbox" id="italic-input">
-  <label for="underline-input">Underline</label>
-  <input type="checkbox" id="underline-input">
-  <label for="crossline-input">Crossline</label>
-  <input type="checkbox" id="crossline-input">
-  <input type="file" id="imageInput">
-    <button onclick="uploadImage();addStaticImage()">Upload</button>
+    <!--image-->
+    <div id="imageModelContainer">
+        <div class="modal" tabindex="-1" id="imageModel">
+            <div class="modal-dialog">
+                <div class="modal-content  border border-1 border-secondary m-3">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="text-input" placeholder="Add text here">
+                        <input type="color" id="color-input" value="#000000"> <!-- Color input field -->
+                        <input type="number" id="font-size-input" placeholder="Font Size" value="30">
+                        <select id="font-family-input">
+                            <option value="Arial">Arial</option>
+                            <option value="Helvetica">Helvetica</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <!-- Add more font options here as needed -->
+                        </select>
+                        <label for="bold-input">Bold</label>
+                        <input type="checkbox" id="bold-input">
+                        <label for="italic-input">Italic</label>
+                        <input type="checkbox" id="italic-input">
+                        <label for="underline-input">Underline</label>
+                        <input type="checkbox" id="underline-input">
+                        <label for="crossline-input">Crossline</label>
+                        <input type="checkbox" id="crossline-input">
+                        <input type="file" id="imageInput">
+                        <button onclick="uploadImage();addStaticImage()">Upload</button>
 
-  <button onclick="addText()" id="addingText">
-                                                add text
-                                            </button>
-                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <button onclick="addText()" id="addingText">
+                            add text
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

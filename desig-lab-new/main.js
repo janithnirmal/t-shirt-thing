@@ -19,6 +19,27 @@ function tooltip(id, innerText, topShift) {
   });
 }
 
+function logout() {
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = () => {
+    if (request.readyState == 4 && request.status == 200) {
+      responseObject = JSON.parse(request.responseText);
+      if (responseObject.status === "success") {
+        window.location.reload();
+      } else {
+        console.log(responseObject);
+      }
+    }
+  };
+
+  request.open(
+    "POST",
+    "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/sign_out.php",
+    true
+  );
+  request.send();
+}
+
 // try {
 //   // tooltip for top left box
 //   document.getElementById("btn1").addEventListener("mouseenter", () => {

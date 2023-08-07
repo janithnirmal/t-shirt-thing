@@ -975,14 +975,23 @@ nav i {
   object-fit: contain;
 }
 
+#savedDesignModelContentContainer {
+  overflow-y: auto;
+  height: 400px;
+}
+
 .saved-design-item {
   border-radius: 20px;
   padding: 30px 20px;
   background-color: gray;
   color: white;
-  width: 100%;
   min-height: 70px;
   margin: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .saved-design-item-images {
@@ -1055,6 +1064,15 @@ nav i {
   width: 25px;
   height: 25px;
 }
+
+.saved-design-list-view-details {
+  width: 100%;
+  border-radius: 100px;
+  background-color: rgb(69, 69, 255);
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
 /* responsive */
 @media (max-width: 1280px) {
   .container {
