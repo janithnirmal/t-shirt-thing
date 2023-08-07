@@ -217,7 +217,6 @@ function tShirtButtonNeckSection(buttonType) {
   dataObject.clothOption.buttons = buttonType;
   productControlModel.hide();
   render(dataObject);
-  console.log(dataObject.clothOption.buttons);
 }
 
 // view side updater
@@ -743,9 +742,6 @@ function applyFontSize() {
 //
 //
 // test
-document.addEventListener("DOMContentLoaded", () => {
-  controllerModelOpen("neck");
-});
 
 function consolelog(params) {
   console.log(params);

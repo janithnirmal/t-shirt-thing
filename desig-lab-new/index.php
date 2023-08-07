@@ -1,5 +1,5 @@
 <?php
-require_once("./backend/config.php");
+// require_once("./backend/config.php");
 
 // require_once("backend/app/user_access_updater.php");
 
@@ -232,24 +232,29 @@ require_once("./backend/config.php");
                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
+                                                                <span>Chinese</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="templateSection('chinese');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
+                                                                <span>Chinese V Type</span>
+                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <button onclick="templateSection('chinese-v-type');" class="btn btn-secondary">Select</button>
+                                                            </div>
+                                                            <div class="product-control-card-item">
                                                                 <span>V Neck</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="templateSection('vneck');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
-                                                                <span>Round Neck</span>
+                                                                <span>V Cut with COller</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="templateSection('roundneck')" class="btn btn-secondary">Select</button>
+                                                                <button onclick="templateSection('v-cut-with-coller')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
-                                                                <span>Collar + 3 Buttons</span>
+                                                                <span>V neck with Coller</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="templateSection('collar2buttons');" class="btn btn-secondary">Select</button>
-                                                            </div>
-                                                            <div class="product-control-card-item">
-                                                                <span>Collar + 3 Buttons </span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="templateSection('collar3buttons')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
                                                     </div>
