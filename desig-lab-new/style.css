@@ -1115,8 +1115,7 @@ nav i {
   .navbar-link-container {
     z-index: 10;
     position: absolute;
-    height: 92vh;
-    width: 80%;
+    height: 100vh;
     background-color: #000;
     top: 0;
     left: 0;
@@ -1164,11 +1163,19 @@ nav i {
   .cart-side-radioAmount {
     text-align: end;
   }
+  .section1-layout {
+    /* min-width: 150%; */
+    width: max-content;
+    height: max-content;
+    background-color: white;
+  }
+  
 }
 
-@media (max-width: 426px) {
+@media (max-width: 720px) {
   .section1-layout {
-    min-width: 150%;
+    /* min-width: 150%; */
+    width: max-content;
     height: max-content;
     background-color: white;
   }
@@ -1203,10 +1210,10 @@ nav i {
     width: 150%;
     /* height: 100px; */
   }
-}
+}  
 @media (max-width: 320px) {
   .section1-layout {
-    min-width: 170%;
+    width: max-content;
     height: max-content;
     background-color: white;
   }
