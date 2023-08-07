@@ -514,7 +514,7 @@
 
 
                                     <!-- image box -->
-
+                                    
                                     <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
                                         <canvas id="canvass" width="220px" height="300px"></canvas>
 
@@ -1196,32 +1196,59 @@
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                   
                     <div class="modal-body">
-                        <input type="text" id="text-input" placeholder="Add text here">
-                        <input type="color" id="color-input" value="#000000"> <!-- Color input field -->
-                        <input type="number" id="font-size-input" placeholder="Font Size" value="30">
-                        <select id="font-family-input">
-                            <option value="Arial">Arial</option>
-                            <option value="Helvetica">Helvetica</option>
-                            <option value="Times New Roman">Times New Roman</option>
-                            <!-- Add more font options here as needed -->
-                        </select>
-                        <label for="bold-input">Bold</label>
-                        <input type="checkbox" id="bold-input">
-                        <label for="italic-input">Italic</label>
-                        <input type="checkbox" id="italic-input">
-                        <label for="underline-input">Underline</label>
-                        <input type="checkbox" id="underline-input">
-                        <label for="crossline-input">Crossline</label>
-                        <input type="checkbox" id="crossline-input">
-                        <input type="file" id="imageInput">
-                        <button onclick="uploadImage();addStaticImage()">Upload</button>
+    <div class="mb-3">
+        <input type="text" id="text-input" class="form-control" placeholder="Add text here">
+    </div>
+    <div class="mb-3">
+        <input type="color" id="color-input" class="form-control form-control-color" value="#000000">
+    </div>
+    <div class="mb-3">
+        <input type="number" id="font-size-input" class="form-control" placeholder="Font Size" value="30">
+    </div>
+    <div class="mb-3">
+        <select id="font-family-input" class="form-select">
+            <option value="Arial">Arial</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <!-- Add more font options here as needed -->
+        </select>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="bold-input" class="form-check-input">
+        <label for="bold-input" class="form-check-label">Bold</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="italic-input" class="form-check-input">
+        <label for="italic-input" class="form-check-label">Italic</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="underline-input" class="form-check-input">
+        <label for="underline-input" class="form-check-label">Underline</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="crossline-input" class="form-check-input">
+        <label for="crossline-input" class="form-check-label">Crossline</label>
+    </div>
+    <div class="mb-3">
+        <input type="file" id="imageInput" class="form-control">
+    </div>
+    <button onclick="uploadImage();addStaticImage()" class="btn btn-primary mb-3">Upload</button>
+    <button onclick="addText()" id="addingText" class="btn btn-success">
+        Add Text
+    </button>
+</div>
 
-                        <button onclick="addText()" id="addingText">
-                            add text
-                        </button>
 
-                    </div>
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
