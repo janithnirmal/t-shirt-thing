@@ -1,5 +1,4 @@
 <?php
-
 require_once("backend/app/user_access_updater.php");
 
 $loggedUserData = null;

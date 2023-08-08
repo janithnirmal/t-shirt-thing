@@ -35,15 +35,17 @@
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/f98ce7c376.js" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
 
     <script src="renderer.js" defer></script>
     <script src="controls.js" defer></script>
     <script src="popup.js" defer></script>
     <script src="main.js" defer></script>
     <script src="script.js" defer></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script defer src="imageTextController.js"></script>
 
 </head>
 
@@ -497,6 +499,8 @@
             <!-- middle panel -->
             <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                 <div class="t-shirt-panel-container ">
+
+                    <!-- strips -->
                     <div class="canvasOverly">
                         <div id="polo-t-shirt" class="canvasOverlyInner  d-block">
                             <div data-controlside="front" id="polo-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
@@ -514,8 +518,8 @@
 
 
                                     <!-- image box -->
-                                    
-                                    <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
+
+                                    <!-- <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
                                         <canvas id="canvass" width="220px" height="300px"></canvas>
 
                                     </div>
@@ -526,17 +530,7 @@
                                     </div>
                                     <div class="controller-indication-design polo-t-shirt-front-image-top-right" ondblclick="openImageModel();poloTopRight()">
                                         <canvas id="canvas-polo-top-right" width="85px" height="100px"></canvas>
-                                    </div>
-
-
-
-
-
-
-
-
-
-
+                                    </div> -->
                                 </div>
                             </div>
                             <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
@@ -546,12 +540,12 @@
                                 <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
+                                <!-- <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
                                     <canvas id="canvas-polo-back-middle" width="220px" height="300px"></canvas>
                                 </div>
                                 <div class="controller-indication-design polo-t-shirt-back-image-top" ondblclick="openImageModel();changeCanvasPoloBackTop()">
                                     <canvas id="canvas-polo-back-top" width="200px" height="50px"></canvas>
-                                </div>
+                                </div> -->
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
@@ -563,9 +557,9 @@
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
+                                <!-- <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
                                     <canvas id="canvas-polo-left-image" width="85px" height="100px"></canvas>
-                                </div>
+                                </div> -->
 
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
@@ -576,9 +570,9 @@
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
+                                <!-- <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
                                     <canvas id="canvas-polo-right-image" width="75px" height="100px"></canvas>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
@@ -641,7 +635,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="image-text-container"></div>
+
+                    <!-- image text  -->
+                    <div class="image-text-container" id="imageTextContainer">
+                        <div data-side="Front" id="canvasOverlyFront" class="d-block position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-side="Back" id="canvasOverlyBack" class="d-none position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-side="Left" id="canvasOverlyLeft" class="d-none position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-side="Right" id="canvasOverlyRight" class="d-none position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
+                    </div>
+
+                    <!-- render -->
                     <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
                 </div>
 
@@ -1194,50 +1197,50 @@
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                   
+
                     <div class="modal-body">
-    <div class="mb-3">
-        <input type="text" id="text-input" class="form-control" placeholder="Add text here">
-    </div>
-    <div class="mb-3">
-        <input type="color" id="color-input" class="form-control form-control-color" value="#000000">
-    </div>
-    <div class="mb-3">
-        <input type="number" id="font-size-input" class="form-control" placeholder="Font Size" value="30">
-    </div>
-    <div class="mb-3">
-        <select id="font-family-input" class="form-select">
-            <option value="Arial">Arial</option>
-            <option value="Helvetica">Helvetica</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <!-- Add more font options here as needed -->
-        </select>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="bold-input" class="form-check-input">
-        <label for="bold-input" class="form-check-label">Bold</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="italic-input" class="form-check-input">
-        <label for="italic-input" class="form-check-label">Italic</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="underline-input" class="form-check-input">
-        <label for="underline-input" class="form-check-label">Underline</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="crossline-input" class="form-check-input">
-        <label for="crossline-input" class="form-check-label">Crossline</label>
-    </div>
-    <div class="mb-3">
-        <input type="file" id="imageInput" class="form-control">
-    </div>
-    <button onclick="uploadImage()" class="btn btn-primary  mx-2">Upload</button>
-    <button onclick="addStaticImage()" class="btn btn-primary  mx-2" id="adding image">Add image</button>
-    <button onclick="addText()" id="addingText" class="btn btn-success mx-2">
-        Add Text
-    </button>
-</div>
+                        <div class="mb-3">
+                            <input type="text" id="text-input" class="form-control" placeholder="Add text here">
+                        </div>
+                        <div class="mb-3">
+                            <input type="color" id="color-input" class="form-control form-control-color" value="#000000">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" id="font-size-input" class="form-control" placeholder="Font Size" value="30">
+                        </div>
+                        <div class="mb-3">
+                            <select id="font-family-input" class="form-select">
+                                <option value="Arial">Arial</option>
+                                <option value="Helvetica">Helvetica</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                                <!-- Add more font options here as needed -->
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="bold-input" class="form-check-input">
+                            <label for="bold-input" class="form-check-label">Bold</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="italic-input" class="form-check-input">
+                            <label for="italic-input" class="form-check-label">Italic</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="underline-input" class="form-check-input">
+                            <label for="underline-input" class="form-check-label">Underline</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="crossline-input" class="form-check-input">
+                            <label for="crossline-input" class="form-check-label">Crossline</label>
+                        </div>
+                        <div class="mb-3">
+                            <input type="file" id="imageInput" class="form-control">
+                        </div>
+                        <button onclick="uploadImage()" class="btn btn-primary  mx-2">Upload</button>
+                        <button onclick="addStaticImage()" class="btn btn-primary  mx-2" id="adding image">Add image</button>
+                        <button onclick="addText()" id="addingText" class="btn btn-success mx-2">
+                            Add Text
+                        </button>
+                    </div>
 
 
 

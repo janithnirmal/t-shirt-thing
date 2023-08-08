@@ -225,6 +225,22 @@ function viewChange(side) {
   render(dataObject);
 
   changeControlViewSection(dataObject.clothType);
+  imageTextSectioniewChanger(side);
+}
+
+function imageTextSectioniewChanger(side) {
+  const imageTextSectionView = document.querySelectorAll(
+    "#imageTextContainer div"
+  );
+
+  imageTextSectionView.forEach((element) => {
+    element.classList.add("d-none");
+    element.classList.remove("d-block");
+  });
+
+  let selectedSide = document.getElementById("canvasOverly" + side);
+  selectedSide.classList.add("d-block");
+  selectedSide.classList.remove("d-none");
 }
 
 function changeControlViewSection(type) {

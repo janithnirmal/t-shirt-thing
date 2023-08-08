@@ -1,3 +1,5 @@
+
+//  design data object
 let dataObject = {
   sizeQuntitySets: [],
   gender: "male",
@@ -51,6 +53,10 @@ let dataObject = {
     },
   },
 };
+
+// cloth image text object
+
+
 
 // renderer
 function render(dataObject) {

@@ -786,6 +786,8 @@ function openImageModel() {
   imageModel.show();
 }
 
+
+
 function poloMiddle() {
   document.getElementById("addingText").setAttribute("onclick", "addText()");
 }
@@ -829,3 +831,5 @@ function changeCanvasPoloRightImage() {
     .getElementById("addingText")
     .setAttribute("onclick", "addTextcanvasPoloRightImage()");
 }
+
+

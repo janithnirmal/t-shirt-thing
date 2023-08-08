@@ -203,12 +203,6 @@ function productIdentifier() {
 }
 
 // image Text render
-
-// const canvasOverlyFront = document.getElementById("canvasOverlyFront"); // container
-// const canvasOverlyBack = document.getElementById("canvasOverlyBack"); // container
-// const canvasOverlyLeft = document.getElementById("canvasOverlyLeft"); // container
-// const canvasOverlyRight = document.getElementById("canvasOverlyRight"); // container
-
 function imageTextSectionRenderer() {
   allCanvasElements = []; // clear all canavas array
 
@@ -465,7 +459,7 @@ function generateUniqueId() {
 //
 // test
 document.addEventListener("DOMContentLoaded", () => {
-  // productIdentifier();
+  productIdentifier();
 });
 
 // setInterval(() => {
