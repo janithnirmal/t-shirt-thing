@@ -345,10 +345,42 @@ function addText() {
 canvass.on("object:moving", (e) => {
   const target = e.target;
   if (target.type === "text") {
+    // Constrain the text position within the canvas boundaries
+    const canvasWidth = canvass.width;
+    const canvasHeight = canvass.height;
+    const textWidth = target.width * target.scaleX;
+    const textHeight = target.height * target.scaleY;
+
+    // Left boundary
+    if (target.left < 0) {
+      target.left = 0;
+    }
+    // Right boundary
+    if (target.left + textWidth > canvasWidth) {
+      target.left = canvasWidth - textWidth;
+    }
+    // Top boundary
+    if (target.top < 0) {
+      target.top = 0;
+    }
+    // Bottom boundary
+    if (target.top + textHeight > canvasHeight) {
+      target.top = canvasHeight - textHeight;
+    }
+
+    // Update the textLeft and textTop variables to keep track of the position
     textLeft = target.left;
     textTop = target.top;
+
+    // Re-render the canvas
+    canvass.renderAll();
   }
 });
+
+document.getElementById("color-input").addEventListener("change", (e) => {
+  textColor = e.target.value;
+});
+
 
 document.getElementById("color-input").addEventListener("change", (e) => {
   textColor = e.target.value;
@@ -735,7 +767,7 @@ function addStaticImage() {
 
     // Position the delete button at the top-right corner of the image
     deleteButton.style.position = "absolute";
-    deleteButton.style.top = "250px"; // Adjust the top position according to your preference
+    deleteButton.style.top = "50px"; // Adjust the top position according to your preference
     deleteButton.style.left = "50px"; // Adjust the left position according to your preference
 
     deleteButton.classList.add("btn", "btn-default");
