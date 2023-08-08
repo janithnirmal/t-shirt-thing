@@ -1217,22 +1217,6 @@ nav i {
   .section1{
     width: max-content;
   }
-
-  .big-box {
-    width: 80px;
-    height: 80px;
-  }
-  .footer {
-    margin-top: 260px;
-    width: 150%;
-  }
-}  
-@media (max-width: 320px) {
-  .section1-layout {
-    width: max-content;
-    height: max-content;
-    background-color: white;
-  }
   .cart-left-box {
     width: fit-content;
   }
@@ -1248,6 +1232,22 @@ nav i {
     width: 70px;
     font-size: 11px;
   }
+  .big-box {
+    width: 80px;
+    height: 80px;
+  }
+  .footer {
+    margin-top: 260px;
+    width: 150%;
+  }
+}  
+@media (max-width: 320px) {
+  .section1-layout {
+    width: max-content;
+    height: max-content;
+    background-color: white;
+  }
+
   .footer {
     width: 170%;
   }
