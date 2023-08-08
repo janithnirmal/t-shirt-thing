@@ -1208,20 +1208,17 @@ nav i {
   }
   
 }
-/* @media screen and (min-width: 577px) and (max-width: 670px) {
-  .section1-layout{
-    width: 100%;
-  }
-} */
 @media (max-width: 576px) {
   .section1{
     width: max-content;
   }
-  .cart-main-container {
+  .cart{
+    width: 150%;
+    height: max-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
   .cart-left-box {
     width: 100%;
@@ -1253,7 +1250,9 @@ nav i {
     height: max-content;
     background-color: white;
   }
-
+  .cart{
+    width: 170%;
+  }
   .footer {
     width: 170%;
   }
