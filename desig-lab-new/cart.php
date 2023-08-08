@@ -22,8 +22,8 @@
 
     <!--cart interface  -->
     <br><br>
-    <section class=" container cart d-flex flex-column justify-content-center align-content-center align-items-center">
-        <div class="row cart-main-container" style="min-width: 110% ; height: max-content;">
+    <section class="cart d-flex flex-column justify-content-center align-content-center align-items-center">
+        <div class="row cart-main-container">
             <div class="col-8 bg-light p-0 cart-left-box">
                 <div class="col-6  bg-light h-50 w-100 ">
                     <div class="row d-flex justify-content-between">
