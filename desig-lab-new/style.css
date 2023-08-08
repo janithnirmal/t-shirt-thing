@@ -93,6 +93,7 @@ nav i {
 .section1 {
   margin-top: 70px;
   width: 100%;
+  /* width: max-content; */
   height: max-content;
 }
 
@@ -1112,6 +1113,7 @@ nav i {
 }
 
 @media (max-width: 768px) {
+  
   .navbar-link-container {
     z-index: 10;
     position: absolute;
@@ -1165,17 +1167,30 @@ nav i {
   }
   .section1-layout {
     /* min-width: 150%; */
-    width: max-content;
+    width: fit-content;
     height: max-content;
     background-color: white;
   }
+  .big-box {
+    width: 80px;
+    height: 80px;
+    /* margin-left: 1px; */
+  }
   
 }
-
-@media (max-width: 720px) {
-  .section1-layout {
-    /* min-width: 150%; */
+/* @media screen and (min-width: 577px) and (max-width: 670px) {
+  .section1-layout{
+    width: 100%;
+  }
+} */
+@media (max-width: 576px) {
+  .section1{
     width: max-content;
+  }
+  .section1-layout {
+    /* min-width: 110%; */
+    /* width: max-content; */
+    width: fit-content;
     height: max-content;
     background-color: white;
   }
