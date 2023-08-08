@@ -381,7 +381,6 @@ document.getElementById("color-input").addEventListener("change", (e) => {
   textColor = e.target.value;
 });
 
-
 document.getElementById("color-input").addEventListener("change", (e) => {
   textColor = e.target.value;
 });
@@ -716,10 +715,6 @@ function addTextcanvasPoloRightImage() {
   canvasPoloRightImage.renderAll();
 }
 
-
-
-
-
 function uploadImage() {
   const imageInput = document.getElementById("imageInput");
   const file = imageInput.files[0];
@@ -741,7 +736,7 @@ function uploadImage() {
     .then((result) => {
       console.log(result);
       console.log("Image Name: " + file.name);
-      window.alert("image uploaded click add image button")
+      window.alert("image uploaded click add image button");
     })
     .catch((error) => console.error("Error uploading image:", error));
   imageName = file.name;
