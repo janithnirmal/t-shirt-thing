@@ -84,7 +84,7 @@
                                                         <input checked value="male" name="genderRadioInput" type="radio" id="menRadioBtn">
                                                         <label class="btn btn-primary" for="menRadioBtn">Men</label>
                                                     </div>
-                                                    <div class="d-flex gap-2">
+                                                    <div class="d-none gap-2">
                                                         <input value="female" name="genderRadioInput" type="radio" id="womenRadioBtn">
                                                         <label class="btn btn-info" for="womenRadioBtn">Women</label>
                                                     </div>
@@ -112,12 +112,16 @@
                                             <div class="modal-body">
                                                 <div class="d-flex justify-content-center gap-3">
                                                     <div class="d-flex gap-2">
-                                                        <input checked value="ScreenPrint" name="printTypeRadioInput" type="radio" id="screenPrintRadioBtn">
-                                                        <label class="btn btn-primary" for="screenPrintRadioBtn">ScreenPrint</label>
+                                                        <input checked value="Emblishment" name="printTypeRadioInput" type="radio" id="emblishmentRadioBtn">
+                                                        <label class="btn btn-primary" for="emblishmentRadioBtn">Emblishment</label>
                                                     </div>
                                                     <div class="d-flex gap-2">
                                                         <input value="Embroidered" name="printTypeRadioInput" type="radio" id="embroideredRadioBtn">
                                                         <label class="btn btn-info" for="embroideredRadioBtn">Embroidered</label>
+                                                    </div>
+                                                    <div class="d-flex gap-2">
+                                                        <input value="Sublimation " name="printTypeRadioInput" type="radio" id="sublimationRadioBtn">
+                                                        <label class="btn btn-info" for="sublimationRadioBtn">Sublimation</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,10 +146,10 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="product-control-nav d-flex justify-content-center">
-                                                    <button data-btntype="Gender" id="productControlNavigationChangeGender" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Gender');">
+                                                    <!-- <button data-btntype="Gender" id="productControlNavigationChangeGender" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Gender');">
                                                         <div class="product-control-number-icon">1</div>
                                                         <span class="product-control-number-text fw-light">Start here</span>
-                                                    </button>
+                                                    </button> -->
                                                     <button data-btntype="Type" id="productControlNavigationChangeType" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Type');">
                                                         <div class="product-control-number-icon">2</div>
                                                         <span class="product-control-number-text fw-light">Cloth Template</span>
@@ -165,7 +169,7 @@
                                                 </div>
                                                 <hr>
                                                 <div class="product-control-body overflow-auto">
-                                                    <div id="productControlGenderSelectSection" class="d-flex flex-column  product-control-section">
+                                                    <!-- <div id="productControlGenderSelectSection" class="d-flex flex-column  product-control-section">
                                                         <span class="text-center w-100 py-2">Let's Start Here...</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -179,8 +183,8 @@
                                                                 <button onclick="changeGender('female')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div id="productControlTypeSelectSection" class="d-none flex-column product-control-section">
+                                                    </div> -->
+                                                    <div id="productControlTypeSelectSection" class="d-flex flex-column product-control-section">
                                                         <span class="text-center w-100 py-2">Great! Now it's time to select what you want..</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -265,15 +269,15 @@
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
                                                                 <span>2 Buttons Only</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('2 Buttons + Only');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>2 Buttons + Open</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('2 Buttons + Open')" class="btn btn-secondary">Select</button>
                                                             </div>
-                                                            <div class="product-control-card-item">
+                                                            <!-- <div class="product-control-card-item">
                                                                 <span>3 Buttons Only</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('3 Buttons Only');" class="btn btn-secondary">Select</button>
@@ -282,7 +286,7 @@
                                                                 <span>3 Buttons + Open</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('3 Buttons + Open')" class="btn btn-secondary">Select</button>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -869,7 +873,7 @@
                                                     <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('teal')" style="background-color: teal"></div>
                                                     <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('gray')" style="background-color: gray"></div>
                                                     <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('brown')" style="background-color: brown"></div>
-                                                    <div class="color-option" onclick="colorUpdate(180, 1, 1); setColor('cyan')" style="background-color: cyan"></div>
+                                                    <div class="color-option" onclick="colorUpdate(177, 0, .5); setColor('cyan')" style="background-color: cyan"></div>
                                                     <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('magenta')" style="background-color: magenta"></div>
                                                     <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('lime')" style="background-color: lime"></div>
                                                     <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('silver')" style="background-color: silver"></div>
@@ -1087,7 +1091,7 @@
 
                 <!-- navigation control -->
                 <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
-                    <div class="t_changebtnbox d-flex  flex-row flex-md-column" id="viewPortChange">
+                    <div class="t_changebtnbox d-flex gap-1 flex-row flex-md-column" id="viewPortChange">
                         <button class="t_changebtn t_changebtn1" onclick="viewChange('front');">
                             <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
                             <p class="t_changebtnpara">Front view</p>

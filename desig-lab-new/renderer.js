@@ -5,8 +5,8 @@ let dataObject = {
   clothType: "polo-t-shirt",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
-  mainColorSaturateValue: 1,
-  mainColorLevelValue: 1,
+  mainColorSaturateValue: 0,
+  mainColorLevelValue: 2,
   clothOption: {
     sleves: "shortSleeves",
     neck: "vneck",
@@ -15,40 +15,9 @@ let dataObject = {
   views: {
     active: "front",
     strips: {
-      neck: [
-        {
-          thickness: 2,
-          color: "#ffffff",
-        },
-        {
-          thickness: 2,
-          color: "#008000",
-        },
-        {
-          thickness: 3,
-          color: "#A2FF1C",
-        },
-      ],
-      arm: [
-        {
-          thickness: 2,
-          color: "#ffffff",
-        },
-        {
-          thickness: 2,
-          color: "#F938FF",
-        },
-        {
-          thickness: 3,
-          color: "#FF6E38",
-        },
-      ],
-      sides: [
-        {
-          thickness: 3,
-          color: "#FF6E38",
-        },
-      ],
+      neck: [],
+      arm: [],
+      sides: [],
     },
   },
 };

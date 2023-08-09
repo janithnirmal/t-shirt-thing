@@ -25,7 +25,7 @@ if ($access->isLoggedIn()) {
             <a href="index.php">DesignHome</a>
             <button class="btn-style-remover text-secondary" href="#" onclick="openSavedDesignModal();">Designs</button>
             <a href="orders.php">Orders</a>
-            <a href="">Help</a>
+            <a class="d-none" href="">Help</a>
             <a href="" class="d-none">
                 Reviews
                 <i class="fas fa-star"></i>
@@ -33,12 +33,12 @@ if ($access->isLoggedIn()) {
         </div>
     </div>
     <div class="d-flex h-100 justify-content-center align-items-center nav-bar-button-section">
-        <a href=""><img class="nav-img-contact navbar-talk-image" src="images/contact.png" alt="" /></a>
-        <div class="nav-contact-para d-lg-flex d-none  flex-column ">
+        <img class="nav-img-contact navbar-talk-image" src="images/contact.png" alt="" />
+        <div class="mx-3 nav-contact-para d-lg-flex d-none  flex-column ">
             <span class="nav-contact-para1">(+94)70 1234567</span>
             <span class="nav-contact-para2">Talk to an Expert</span>
         </div>
-        <a href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a>
+        <a class="d-none" href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a>
         <?php
         if ($loggedUserData) {
         ?>

@@ -298,6 +298,8 @@ function canvasBuilder(
   canvasCotainer.style.marginTop = canvasTop + "px";
   canvasCotainer.style.marginLeft = canvasLeft + "px";
   canvasCotainer.style.position = "absolute";
+  canvasCotainer.style.border = "2px black dashed";
+  canvasCotainer.style.cursor = "pointer";
   canvasCotainer.style.backgroundColor = "#0000ff";
   // canvasCotainer.setAttribute("onclick", "selectCanvas('" + canvasId + "')");
   canvasCotainer.appendChild(canvas);
@@ -459,8 +461,8 @@ function imageGenerator(fabricElement, file, options = {}) {
       const defaultOptions = {
         left: 20,
         top: 20,
-        scaleX: .5,
-        scaleY: .5,
+        scaleX: 0.5,
+        scaleY: 0.5,
         angle: 0,
         opacity: 1,
       };
