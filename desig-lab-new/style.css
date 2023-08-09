@@ -64,6 +64,19 @@ nav i {
   color: #ffa500;
 }
 
+.pointer-click-trough {
+  pointer-events: none;
+}
+
+.canvas-overly {
+  pointer-events: none; /* Make the overlay click-through */
+}
+
+.canvas-overly * {
+  pointer-events: auto; /* Enable click events for child elements */
+}
+
+
 .container {
   width: 1200px;
   height: max-content;
@@ -1070,12 +1083,18 @@ nav i {
   height: 40px;
   margin-left: 15px;
 }
+
 .text-pop-bottomicon2 {
   padding: 6px;
   width: 6px;
   height: 6px;
 }
 .text-pop-bottomiconimage {
+  width: 25px;
+  height: 25px;
+}
+
+.image-text-controller-icons {
   width: 25px;
   height: 25px;
 }
@@ -1113,7 +1132,6 @@ nav i {
 }
 
 @media (max-width: 768px) {
-  
   .navbar-link-container {
     z-index: 10;
     position: absolute;
@@ -1201,18 +1219,16 @@ nav i {
     width: 80px;
   }
 
-
   .big-box {
     width: 80px;
     height: 80px;
   }
-  
 }
 @media (max-width: 576px) {
-  .section1{
+  .section1 {
     width: max-content;
   }
-  .cart{
+  .cart {
     width: 150%;
     height: max-content;
     display: flex;
@@ -1243,14 +1259,14 @@ nav i {
     margin-top: 260px;
     width: 150%;
   }
-}  
+}
 @media (max-width: 320px) {
   .section1-layout {
     width: max-content;
     height: max-content;
     background-color: white;
   }
-  .cart{
+  .cart {
     width: 170%;
   }
   .footer {

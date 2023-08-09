@@ -337,14 +337,14 @@
                 <!-- box 2 -->
                 <div class="basic-styling left-side-box2 d-flex  flex-md-column justify-content-center align-items-center">
                     <div class="list-group-item" id="btn6">
-                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button onclick="openTextPanel()" class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-t"></i>
                             <p class="p-0 m-0">Add Text</p>
                         </button>
                         <!-- controls for adding text -->
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
                             <!-- Modal -->
-                            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade " id="addTextModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content" style="background-color: #e3e8ce;">
                                         <div class="modal-header">
@@ -355,7 +355,7 @@
                                             <div class="col-12">
                                                 <button class="w-100 card d-flex flex-column align-items-center p-2" style="background-color: #e3e8ce;">
                                                     <div class="fs-6">Text</div>
-                                                    <textarea class="edit-text-textarea form-control w-100" col="1" id="floatingInput" name="" placeholder="Your Text"></textarea>
+                                                    <textarea class="edit-text-textarea form-control w-100" col="1" id="textAddingInput" name="" placeholder="Your Text"></textarea>
                                                 </button>
                                             </div>
 
@@ -378,43 +378,6 @@
                                                         <div class="small-box"></div>
                                                     </div>
                                                 </button>
-
-                                                <div id="colorControlModelContainer">
-                                                    <!-- <div class="modal" tabindex="-1" id="colorControlModel">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content  border border-1 border-secondary m-3">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title text-center">Select A Color</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <div class="d-flex justify-content-center gap-3">
-                                                                        <div class="color-row" style="max-width: 350px">
-                                                                            <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('red')" style="background-color: red"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(230, 1, 1); setColor('blue')" style="background-color: blue"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(120, 1, 1); setColor('green')" style="background-color: green"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(60, 1.4, 1.8); setColor('yellow')" style="background-color: yellow"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('orange')" style="background-color: orange"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(270, 1, 1); setColor('purple')" style="background-color: purple"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('pink')" style="background-color: pink"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('teal')" style="background-color: teal"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('gray')" style="background-color: gray"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('brown')" style="background-color: brown"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(180, 1, 1); setColor('cyan')" style="background-color: cyan"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('magenta')" style="background-color: magenta"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('lime')" style="background-color: lime"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('silver')" style="background-color: silver"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(280, 1, 1); setColor('indigo')" style="background-color: indigo"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(70, 1, 1); setColor('gold')" style="background-color: gold"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(40, 1, 1); setColor('maroon')" style="background-color: maroon"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(260, 1, 1); setColor('navy')" style="background-color: navy"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
-                                                </div>
                                             </div>
 
                                             <div class="mt-4">
@@ -455,8 +418,8 @@
 
                                         </div>
                                         <div class="modal-footer d-flex  justify-content-center">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button onclick="addTextToSelectedCanvas();" class="btn btn-primary">Add Text</button>
                                         </div>
                                     </div>
                                 </div>
@@ -465,10 +428,31 @@
 
                     </div>
                     <div class="list-group-item" id="btn7">
-                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
+                        <button onclick="openImageModel()" class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-image"></i>
                             <p class="p-0 m-0">Add Image</p>
                         </button>
+                        <!-- add text model controls -->
+                        <!--image-->
+                        <div id="imageModelContainer">
+                            <div class="modal" tabindex="-1" id="addImageModel">
+                                <div class="modal-dialog">
+                                    <div class="modal-content  border border-1 border-secondary m-3">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label>Add Image to Selected Canvas</label>
+                                                <input type="file" id="imageAddingInput" class="form-control">
+                                            </div>
+                                            <button onclick="addImageToSelectedCanvas()" class="btn btn-primary  mx-2" id="adding image">Add image</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="list-group-item" id="btn8">
                         <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="saveCurrentDesign();">
@@ -500,10 +484,17 @@
             <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                 <div class="t-shirt-panel-container ">
 
+                    <div class="image-text-controller-icons position-absolute">
+                        <div class="p-1 bg-dark fw-bold text-white">D</div>
+                    </div>
+
+                    <!-- render -->
+                    <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center position-absolute"></div>
+
                     <!-- strips -->
-                    <div class="canvasOverly">
-                        <div id="polo-t-shirt" class="canvasOverlyInner  d-block">
-                            <div data-controlside="front" id="polo-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                    <div class="canvasOverly ">
+                        <div id="polo-t-shirt" class="canvasOverlyInner d-block">
+                            <div data-controlside="front" id="polo-t-shirt-StripControl-front" class=" canvasOverlyInner-front d-block control-sectinos-sides">
                                 <div class="strip-controls">
                                     <!-- stips neck-->
                                     <div class="controller-indication-design polo-t-shirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
@@ -636,20 +627,21 @@
                         </div>
                     </div>
 
+
                     <!-- image text  -->
-                    <div class="image-text-container" id="imageTextContainer">
-                        <div data-side="Front" id="canvasOverlyFront" class="d-block position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
-                        <div data-side="Back" id="canvasOverlyBack" class="d-none position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
-                        <div data-side="Left" id="canvasOverlyLeft" class="d-none position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
-                        <div data-side="Right" id="canvasOverlyRight" class="d-none position-absolute bg-transperant canvas-overly" style="width: 400px; height: 540px;"></div>
+                    <div class="image-text-container " id="imageTextContainer">
+                        <div data-type="textimage" data-side="front" id="canvasOverlyFront" class="d-block position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-type="textimage" data-side="back" id="canvasOverlyBack" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-type="textimage" data-side="left" id="canvasOverlyLeft" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-type="textimage" data-side="right" id="canvasOverlyRight" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
                     </div>
 
-                    <!-- render -->
-                    <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
                 </div>
 
                 <!-- model contianer -->
                 <div class="modelContainer">
+
+
                     <!-- Modal - polo neck strip -->
                     <div class="modal fade" id="neckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -1096,7 +1088,7 @@
                 <!-- navigation control -->
                 <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
                     <div class="t_changebtnbox d-flex  flex-row flex-md-column" id="viewPortChange">
-                        <button class="t_changebtn t_changebtn1" onclick="viewChange('front');" id="btn9">
+                        <button class="t_changebtn t_changebtn1" onclick="viewChange('front');">
                             <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
                             <p class="t_changebtnpara">Front view</p>
                         </button>
@@ -1189,72 +1181,9 @@
             </div>
         </div>
     </div>
-    <!--image-->
-    <div id="imageModelContainer">
-        <div class="modal" tabindex="-1" id="imageModel">
-            <div class="modal-dialog">
-                <div class="modal-content  border border-1 border-secondary m-3">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <input type="text" id="text-input" class="form-control" placeholder="Add text here">
-                        </div>
-                        <div class="mb-3">
-                            <input type="color" id="color-input" class="form-control form-control-color" value="#000000">
-                        </div>
-                        <div class="mb-3">
-                            <input type="number" id="font-size-input" class="form-control" placeholder="Font Size" value="30">
-                        </div>
-                        <div class="mb-3">
-                            <select id="font-family-input" class="form-select">
-                                <option value="Arial">Arial</option>
-                                <option value="Helvetica">Helvetica</option>
-                                <option value="Times New Roman">Times New Roman</option>
-                                <!-- Add more font options here as needed -->
-                            </select>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="bold-input" class="form-check-input">
-                            <label for="bold-input" class="form-check-label">Bold</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="italic-input" class="form-check-input">
-                            <label for="italic-input" class="form-check-label">Italic</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="underline-input" class="form-check-input">
-                            <label for="underline-input" class="form-check-label">Underline</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="crossline-input" class="form-check-input">
-                            <label for="crossline-input" class="form-check-label">Crossline</label>
-                        </div>
-                        <div class="mb-3">
-                            <input type="file" id="imageInput" class="form-control">
-                        </div>
-                        <button onclick="uploadImage()" class="btn btn-primary  mx-2">Upload</button>
-                        <button onclick="addStaticImage()" class="btn btn-primary  mx-2" id="adding image">Add image</button>
-                        <button onclick="addText()" id="addingText" class="btn btn-success mx-2">
-                            Add Text
-                        </button>
-                    </div>
 
 
 
-
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

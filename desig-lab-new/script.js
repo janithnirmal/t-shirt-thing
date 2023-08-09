@@ -377,13 +377,13 @@ canvass.on("object:moving", (e) => {
   }
 });
 
-document.getElementById("color-input").addEventListener("change", (e) => {
-  textColor = e.target.value;
-});
+// document.getElementById("color-input").addEventListener("change", (e) => {
+//   textColor = e.target.value;
+// });
 
-document.getElementById("color-input").addEventListener("change", (e) => {
-  textColor = e.target.value;
-});
+// document.getElementById("color-input").addEventListener("change", (e) => {
+//   textColor = e.target.value;
+// });
 
 //image undex2.php
 
@@ -451,9 +451,9 @@ canvaso.on("object:moving", (e) => {
   }
 });
 
-document.getElementById("color-input").addEventListener("change", (e) => {
-  textColorCanvaso = e.target.value;
-});
+// document.getElementById("color-input").addEventListener("change", (e) => {
+//   textColorCanvaso = e.target.value;
+// });
 
 const canvasPoloTopRight = new fabric.Canvas("canvas-polo-top-right");
 function addTextTopPoloRight() {
@@ -743,93 +743,83 @@ function uploadImage() {
   return imageName;
 }
 
-function addStaticImage() {
-  console.log("ihi");
-  const imgPath = "uploads/" + imageName; // Replace this with the correct path to your image
-  const imgObj = new Image();
+// function addStaticImage() {
+//   console.log("ihi");
+//   const imgPath = "uploads/" + imageName; // Replace this with the correct path to your image
+//   const imgObj = new Image();
 
-  imgObj.onload = function () {
-    const image = new fabric.Image(imgObj, {
-      left: 50,
-      top: 50,
-      scaleX: 0.4,
-      scaleY: 0.4,
-    });
+//   imgObj.onload = function () {
+//     const image = new fabric.Image(imgObj, {
+//       left: 50,
+//       top: 50,
+//       scaleX: 0.4,
+//       scaleY: 0.4,
+//     });
 
-    const deleteButton = document.createElement("button");
-    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>'; // Font Awesome trash icon
+//     const deleteButton = document.createElement("button");
+//     deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>'; // Font Awesome trash icon
 
-    // Position the delete button at the top-right corner of the image
-    deleteButton.style.position = "absolute";
-    deleteButton.style.top = "50px"; // Adjust the top position according to your preference
-    deleteButton.style.left = "50px"; // Adjust the left position according to your preference
+//     // Position the delete button at the top-right corner of the image
+//     deleteButton.style.position = "absolute";
+//     deleteButton.style.top = "50px"; // Adjust the top position according to your preference
+//     deleteButton.style.left = "50px"; // Adjust the left position according to your preference
 
-    deleteButton.classList.add("btn", "btn-default");
+//     deleteButton.classList.add("btn", "btn-default");
 
-    deleteButton.addEventListener("click", function () {
-      canvass.remove(image);
-      deleteButton.remove();
-    });
+//     deleteButton.addEventListener("click", function () {
+//       canvass.remove(image);
+//       deleteButton.remove();
+//     });
 
-    document.body.appendChild(deleteButton);
+//     document.body.appendChild(deleteButton);
 
-    canvass.add(image);
-    canvass.renderAll();
-  };
+//     canvass.add(image);
+//     canvass.renderAll();
+//   };
 
-  imgObj.src = imgPath;
-}
+//   imgObj.src = imgPath;
+// }
 
-let imageModel;
-function openImageModel() {
-  imageModel = new bootstrap.Modal("#imageModel");
-  imageModel.show();
-}
+// function poloMiddle() {
+//   document.getElementById("addingText").setAttribute("onclick", "addText()");
+// }
+// function poloTopLeft() {
+//   document
+//     .getElementById("addingText")
+//     .setAttribute("onclick", " addTextTopPoloLeft()");
+// }
 
+// function poloMiddle() {
+//   document.getElementById("addingText").setAttribute("onclick", "addText()");
+// }
+// function poloTopLeft() {
+//   document
+//     .getElementById("addingText")
+//     .setAttribute("onclick", " addTextTopPoloLeft()");
+// }
 
-
-function poloMiddle() {
-  document.getElementById("addingText").setAttribute("onclick", "addText()");
-}
-function poloTopLeft() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", " addTextTopPoloLeft()");
-}
-
-function poloMiddle() {
-  document.getElementById("addingText").setAttribute("onclick", "addText()");
-}
-function poloTopLeft() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", " addTextTopPoloLeft()");
-}
-
-function poloTopRight() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", " addTextTopPoloRight()");
-}
-function changeCanvasPoloBackMiddle() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", " addTextPoloBackMiddle()");
-}
-function changeCanvasPoloBackTop() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", "addTextPoloBackTop()");
-}
-function changeCanvasPoloLeftImage() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", "addTextcanvasPoloLeftImage()");
-}
-function changeCanvasPoloRightImage() {
-  document
-    .getElementById("addingText")
-    .setAttribute("onclick", "addTextcanvasPoloRightImage()");
-}
-
-
+// function poloTopRight() {
+//   document
+//     .getElementById("addingText")
+//     .setAttribute("onclick", " addTextTopPoloRight()");
+// }
+// function changeCanvasPoloBackMiddle() {
+//   document
+//     .getElementById("addingText")
+//     .setAttribute("onclick", " addTextPoloBackMiddle()");
+// }
+// function changeCanvasPoloBackTop() {
+//   document
+//     .getElementById("addingText")
+//     .setAttribute("onclick", "addTextPoloBackTop()");
+// }
+// function changeCanvasPoloLeftImage() {
+//   document
+//     .getElementById("addingText")
+//     .setAttribute("onclick", "addTextcanvasPoloLeftImage()");
+// }
+// function changeCanvasPoloRightImage() {
+//   document
+//     .getElementById("addingText")
+//     .setAttribute("onclick", "addTextcanvasPoloRightImage()");
+// }
