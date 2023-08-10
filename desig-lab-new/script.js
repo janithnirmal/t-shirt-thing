@@ -824,3 +824,7 @@ function uploadImage() {
 //     .getElementById("addingText")
 //     .setAttribute("onclick", "addTextcanvasPoloRightImage()");
 // }
+function setColor(colours) {
+  document.getElementById('small-box').style.backgroundColor = colours;
+
+}
