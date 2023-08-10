@@ -848,7 +848,7 @@
                     <div class="dropdown">
                         <!-- <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px"> -->
                         <button onclick="openModelColorControl()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
-                            <div class="small-box"></div>
+                            <div class="small-box" id="small-box"></div>
                             <span>Color</span> <i class="fas fa-chevron-down"></i>
                         </button>
 

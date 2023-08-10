@@ -4,24 +4,24 @@ let clothTextImageObject = {
       {
         canvasWidth: 210,
         canvasHeight: 100,
-        topMargin: 250,
+        topMargin: 220,
         leftMargin: 95,
       },
       {
         canvasWidth: 210,
         canvasHeight: 100,
-        topMargin: 370,
+        topMargin: 340,
         leftMargin: 95,
       },
       {
-        canvasWidth: 85,
-        canvasHeight: 95,
-        topMargin: 94,
-        leftMargin: 75,
+        canvasWidth: 65,
+        canvasHeight: 75,
+        topMargin: 92,
+        leftMargin: 95,
       },
       {
-        canvasWidth: 85,
-        canvasHeight: 95,
+        canvasWidth: 65,
+        canvasHeight: 75,
         topMargin: 92,
         leftMargin: 235,
       },
@@ -36,7 +36,7 @@ let clothTextImageObject = {
       {
         canvasWidth: 230,
         canvasHeight: 80,
-        topMargin: 350,
+        topMargin: 330,
         leftMargin: 80,
       },
       {
