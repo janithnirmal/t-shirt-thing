@@ -314,7 +314,8 @@ function addText() {
     fill: textColor, // Use the selected color
     fontWeight: isBold ? "bold" : "normal",
     fontStyle: isItalic ? "italic" : "normal",
-    textDecoration: isUnderline ? "underline" : "", // Set underline text decoration
+    textDecoration: isUnderline ? "underline" : "",
+     // Set underline text decoration
   });
   if (isCrossline) {
     const rectHeight = 2; // You can adjust the height of the crossline here

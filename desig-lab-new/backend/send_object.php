@@ -60,6 +60,7 @@ ob_start();
 <html>
 <head>
     <title>Variable Table</title>
+    
 </head>
 <body>
     <table border="1">
