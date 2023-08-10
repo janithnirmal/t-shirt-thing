@@ -192,6 +192,7 @@ function changeProduct(type) {
   render(dataObject);
 
   changeControlViewSection(type);
+  productIdentifier(); // update the image views
 }
 
 function templateSection(type) {
@@ -225,6 +226,25 @@ function viewChange(side) {
   render(dataObject);
 
   changeControlViewSection(dataObject.clothType);
+  imageTextSectioniewChanger(dataObject.views.active);
+}
+
+function imageTextSectioniewChanger(side) {
+  const imageTextSectionView = document.querySelectorAll(
+    "#imageTextContainer div"
+  );
+
+  imageTextSectionView.forEach((element) => {
+    if (element.dataset.type === "textimage") {
+      if (element.dataset.side !== side) {
+        element.classList.add("d-none");
+        element.classList.remove("d-block");
+      } else {
+        element.classList.add("d-block");
+        element.classList.remove("d-none");
+      }
+    }
+  });
 }
 
 function changeControlViewSection(type) {
@@ -736,6 +756,43 @@ function applyFontSize() {
   const textContent = document.getElementById("text-pop-sizebtn1");
   // textContent.style.fontSize = `${currentFontSize}px`;
   textContent.innerHTML = currentFontSize;
+}
+
+// openText Panel
+let addTextModel;
+function openTextPanel() {
+  if (!selectedInputCanvas) {
+    alert("Please Select an Area to Add Text");
+  } else {
+    addTextModel = new bootstrap.Modal("#addTextModel");
+    addTextModel.show();
+  }
+}
+
+// openText Panel
+let addImageModel;
+function openImageModel() {
+  if (!selectedInputCanvas) {
+    alert("Please Select an Area to Add Text");
+  } else {
+    addImageModel = new bootstrap.Modal("#addImageModel");
+    addImageModel.show();
+  }
+}
+
+function addTextToSelectedCanvas() {
+  let inputText = document.getElementById("textAddingInput").value;
+  textGenerator(selectedInputCanvas, inputText);
+  addTextModel.hide();
+}
+
+function addImageToSelectedCanvas() {
+  let imageFile = document.getElementById("imageAddingInput").files[0];
+  generateDataUrlFromInputImage(imageFile, function (dataUrl) {
+    imageGenerator(selectedInputCanvas, dataUrl);
+  });
+
+  addImageModel.hide();
 }
 
 //

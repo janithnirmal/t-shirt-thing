@@ -2,46 +2,52 @@ let clothTextImageObject = {
   "polo-t-shirt": {
     front: [
       {
-        canvasWidth: 300,
+        canvasWidth: 240,
         canvasHeight: 250,
-        topMargin: 200,
-        leftMargin: 50,
+        topMargin: 250,
+        leftMargin: 80,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
-        leftMargin: 50,
+        canvasWidth: 95,
+        canvasHeight: 100,
+        topMargin: 95,
+        leftMargin: 75,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
+        canvasWidth: 95,
+        canvasHeight: 100,
+        topMargin: 95,
         leftMargin: 225,
       },
     ],
     back: [
       {
+        canvasWidth: 240,
+        canvasHeight: 300,
+        topMargin: 175,
+        leftMargin: 80,
+      },
+      {
         canvasWidth: 200,
         canvasHeight: 50,
-        topMargin: 50,
-        leftMargin: 10,
+        topMargin: 80,
+        leftMargin: 100,
       },
     ],
     left: [
       {
-        canvasWidth: 30,
-        canvasHeight: 70,
-        topMargin: 150,
-        leftMargin: 50,
+        canvasWidth: 90,
+        canvasHeight: 100,
+        topMargin: 120,
+        leftMargin: 170,
       },
     ],
     right: [
       {
-        canvasWidth: 30,
-        canvasHeight: 70,
-        topMargin: 150,
-        leftMargin: 50,
+        canvasWidth: 90,
+        canvasHeight: 100,
+        topMargin: 120,
+        leftMargin: 130,
       },
     ],
   },
@@ -160,10 +166,10 @@ let clothTextImageObject = {
     ],
     back: [
       {
-        canvasWidth: 200,
-        canvasHeight: 50,
-        topMargin: 50,
-        leftMargin: 10,
+        canvasWidth: 300,
+        canvasHeight: 300,
+        topMargin: 200,
+        leftMargin: 50,
       },
     ],
     left: [
@@ -194,7 +200,7 @@ function productIdentifier() {
       clothTextImageObject["polo-t-shirt"];
   } else if (currentProduct == "cotton-t-shirt") {
     dataObject.views.imageTextContanerData =
-      clothTextImageObject["polo-t-shirt"];
+      clothTextImageObject["cotton-t-shirt"];
   } else if (currentProduct == "bottom") {
     dataObject.views.imageTextContanerData = clothTextImageObject["bottom"];
   }
@@ -203,22 +209,17 @@ function productIdentifier() {
 }
 
 // image Text render
-
-// const canvasOverlyFront = document.getElementById("canvasOverlyFront"); // container
-// const canvasOverlyBack = document.getElementById("canvasOverlyBack"); // container
-// const canvasOverlyLeft = document.getElementById("canvasOverlyLeft"); // container
-// const canvasOverlyRight = document.getElementById("canvasOverlyRight"); // container
-
 function imageTextSectionRenderer() {
   allCanvasElements = []; // clear all canavas array
 
   // front
   const frontArray = dataObject.views.imageTextContanerData.front;
+  document.getElementById("canvasOverlyFront").innerHTML = "";
   frontArray.forEach((element) => {
     canvasBuilder(
       "canvasOverlyFront",
       element.canvasWidth,
-      element.canvasWidth,
+      element.canvasHeight,
       element.topMargin,
       element.leftMargin
     );
@@ -226,11 +227,12 @@ function imageTextSectionRenderer() {
 
   // back
   const backArray = dataObject.views.imageTextContanerData.back;
+  document.getElementById("canvasOverlyBack").innerHTML = "";
   backArray.forEach((element) => {
     canvasBuilder(
       "canvasOverlyBack",
       element.canvasWidth,
-      element.canvasWidth,
+      element.canvasHeight,
       element.topMargin,
       element.leftMargin
     );
@@ -238,11 +240,12 @@ function imageTextSectionRenderer() {
 
   // left
   const leftArray = dataObject.views.imageTextContanerData.left;
+  document.getElementById("canvasOverlyLeft").innerHTML = "";
   leftArray.forEach((element) => {
     canvasBuilder(
       "canvasOverlyLeft",
       element.canvasWidth,
-      element.canvasWidth,
+      element.canvasHeight,
       element.topMargin,
       element.leftMargin
     );
@@ -250,11 +253,12 @@ function imageTextSectionRenderer() {
 
   // right
   const rightArray = dataObject.views.imageTextContanerData.right;
+  document.getElementById("canvasOverlyRight").innerHTML = "";
   rightArray.forEach((element) => {
     canvasBuilder(
       "canvasOverlyRight",
       element.canvasWidth,
-      element.canvasWidth,
+      element.canvasHeight,
       element.topMargin,
       element.leftMargin
     );
@@ -294,18 +298,16 @@ function canvasBuilder(
   canvasCotainer.style.marginTop = canvasTop + "px";
   canvasCotainer.style.marginLeft = canvasLeft + "px";
   canvasCotainer.style.position = "absolute";
-  canvasCotainer.style.backgroundColor = "#0000ff55";
-  canvasCotainer.setAttribute("onclick", "selectCanvas('" + canvasId + "')");
+  canvasCotainer.style.border = "2px black dashed";
+  canvasCotainer.style.cursor = "pointer";
+  canvasCotainer.style.backgroundColor = "#0000ff";
+  // canvasCotainer.setAttribute("onclick", "selectCanvas('" + canvasId + "')");
   canvasCotainer.appendChild(canvas);
 
   document.getElementById(canvasOverly).appendChild(canvasCotainer);
 
   const fabricElement = new fabric.Canvas(canvasId);
   allCanvasElements.push(fabricElement);
-
-  // new items
-  textGenerator(fabricElement, canvasId);
-  imageGenerator(fabricElement);
 
   // clipper
   function boundKeeper(e) {
@@ -354,10 +356,12 @@ function canvasBuilder(
   // selection observer
   fabricElement.on("selection:created", function (event) {
     selectedItem = event.target;
+    console.log(selectedItem);
   });
 
   fabricElement.on("selection:cleared", function () {
     selectedItem = null; // Clear the selected object when selection is cleared
+    console.log(selectedItem);
   });
 
   fabricElement.on("object:scaling", function (e) {
@@ -377,6 +381,12 @@ function canvasBuilder(
       obj.lockScalingX = false;
       obj.lockScalingY = false;
     }
+  });
+
+  // click event
+  fabricElement.on("mouse:down", function (event) {
+    selectedInputCanvas = fabricElement;
+    console.log(selectedInputCanvas);
   });
 }
 
@@ -399,37 +409,120 @@ function textGenerator(fabricElement, inputText, options = {}) {
   fabricElement.renderAll();
 }
 
-function imageGenerator(fabricElement, options = {}) {
-  const defaultOptions = {
-    left: 20,
-    top: 20,
-    scaleX: 0.5,
-    scaleY: 0.5,
-    angle: 0,
-    opacity: 1,
-  };
-  const mergedOptions = Object.assign({}, defaultOptions, options);
+// function imageGenerator(fabricElement, file, options = {}) {
+//   const DESIERED_WIDTH = 200;
+//   const defaultOptions = {
+//     left: 20,
+//     top: 20,
+//     scaleX: 0.3,
+//     scaleY: 0.3,
+//     angle: 0,
+//     opacity: 1,
+//   };
 
-  const imgPath = "images/arrow.png"; // Replace this with the correct path to your image
+//   const mergedOptions1 = Object.assign({}, defaultOptions, options);
+
+//   let url = file;
+//   let imgPath = url; // Replace this with the correct path to your image
+//   const imgObj = new Image();
+
+//   let width = imgObj.width;
+//   let height = imgObj.height;
+
+//   let aspectRatio = width / height;
+//   const DESIERED_HEIGHT = Math.round(DESIERED_WIDTH / aspectRatio);
+
+//   var canvas = document.createElement("canvas");
+//   canvas.width = DESIERED_WIDTH;
+//   canvas.height = DESIERED_HEIGHT;
+
+//   var ctx = canvas.getContext("2d");
+//   ctx.drawImage(imgObj, 0, 0, DESIERED_WIDTH, DESIERED_HEIGHT);
+//   imgPath = canvas.toDataURL("image/jpeg");
+
+//   imgObj.onload = function () {
+//     const image = new fabric.Image(imgObj, mergedOptions1);
+//     fabricElement.add(image);
+//     fabricElement.renderAll();
+//   };
+
+//   imgObj.src = imgPath;
+//   document.body.appendChild(imgObj);
+// }
+
+function imageGenerator(fabricElement, file, options = {}) {
+  imageSizeReducer(file, (URL) => {
+    const dataURL = URL;
+    console.log(dataURL);
+
+    const imgObj = new Image();
+
+    imgObj.onload = function () {
+      const defaultOptions = {
+        left: 20,
+        top: 20,
+        scaleX: 0.5,
+        scaleY: 0.5,
+        angle: 0,
+        opacity: 1,
+      };
+      const mergedOptions = Object.assign({}, defaultOptions, options);
+
+      const image = new fabric.Image(imgObj, mergedOptions);
+
+      fabricElement.add(image);
+      fabricElement.renderAll();
+    };
+
+    imgObj.src = dataURL;
+  });
+}
+
+function imageSizeReducer(file, callback) {
   const imgObj = new Image();
 
   imgObj.onload = function () {
-    const image = new fabric.Image(imgObj, mergedOptions);
-    fabricElement.add(image);
+    const DESIRED_WIDTH = 200;
+    let aspectRatio = imgObj.width / imgObj.height;
+    const DESIRED_HEIGHT = Math.round(DESIRED_WIDTH / aspectRatio);
+
+    var canvas = document.createElement("canvas");
+    canvas.width = DESIRED_WIDTH;
+    canvas.height = DESIRED_HEIGHT;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(imgObj, 0, 0, DESIRED_WIDTH, DESIRED_HEIGHT);
+
+    let URL = canvas.toDataURL("image/jpeg");
+    callback(URL);
   };
 
-  imgObj.src = imgPath;
+  imgObj.src = file;
 }
 
-function generateTextImageSections() {
+function generateDataUrlFromInputImage(file, callback) {
+  var reader = new FileReader();
+
+  reader.onload = function (event) {
+    var dataUrl = event.target.result;
+    callback(dataUrl);
+  };
+
+  reader.readAsDataURL(file);
+}
+
+// final renderer
+let currentImageTextRenderViewImage = new Image();
+function generateTextImageSections(sideId) {
   deselectAll();
-  html2canvas(document.getElementById("canvasOverly"), {
+  html2canvas(document.getElementById(sideId), {
     backgroundColor: "transparent",
   }).then((canvas) => {
     const img = new Image();
     img.src = canvas.toDataURL();
-    let imageContainer = document.getElementById("imageViewer");
-    imageContainer.innerHTML = "";
+    currentImageTextRenderViewImage = img;
+    let imageContainer = document.body;
+    // imageContainer.innerHTML = "";
     imageContainer.appendChild(img);
   });
 }
@@ -465,7 +558,7 @@ function generateUniqueId() {
 //
 // test
 document.addEventListener("DOMContentLoaded", () => {
-  // productIdentifier();
+  productIdentifier();
 });
 
 // setInterval(() => {

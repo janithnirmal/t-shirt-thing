@@ -35,15 +35,17 @@
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/f98ce7c376.js" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
 
     <script src="renderer.js" defer></script>
     <script src="controls.js" defer></script>
     <script src="popup.js" defer></script>
     <script src="main.js" defer></script>
     <script src="script.js" defer></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script defer src="imageTextController.js"></script>
 
 </head>
 
@@ -82,7 +84,7 @@
                                                         <input checked value="male" name="genderRadioInput" type="radio" id="menRadioBtn">
                                                         <label class="btn btn-primary" for="menRadioBtn">Men</label>
                                                     </div>
-                                                    <div class="d-flex gap-2">
+                                                    <div class="d-none gap-2">
                                                         <input value="female" name="genderRadioInput" type="radio" id="womenRadioBtn">
                                                         <label class="btn btn-info" for="womenRadioBtn">Women</label>
                                                     </div>
@@ -110,12 +112,16 @@
                                             <div class="modal-body">
                                                 <div class="d-flex justify-content-center gap-3">
                                                     <div class="d-flex gap-2">
-                                                        <input checked value="ScreenPrint" name="printTypeRadioInput" type="radio" id="screenPrintRadioBtn">
-                                                        <label class="btn btn-primary" for="screenPrintRadioBtn">ScreenPrint</label>
+                                                        <input checked value="Emblishment" name="printTypeRadioInput" type="radio" id="emblishmentRadioBtn">
+                                                        <label class="btn btn-primary" for="emblishmentRadioBtn">Emblishment</label>
                                                     </div>
                                                     <div class="d-flex gap-2">
                                                         <input value="Embroidered" name="printTypeRadioInput" type="radio" id="embroideredRadioBtn">
                                                         <label class="btn btn-info" for="embroideredRadioBtn">Embroidered</label>
+                                                    </div>
+                                                    <div class="d-flex gap-2">
+                                                        <input value="Sublimation " name="printTypeRadioInput" type="radio" id="sublimationRadioBtn">
+                                                        <label class="btn btn-info" for="sublimationRadioBtn">Sublimation</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,10 +146,10 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="product-control-nav d-flex justify-content-center">
-                                                    <button data-btntype="Gender" id="productControlNavigationChangeGender" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Gender');">
+                                                    <!-- <button data-btntype="Gender" id="productControlNavigationChangeGender" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Gender');">
                                                         <div class="product-control-number-icon">1</div>
                                                         <span class="product-control-number-text fw-light">Start here</span>
-                                                    </button>
+                                                    </button> -->
                                                     <button data-btntype="Type" id="productControlNavigationChangeType" class="d-flex btn-style-remover product-control-nav-section-btn" onclick="productControlNavigationChange('Type');">
                                                         <div class="product-control-number-icon">2</div>
                                                         <span class="product-control-number-text fw-light">Cloth Template</span>
@@ -163,7 +169,7 @@
                                                 </div>
                                                 <hr>
                                                 <div class="product-control-body overflow-auto">
-                                                    <div id="productControlGenderSelectSection" class="d-flex flex-column  product-control-section">
+                                                    <!-- <div id="productControlGenderSelectSection" class="d-flex flex-column  product-control-section">
                                                         <span class="text-center w-100 py-2">Let's Start Here...</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -177,8 +183,8 @@
                                                                 <button onclick="changeGender('female')" class="btn btn-secondary">Select</button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div id="productControlTypeSelectSection" class="d-none flex-column product-control-section">
+                                                    </div> -->
+                                                    <div id="productControlTypeSelectSection" class="d-flex flex-column product-control-section">
                                                         <span class="text-center w-100 py-2">Great! Now it's time to select what you want..</span>
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
@@ -263,15 +269,15 @@
                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                             <div class="product-control-card-item">
                                                                 <span>2 Buttons Only</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('2 Buttons + Only');" class="btn btn-secondary">Select</button>
                                                             </div>
                                                             <div class="product-control-card-item">
                                                                 <span>2 Buttons + Open</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('2 Buttons + Open')" class="btn btn-secondary">Select</button>
                                                             </div>
-                                                            <div class="product-control-card-item">
+                                                            <!-- <div class="product-control-card-item">
                                                                 <span>3 Buttons Only</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('3 Buttons Only');" class="btn btn-secondary">Select</button>
@@ -280,7 +286,7 @@
                                                                 <span>3 Buttons + Open</span>
                                                                 <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
                                                                 <button onclick="tShirtButtonNeckSection('3 Buttons + Open')" class="btn btn-secondary">Select</button>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -335,14 +341,14 @@
                 <!-- box 2 -->
                 <div class="basic-styling left-side-box2 d-flex  flex-md-column justify-content-center align-items-center">
                     <div class="list-group-item" id="btn6">
-                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button onclick="openTextPanel()" class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-t"></i>
                             <p class="p-0 m-0">Add Text</p>
                         </button>
                         <!-- controls for adding text -->
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
                             <!-- Modal -->
-                            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade " id="addTextModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content" style="background-color: #e3e8ce;">
                                         <div class="modal-header">
@@ -353,7 +359,7 @@
                                             <div class="col-12">
                                                 <button class="w-100 card d-flex flex-column align-items-center p-2" style="background-color: #e3e8ce;">
                                                     <div class="fs-6">Text</div>
-                                                    <textarea class="edit-text-textarea form-control w-100" col="1" id="floatingInput" name="" placeholder="Your Text"></textarea>
+                                                    <textarea class="edit-text-textarea form-control w-100" col="1" id="textAddingInput" name="" placeholder="Your Text"></textarea>
                                                 </button>
                                             </div>
 
@@ -376,43 +382,6 @@
                                                         <div class="small-box"></div>
                                                     </div>
                                                 </button>
-
-                                                <div id="colorControlModelContainer">
-                                                    <!-- <div class="modal" tabindex="-1" id="colorControlModel">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content  border border-1 border-secondary m-3">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title text-center">Select A Color</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <div class="d-flex justify-content-center gap-3">
-                                                                        <div class="color-row" style="max-width: 350px">
-                                                                            <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('red')" style="background-color: red"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(230, 1, 1); setColor('blue')" style="background-color: blue"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(120, 1, 1); setColor('green')" style="background-color: green"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(60, 1.4, 1.8); setColor('yellow')" style="background-color: yellow"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('orange')" style="background-color: orange"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(270, 1, 1); setColor('purple')" style="background-color: purple"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('pink')" style="background-color: pink"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('teal')" style="background-color: teal"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('gray')" style="background-color: gray"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('brown')" style="background-color: brown"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(180, 1, 1); setColor('cyan')" style="background-color: cyan"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('magenta')" style="background-color: magenta"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('lime')" style="background-color: lime"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('silver')" style="background-color: silver"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(280, 1, 1); setColor('indigo')" style="background-color: indigo"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(70, 1, 1); setColor('gold')" style="background-color: gold"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(40, 1, 1); setColor('maroon')" style="background-color: maroon"></div>
-                                                                            <div class="color-option" onclick="colorUpdate(260, 1, 1); setColor('navy')" style="background-color: navy"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
-                                                </div>
                                             </div>
 
                                             <div class="mt-4">
@@ -453,8 +422,8 @@
 
                                         </div>
                                         <div class="modal-footer d-flex  justify-content-center">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button onclick="addTextToSelectedCanvas();" class="btn btn-primary">Add Text</button>
                                         </div>
                                     </div>
                                 </div>
@@ -463,10 +432,31 @@
 
                     </div>
                     <div class="list-group-item" id="btn7">
-                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
+                        <button onclick="openImageModel()" class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
                             <i class="left-side-icons fas fa-image"></i>
                             <p class="p-0 m-0">Add Image</p>
                         </button>
+                        <!-- add text model controls -->
+                        <!--image-->
+                        <div id="imageModelContainer">
+                            <div class="modal" tabindex="-1" id="addImageModel">
+                                <div class="modal-dialog">
+                                    <div class="modal-content  border border-1 border-secondary m-3">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label>Add Image to Selected Canvas</label>
+                                                <input type="file" id="imageAddingInput" class="form-control">
+                                            </div>
+                                            <button onclick="addImageToSelectedCanvas()" class="btn btn-primary  mx-2" id="adding image">Add image</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="list-group-item" id="btn8">
                         <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="saveCurrentDesign();">
@@ -497,9 +487,18 @@
             <!-- middle panel -->
             <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                 <div class="t-shirt-panel-container ">
-                    <div class="canvasOverly">
-                        <div id="polo-t-shirt" class="canvasOverlyInner  d-block">
-                            <div data-controlside="front" id="polo-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+
+                    <div class="image-text-controller-icons position-absolute">
+                        <div class="p-1 bg-dark fw-bold text-white">D</div>
+                    </div>
+
+                    <!-- render -->
+                    <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center position-absolute"></div>
+
+                    <!-- strips -->
+                    <div class="canvasOverly ">
+                        <div id="polo-t-shirt" class="canvasOverlyInner d-block">
+                            <div data-controlside="front" id="polo-t-shirt-StripControl-front" class=" canvasOverlyInner-front d-block control-sectinos-sides">
                                 <div class="strip-controls">
                                     <!-- stips neck-->
                                     <div class="controller-indication-design polo-t-shirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
@@ -514,8 +513,8 @@
 
 
                                     <!-- image box -->
-                                    
-                                    <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
+
+                                    <!-- <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
                                         <canvas id="canvass" width="220px" height="300px"></canvas>
 
                                     </div>
@@ -526,17 +525,7 @@
                                     </div>
                                     <div class="controller-indication-design polo-t-shirt-front-image-top-right" ondblclick="openImageModel();poloTopRight()">
                                         <canvas id="canvas-polo-top-right" width="85px" height="100px"></canvas>
-                                    </div>
-
-
-
-
-
-
-
-
-
-
+                                    </div> -->
                                 </div>
                             </div>
                             <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
@@ -546,12 +535,12 @@
                                 <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
                                 <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
+                                <!-- <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
                                     <canvas id="canvas-polo-back-middle" width="220px" height="300px"></canvas>
                                 </div>
                                 <div class="controller-indication-design polo-t-shirt-back-image-top" ondblclick="openImageModel();changeCanvasPoloBackTop()">
                                     <canvas id="canvas-polo-back-top" width="200px" height="50px"></canvas>
-                                </div>
+                                </div> -->
 
                             </div>
                             <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
@@ -563,9 +552,9 @@
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
+                                <!-- <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
                                     <canvas id="canvas-polo-left-image" width="85px" height="100px"></canvas>
-                                </div>
+                                </div> -->
 
                             </div>
                             <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
@@ -576,9 +565,9 @@
                                 <!-- straight line -->
                                 <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
                                 <!-- image controll -->
-                                <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
+                                <!-- <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
                                     <canvas id="canvas-polo-right-image" width="75px" height="100px"></canvas>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
@@ -641,12 +630,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="image-text-container"></div>
-                    <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center"></div>
+
+
+                    <!-- image text  -->
+                    <div class="image-text-container " id="imageTextContainer">
+                        <div data-type="textimage" data-side="front" id="canvasOverlyFront" class="d-block position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-type="textimage" data-side="back" id="canvasOverlyBack" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-type="textimage" data-side="left" id="canvasOverlyLeft" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                        <div data-type="textimage" data-side="right" id="canvasOverlyRight" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                    </div>
+
                 </div>
 
                 <!-- model contianer -->
                 <div class="modelContainer">
+
+
                     <!-- Modal - polo neck strip -->
                     <div class="modal fade" id="neckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -874,7 +873,7 @@
                                                     <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('teal')" style="background-color: teal"></div>
                                                     <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('gray')" style="background-color: gray"></div>
                                                     <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('brown')" style="background-color: brown"></div>
-                                                    <div class="color-option" onclick="colorUpdate(180, 1, 1); setColor('cyan')" style="background-color: cyan"></div>
+                                                    <div class="color-option" onclick="colorUpdate(177, 0, .5); setColor('cyan')" style="background-color: cyan"></div>
                                                     <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('magenta')" style="background-color: magenta"></div>
                                                     <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('lime')" style="background-color: lime"></div>
                                                     <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('silver')" style="background-color: silver"></div>
@@ -1092,8 +1091,8 @@
 
                 <!-- navigation control -->
                 <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
-                    <div class="t_changebtnbox d-flex  flex-row flex-md-column" id="viewPortChange">
-                        <button class="t_changebtn t_changebtn1" onclick="viewChange('front');" id="btn9">
+                    <div class="t_changebtnbox d-flex gap-1 flex-row flex-md-column" id="viewPortChange">
+                        <button class="t_changebtn t_changebtn1" onclick="viewChange('front');">
                             <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
                             <p class="t_changebtnpara">Front view</p>
                         </button>
@@ -1186,72 +1185,9 @@
             </div>
         </div>
     </div>
-    <!--image-->
-    <div id="imageModelContainer">
-        <div class="modal" tabindex="-1" id="imageModel">
-            <div class="modal-dialog">
-                <div class="modal-content  border border-1 border-secondary m-3">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                   
-                    <div class="modal-body">
-    <div class="mb-3">
-        <input type="text" id="text-input" class="form-control" placeholder="Add text here">
-    </div>
-    <div class="mb-3">
-        <input type="color" id="color-input" class="form-control form-control-color" value="#000000">
-    </div>
-    <div class="mb-3">
-        <input type="number" id="font-size-input" class="form-control" placeholder="Font Size" value="30">
-    </div>
-    <div class="mb-3">
-        <select id="font-family-input" class="form-select">
-            <option value="Arial">Arial</option>
-            <option value="Helvetica">Helvetica</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <!-- Add more font options here as needed -->
-        </select>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="bold-input" class="form-check-input">
-        <label for="bold-input" class="form-check-label">Bold</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="italic-input" class="form-check-input">
-        <label for="italic-input" class="form-check-label">Italic</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="underline-input" class="form-check-input">
-        <label for="underline-input" class="form-check-label">Underline</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="crossline-input" class="form-check-input">
-        <label for="crossline-input" class="form-check-label">Crossline</label>
-    </div>
-    <div class="mb-3">
-        <input type="file" id="imageInput" class="form-control">
-    </div>
-    <button onclick="uploadImage()" class="btn btn-primary  mx-2">Upload</button>
-    <button onclick="addStaticImage()" class="btn btn-primary  mx-2" id="adding image">Add image</button>
-    <button onclick="addText()" id="addingText" class="btn btn-success mx-2">
-        Add Text
-    </button>
-</div>
 
 
 
-
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

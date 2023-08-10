@@ -1,11 +1,12 @@
+//  design data object
 let dataObject = {
   sizeQuntitySets: [],
   gender: "male",
   clothType: "polo-t-shirt",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
-  mainColorSaturateValue: 1,
-  mainColorLevelValue: 1,
+  mainColorSaturateValue: 0,
+  mainColorLevelValue: 2,
   clothOption: {
     sleves: "shortSleeves",
     neck: "vneck",
@@ -14,43 +15,14 @@ let dataObject = {
   views: {
     active: "front",
     strips: {
-      neck: [
-        {
-          thickness: 2,
-          color: "#ffffff",
-        },
-        {
-          thickness: 2,
-          color: "#008000",
-        },
-        {
-          thickness: 3,
-          color: "#A2FF1C",
-        },
-      ],
-      arm: [
-        {
-          thickness: 2,
-          color: "#ffffff",
-        },
-        {
-          thickness: 2,
-          color: "#F938FF",
-        },
-        {
-          thickness: 3,
-          color: "#FF6E38",
-        },
-      ],
-      sides: [
-        {
-          thickness: 3,
-          color: "#FF6E38",
-        },
-      ],
+      neck: [],
+      arm: [],
+      sides: [],
     },
   },
 };
+
+// cloth image text object
 
 // renderer
 function render(dataObject) {
@@ -139,6 +111,13 @@ function clothRenderer(canvas, dataObject) {
       ") "; // Apply the hue-rotate filter to the canvas context
     ctx.drawImage(image, 0, 0, parseInt(imageWidth), parseInt(imageHeight));
     ctx.filter = "none";
+    ctx.drawImage(
+      currentImageTextRenderViewImage,
+      0,
+      0,
+      parseInt(imageWidth),
+      parseInt(imageHeight)
+    );
 
     // check cloth type
     if (dataObject.clothType == "polo-t-shirt") {
@@ -463,8 +442,8 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
           248,
           205,
           535,
-          armStripsArray[0].thickness,
-          armStripsArray[0].color
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[0].color
         );
       }
     }
@@ -545,8 +524,8 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
           248,
           185,
           535,
-          armStripsArray[0].thickness,
-          armStripsArray[0].color
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[0].color
         );
       }
     }
@@ -1035,25 +1014,41 @@ function saveCurrentDesign() {
   let dataURLRight;
   // front
   dataObject.views.active = "front";
-  render(dataObject);
+  viewChange("front");
+  generateTextImageSections("canvasOverlyFront");
+  setTimeout(() => {
+    render(dataObject);
+  }, 1000);
 
   setTimeout(() => {
     dataURLFront = generateFront();
     dataObject.views.active = "back";
-    render(dataObject);
-  }, 2000);
+    viewChange("back");
+    generateTextImageSections("canvasOverlyBack");
+    setTimeout(() => {
+      render(dataObject);
+    }, 1000);
+  }, 4000);
 
   setTimeout(() => {
     dataURLBack = generateBack();
     dataObject.views.active = "left";
-    render(dataObject);
-  }, 4000);
+    viewChange("left");
+    generateTextImageSections("canvasOverlyLeft");
+    setTimeout(() => {
+      render(dataObject);
+    }, 1000);
+  }, 8000);
 
   setTimeout(() => {
     dataURLLeft = generateLeft();
     dataObject.views.active = "right";
-    render(dataObject);
-  }, 6000);
+    viewChange("right");
+    generateTextImageSections("canvasOverlyRight");
+    setTimeout(() => {
+      render(dataObject);
+    }, 1000);
+  }, 12000);
 
   setTimeout(() => {
     dataURLRight = generateRight();
@@ -1066,6 +1061,8 @@ function saveCurrentDesign() {
     };
 
     dataObject.views.active = "front"; // set default view
+    viewChange("front");
+
     let form = new FormData();
     form.append("imageObject", JSON.stringify(imageObject));
     form.append("design_json", JSON.stringify(dataObject));
@@ -1078,6 +1075,7 @@ function saveCurrentDesign() {
           let response = JSON.parse(request.responseText);
           if (response.status == "success") {
             alert("Successfully saved");
+            window.location.reload();
           } else if (response.status == "failed") {
             alert(response.error);
           }
@@ -1091,7 +1089,7 @@ function saveCurrentDesign() {
     request.open("POST", SERVER_URL + "backend/save_design_api.php", true);
     request.send(form);
     renderEndEffects();
-  }, 8000);
+  }, 14000);
 }
 
 function generateFront() {
