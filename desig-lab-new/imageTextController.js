@@ -59,7 +59,6 @@ let clothTextImageObject = {
         topMargin: 175,
         leftMargin: 173,
       },
-      
     ],
     right: [
       {
@@ -323,8 +322,8 @@ function canvasBuilder(
   canvasCotainer.style.marginTop = canvasTop + "px";
   canvasCotainer.style.marginLeft = canvasLeft + "px";
   canvasCotainer.style.position = "absolute";
-  canvasCotainer.style.border = "1px black dashed";
   canvasCotainer.style.cursor = "pointer";
+  canvasCotainer.style.border = "1px gray dashed";
   //canvasCotainer.style.backgroundColor = "#0000ff";
   // canvasCotainer.setAttribute("onclick", "selectCanvas('" + canvasId + "')");
   canvasCotainer.appendChild(canvas);
@@ -381,12 +380,10 @@ function canvasBuilder(
   // selection observer
   fabricElement.on("selection:created", function (event) {
     selectedItem = event.target;
-    console.log(selectedItem);
   });
 
   fabricElement.on("selection:cleared", function () {
     selectedItem = null; // Clear the selected object when selection is cleared
-    console.log(selectedItem);
   });
 
   fabricElement.on("object:scaling", function (e) {
@@ -410,8 +407,36 @@ function canvasBuilder(
 
   // click event
   fabricElement.on("mouse:down", function (event) {
+    if (selectedInputCanvas) {
+      const previousCanvasParent = selectedInputCanvas.getElement().parentNode;
+      previousCanvasParent.style.border = "none";
+    }
+
+    //  set selected input canavs
     selectedInputCanvas = fabricElement;
-    console.log(selectedInputCanvas);
+    const parent = selectedInputCanvas.getElement().parentNode;
+    parent.style.border = "2px black dashed";
+  });
+
+  fabricElement.on("mouse:dblclick", function () {
+    selectedInputCanvas = fabricElement;
+    openTextPanel();
+  });
+
+  fabricElement.on("mouse:over", function () {
+    const fabricCanvas = document.getElementById(canvasId);
+    fabricCanvas.parentElement.style.border = "1.5px dashed black";
+  });
+
+  fabricElement.on("mouse:out", function () {
+    allCanvasElements.forEach((element) => {
+      if (selectedInputCanvas != element) {
+        element.getElement().parentNode.style.border = "none";
+      } else {
+        const fabricCanvas = document.getElementById(canvasId);
+        fabricCanvas.style.border = "none";
+      }
+    });
   });
 }
 
@@ -574,6 +599,13 @@ function generateUniqueId() {
   const timestamp = new Date().getTime();
   const random = Math.floor(Math.random() * 10000); // Change the range as needed
   return `${timestamp}${random}`;
+}
+
+// remove items
+function removeSelectedItem() {
+  if (selectedItem && selectedItem.canvas == selectedInputCanvas) {
+    selectedItem.canvas.remove(selectedItem);
+  }
 }
 
 //
