@@ -488,9 +488,7 @@
             <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                 <div class="t-shirt-panel-container ">
 
-                    <div class="image-text-controller-icons position-absolute">
-                        <div class="p-1 bg-dark fw-bold text-white">D</div>
-                    </div>
+
 
                     <!-- render -->
                     <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center position-absolute"></div>
@@ -638,6 +636,10 @@
                         <div data-type="textimage" data-side="back" id="canvasOverlyBack" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
                         <div data-type="textimage" data-side="left" id="canvasOverlyLeft" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
                         <div data-type="textimage" data-side="right" id="canvasOverlyRight" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                    </div>
+
+                    <div class="image-text-controller-icons position-absolute">
+                        <button onclick="removeSelectedItem()" id="canvasSelectedItemDeleteBtn" class="py-1 px-2 btn-style-remover btn rounded-2 bg-dark fw-bold text-white"><i class="fas fa-trash"></i></button>
                     </div>
 
                 </div>
