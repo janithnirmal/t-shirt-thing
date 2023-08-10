@@ -5,8 +5,8 @@ let dataObject = {
   clothType: "polo-t-shirt",
   printType: "ScreenPrint",
   mainColorHueValue: 100,
-  mainColorSaturateValue: 1,
-  mainColorLevelValue: 1,
+  mainColorSaturateValue: 0,
+  mainColorLevelValue: 2.5,
   clothOption: {
     sleves: "shortSleeves",
     neck: "vneck",

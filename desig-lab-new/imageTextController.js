@@ -298,7 +298,7 @@ function canvasBuilder(
   canvasCotainer.style.marginTop = canvasTop + "px";
   canvasCotainer.style.marginLeft = canvasLeft + "px";
   canvasCotainer.style.position = "absolute";
-  canvasCotainer.style.border = "2px black dashed";
+  // canvasCotainer.style.border = "2px black dashed";
   canvasCotainer.style.cursor = "pointer";
   canvasCotainer.style.backgroundColor = "#0000ff";
   // canvasCotainer.setAttribute("onclick", "selectCanvas('" + canvasId + "')");
@@ -385,8 +385,32 @@ function canvasBuilder(
 
   // click event
   fabricElement.on("mouse:down", function (event) {
+    if (selectedInputCanvas) {
+      const previousCanvasParent = selectedInputCanvas.getElement().parentNode;
+      previousCanvasParent.style.border = "none";
+    }
+
+    //  set selected input canavs
     selectedInputCanvas = fabricElement;
-    console.log(selectedInputCanvas);
+    const parent = selectedInputCanvas.getElement().parentNode;
+    parent.style.border = "2px black dashed";
+  });
+
+  fabricElement.on("mouse:dblclick", function (event) {
+    selectedInputCanvas = fabricElement;
+    openTextPanel();
+  });
+
+  fabricElement.on("mouse:over", function () {
+    const fabricCanvas = document.getElementById(canvasId);
+    fabricCanvas.parentElement.style.border = "2px dashed red";
+  });
+
+  fabricElement.on("mouse:out", function () {
+    if (!selectedInputCanvas) {
+      const fabricCanvas = document.getElementById(canvasId);
+      fabricCanvas.parentElement.style.border = "none";
+    }
   });
 }
 
