@@ -364,7 +364,7 @@
                                             </div>
 
                                             <div class="card mt-4" style="background-color: #e3e8ce;">
-                                                <div class="form-group d-flex flex-column align-items-center p-2">
+                                                <!-- <div class="form-group d-flex flex-column align-items-center p-2">
                                                     <label for="fontSelector" class="fs-6 py-2">Font</label>
                                                     <select class="form-control" id="fontSelector" style="background-color: #e3e8ce;">
                                                         <option value="Arial">Arial</option>
@@ -372,14 +372,13 @@
                                                         <option value="Times New Roman">Times New Roman</option>
                                                         <option value="Courier New">Courier New</option>
                                                         <option value="Verdana">Verdana</option>
-                                                        <!-- Add more font options here -->
                                                     </select>
-                                                </div>
+                                                </div> -->
 
                                                 <button onclick="" class="w-100 size-qty-box2 btn-style-remover">
                                                     <div class="d-flex flex-column align-items-center justify-content-center p-1">
                                                         <div class="fs-6 p-3">Font Color</div>
-                                                        <div class="small-box"></div>
+                                                        <input type="color" class="border-0 " id="textColorInput">
                                                     </div>
                                                 </button>
                                             </div>
@@ -392,8 +391,8 @@
                                                                 <h3 class="card-title fs-6 py-2">Font Size</h3>
                                                                 <div class="btn-group" role="group" aria-label="Font Size Controls">
                                                                     <button type="button" class="card rounded-0 text-pop-sizebtn btn" onclick="decreaseFontSize()">-</button>
-                                                                    <button class="card text-pop-sizebtn1 rounded-0 fs-6 btn" id="text-pop-sizebtn1">16</button>
-                                                                    <button class="card text-pop-sizebtn2 rounded-0 fs-6  fw-bold btn">px</button>
+                                                                    <input id="fontSizeInput" type="text" class="text-pop-sizebtn1" min="0" max="120" value="16">
+                                                                    <button class="card text-pop-sizebtn2 rounded-0 fs-6  fw-bold btn">pt</button>
                                                                     <button type="button" class="card text-pop-sizebtn rounded-0 btn" onclick="increaseFontSize()">+</button>
                                                                 </div>
                                                             </div>
@@ -402,9 +401,7 @@
                                                 </div>
                                             </div>
 
-
-
-                                            <div class="mt-4">
+                                            <!-- <div class="mt-4">
                                                 <div class="row m-0">
                                                     <div class="p-0">
                                                         <div class="card d-flex flex-column  align-items-center" style="background-color: #e3e8ce;">
@@ -418,7 +415,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                         </div>
                                         <div class="modal-footer d-flex  justify-content-center">

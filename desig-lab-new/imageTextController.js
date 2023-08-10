@@ -441,22 +441,28 @@ function canvasBuilder(
 }
 
 function textGenerator(fabricElement, inputText, options = {}) {
+  // input values
+  const fillColor = document.getElementById("textColorInput").value;
+  const fontSize = document.getElementById("fontSizeInput").value;
+
   const defaultOptions = {
     left: 10,
     top: 10,
     fontFamily: "arial",
-    fontSize: 14,
-    fill: "white",
+    fontSize: fontSize,
+    fill: fillColor,
     fontWeight: "bold",
     fontStyle: "italic",
     textDecoration: "underline",
   };
   const margedOptions = Object.assign({}, defaultOptions, options);
 
-  const text = new fabric.Textbox(inputText, margedOptions);
-  fabricElement.add(text);
-  textChanger(text);
-  fabricElement.renderAll();
+  if (inputText !== "") {
+    const text = new fabric.Textbox(inputText, margedOptions);
+    fabricElement.add(text);
+    // textChanger(text);
+    fabricElement.renderAll();
+  }
 }
 
 // function imageGenerator(fabricElement, file, options = {}) {

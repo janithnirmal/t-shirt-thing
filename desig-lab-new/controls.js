@@ -740,22 +740,25 @@ function cancelLineData() {
 //
 
 // text adding feature popup size incrasing
-let currentFontSize = 16; // Initial font size in pixels
 
 function increaseFontSize() {
-  currentFontSize += 1; // Increase font size by 1 pixels
-  applyFontSize();
+  let currentFontSize = document.getElementById("fontSizeInput").value;
+  if (currentFontSize < 120) {
+    currentFontSize++; // Increase font size by 1 point
+    applyFontSize(currentFontSize);
+  }
 }
 
 function decreaseFontSize() {
-  currentFontSize -= 1; // Decrease font size by 1 pixels
-  applyFontSize();
+  let currentFontSize = document.getElementById("fontSizeInput").value;
+  if (currentFontSize > 1) {
+    currentFontSize--; // Increase font size by 1 point
+    applyFontSize(currentFontSize);
+  }
 }
 
-function applyFontSize() {
-  const textContent = document.getElementById("text-pop-sizebtn1");
-  // textContent.style.fontSize = `${currentFontSize}px`;
-  textContent.innerHTML = currentFontSize;
+function applyFontSize(newFontSize) {
+  document.getElementById("fontSizeInput").value = newFontSize;
 }
 
 // openText Panel
