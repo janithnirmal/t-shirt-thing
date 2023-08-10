@@ -2,52 +2,77 @@ let clothTextImageObject = {
   "polo-t-shirt": {
     front: [
       {
-        canvasWidth: 240,
-        canvasHeight: 250,
+        canvasWidth: 210,
+        canvasHeight: 100,
         topMargin: 250,
-        leftMargin: 80,
+        leftMargin: 95,
       },
       {
-        canvasWidth: 95,
+        canvasWidth: 210,
         canvasHeight: 100,
-        topMargin: 95,
+        topMargin: 370,
+        leftMargin: 95,
+      },
+      {
+        canvasWidth: 85,
+        canvasHeight: 95,
+        topMargin: 94,
         leftMargin: 75,
       },
       {
-        canvasWidth: 95,
-        canvasHeight: 100,
-        topMargin: 95,
-        leftMargin: 225,
+        canvasWidth: 85,
+        canvasHeight: 95,
+        topMargin: 92,
+        leftMargin: 235,
       },
     ],
     back: [
       {
-        canvasWidth: 240,
-        canvasHeight: 300,
+        canvasWidth: 230,
+        canvasHeight: 130,
         topMargin: 175,
         leftMargin: 80,
       },
       {
-        canvasWidth: 200,
+        canvasWidth: 230,
+        canvasHeight: 80,
+        topMargin: 350,
+        leftMargin: 80,
+      },
+      {
+        canvasWidth: 185,
         canvasHeight: 50,
-        topMargin: 80,
-        leftMargin: 100,
+        topMargin: 75,
+        leftMargin: 105,
       },
     ],
     left: [
       {
-        canvasWidth: 90,
-        canvasHeight: 100,
+        canvasWidth: 77,
+        canvasHeight: 40,
         topMargin: 120,
-        leftMargin: 170,
+        leftMargin: 173,
       },
+      {
+        canvasWidth: 77,
+        canvasHeight: 40,
+        topMargin: 175,
+        leftMargin: 173,
+      },
+      
     ],
     right: [
       {
-        canvasWidth: 90,
-        canvasHeight: 100,
+        canvasWidth: 77,
+        canvasHeight: 40,
         topMargin: 120,
-        leftMargin: 130,
+        leftMargin: 138,
+      },
+      {
+        canvasWidth: 77,
+        canvasHeight: 40,
+        topMargin: 175,
+        leftMargin: 138,
       },
     ],
   },
@@ -298,9 +323,9 @@ function canvasBuilder(
   canvasCotainer.style.marginTop = canvasTop + "px";
   canvasCotainer.style.marginLeft = canvasLeft + "px";
   canvasCotainer.style.position = "absolute";
-  canvasCotainer.style.border = "2px black dashed";
+  canvasCotainer.style.border = "1px black dashed";
   canvasCotainer.style.cursor = "pointer";
-  canvasCotainer.style.backgroundColor = "#0000ff";
+  //canvasCotainer.style.backgroundColor = "#0000ff";
   // canvasCotainer.setAttribute("onclick", "selectCanvas('" + canvasId + "')");
   canvasCotainer.appendChild(canvas);
 

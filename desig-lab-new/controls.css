@@ -109,11 +109,10 @@
   rotate: -30deg;
 }
 .polo-t-shirt-left-straight-line {
-  width: 20px;
-  height: 300px;
-  margin-left: 200px;
-  margin-top: 220px;
-  rotate: 3deg;
+  width: 80px;
+  height: 270px;
+  margin-left: 170px;
+  margin-top: 250px;
 }
 .polo-t-shirt-right-arm {
   width: 100px;
@@ -124,11 +123,10 @@
 }
 
 .polo-t-shirt-right-straight-line {
-  width: 20px;
-  height: 300px;
-  margin-left: 170px;
-  margin-top: 220px;
-  rotate: -3deg;
+  width: 80px;
+  height: 270px;
+  margin-left: 140px;
+  margin-top: 250px;
 }
 .polo-t-shirt-front-image-middle{
   margin-left: 90px;
