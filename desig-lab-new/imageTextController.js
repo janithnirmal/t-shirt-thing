@@ -142,6 +142,9 @@ let clothTextImageObject = {
         leftMargin: 250,
       },
     ],
+    back: [],
+    left: [],
+    right: [],
   },
   singlet: {
     front: [
@@ -172,6 +175,8 @@ let clothTextImageObject = {
         leftMargin: 10,
       },
     ],
+    left: [],
+    right: [],
   },
   jacket: {
     front: [
@@ -251,10 +256,10 @@ function productIdentifier() {
       clothTextImageObject["cotton-t-shirt"];
   } else if (currentProduct == "bottom") {
     dataObject.views.imageTextContanerData = clothTextImageObject["bottom"];
-  }else if (currentProduct == "jacket") {
+  } else if (currentProduct == "jacket") {
     dataObject.views.imageTextContanerData = clothTextImageObject["jacket"];
   }
-  
+
   imageTextSectionRenderer();
 }
 

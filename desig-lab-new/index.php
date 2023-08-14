@@ -99,7 +99,7 @@
                     <div class="list-group-item">
                         <div id="btn9">
                             <button class="left-side-btn btn btn-primary" onclick="openPrintTypeModel();" id="printTypeControlBtn">
-                            Emblishment 
+                                Emblishment
                             </button>
                             <div id="printTypeModelContainer">
                                 <div class="modal" tabindex="-1" id="printTypeModel">
@@ -477,7 +477,7 @@
                             <img src="images/Cart.png" style="width: 25px; height: 25px" />
                             <p class="text-white p-0 m-0" ">MIN QTY : 35</p>
                         </button>
-                        <button id="sendOrderButton" class="pricetagbtn3box justify-content-center align-items-center p-2 my-4" style="display: none;" >
+                        <button id=" sendOrderButton" class="pricetagbtn3box justify-content-center align-items-center p-2 my-4" style="display: none;">
                             <p class="text-white p-0 m-0">Send My Order</p>
                         </button>
                     </div>
@@ -1148,7 +1148,7 @@
                             </div>
                         </div>
 
-                        
+
                     </div>
                     <div class="modal-footer">
 

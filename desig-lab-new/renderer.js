@@ -442,7 +442,7 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
           248,
           205,
           535,
-          sidesStripsArray[0].thickness,
+          // sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       }
@@ -524,7 +524,7 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
           248,
           185,
           535,
-          sidesStripsArray[0].thickness,
+          // sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       }
@@ -556,7 +556,7 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           213,
           520,
-          sidesStripsArray[0].thickness,
+          // sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       } else if (x == 1) {
@@ -566,7 +566,7 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           203,
           520,
-          sidesStripsArray[1].thickness,
+          // sidesStripsArray[1].thickness,
           sidesStripsArray[1].color
         );
       }
@@ -580,7 +580,7 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           185,
           520,
-          sidesStripsArray[0].thickness,
+          // sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       } else if (x == 1) {
@@ -590,7 +590,7 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           30,
           175,
           520,
-          sidesStripsArray[1].thickness,
+          // sidesStripsArray[1].thickness,
           sidesStripsArray[1].color
         );
       }
@@ -622,7 +622,7 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           200,
           490,
-          sidesStripsArray[0].thickness,
+          // sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       } else if (x == 1) {
@@ -632,7 +632,7 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           210,
           490,
-          sidesStripsArray[1].thickness,
+          // sidesStripsArray[1].thickness,
           sidesStripsArray[1].color
         );
       }
@@ -646,7 +646,7 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           200,
           490,
-          sidesStripsArray[0].thickness,
+          // sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       } else if (x == 1) {
@@ -656,7 +656,7 @@ function stripDrawerShort(ctx, stripObjects, side) {
           88,
           190,
           490,
-          sidesStripsArray[1].thickness,
+          // sidesStripsArray[1].thickness,
           sidesStripsArray[1].color
         );
       }
@@ -883,8 +883,6 @@ function size() {
   doublexl = isNaN(doublexl) ? 0 : doublexl;
   thribblexl = isNaN(thribblexl) ? 0 : thribblexl;
 
-
-
   // Calculate and display the total
   var total = xs + s + m + l + xl + doublexl + thribblexl;
   const sizeItemsDiv = document.getElementById("sizeItems");
@@ -937,26 +935,23 @@ function size() {
   let totals = 0;
 
   // Loop through each span and accumulate the total
-  spans.forEach(span => {
+  spans.forEach((span) => {
     const content = span.textContent.trim(); // Get the text content and remove any leading/trailing spaces
     const value = parseFloat(content) || 0; // Convert the content to a number, default to 0 if conversion fails
     totals += value;
   });
 
-  
   console.log(totals);
- const button=document.getElementById('sendOrderButton')
+  const button = document.getElementById("sendOrderButton");
 
-        // Check the condition and update the button's display style accordingly
-        if (totals>35) {
-            button.style.display = "block"; // Display the button
-        } else {
-            button.style.display = "none"; // Hide the button
-        }
-
+  // Check the condition and update the button's display style accordingly
+  if (totals > 35) {
+    button.style.display = "block"; // Display the button
+  } else {
+    button.style.display = "none"; // Hide the button
+  }
 
   // Set the display property of the button based on the total value
-  
 }
 
 // Function to get the value of the selected radio button for gender
@@ -985,9 +980,6 @@ function getSelectedBudget() {
     }
   });
   return selectedBudget;
-
-
-
 }
 
 // Get the element with the ID 'sizeItems'

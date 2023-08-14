@@ -1,7 +1,7 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
- // "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
- "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
+  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
+//  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -26,7 +26,6 @@ function signInModalViewChanger() {
     openedSigninViewName = "sign-in";
   }
 }
-
 
 // signIn
 let signInModel;
@@ -95,7 +94,7 @@ try {
     let form = new FormData();
     form.append("email", document.getElementById("emailInput").value);
     form.append("password", document.getElementById("passwordInput").value);
-    console.log("hi")
+    console.log("hi");
 
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -222,8 +221,6 @@ function userData() {
 }
 
 function SignIn() {
-  console.log("bi")
-
   let form = new FormData();
   form.append("email", document.getElementById("emailInput").value);
   form.append("password", document.getElementById("passwordInput").value);
@@ -231,11 +228,15 @@ function SignIn() {
   const request = new XMLHttpRequest();
   request.onreadystatechange = () => {
     if (request.readyState == 4 && request.status == 200) {
-      responseObject = JSON.parse(request.responseText);
-      if (responseObject.status === "success") {
-        window.location.reload();
-      } else {
-        console.log(responseObject);
+      try {
+        responseObject = JSON.parse(request.responseText);
+        if (responseObject.status === "success") {
+          window.location.reload();
+        } else {
+          console.log(responseObject);
+        }
+      } catch (error) {
+        console.log(request.responseText);
       }
     }
   };
@@ -318,7 +319,7 @@ function addText() {
     fontWeight: isBold ? "bold" : "normal",
     fontStyle: isItalic ? "italic" : "normal",
     textDecoration: isUnderline ? "underline" : "",
-     // Set underline text decoration
+    // Set underline text decoration
   });
   if (isCrossline) {
     const rectHeight = 2; // You can adjust the height of the crossline here
@@ -828,6 +829,5 @@ function uploadImage() {
 //     .setAttribute("onclick", "addTextcanvasPoloRightImage()");
 // }
 function setColor(colours) {
-  document.getElementById('small-box').style.backgroundColor = colours;
-
+  document.getElementById("small-box").style.backgroundColor = colours;
 }
