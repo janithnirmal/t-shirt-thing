@@ -84,92 +84,242 @@ let clothTextImageObject = {
   "cotton-t-shirt": {
     front: [
       {
-        canvasWidth: 300,
-        canvasHeight: 250,
-        topMargin: 200,
-        leftMargin: 50,
+        canvasWidth: 210,
+        canvasHeight: 100,
+        topMargin: 230,
+        leftMargin:95,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
-        leftMargin: 50,
+        canvasWidth: 210,
+        canvasHeight: 100,
+        topMargin: 350,
+        leftMargin: 95,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
-        leftMargin: 225,
+        canvasWidth: 65,
+        canvasHeight: 75,
+        topMargin: 120,
+        leftMargin: 90,
+      },
+      {
+        canvasWidth: 65,
+        canvasHeight: 75,
+        topMargin: 120,
+        leftMargin: 245,
       },
     ],
     back: [
       {
         canvasWidth: 200,
+        canvasHeight: 130,
+        topMargin: 250,
+        leftMargin: 100,
+      },
+      {
+        canvasWidth: 200,
+        canvasHeight: 80,
+        topMargin: 400,
+        leftMargin: 100,
+      },
+      {
+        canvasWidth: 185,
         canvasHeight: 50,
-        topMargin: 50,
-        leftMargin: 10,
+        topMargin: 130,
+        leftMargin: 110,
+      },
+      {
+        canvasWidth: 85,
+        canvasHeight: 20,
+        topMargin: 88,
+        leftMargin: 155,
       },
     ],
     left: [
       {
-        canvasWidth: 30,
-        canvasHeight: 70,
-        topMargin: 150,
-        leftMargin: 50,
+        canvasWidth: 77,
+        canvasHeight: 30,
+        topMargin: 145,
+        leftMargin: 176,
+      },
+      {
+        canvasWidth: 77,
+        canvasHeight: 30,
+        topMargin: 190,
+        leftMargin: 176,
       },
     ],
     right: [
       {
-        canvasWidth: 30,
-        canvasHeight: 70,
-        topMargin: 150,
-        leftMargin: 50,
+        canvasWidth: 77,
+        canvasHeight: 30,
+        topMargin: 145,
+        leftMargin: 146,
+      },
+      {
+        canvasWidth: 77,
+        canvasHeight: 30,
+        topMargin: 190,
+        leftMargin: 146,
       },
     ],
   },
   bottom: {
     front: [
       {
+        canvasWidth: 50,
+        canvasHeight: 100,
+        topMargin: 70,
+        leftMargin: 120,
+      },
+      {
+        canvasWidth: 50,
+        canvasHeight: 100,
+        topMargin: 70,
+        leftMargin: 220,
+      },  
+    ],
+    back: [
+      {
+        canvasWidth: 50,
+        canvasHeight: 100,
+        topMargin: 70,
+        leftMargin: 120,
+      },
+      {
+        canvasWidth: 50,
+        canvasHeight: 100,
+        topMargin: 70,
+        leftMargin: 220,
+      },  
+    ],
+    
+    
+  },
+  short: {
+    front: [
+      {
         canvasWidth: 100,
         canvasHeight: 100,
-        topMargin: 50,
-        leftMargin: 50,
+        topMargin: 130,
+        leftMargin: 60,
       },
       {
         canvasWidth: 100,
         canvasHeight: 100,
-        topMargin: 50,
-        leftMargin: 250,
+        topMargin: 130,
+        leftMargin: 235,
+      },
+      {
+        canvasWidth: 100,
+        canvasHeight: 100,
+        topMargin: 290,
+        leftMargin: 60,
+      },
+      {
+        canvasWidth: 100,
+        canvasHeight: 100,
+        topMargin: 290,
+        leftMargin: 235,
+      },    
+    ],
+    back: [
+      {
+        canvasWidth: 100,
+        canvasHeight: 100,
+        topMargin: 130,
+        leftMargin: 60, 
+      },
+      {
+        canvasWidth: 100,
+        canvasHeight: 100,
+        topMargin: 130,
+        leftMargin: 235,
+      },
+      {
+        canvasWidth: 100,
+        canvasHeight: 100,
+        topMargin: 290,
+        leftMargin: 60,
+      },
+      {
+        canvasWidth: 100,
+        canvasHeight: 100,
+        topMargin: 290,
+        leftMargin: 235,
+      },    
+    ],
+    right:[
+      {
+        canvasWidth: 0,
+        canvasHeight: 0,
+        topMargin: 0,
+        leftMargin: 0,
+      }
+    ],
+    left:[
+      {
+        canvasWidth: 0,
+        canvasHeight: 0,
+        topMargin: 0,
+        leftMargin: 0,
       },
     ],
+    
+   
+    
   },
   singlet: {
     front: [
       {
-        canvasWidth: 300,
-        canvasHeight: 250,
-        topMargin: 200,
-        leftMargin: 50,
+        canvasWidth: 150,
+        canvasHeight: 100,
+        topMargin: 230,
+        leftMargin:125,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
-        leftMargin: 50,
+        canvasWidth: 150,
+        canvasHeight: 100,
+        topMargin: 350,
+        leftMargin: 125,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
+        canvasWidth: 50,
+        canvasHeight: 50,
+        topMargin: 150,
+        leftMargin: 125,
+      },
+      {
+        canvasWidth: 50,
+        canvasHeight: 50,
+        topMargin: 150,
         leftMargin: 225,
       },
+     
     ],
     back: [
       {
-        canvasWidth: 200,
+        canvasWidth: 180,
+        canvasHeight: 130,
+        topMargin: 240,
+        leftMargin: 110,
+      },
+      {
+        canvasWidth: 180,
+        canvasHeight: 80,
+        topMargin: 390,
+        leftMargin: 110,
+      },
+      {
+        canvasWidth: 150,
         canvasHeight: 50,
-        topMargin: 50,
-        leftMargin: 10,
+        topMargin: 150,
+        leftMargin: 123,
+      },
+      {
+        canvasWidth: 85,
+        canvasHeight: 20,
+        topMargin: 60,
+        leftMargin: 155,
       },
     ],
   },
@@ -237,6 +387,7 @@ let clothTextImageObject = {
       },
     ],
   },
+  
 };
 
 //
@@ -250,9 +401,16 @@ function productIdentifier() {
     dataObject.views.imageTextContanerData =
       clothTextImageObject["cotton-t-shirt"];
   } else if (currentProduct == "bottom") {
-    dataObject.views.imageTextContanerData = clothTextImageObject["bottom"];
+    dataObject.views.imageTextContanerData =
+    clothTextImageObject["bottom"];
   }else if (currentProduct == "jacket") {
     dataObject.views.imageTextContanerData = clothTextImageObject["jacket"];
+  }
+  else if (currentProduct == "short") {
+    dataObject.views.imageTextContanerData = clothTextImageObject["short"];
+  }
+  else if (currentProduct == "singlet") {
+    dataObject.views.imageTextContanerData = clothTextImageObject["singlet"];
   }
   
   imageTextSectionRenderer();
