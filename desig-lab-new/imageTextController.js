@@ -322,6 +322,8 @@ let clothTextImageObject = {
         leftMargin: 155,
       },
     ],
+    left: [],
+    right: [],
   },
   jacket: {
     front: [

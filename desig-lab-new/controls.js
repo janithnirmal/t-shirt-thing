@@ -100,11 +100,11 @@ function openProductModel() {
   productControlModel = new bootstrap.Modal("#productControlModel");
   productControlModel.show();
 
-  document
-    .getElementById("productControlNavigationChangeGender")
-    .classList.add("product-control-nav-section-btn-clicked");
+  // document
+  //   .getElementById("productControlNavigationChangeGender")
+  //   .classList.add("product-control-nav-section-btn-clicked");
 
-  document.getElementById("productControlNavigationChangeGender").click();
+  // document.getElementById("productControlNavigationChangeGender").click();
 
   document
     .getElementById("productControlNavigationChangeSleeves")
