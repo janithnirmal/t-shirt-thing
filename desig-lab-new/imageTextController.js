@@ -45,6 +45,12 @@ let clothTextImageObject = {
         topMargin: 75,
         leftMargin: 105,
       },
+      {
+        canvasWidth: 85,
+        canvasHeight: 20,
+        topMargin: 48,
+        leftMargin: 155,
+      },
     ],
     left: [
       {
@@ -170,46 +176,64 @@ let clothTextImageObject = {
   jacket: {
     front: [
       {
-        canvasWidth: 300,
-        canvasHeight: 250,
-        topMargin: 200,
-        leftMargin: 50,
+        canvasWidth: 210,
+        canvasHeight: 80,
+        topMargin: 360,
+        leftMargin: 100,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
-        leftMargin: 50,
+        canvasWidth: 210,
+        canvasHeight: 80,
+        topMargin: 290,
+        leftMargin: 100,
       },
       {
-        canvasWidth: 125,
-        canvasHeight: 125,
-        topMargin: 40,
-        leftMargin: 225,
+        canvasWidth: 65,
+        canvasHeight: 75,
+        topMargin: 170,
+        leftMargin: 100,
+      },
+      {
+        canvasWidth: 65,
+        canvasHeight: 75,
+        topMargin: 170,
+        leftMargin: 245,
       },
     ],
     back: [
       {
-        canvasWidth: 300,
-        canvasHeight: 300,
-        topMargin: 200,
-        leftMargin: 50,
+        canvasWidth: 200,
+        canvasHeight: 80,
+        topMargin: 250,
+        leftMargin: 105,
+      },
+      {
+        canvasWidth: 200,
+        canvasHeight: 60,
+        topMargin: 350,
+        leftMargin: 105,
+      },
+      {
+        canvasWidth: 200,
+        canvasHeight: 40,
+        topMargin: 170,
+        leftMargin: 105,
       },
     ],
     left: [
       {
         canvasWidth: 30,
         canvasHeight: 70,
-        topMargin: 150,
-        leftMargin: 50,
+        topMargin: 180,
+        leftMargin: 220,
       },
     ],
     right: [
       {
         canvasWidth: 30,
         canvasHeight: 70,
-        topMargin: 150,
-        leftMargin: 50,
+        topMargin: 180,
+        leftMargin: 130,
       },
     ],
   },
@@ -227,8 +251,10 @@ function productIdentifier() {
       clothTextImageObject["cotton-t-shirt"];
   } else if (currentProduct == "bottom") {
     dataObject.views.imageTextContanerData = clothTextImageObject["bottom"];
+  }else if (currentProduct == "jacket") {
+    dataObject.views.imageTextContanerData = clothTextImageObject["jacket"];
   }
-
+  
   imageTextSectionRenderer();
 }
 

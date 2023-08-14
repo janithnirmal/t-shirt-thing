@@ -1,8 +1,7 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
-  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
-//  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
-
+ // "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
+ "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -27,6 +26,7 @@ function signInModalViewChanger() {
     openedSigninViewName = "sign-in";
   }
 }
+
 
 // signIn
 let signInModel;
@@ -95,6 +95,7 @@ try {
     let form = new FormData();
     form.append("email", document.getElementById("emailInput").value);
     form.append("password", document.getElementById("passwordInput").value);
+    console.log("hi")
 
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -221,6 +222,8 @@ function userData() {
 }
 
 function SignIn() {
+  console.log("bi")
+
   let form = new FormData();
   form.append("email", document.getElementById("emailInput").value);
   form.append("password", document.getElementById("passwordInput").value);

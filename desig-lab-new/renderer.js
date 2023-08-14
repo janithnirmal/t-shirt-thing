@@ -883,6 +883,8 @@ function size() {
   doublexl = isNaN(doublexl) ? 0 : doublexl;
   thribblexl = isNaN(thribblexl) ? 0 : thribblexl;
 
+
+
   // Calculate and display the total
   var total = xs + s + m + l + xl + doublexl + thribblexl;
   const sizeItemsDiv = document.getElementById("sizeItems");
@@ -928,7 +930,33 @@ function size() {
   document.getElementById("2xl").value = "";
   document.getElementById("3xl").value = "";
 
-  window.alert("data added sucess fully");
+  window.alert("data added sucessfully");
+
+  const spans = document.querySelectorAll(".right-side-box-num");
+
+  let totals = 0;
+
+  // Loop through each span and accumulate the total
+  spans.forEach(span => {
+    const content = span.textContent.trim(); // Get the text content and remove any leading/trailing spaces
+    const value = parseFloat(content) || 0; // Convert the content to a number, default to 0 if conversion fails
+    totals += value;
+  });
+
+  
+  console.log(totals);
+ const button=document.getElementById('sendOrderButton')
+
+        // Check the condition and update the button's display style accordingly
+        if (totals>35) {
+            button.style.display = "block"; // Display the button
+        } else {
+            button.style.display = "none"; // Hide the button
+        }
+
+
+  // Set the display property of the button based on the total value
+  
 }
 
 // Function to get the value of the selected radio button for gender
@@ -957,6 +985,9 @@ function getSelectedBudget() {
     }
   });
   return selectedBudget;
+
+
+
 }
 
 // Get the element with the ID 'sizeItems'

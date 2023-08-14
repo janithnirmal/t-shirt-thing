@@ -99,7 +99,7 @@
                     <div class="list-group-item">
                         <div id="btn9">
                             <button class="left-side-btn btn btn-primary" onclick="openPrintTypeModel();" id="printTypeControlBtn">
-                                ScreenPrint
+                            Emblishment 
                             </button>
                             <div id="printTypeModelContainer">
                                 <div class="modal" tabindex="-1" id="printTypeModel">
@@ -113,7 +113,7 @@
                                                 <div class="d-flex justify-content-center gap-3">
                                                     <div class="d-flex gap-2">
                                                         <input checked value="Emblishment" name="printTypeRadioInput" type="radio" id="emblishmentRadioBtn">
-                                                        <label class="btn btn-primary" for="emblishmentRadioBtn">Emblishment</label>
+                                                        <label class="btn btn-primary" for="emblishmentRadioBtn">ScreenPrint</label>
                                                     </div>
                                                     <div class="d-flex gap-2">
                                                         <input value="Embroidered" name="printTypeRadioInput" type="radio" id="embroideredRadioBtn">
@@ -475,7 +475,10 @@
                     <div class="pricetagcontainer">
                         <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center p-2">
                             <img src="images/Cart.png" style="width: 25px; height: 25px" />
-                            <p class="text-white p-0 m-0">MIN QTY : 15</p>
+                            <p class="text-white p-0 m-0" ">MIN QTY : 35</p>
+                        </button>
+                        <button id="sendOrderButton" class="pricetagbtn3box justify-content-center align-items-center p-2 my-4" style="display: none;" >
+                            <p class="text-white p-0 m-0">Send My Order</p>
                         </button>
                     </div>
                 </div>
@@ -1145,23 +1148,7 @@
                             </div>
                         </div>
 
-                        <div class="row d-none" id="signInModalSignUpSection">
-                            <div class="col-12">
-                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
-                                    <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
-                                    <input id="emailInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
-                                    <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                                    <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
-                                </div>
-                            </div>
-                            <div style="padding: 0px 50px 15px 50px;">
-                                <button style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="modal-footer">
 
