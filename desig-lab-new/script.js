@@ -138,6 +138,7 @@ function openSavedDesignModal() {
             resultDesign.classList.add("saved-design-item");
             resultDesign.addEventListener("click", () => {
               loadSavedDesign(designData);
+              imageTextSectionRenderer();
             });
 
             const div = document.createElement("div");
