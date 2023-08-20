@@ -86,7 +86,11 @@ $jsonData = '{
     }
 }';
 
-$decodedData = json_decode($jsonData);
+
+//$decodedData = json_decode($jsonData);
+
+$decodedData = json_decode($_POST["orderDetails"], true);
+
 
 $sizeQuantitySets = $decodedData->sizeQuntitySets;
 $gender = $decodedData->gender;
@@ -104,7 +108,8 @@ $stripsNeck=$decodedData->views->strips->neck;
 $stripsArm=$decodedData->views->strips->arm;
 $stripsSides=$decodedData->views->strips->sides;
 
-
+// Start output buffering
+ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -236,3 +241,10 @@ $stripsSides=$decodedData->views->strips->sides;
 </table>
 </body>
 </html>
+<?php
+// Get the content from the output buffer
+$tableHtml = ob_get_clean();
+
+// Now you can use the $tableHtml variable wherever you need to display the HTML table
+echo $tableHtml;
+?>
