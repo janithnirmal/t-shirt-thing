@@ -87,9 +87,9 @@ $jsonData = '{
 }';
 
 
-//$decodedData = json_decode($jsonData);
+$decodedData = json_decode($jsonData);
 
-$decodedData = json_decode($_POST["orderDetails"], true);
+//$decodedData = json_decode($_POST["orderDetails"], true);
 
 
 $sizeQuantitySets = $decodedData->sizeQuntitySets;
@@ -117,21 +117,48 @@ ob_start();
 <head>
     <title>PHP Object Data Table</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+        border: 1px solid #e0e0e0;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+    }
+    td {
+        vertical-align: top;
+    }
+</style>
+
 </head>
 <body>
 
-<h2>Data Table</h2>
-<table>
+<div class="container">
+<h2>Main Data</h2>
+
+    <table>
     <tr>
         <th>Variable</th>
         <th>Value</th>
@@ -175,6 +202,8 @@ ob_start();
     
 </table>
 <table>
+<h2>Quntity Data</h2>
+
 <tr>
         <th>Timestamp</th>
         <th>Gender</th>
@@ -204,6 +233,8 @@ ob_start();
     <?php } ?>
 </table>
 <table>
+<h2>Neck Line Data</h2>
+
 <tr>
             <th>colour</th>
             <th>thickness</th>
@@ -216,6 +247,8 @@ ob_start();
         <?php } ?>
 </table>
 <table>
+<h2>Arm Line Data</h2>
+
 <tr>
             <th>colour</th>
             <th>thickness</th>
@@ -228,6 +261,8 @@ ob_start();
         <?php } ?>
 </table>
 <table>
+<h2>Side Line Data</h2>
+
 <tr>
             <th>colour</th>
             <th>thickness</th>
@@ -239,6 +274,8 @@ ob_start();
             </tr>
         <?php } ?>
 </table>
+</div>
+
 </body>
 </html>
 <?php

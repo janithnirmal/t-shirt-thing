@@ -43,9 +43,15 @@ $query = "UPDATE `user` SET
             `lastname` = ?, 
             `address1` = ?, 
             `address2` = ?,
-            `mobile` = ?
+            `mobile` = ?,
+            `city` = ?,
+            `provience` = ?,
+            `postal` = ?
+
+
+
           WHERE `email` = ?";
-$database->execute_query($query, "ssssss",[$firstName, $lastName, $address, $address2, $telephone, $loggedUserData["email"]]);
+$database->execute_query($query, "sssssssss",[$firstName, $lastName, $address, $address2, $telephone,$city,$province,$postalCode, $loggedUserData["email"]]);
 
 
 $responseObject->error = "Sucess";
