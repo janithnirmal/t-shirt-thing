@@ -89,7 +89,7 @@ $jsonData = '{
 
 $decodedData = json_decode($jsonData);
 
-// $decodedData = json_decode($_POST["orderDetails"], true);
+//$decodedData = json_decode($_POST["orderDetails"], true);
 
 
 $sizeQuantitySets = $decodedData->sizeQuntitySets;
@@ -116,131 +116,165 @@ ob_start();
 <head>
     <title>PHP Object Data Table</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         th,
         td {
-            border: 1px solid black;
-            padding: 8px;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
             text-align: left;
         }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        td {
+            vertical-align: top;
+        }
     </style>
+
 </head>
 
 <body>
 
-    <h2>Data Table</h2>
-    <table>
-        <tr>
-            <th>Variable</th>
-            <th>Value</th>
-        </tr>
-        <tr>
-            <td>Gender</td>
-            <td><?php echo $gender; ?></td>
-        </tr>
-        <tr>
-            <td>Cloth Type</td>
-            <td><?php echo $clothType; ?></td>
-        </tr>
-        <tr>
-            <td>Print Type</td>
-            <td><?php echo $printType; ?></td>
-        </tr>
-        <tr>
-            <td>Main Color Hue Value</td>
-            <td><?php echo $mainColorHueValue; ?></td>
-        </tr>
-        <tr>
-            <td>Main Color Saturate Value</td>
-            <td><?php echo $mainColorSaturateValue; ?></td>
-        </tr>
-        <tr>
-            <td>Main Color Level Value</td>
-            <td><?php echo $mainColorLevelValue; ?></td>
-        </tr>
-        <tr>
-            <td>sleve type</td>
-            <td><?php echo $clothOptionSleves; ?></td>
-        </tr>
-        <tr>
-            <td>neck type</td>
-            <td><?php echo $clothOptionNeck; ?></td>
-        </tr>
-        <tr>
-            <td>button type</td>
-            <td><?php echo $clothOptionButtons; ?></td>
-        </tr>
+    <div class="container">
+        <h2>Main Data</h2>
 
-    </table>
-    <table>
-        <tr>
-            <th>Timestamp</th>
-            <th>Gender</th>
-            <th>Material</th>
-            <th>XS</th>
-            <th>S</th>
-            <th>M</th>
-            <th>L</th>
-            <th>XL</th>
-            <th>DoubleXXL</th>
-            <th>ThribbleXXL</th>
-        </tr>
-        <?php foreach ($sizeQuantitySets as $set) { ?>
+        <table>
             <tr>
-                <td><?php echo $set->timestamp; ?></td>
-                <td><?php echo $set->gender; ?></td>
-                <td><?php echo $set->matirial; ?></td>
-                <td><?php echo $set->xs; ?></td>
-                <td><?php echo $set->s; ?></td>
-                <td><?php echo $set->m; ?></td>
-                <td><?php echo $set->l; ?></td>
-                <td><?php echo $set->xl; ?></td>
-                <td><?php echo $set->doublexxl; ?></td>
-                <td><?php echo $set->thribblexxl; ?></td>
+                <th>Variable</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><?php echo $gender; ?></td>
+            </tr>
+            <tr>
+                <td>Cloth Type</td>
+                <td><?php echo $clothType; ?></td>
+            </tr>
+            <tr>
+                <td>Print Type</td>
+                <td><?php echo $printType; ?></td>
+            </tr>
+            <tr>
+                <td>Main Color Hue Value</td>
+                <td><?php echo $mainColorHueValue; ?></td>
+            </tr>
+            <tr>
+                <td>Main Color Saturate Value</td>
+                <td><?php echo $mainColorSaturateValue; ?></td>
+            </tr>
+            <tr>
+                <td>Main Color Level Value</td>
+                <td><?php echo $mainColorLevelValue; ?></td>
+            </tr>
+            <tr>
+                <td>sleve type</td>
+                <td><?php echo $clothOptionSleves; ?></td>
+            </tr>
+            <tr>
+                <td>neck type</td>
+                <td><?php echo $clothOptionNeck; ?></td>
+            </tr>
+            <tr>
+                <td>button type</td>
+                <td><?php echo $clothOptionButtons; ?></td>
             </tr>
 
-        <?php } ?>
-    </table>
-    <table>
-        <tr>
-            <th>colour</th>
-            <th>thickness</th>
-        </tr>
-        <?php foreach ($stripsNeck as $setp) { ?>
+        </table>
+        <table>
+            <h2>Quntity Data</h2>
+
             <tr>
-                <td><?php echo $setp->color; ?></td>
-                <td><?php echo $setp->thickness; ?></td>
+                <th>Timestamp</th>
+                <th>Gender</th>
+                <th>Material</th>
+                <th>XS</th>
+                <th>S</th>
+                <th>M</th>
+                <th>L</th>
+                <th>XL</th>
+                <th>DoubleXXL</th>
+                <th>ThribbleXXL</th>
             </tr>
-        <?php } ?>
-    </table>
-    <table>
-        <tr>
-            <th>colour</th>
-            <th>thickness</th>
-        </tr>
-        <?php foreach ($stripsArm as $setpo) { ?>
+            <?php foreach ($sizeQuantitySets as $set) { ?>
+                <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                </tr>
+
+            <?php } ?>
+        </table>
+        <table>
+            <h2>Neck Line Data</h2>
+
             <tr>
-                <td><?php echo $setpo->color; ?></td>
-                <td><?php echo $setpo->thickness; ?></td>
+                <th>colour</th>
+                <th>thickness</th>
             </tr>
-        <?php } ?>
-    </table>
-    <table>
-        <tr>
-            <th>colour</th>
-            <th>thickness</th>
-        </tr>
-        <?php foreach ($stripsSides as $setpm) { ?>
+            <?php foreach ($stripsNeck as $setp) { ?>
+                <tr>
+                    <td><?php echo $setp->color; ?></td>
+                    <td><?php echo $setp->thickness; ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+        <table>
+            <h2>Arm Line Data</h2>
+
             <tr>
-                <td><?php echo $setpm->color; ?></td>
-                <td><?php echo $setpm->thickness; ?></td>
+                <th>colour</th>
+                <th>thickness</th>
             </tr>
-        <?php } ?>
-    </table>
+            <?php foreach ($stripsArm as $setpo) { ?>
+                <tr>
+                    <td><?php echo $setpo->color; ?></td>
+                    <td><?php echo $setpo->thickness; ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+        <table>
+            <h2>Side Line Data</h2>
+
+            <tr>
+                <th>colour</th>
+                <th>thickness</th>
+            </tr>
+            <?php foreach ($stripsSides as $setpm) { ?>
+                <tr>
+                    <td><?php echo $setpm->color; ?></td>
+                    <td><?php echo $setpm->thickness; ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
+
 </body>
 
 
