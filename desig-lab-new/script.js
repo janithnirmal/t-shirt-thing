@@ -1,7 +1,7 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
 const SERVER_URL =
- // "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
- "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"//malidu
+  "http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
+// "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -213,11 +213,7 @@ function userData() {
     }
   };
 
-  request.open(
-    "POST",
-    SERVER_URL + "backend/user_data_save.php",
-    true
-  );
+  request.open("POST", SERVER_URL + "backend/user_data_save.php", true);
   request.send(form);
 }
 
@@ -747,6 +743,27 @@ function uploadImage() {
     .catch((error) => console.error("Error uploading image:", error));
   imageName = file.name;
   return imageName;
+}
+
+// ordering process
+let placeOrderModal;
+function placeOrderModalOpen() {
+  placeOrderModal = new bootstrap.Modal("#orderNowModal");
+  placeOrderModal.show();
+}
+
+function placeOrder() {
+  savindDataForOrder();
+
+  const form = new FormData();
+  form.append("dataObject", JSON.stringify(dataObject));
+
+  fetch("backend/orderingProcess.php", {
+    method: "POST",
+    body: form,
+  })
+    .then((response) => response.text())
+    .then((data) => console.log(data));
 }
 
 // function addStaticImage() {

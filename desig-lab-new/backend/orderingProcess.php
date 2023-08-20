@@ -1,4 +1,15 @@
 <?php
+require "app/SMTP.php";
+require "app/PHPMailer.php";
+require "app/Exception.php";
+
+require "app/database_driver.php";
+require "app/user_access_updater.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
+
+
+
 // $jsonData = '{
 //     "sizeQuntitySets": [
 //         {
@@ -268,6 +279,15 @@ ob_start();
             <?php } ?>
         </table>
     </div>
+
+    <div>
+        Images
+    </div>
+    <div>
+        <?php
+
+        ?>
+    </div>
 </div>
 
 
@@ -276,5 +296,50 @@ ob_start();
 $tableHtml = ob_get_clean();
 
 // Now you can use the $tableHtml variable wherever you need to display the HTML table
-echo $tableHtml;
+
+// email code
+$mail = new PHPMailer;
+$mail->IsSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'trackaaofficial@gmail.com';
+$mail->Password = 'gijtkbbqyrnxnwzr';
+$mail->SMTPSecure = 'ssl';
+$mail->Port = 465;
+$mail->setFrom('trackaaofficial@gmail.com', 'Admin Verification');
+$mail->addReplyTo('trackaaofficial@gmail.com', 'Admin Verification');
+$mail->addAddress('rmjanithnirmal@gmail.com');
+$mail->isHTML(true);
+$mail->Subject = 'Test t shirt thing';
+$mail->Body    = $tableHtml;
+
+
+$canvasItemArray = $decodedData->views->generatedTextData;
+foreach ($canvasItemArray as $object) {
+    $items = json_decode($object->data)->objects;
+    foreach ($items as $value) {
+        $dataUrl = $value->src;
+        $mail->addStringAttachment(base64_decode(substr($dataUrl, strpos($dataUrl, ",") + 1)), "image.png");
+    }
+}
+
+
+if (!$mail->send()) {
+    echo ("failed");
+} else {
+    $database = new database_driver();
+    $user_access = new UserAccess();
+
+    date_default_timezone_set('Asia/Colombo'); // Set the time zone to your desired one
+
+    $currentDateTime = date("Y-m-d H:i:s");
+
+    $insertQuery = "INSERT INTO `order` (`ordered_datetime`, `user_email`, `data_object`) VALUES (?, ?, ?) ";
+    $database->execute_query($insertQuery, "sss", [$currentDateTime, $user_access->getUserData()["email"], json_encode($decodedData)]);
+
+    echo ("success");
+}
+
+
+
 ?>

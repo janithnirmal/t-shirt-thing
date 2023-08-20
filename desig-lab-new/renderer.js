@@ -96,24 +96,28 @@ let clothTextImageObject = {
   "cotton-t-shirt": {
     front: [
       {
+        canvasId: "cotton-t-shirt-1",
         canvasWidth: 210,
         canvasHeight: 100,
         topMargin: 230,
         leftMargin: 95,
       },
       {
+        canvasId: "cotton-t-shirt-2",
         canvasWidth: 210,
         canvasHeight: 100,
         topMargin: 350,
         leftMargin: 95,
       },
       {
+        canvasId: "cotton-t-shirt-3",
         canvasWidth: 65,
         canvasHeight: 75,
         topMargin: 120,
         leftMargin: 90,
       },
       {
+        canvasId: "cotton-t-shirt-4",
         canvasWidth: 65,
         canvasHeight: 75,
         topMargin: 120,
@@ -122,24 +126,28 @@ let clothTextImageObject = {
     ],
     back: [
       {
+        canvasId: "cotton-t-shirt-5",
         canvasWidth: 200,
         canvasHeight: 130,
         topMargin: 250,
         leftMargin: 100,
       },
       {
+        canvasId: "cotton-t-shirt-6",
         canvasWidth: 200,
         canvasHeight: 80,
         topMargin: 400,
         leftMargin: 100,
       },
       {
+        canvasId: "cotton-t-shirt-7",
         canvasWidth: 185,
         canvasHeight: 50,
         topMargin: 130,
         leftMargin: 110,
       },
       {
+        canvasId: "cotton-t-shirt-8",
         canvasWidth: 85,
         canvasHeight: 20,
         topMargin: 88,
@@ -148,12 +156,14 @@ let clothTextImageObject = {
     ],
     left: [
       {
+        canvasId: "cotton-t-shirt-9",
         canvasWidth: 77,
         canvasHeight: 30,
         topMargin: 145,
         leftMargin: 176,
       },
       {
+        canvasId: "cotton-t-shirt-10",
         canvasWidth: 77,
         canvasHeight: 30,
         topMargin: 190,
@@ -162,12 +172,14 @@ let clothTextImageObject = {
     ],
     right: [
       {
+        canvasId: "cotton-t-shirt-11",
         canvasWidth: 77,
         canvasHeight: 30,
         topMargin: 145,
         leftMargin: 146,
       },
       {
+        canvasId: "cotton-t-shirt-12",
         canvasWidth: 77,
         canvasHeight: 30,
         topMargin: 190,
@@ -178,12 +190,14 @@ let clothTextImageObject = {
   bottom: {
     front: [
       {
+        canvasId: "bottom-1",
         canvasWidth: 50,
         canvasHeight: 100,
         topMargin: 70,
         leftMargin: 120,
       },
       {
+        canvasId: "bottom-2",
         canvasWidth: 50,
         canvasHeight: 100,
         topMargin: 70,
@@ -192,12 +206,14 @@ let clothTextImageObject = {
     ],
     back: [
       {
+        canvasId: "bottom-3",
         canvasWidth: 50,
         canvasHeight: 100,
         topMargin: 70,
         leftMargin: 120,
       },
       {
+        canvasId: "bottom-4",
         canvasWidth: 50,
         canvasHeight: 100,
         topMargin: 70,
@@ -208,24 +224,31 @@ let clothTextImageObject = {
   short: {
     front: [
       {
+        canvasId: "short-1",
+        canvasId: "cotton-t-shirt-17",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 130,
         leftMargin: 60,
       },
       {
+        canvasId: "short-2",
+        canvasId: "cotton-t-shirt-18",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 130,
         leftMargin: 235,
       },
       {
+        canvasId: "short-3",
+        canvasId: "cotton-t-shirt-19",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 290,
         leftMargin: 60,
       },
       {
+        canvasId: "short-4",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 290,
@@ -234,24 +257,28 @@ let clothTextImageObject = {
     ],
     back: [
       {
+        canvasId: "short-5",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 130,
         leftMargin: 60,
       },
       {
+        canvasId: "short-6",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 130,
         leftMargin: 235,
       },
       {
+        canvasId: "short-7",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 290,
         leftMargin: 60,
       },
       {
+        canvasId: "short-8",
         canvasWidth: 100,
         canvasHeight: 100,
         topMargin: 290,
@@ -260,6 +287,7 @@ let clothTextImageObject = {
     ],
     right: [
       {
+        canvasId: "short-9",
         canvasWidth: 0,
         canvasHeight: 0,
         topMargin: 0,
@@ -268,6 +296,7 @@ let clothTextImageObject = {
     ],
     left: [
       {
+        canvasId: "short-10",
         canvasWidth: 0,
         canvasHeight: 0,
         topMargin: 0,
@@ -278,24 +307,28 @@ let clothTextImageObject = {
   singlet: {
     front: [
       {
+        canvasId: "singlet-1",
         canvasWidth: 150,
         canvasHeight: 100,
         topMargin: 230,
         leftMargin: 125,
       },
       {
+        canvasId: "singlet-2",
         canvasWidth: 150,
         canvasHeight: 100,
         topMargin: 350,
         leftMargin: 125,
       },
       {
+        canvasId: "singlet-3",
         canvasWidth: 50,
         canvasHeight: 50,
         topMargin: 150,
         leftMargin: 125,
       },
       {
+        canvasId: "singlet-4",
         canvasWidth: 50,
         canvasHeight: 50,
         topMargin: 150,
@@ -304,24 +337,28 @@ let clothTextImageObject = {
     ],
     back: [
       {
+        canvasId: "singlet-5",
         canvasWidth: 180,
         canvasHeight: 130,
         topMargin: 240,
         leftMargin: 110,
       },
       {
+        canvasId: "singlet-6",
         canvasWidth: 180,
         canvasHeight: 80,
         topMargin: 390,
         leftMargin: 110,
       },
       {
+        canvasId: "singlet-7",
         canvasWidth: 150,
         canvasHeight: 50,
         topMargin: 150,
         leftMargin: 123,
       },
       {
+        canvasId: "singlet-8",
         canvasWidth: 85,
         canvasHeight: 20,
         topMargin: 60,
@@ -334,24 +371,28 @@ let clothTextImageObject = {
   jacket: {
     front: [
       {
+        canvasId: "jacket-1",
         canvasWidth: 210,
         canvasHeight: 80,
         topMargin: 360,
         leftMargin: 100,
       },
       {
+        canvasId: "jacket-2",
         canvasWidth: 210,
         canvasHeight: 80,
         topMargin: 290,
         leftMargin: 100,
       },
       {
+        canvasId: "jacket-3",
         canvasWidth: 65,
         canvasHeight: 75,
         topMargin: 170,
         leftMargin: 100,
       },
       {
+        canvasId: "jacket-4",
         canvasWidth: 65,
         canvasHeight: 75,
         topMargin: 170,
@@ -360,18 +401,21 @@ let clothTextImageObject = {
     ],
     back: [
       {
+        canvasId: "jacket-5",
         canvasWidth: 200,
         canvasHeight: 80,
         topMargin: 250,
         leftMargin: 105,
       },
       {
+        canvasId: "jacket-6",
         canvasWidth: 200,
         canvasHeight: 60,
         topMargin: 350,
         leftMargin: 105,
       },
       {
+        canvasId: "jacket-7",
         canvasWidth: 200,
         canvasHeight: 40,
         topMargin: 170,
@@ -380,6 +424,7 @@ let clothTextImageObject = {
     ],
     left: [
       {
+        canvasId: "jacket-8",
         canvasWidth: 30,
         canvasHeight: 70,
         topMargin: 180,
@@ -388,6 +433,7 @@ let clothTextImageObject = {
     ],
     right: [
       {
+        canvasId: "jacket-9",
         canvasWidth: 30,
         canvasHeight: 70,
         topMargin: 180,
@@ -484,7 +530,6 @@ function imageTextSectionRenderer() {
   //
   //
   // loadText
-  console.log(dataObject.views.generatedTextData);
   loadTextDataFromSaved();
 }
 
@@ -910,8 +955,6 @@ let dataObject = {
     generatedTextData: [],
   },
 };
-
-
 
 // cloth image text object
 
@@ -1825,30 +1868,27 @@ function size() {
   });
 
   console.log(totals);
-  
-  if(totals>35){
+
+  if (totals > 35) {
     const sendOrderButton = document.createElement("button");
-  sendOrderButton.id = "sendOrderButton";
-  sendOrderButton.className = "pricetagbtn3box justify-content-center align-items-center p-2 my-4";
-  sendOrderButton.style.display = "block";
+    sendOrderButton.id = "sendOrderButton";
+    sendOrderButton.className =
+      "pricetagbtn3box justify-content-center align-items-center p-2 my-4";
+    sendOrderButton.style.display = "block";
 
-  // Create a new paragraph element for the button's text
-  const buttonText = document.createElement("p");
-  buttonText.className = "text-white p-0 m-0";
-  buttonText.textContent = "Send My Order";
+    // Create a new paragraph element for the button's text
+    const buttonText = document.createElement("p");
+    buttonText.className = "text-white p-0 m-0";
+    buttonText.textContent = "Send My Order";
 
-  // Append the paragraph element to the button element
-  sendOrderButton.appendChild(buttonText);
+    // Append the paragraph element to the button element
+    sendOrderButton.appendChild(buttonText);
 
-  const pricetagContainer = document.querySelector(".pricetagcontainer");
+    const pricetagContainer = document.querySelector(".pricetagcontainer");
 
-  // Append the button element to the "pricetagcontainer" div
-  pricetagContainer.appendChild(sendOrderButton);
+    // Append the button element to the "pricetagcontainer" div
+    pricetagContainer.appendChild(sendOrderButton);
   }
-  
-
-
-  
 
   // Set the display property of the button based on the total value
 }
@@ -1927,7 +1967,7 @@ function getSelectedBudget() {
 //
 //
 
-function saveCurrentDesign() {
+function savindDataForOrder() {
   const savedTextDataArray = [];
   for (let u = 0; u < allCanvasElements.length; u++) {
     let textData = {
@@ -1939,7 +1979,11 @@ function saveCurrentDesign() {
   }
 
   dataObject.views.generatedTextData = savedTextDataArray;
-  console.log(dataObject.views.generatedTextData);
+}
+
+function saveCurrentDesign() {
+  savindDataForOrder();
+
   renderStartEffects();
 
   let dataURLFront;
