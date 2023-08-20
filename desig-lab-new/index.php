@@ -473,44 +473,64 @@
                 <!-- size & qty -->
                 <div class="left-side-box3">
                     <div class="pricetagcontainer">
-                        <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center p-2">
+                        <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center p-2" onclick="placeOrderModalOpen();">
                             <img src="images/Cart.png" style="width: 25px; height: 25px" />
                             <p class="text-white p-0 m-0" ">MIN QTY : 35</p>
                         </button>
                        
                     </div>
                 </div>
-            </div>
 
-            <!-- middle panel -->
-            <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
-                <div class="t-shirt-panel-container ">
+                <!-- ordering modal -->
+                <div class=" modal" tabindex="-1" id="orderNowModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Ordering Process</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>You are ordering Few Modals</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button onclick="placeOrder()" type="button" class="btn btn-primary">Confirm Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+
+                <!-- middle panel -->
+                <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
+                    <div class="t-shirt-panel-container ">
 
 
 
-                    <!-- render -->
-                    <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center position-absolute"></div>
+                        <!-- render -->
+                        <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center position-absolute"></div>
 
-                    <!-- strips -->
-                    <div class="canvasOverly ">
-                        <div id="polo-t-shirt" class="canvasOverlyInner d-block">
-                            <div data-controlside="front" id="polo-t-shirt-StripControl-front" class=" canvasOverlyInner-front d-block control-sectinos-sides">
-                                <div class="strip-controls">
-                                    <!-- stips neck-->
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
-                                    <div class="controller-indication-design polo-t-shirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
-
-
+                        <!-- strips -->
+                        <div class="canvasOverly ">
+                            <div id="polo-t-shirt" class="canvasOverlyInner d-block">
+                                <div data-controlside="front" id="polo-t-shirt-StripControl-front" class=" canvasOverlyInner-front d-block control-sectinos-sides">
+                                    <div class="strip-controls">
+                                        <!-- stips neck-->
+                                        <div class="controller-indication-design polo-t-shirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
+                                        <div class="controller-indication-design polo-t-shirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
 
 
-                                    <!-- strips arm -->
-                                    <div class="controller-indication-design polo-t-shirt-front-left-arm" onclick="controllerModelOpen('arm');"></div>
-                                    <div class="controller-indication-design polo-t-shirt-front-right-arm" onclick="controllerModelOpen('arm');"></div>
 
 
-                                    <!-- image box -->
+                                        <!-- strips arm -->
+                                        <div class="controller-indication-design polo-t-shirt-front-left-arm" onclick="controllerModelOpen('arm');"></div>
+                                        <div class="controller-indication-design polo-t-shirt-front-right-arm" onclick="controllerModelOpen('arm');"></div>
 
-                                    <!-- <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
+
+                                        <!-- image box -->
+
+                                        <!-- <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
                                         <canvas id="canvass" width="220px" height="300px"></canvas>
 
                                     </div>
@@ -522,485 +542,485 @@
                                     <div class="controller-indication-design polo-t-shirt-front-image-top-right" ondblclick="openImageModel();poloTopRight()">
                                         <canvas id="canvas-polo-top-right" width="85px" height="100px"></canvas>
                                     </div> -->
+                                    </div>
                                 </div>
-                            </div>
-                            <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                                <!--strips neck-->
-                                <div class="controller-indication-design polo-t-shirt-coller-back" onclick="controllerModelOpen('neck')"></div>
-                                <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
-                                <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
-                                <!-- image controll -->
-                                <!-- <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
+                                <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                    <!--strips neck-->
+                                    <div class="controller-indication-design polo-t-shirt-coller-back" onclick="controllerModelOpen('neck')"></div>
+                                    <!-- strips arm -->
+                                    <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
+                                    <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
+                                    <!-- image controll -->
+                                    <!-- <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
                                     <canvas id="canvas-polo-back-middle" width="220px" height="300px"></canvas>
                                 </div>
                                 <div class="controller-indication-design polo-t-shirt-back-image-top" ondblclick="openImageModel();changeCanvasPoloBackTop()">
                                     <canvas id="canvas-polo-back-top" width="200px" height="50px"></canvas>
                                 </div> -->
 
-                            </div>
-                            <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                <!-- stips neck-->
+                                </div>
+                                <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                    <!-- stips neck-->
 
-                                <div class="controller-indication-design polo-t-shirt-coller-left" onclick="controllerModelOpen('neck')"></div>
-                                <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-left-arm" onclick="controllerModelOpen('arm');"></div>
-                                <!-- straight line -->
-                                <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
-                                <!-- image controll -->
-                                <!-- <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
+                                    <div class="controller-indication-design polo-t-shirt-coller-left" onclick="controllerModelOpen('neck')"></div>
+                                    <!-- strips arm -->
+                                    <div class="controller-indication-design polo-t-shirt-left-arm" onclick="controllerModelOpen('arm');"></div>
+                                    <!-- straight line -->
+                                    <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
+                                    <!-- image controll -->
+                                    <!-- <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
                                     <canvas id="canvas-polo-left-image" width="85px" height="100px"></canvas>
                                 </div> -->
 
-                            </div>
-                            <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                <!-- stips neck-->
-                                <div class="controller-indication-design polo-t-shirt-coller-right" onclick="controllerModelOpen('neck')"></div>
-                                <!-- strips arm -->
-                                <div class="controller-indication-design polo-t-shirt-right-arm" onclick="controllerModelOpen('arm');"></div>
-                                <!-- straight line -->
-                                <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
-                                <!-- image controll -->
-                                <!-- <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
+                                </div>
+                                <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                    <!-- stips neck-->
+                                    <div class="controller-indication-design polo-t-shirt-coller-right" onclick="controllerModelOpen('neck')"></div>
+                                    <!-- strips arm -->
+                                    <div class="controller-indication-design polo-t-shirt-right-arm" onclick="controllerModelOpen('arm');"></div>
+                                    <!-- straight line -->
+                                    <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
+                                    <!-- image controll -->
+                                    <!-- <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
                                     <canvas id="canvas-polo-right-image" width="75px" height="100px"></canvas>
                                 </div> -->
+                                </div>
                             </div>
-                        </div>
-                        <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
-                            <div data-controlside="front" id="cotton-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                            <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
+                                <div data-controlside="front" id="cotton-t-shirt-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                </div>
+                                <div data-controlside="back" id="cotton-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                </div>
+                                <div data-controlside="left" id="cotton-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                </div>
+                                <div data-controlside="right" id="cotton-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                </div>
                             </div>
-                            <div data-controlside="back" id="cotton-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                            <div id="short" class="canvasOverlyInner  d-none">
+                                <div data-controlside="front" id="short-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                </div>
+                                <div data-controlside="back" id="short-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                </div>
+                                <div data-controlside="left" id="short-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                    <div class="controller-indication-design short-leg-left" onclick="controllerModelOpen('sides')"></div>
+                                </div>
+                                <div data-controlside="right" id="short-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                    <div class="controller-indication-design short-leg-right" onclick="controllerModelOpen('sides')"></div>
+                                </div>
                             </div>
-                            <div data-controlside="left" id="cotton-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                            </div>
-                            <div data-controlside="right" id="cotton-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                            </div>
-                        </div>
-                        <div id="short" class="canvasOverlyInner  d-none">
-                            <div data-controlside="front" id="short-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                            </div>
-                            <div data-controlside="back" id="short-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                            </div>
-                            <div data-controlside="left" id="short-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                <div class="controller-indication-design short-leg-left" onclick="controllerModelOpen('sides')"></div>
-                            </div>
-                            <div data-controlside="right" id="short-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                <div class="controller-indication-design short-leg-right" onclick="controllerModelOpen('sides')"></div>
-                            </div>
-                        </div>
-                        <div id="bottom" class="canvasOverlyInner  d-none">
-                            <div data-controlside="front" id="bottom-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                            </div>
-                            <div data-controlside="back" id="bottom-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                            </div>
-                            <div data-controlside="left" id="bottom-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                <div class="controller-indication-design bottom-leg-left" onclick="controllerModelOpen('sides')"></div>
+                            <div id="bottom" class="canvasOverlyInner  d-none">
+                                <div data-controlside="front" id="bottom-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                </div>
+                                <div data-controlside="back" id="bottom-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                </div>
+                                <div data-controlside="left" id="bottom-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                    <div class="controller-indication-design bottom-leg-left" onclick="controllerModelOpen('sides')"></div>
 
+                                </div>
+                                <div data-controlside="right" id="bottom-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                    <div class="controller-indication-design bottom-leg-right" onclick="controllerModelOpen('sides')"></div>
+                                </div>
                             </div>
-                            <div data-controlside="right" id="bottom-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                <div class="controller-indication-design bottom-leg-right" onclick="controllerModelOpen('sides')"></div>
+                            <div id="singlet" class="canvasOverlyInner  d-none">
+                                <div data-controlside="front" id="singlet-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                </div>
+                                <div data-controlside="back" id="singlet-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                </div>
+                                <div data-controlside="left" id="singlet-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                </div>
+                                <div data-controlside="right" id="singlet-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                </div>
+                            </div>
+                            <div id="jacket" class="canvasOverlyInner  d-none">
+                                <div data-controlside="front" id="jacket-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
+                                </div>
+                                <div data-controlside="back" id="jacket-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
+                                </div>
+                                <div data-controlside="left" id="jacket-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
+                                    <div class="controller-indication-design jacket-arm-left-top" onclick="controllerModelOpen('arm')"></div>
+                                    <div class="controller-indication-design jacket-arm-left-bottom" onclick="controllerModelOpen('arm')"></div>
+                                </div>
+                                <div data-controlside="right" id="jacket-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
+                                    <div class="controller-indication-design jacket-arm-right-top" onclick="controllerModelOpen('arm')"></div>
+                                    <div class="controller-indication-design jacket-arm-right-bottom" onclick="controllerModelOpen('arm')"></div>
+                                </div>
                             </div>
                         </div>
-                        <div id="singlet" class="canvasOverlyInner  d-none">
-                            <div data-controlside="front" id="singlet-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                            </div>
-                            <div data-controlside="back" id="singlet-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                            </div>
-                            <div data-controlside="left" id="singlet-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                            </div>
-                            <div data-controlside="right" id="singlet-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                            </div>
+
+
+                        <!-- image text  -->
+                        <div class="image-text-container " id="imageTextContainer">
+                            <div data-type="textimage" data-side="front" id="canvasOverlyFront" class="d-block position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                            <div data-type="textimage" data-side="back" id="canvasOverlyBack" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                            <div data-type="textimage" data-side="left" id="canvasOverlyLeft" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                            <div data-type="textimage" data-side="right" id="canvasOverlyRight" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
                         </div>
-                        <div id="jacket" class="canvasOverlyInner  d-none">
-                            <div data-controlside="front" id="jacket-StripControl-front" class="canvasOverlyInner-front d-block control-sectinos-sides">
-                            </div>
-                            <div data-controlside="back" id="jacket-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
-                            </div>
-                            <div data-controlside="left" id="jacket-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
-                                <div class="controller-indication-design jacket-arm-left-top" onclick="controllerModelOpen('arm')"></div>
-                                <div class="controller-indication-design jacket-arm-left-bottom" onclick="controllerModelOpen('arm')"></div>
-                            </div>
-                            <div data-controlside="right" id="jacket-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
-                                <div class="controller-indication-design jacket-arm-right-top" onclick="controllerModelOpen('arm')"></div>
-                                <div class="controller-indication-design jacket-arm-right-bottom" onclick="controllerModelOpen('arm')"></div>
-                            </div>
+
+                        <div class="image-text-controller-icons position-absolute">
+                            <button onclick="removeSelectedItem()" id="canvasSelectedItemDeleteBtn" class="py-1 px-2 btn-style-remover btn rounded-2 bg-dark fw-bold text-white"><i class="fas fa-trash"></i></button>
                         </div>
+
                     </div>
 
-
-                    <!-- image text  -->
-                    <div class="image-text-container " id="imageTextContainer">
-                        <div data-type="textimage" data-side="front" id="canvasOverlyFront" class="d-block position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
-                        <div data-type="textimage" data-side="back" id="canvasOverlyBack" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
-                        <div data-type="textimage" data-side="left" id="canvasOverlyLeft" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
-                        <div data-type="textimage" data-side="right" id="canvasOverlyRight" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
-                    </div>
-
-                    <div class="image-text-controller-icons position-absolute">
-                        <button onclick="removeSelectedItem()" id="canvasSelectedItemDeleteBtn" class="py-1 px-2 btn-style-remover btn rounded-2 bg-dark fw-bold text-white"><i class="fas fa-trash"></i></button>
-                    </div>
-
-                </div>
-
-                <!-- model contianer -->
-                <div class="modelContainer">
+                    <!-- model contianer -->
+                    <div class="modelContainer">
 
 
-                    <!-- Modal - polo neck strip -->
-                    <div class="modal fade" id="neckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5">Neck Strip Lines</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-
-                                    <div class="d-flex justify-content-center align-items-center p-3 my-3">
-                                        <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="neckStripLinePreviewContainer">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Line Count</div>
-                                        <input id="neckStripLineControlCountInput" onchange="neckLineCounter(event)" type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" />
-                                    </div>
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="neckLineSelector" class="form-control" onchange="selectneckLine(event)">
-                                            <option value="0">No Lines</option>
-                                        </select>
-                                    </div>
-                                    <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="neckStripLinePreviewColorInput" onchange="updateneckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="neckStripLinePreviewThicknessInput" onchange="updateneckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
-                                                </div>
-                                            </div>
-                                            <!-- <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="updateneckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="updateneckLineData()">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal - polo arm strip -->
-                    <div class="modal fade" id="armStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5">arm Strip Lines</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-
-                                    <div class="d-flex justify-content-center align-items-center p-3 my-3">
-                                        <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="armStripLinePreviewContainer">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Line Count</div>
-                                        <input id="armStripLineControlCountInput" onchange="armLineCounter(event)" type="number" class=" form-control strip-control-modal-line-arm-line-count" value="0" min="0" max="3" />
-                                    </div>
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="armLineSelector" class="form-control" onchange="selectarmLine(event)">
-                                            <option value="0">No Lines</option>
-                                        </select>
-                                    </div>
-                                    <div class="tshirt-arm-line-control-container d-none" id="armLineControlSection">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="armStripLinePreviewColorInput" onchange="updatearmStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="armStripLinePreviewThicknessInput" onchange="updatearmStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
-                                                </div>
-                                            </div>
-                                            <!-- <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="updatearmStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="updatearmLineData()">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal - polo sides strip -->
-                    <div class="modal fade" id="sidesStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5">Sides Strip Lines</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-
-                                    <div class="d-flex justify-content-center align-items-center p-3 my-3">
-                                        <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="sidesStripLinePreviewContainer">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Line Count</div>
-                                        <input id="sidesStripLineControlCountInput" onchange="sidesLineCounter(event)" type="number" class=" form-control strip-control-modal-line-sides-line-count" value="0" min="0" max="3" />
-                                    </div>
-                                    <div class="p-2">
-                                        <div class="fs-5 text-center">Selected Line</div>
-                                        <select id="sidesLineSelector" class="form-control" onchange="selectsidesLine(event)">
-                                            <option value="0">No Lines</option>
-                                        </select>
-                                    </div>
-                                    <div class="tshirt-sides-line-control-container d-none" id="sidesLineControlSection">
-                                        <div>
-                                            <div class="p-2">
-                                                <div class="fs-5 text-center">Line Color & Thickness</div>
-                                                <div class="d-flex justify-content-between">
-                                                    <input id="sidesStripLinePreviewColorInput" onchange="updatesidesStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                    <input id="sidesStripLinePreviewThicknessInput" onchange="updatesidesStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
-                                                </div>
-                                            </div>
-                                            <!-- <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="updatesidesStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="updatesidesLineData()">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- right side panel -->
-            <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
-
-                <!-- size & qty -->
-                <div class="basic-styling right-side-box1 ">
-                    <div class="right-side-box-btn-container">
-                        <div class="d-flex-column">
-                            <button style="background-color: #2596be" class="right-side-box-btn">
-                                Men
-                            </button>
-                            <button style="background-color: #8e48ae" class="right-side-box-btn">
-                                Men
-                            </button>
-                            <button style="background-color: #4482c9" class="right-side-box-btn">
-                                Woman
-                            </button>
-                            <button style="background-color: #8e44ad" class="right-side-box-btn">
-                                Woman
-                            </button>
-                        </div>
-
-                        <div class="d-flex-column">
-                            <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Coparate
-                            </button>
-                            <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Budget
-                            </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Budget
-                            </button>
-                            <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
-                                Coparate
-                            </button>
-                        </div>
-
-                        <div class="d-flex-column">
-                            <span class="right-side-box-num" id="mc" style="font-size: 10px;"></span>
-                            <span class="right-side-box-num" id="mb" style="font-size: 10px;"> </span>
-                            <span class="right-side-box-num" id="wb" style="font-size: 10px;"></span>
-                            <span class="right-side-box-num" id="wc" style="font-size: 10px;"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- color controls -->
-                <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
-                    <div class="dropdown">
-                        <!-- <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px"> -->
-                        <button onclick="openModelColorControl()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
-                            <div class="small-box" id="small-box"></div>
-                            <span>Color</span> <i class="fas fa-chevron-down"></i>
-                        </button>
-
-                        <div id="colorControlModelContainer">
-                            <div class="modal" tabindex="-1" id="colorControlModel">
-                                <div class="modal-dialog">
-                                    <div class="modal-content  border border-1 border-secondary m-3">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-center">Select A Color</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="d-flex justify-content-center gap-3">
-                                                <div class="color-row" style="max-width: 350px">
-                                                    <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('#C74B4B')" style="background-color: #C74B4B"></div>
-                                                    <div class="color-option" onclick="colorUpdate(230, 1, 1); setColor('#3B69C0')" style="background-color: #3B69C0"></div>
-                                                    <div class="color-option" onclick="colorUpdate(120, 1, 1); setColor('#1F851F')" style="background-color: #1F851F"></div>
-                                                    <div class="color-option" onclick="colorUpdate(60, 1.4, 1.8); setColor('#f8BB00')" style="background-color: #f8BB00"></div>
-                                                    <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('#A95B18')" style="background-color: #A95B18"></div>
-                                                    <div class="color-option" onclick="colorUpdate(170, 1, .7); setColor('#005C4E')" style="background-color: #005C4E"></div>
-                                                    <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('#AF49AE')" style="background-color: #AF49AE"></div>
-                                                    <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('#00865E')" style="background-color: #00865E"></div>
-                                                    <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('#9A9A9A')" style="background-color: #9A9A9A"></div>
-                                                    <div class="color-option" onclick="colorUpdate(195, 1, .6); setColor('#08495B')" style="background-color: #08495B"></div>
-                                                    <div class="color-option" onclick="colorUpdate(177, 0, .5); setColor('#333333')" style="background-color: #333333"></div>
-                                                    <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('#CC4883')" style="background-color: #CC4883"></div>
-                                                    <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('#03844A')" style="background-color: #03844A"></div>
-                                                    <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('#C84C4C')" style="background-color: #C84C4C"></div>
-                                                    <div class="color-option" onclick="colorUpdate(280, 1, 1); setColor('#9150C2')" style="background-color: #9150C2"></div>
-                                                    <div class="color-option" onclick="colorUpdate(70, 1, 1); setColor('#706F00')" style="background-color: #706F00"></div>
-                                                    <div class="color-option" onclick="colorUpdate(100, .7, 1); setColor('#497727')" style="background-color: #497727"></div>
-                                                    <div class="color-option" onclick="colorUpdate(260, 1, 1); setColor('#715BCE')" style="background-color: #715BCE"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- size & qty -->
-                <div class="basic-styling big-box order-md-2 order-4">
-                    <div class="d-flex-column" style="height: 100%">
-                        <!-- <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;"> -->
-                        <button onclick="openSizeQuantityModel();" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
-                            <div class="size-qty-box1" id="sizeItems"></div>
-                            <span style="width: 100%">Size & Qty</span>
-
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-
-                        <div class="modal" tabindex="-1" id="sizeQuantityModel">
-                            <div class="modal-dialog">
+                        <!-- Modal - polo neck strip -->
+                        <div class="modal fade" id="neckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Select your combination.</h5>
+                                        <h1 class="modal-title fs-5">Neck Strip Lines</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="align-items-end flex-column">
-                                            <div class="p-2 rounded-3 border border-1 border-secondary w-100">
-                                                <!-- <p class="text-center">Select your combination.</p> -->
-                                                <div class="size-box1 d-flex justify-content-center flex-column gap-3 w-100">
-                                                    <div class="w-100 d-flex">
-                                                        <div class="w-50">
-                                                            <input type="radio" id="combinationMen" name="combinationGender" />
-                                                            <label for="combinationMen" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
-                                                                Men
-                                                            </label>
-                                                        </div>
-                                                        <div class="w-50">
-                                                            <input type="radio" id="combinationWomen" name="combinationGender" />
-                                                            <label for="combinationWomen" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
-                                                                Woman
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="w-100 d-flex">
-                                                        <div class="w-50">
-                                                            <input type="radio" id="combinationBudget" name="combinationBudget" />
-                                                            <label for="combinationBudget" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
-                                                                Budget
-                                                            </label>
-                                                        </div>
-                                                        <div class="w-50">
-                                                            <input type="radio" id="combinationCoperate" name="combinationBudget" />
-                                                            <label for="combinationCoperate" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
-                                                                Coperate
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                        <div class="d-flex justify-content-center align-items-center p-3 my-3">
+                                            <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="neckStripLinePreviewContainer">
+
                                             </div>
+                                        </div>
 
-                                            <div class="my-2 d-flex flex-column gap-1">
-                                                <div class="w-100 d-flex gap-2">
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">XS</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xs" />
-                                                    </div>
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">S</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="s" />
-                                                    </div>
-                                                </div>
-                                                <div class="w-100 d-flex gap-2">
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">M</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="m" />
-                                                    </div>
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">L</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="l" />
+                                        <div class="p-2">
+                                            <div class="fs-5 text-center">Line Count</div>
+                                            <input id="neckStripLineControlCountInput" onchange="neckLineCounter(event)" type="number" class=" form-control strip-control-modal-line-neck-line-count" value="0" min="0" max="3" />
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="fs-5 text-center">Selected Line</div>
+                                            <select id="neckLineSelector" class="form-control" onchange="selectneckLine(event)">
+                                                <option value="0">No Lines</option>
+                                            </select>
+                                        </div>
+                                        <div class="tshirt-neck-line-control-container d-none" id="neckLineControlSection">
+                                            <div>
+                                                <div class="p-2">
+                                                    <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <input id="neckStripLinePreviewColorInput" onchange="updateneckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                        <input id="neckStripLinePreviewThicknessInput" onchange="updateneckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
                                                     </div>
                                                 </div>
-                                                <div class="w-100 d-flex gap-2">
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">Xl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xl" />
-                                                    </div>
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">2XXL</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="2xl" />
-                                                    </div>
-                                                </div>
-                                                <div class="w-100 d-flex gap-2">
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">3XXl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="3xl" />
-                                                    </div>
-                                                    <div class="w-50 combination-size d-flex">
-                                                        <div class="combination-size-input p-1">XXl</div>
-                                                        <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
-                                                    </div>
-                                                </div>
+                                                <!-- <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input onchange="updateneckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                            </div> -->
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
+                                        <button type="button" class="btn btn-primary" onclick="updateneckLineData()">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                            <div class="d-flex gap-2 w-100">
-                                                <button class="size-chart-text btn btn-secondary w-50">Size Chart</button>
+                        <!-- Modal - polo arm strip -->
+                        <div class="modal fade" id="armStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">arm Strip Lines</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
 
-                                                <button class="size-chart-text btn btn-dark w-50" onclick="size()">Add Quantities</button>
+                                        <div class="d-flex justify-content-center align-items-center p-3 my-3">
+                                            <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="armStripLinePreviewContainer">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2">
+                                            <div class="fs-5 text-center">Line Count</div>
+                                            <input id="armStripLineControlCountInput" onchange="armLineCounter(event)" type="number" class=" form-control strip-control-modal-line-arm-line-count" value="0" min="0" max="3" />
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="fs-5 text-center">Selected Line</div>
+                                            <select id="armLineSelector" class="form-control" onchange="selectarmLine(event)">
+                                                <option value="0">No Lines</option>
+                                            </select>
+                                        </div>
+                                        <div class="tshirt-arm-line-control-container d-none" id="armLineControlSection">
+                                            <div>
+                                                <div class="p-2">
+                                                    <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <input id="armStripLinePreviewColorInput" onchange="updatearmStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                        <input id="armStripLinePreviewThicknessInput" onchange="updatearmStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input onchange="updatearmStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                            </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
+                                        <button type="button" class="btn btn-primary" onclick="updatearmLineData()">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal - polo sides strip -->
+                        <div class="modal fade" id="sidesStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">Sides Strip Lines</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="d-flex justify-content-center align-items-center p-3 my-3">
+                                            <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="sidesStripLinePreviewContainer">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2">
+                                            <div class="fs-5 text-center">Line Count</div>
+                                            <input id="sidesStripLineControlCountInput" onchange="sidesLineCounter(event)" type="number" class=" form-control strip-control-modal-line-sides-line-count" value="0" min="0" max="3" />
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="fs-5 text-center">Selected Line</div>
+                                            <select id="sidesLineSelector" class="form-control" onchange="selectsidesLine(event)">
+                                                <option value="0">No Lines</option>
+                                            </select>
+                                        </div>
+                                        <div class="tshirt-sides-line-control-container d-none" id="sidesLineControlSection">
+                                            <div>
+                                                <div class="p-2">
+                                                    <div class="fs-5 text-center">Line Color & Thickness</div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <input id="sidesStripLinePreviewColorInput" onchange="updatesidesStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
+                                                        <input id="sidesStripLinePreviewThicknessInput" onchange="updatesidesStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="p-2">
+                                                <div class="fs-5 text-center">Line gap</div>
+                                                <input onchange="updatesidesStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
+                                            </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelLineData();">Close</button>
+                                        <button type="button" class="btn btn-primary" onclick="updatesidesLineData()">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right side panel -->
+                <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
+
+                    <!-- size & qty -->
+                    <div class="basic-styling right-side-box1 ">
+                        <div class="right-side-box-btn-container">
+                            <div class="d-flex-column">
+                                <button style="background-color: #2596be" class="right-side-box-btn">
+                                    Men
+                                </button>
+                                <button style="background-color: #8e48ae" class="right-side-box-btn">
+                                    Men
+                                </button>
+                                <button style="background-color: #4482c9" class="right-side-box-btn">
+                                    Woman
+                                </button>
+                                <button style="background-color: #8e44ad" class="right-side-box-btn">
+                                    Woman
+                                </button>
+                            </div>
+
+                            <div class="d-flex-column">
+                                <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                    Coparate
+                                </button>
+                                <button style="background-color: #1f3a93" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                    Budget
+                                </button>
+                                <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                    Budget
+                                </button>
+                                <button style="background-color: #fb6e0d" class="right-side-box-btn" onclick="opemMaterialModel();">
+                                    Coparate
+                                </button>
+                            </div>
+
+                            <div class="d-flex-column">
+                                <span class="right-side-box-num" id="mc" style="font-size: 10px;"></span>
+                                <span class="right-side-box-num" id="mb" style="font-size: 10px;"> </span>
+                                <span class="right-side-box-num" id="wb" style="font-size: 10px;"></span>
+                                <span class="right-side-box-num" id="wc" style="font-size: 10px;"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- color controls -->
+                    <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
+                        <div class="dropdown">
+                            <!-- <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px"> -->
+                            <button onclick="openModelColorControl()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
+                                <div class="small-box" id="small-box"></div>
+                                <span>Color</span> <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <div id="colorControlModelContainer">
+                                <div class="modal" tabindex="-1" id="colorControlModel">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content  border border-1 border-secondary m-3">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center">Select A Color</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="d-flex justify-content-center gap-3">
+                                                    <div class="color-row" style="max-width: 350px">
+                                                        <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('#C74B4B')" style="background-color: #C74B4B"></div>
+                                                        <div class="color-option" onclick="colorUpdate(230, 1, 1); setColor('#3B69C0')" style="background-color: #3B69C0"></div>
+                                                        <div class="color-option" onclick="colorUpdate(120, 1, 1); setColor('#1F851F')" style="background-color: #1F851F"></div>
+                                                        <div class="color-option" onclick="colorUpdate(60, 1.4, 1.8); setColor('#f8BB00')" style="background-color: #f8BB00"></div>
+                                                        <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('#A95B18')" style="background-color: #A95B18"></div>
+                                                        <div class="color-option" onclick="colorUpdate(170, 1, .7); setColor('#005C4E')" style="background-color: #005C4E"></div>
+                                                        <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('#AF49AE')" style="background-color: #AF49AE"></div>
+                                                        <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('#00865E')" style="background-color: #00865E"></div>
+                                                        <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('#9A9A9A')" style="background-color: #9A9A9A"></div>
+                                                        <div class="color-option" onclick="colorUpdate(195, 1, .6); setColor('#08495B')" style="background-color: #08495B"></div>
+                                                        <div class="color-option" onclick="colorUpdate(177, 0, .5); setColor('#333333')" style="background-color: #333333"></div>
+                                                        <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('#CC4883')" style="background-color: #CC4883"></div>
+                                                        <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('#03844A')" style="background-color: #03844A"></div>
+                                                        <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('#C84C4C')" style="background-color: #C84C4C"></div>
+                                                        <div class="color-option" onclick="colorUpdate(280, 1, 1); setColor('#9150C2')" style="background-color: #9150C2"></div>
+                                                        <div class="color-option" onclick="colorUpdate(70, 1, 1); setColor('#706F00')" style="background-color: #706F00"></div>
+                                                        <div class="color-option" onclick="colorUpdate(100, .7, 1); setColor('#497727')" style="background-color: #497727"></div>
+                                                        <div class="color-option" onclick="colorUpdate(260, 1, 1); setColor('#715BCE')" style="background-color: #715BCE"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500">
+
+                    <!-- size & qty -->
+                    <div class="basic-styling big-box order-md-2 order-4">
+                        <div class="d-flex-column" style="height: 100%">
+                            <!-- <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;"> -->
+                            <button onclick="openSizeQuantityModel();" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
+                                <div class="size-qty-box1" id="sizeItems"></div>
+                                <span style="width: 100%">Size & Qty</span>
+
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <div class="modal" tabindex="-1" id="sizeQuantityModel">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Select your combination.</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="align-items-end flex-column">
+                                                <div class="p-2 rounded-3 border border-1 border-secondary w-100">
+                                                    <!-- <p class="text-center">Select your combination.</p> -->
+                                                    <div class="size-box1 d-flex justify-content-center flex-column gap-3 w-100">
+                                                        <div class="w-100 d-flex">
+                                                            <div class="w-50">
+                                                                <input type="radio" id="combinationMen" name="combinationGender" />
+                                                                <label for="combinationMen" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
+                                                                    Men
+                                                                </label>
+                                                            </div>
+                                                            <div class="w-50">
+                                                                <input type="radio" id="combinationWomen" name="combinationGender" />
+                                                                <label for="combinationWomen" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
+                                                                    Woman
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 d-flex">
+                                                            <div class="w-50">
+                                                                <input type="radio" id="combinationBudget" name="combinationBudget" />
+                                                                <label for="combinationBudget" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
+                                                                    Budget
+                                                                </label>
+                                                            </div>
+                                                            <div class="w-50">
+                                                                <input type="radio" id="combinationCoperate" name="combinationBudget" />
+                                                                <label for="combinationCoperate" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
+                                                                    Coperate
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="my-2 d-flex flex-column gap-1">
+                                                    <div class="w-100 d-flex gap-2">
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">XS</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xs" />
+                                                        </div>
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">S</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="s" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-100 d-flex gap-2">
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">M</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="m" />
+                                                        </div>
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">L</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="l" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-100 d-flex gap-2">
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">Xl</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="xl" />
+                                                        </div>
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">2XXL</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="2xl" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-100 d-flex gap-2">
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">3XXl</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" id="3xl" />
+                                                        </div>
+                                                        <div class="w-50 combination-size d-flex">
+                                                            <div class="combination-size-input p-1">XXl</div>
+                                                            <input type="number" class="bg-transparent border-1 border border-secondary w-100" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex gap-2 w-100">
+                                                    <button class="size-chart-text btn btn-secondary w-50">Size Chart</button>
+
+                                                    <button class="size-chart-text btn btn-dark w-50" onclick="size()">Add Quantities</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500">
                             <i class="p-2 fas fa-close" onclick="toggleDropdown2()"></i>
                             <div class="p-2 rounded-3 border border-1 border-secondary w-100">
                                 <p class="text-center">Select your combination.</p>
@@ -1085,90 +1105,90 @@
                                 <button class="size-chart-text btn btn-dark w-50">Add Quantities</button>
                             </div>
                         </div> -->
-                    </div>
-                </div>
-
-
-                <!-- navigation control -->
-                <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
-                    <div class="t_changebtnbox d-flex gap-1 flex-row flex-md-column" id="viewPortChange">
-                        <button class="t_changebtn t_changebtn1" onclick="viewChange('front');">
-                            <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
-                            <p class="t_changebtnpara">Front view</p>
-                        </button>
-                        <button class="t_changebtn t_changebtn2" onclick="viewChange('left');">
-                            <div class="p-3 t_changebtnimg t_changebtnimg2"></div>
-                            <p class="t_changebtnpara">Left view</p>
-                        </button>
-                        <button class="t_changebtn t_changebtn3" onclick="viewChange('back');">
-                            <div class="p-3 t_changebtnimg t_changebtnimg3"></div>
-                            <p class="t_changebtnpara">Back view</p>
-                        </button>
-                        <button class="t_changebtn t_changebtn4" onclick="viewChange('right');">
-                            <div class="p-3 t_changebtnimg t_changebtnimg4"></div>
-                            <p class="t_changebtnpara">Right view</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- models -->
-    <div class="model-container">
-        <div class="modal fade" id="signInModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-1 text-center" id="exampleModalLabel">
-                            Sign In
-                        </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row" id="signInModalSignInSection">
-                            <div class="col-12">
-                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
-                                    <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
-                                    <input id="emailInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
-                                    <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-
-                                    <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
-                                </div>
-                            </div>
-                            <div class="col-12 text-end text-primary" style="font-size: 13px;  padding: 0 50px 0px 0px; cursor: pointer;">forgot passowrd?</div>
-                            <div style="padding: 0px 50px 15px 50px;">
-                                <button onclick="SignIn();" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
-                            </div>
                         </div>
-
-
                     </div>
-                    <div class="modal-footer">
 
-                        <div class="col-12 text-center">
-                            <span style="font-size: 18px">Or Continue with</span>
-                        </div>
-                        <div class="col-12 text-center" style="margin-top: 12px;">
-                            <button class="btn btn-dark btn-lg fs-6 rounded-1" onclick="window.location = '<?php echo $Google_login_btn ?>'" style="padding: 0; width: 120px; height: 36px;">
-                                <!-- <a class="text-decoration-none text-white" >
-                                    <div style="font-size: 18px; gap: 5px;"><span style="margin-right:14px ;"><i class="fa-brands fa-google"></i></span><span>Google</span></div>
-                                </a> -->
-                                GOOGLE
+
+                    <!-- navigation control -->
+                    <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
+                        <div class="t_changebtnbox d-flex gap-1 flex-row flex-md-column" id="viewPortChange">
+                            <button class="t_changebtn t_changebtn1" onclick="viewChange('front');">
+                                <div class="p-3 t_changebtnimg t_changebtnimg1"></div>
+                                <p class="t_changebtnpara">Front view</p>
+                            </button>
+                            <button class="t_changebtn t_changebtn2" onclick="viewChange('left');">
+                                <div class="p-3 t_changebtnimg t_changebtnimg2"></div>
+                                <p class="t_changebtnpara">Left view</p>
+                            </button>
+                            <button class="t_changebtn t_changebtn3" onclick="viewChange('back');">
+                                <div class="p-3 t_changebtnimg t_changebtnimg3"></div>
+                                <p class="t_changebtnpara">Back view</p>
+                            </button>
+                            <button class="t_changebtn t_changebtn4" onclick="viewChange('right');">
+                                <div class="p-3 t_changebtnimg t_changebtnimg4"></div>
+                                <p class="t_changebtnpara">Right view</p>
                             </button>
                         </div>
-                        <div class="col-12 text-center" style="margin-top: 70px;">
-                            <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;" id="signInUpChangeBtn" onclick="signInModalViewChanger();">Sign Up Now!</span> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- models -->
+        <div class="model-container">
+            <div class="modal fade" id="signInModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-1 text-center" id="exampleModalLabel">
+                                Sign In
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row" id="signInModalSignInSection">
+                                <div class="col-12">
+                                    <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                        <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
+                                        <input id="emailInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                        <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+
+                                        <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
+                                    </div>
+                                </div>
+                                <div class="col-12 text-end text-primary" style="font-size: 13px;  padding: 0 50px 0px 0px; cursor: pointer;">forgot passowrd?</div>
+                                <div style="padding: 0px 50px 15px 50px;">
+                                    <button onclick="SignIn();" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <div class="col-12 text-center">
+                                <span style="font-size: 18px">Or Continue with</span>
+                            </div>
+                            <div class="col-12 text-center" style="margin-top: 12px;">
+                                <button class="btn btn-dark btn-lg fs-6 rounded-1" onclick="window.location = '<?php echo $Google_login_btn ?>'" style="padding: 0; width: 120px; height: 36px;">
+                                    <!-- <a class="text-decoration-none text-white" >
+                                    <div style="font-size: 18px; gap: 5px;"><span style="margin-right:14px ;"><i class="fa-brands fa-google"></i></span><span>Google</span></div>
+                                </a> -->
+                                    GOOGLE
+                                </button>
+                            </div>
+                            <div class="col-12 text-center" style="margin-top: 70px;">
+                                <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;" id="signInUpChangeBtn" onclick="signInModalViewChanger();">Sign Up Now!</span> </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -1178,19 +1198,19 @@
 
 
 
-    <!-- toasts -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img src="..." class="rounded me-2" alt="...">
-                <strong class="me-auto">Saving Design</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Wait for few seconds.....
+        <!-- toasts -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="..." class="rounded me-2" alt="...">
+                    <strong class="me-auto">Saving Design</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Wait for few seconds.....
+                </div>
             </div>
         </div>
-    </div>
 
 
 </body>
