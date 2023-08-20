@@ -911,6 +911,8 @@ let dataObject = {
   },
 };
 
+
+
 // cloth image text object
 
 // renderer

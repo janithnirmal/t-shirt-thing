@@ -12,6 +12,8 @@ $responseObject = new stdClass();
 $responseObject->status = "failed";
 
 
+
+
   $access = new UserAccess();
   if (!$access->isLoggedIn()) {
       $responseObject->error = "Invalid Access";
@@ -20,6 +22,20 @@ $responseObject->status = "failed";
   }
   
 $orderDetails = json_decode($_POST["orderDetails"], true);
+
+
+$clothtype=$orderDetails['clothType'];
+$printType=$orderDetails['printType'];
+
+$clothOptionsleves=$orderDetails['clothOption']['sleves'];
+$clothOptionneck=$orderDetails['clothOption']['neck'];
+$clothOptionbutton=$orderDetails['clothOption']['button'];
+
+$views=$orderDetails['clothOption']['sleves'];
+
+
+
+
 
 
 
