@@ -1165,7 +1165,23 @@
                                     <button onclick="SignIn();" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
                                 </div>
                             </div>
-
+                            <div class="row d-none" id="signInModalSignUpSection">
+                            <div class="col-12">
+                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                    <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
+                                    <input id="emailInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
+                                    <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                                    <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
+                                </div>
+                            </div>
+                            <div style="padding: 0px 50px 15px 50px;">
+                                <button style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
+                            </div>
+                        </div>
 
                         </div>
                         <div class="modal-footer">

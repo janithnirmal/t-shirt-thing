@@ -3,7 +3,7 @@ require_once 'app/database_driver.php';
 require_once 'app/response_sender.php';
 require_once 'app/passwordEncryptor.php';
 
-
++-
 
 if (!isset($_POST['email']) || !isset($_POST['password'])) {
     echo ("Warning! unauthorized acces!");
