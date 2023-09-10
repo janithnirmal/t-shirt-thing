@@ -1139,14 +1139,15 @@
             <div class="modal fade" id="signInModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="modal-header">
+                       
+                        <div class="modal-body">
+                            <div class="row" id="signInModalSignInSection">
+                            <div class="modal-header">
                             <h1 class="modal-title fs-1 text-center" id="exampleModalLabel">
                                 Sign In
                             </h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <div class="row" id="signInModalSignInSection">
                                 <div class="col-12">
                                     <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
                                         <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
@@ -1164,43 +1165,46 @@
                                 <div style="padding: 0px 50px 15px 50px;">
                                     <button onclick="SignIn();" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
                                 </div>
+                                <div class="modal-footer">
+
+<div class="col-12 text-center">
+    <span style="font-size: 18px">Or Continue with</span>
+</div>
+<div class="col-12 text-center" style="margin-top: 12px;">
+   
+</div>
+<div class="col-12 text-center" style="margin-top: 70px;">
+    <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;" id="signInUpChangeBtn" onclick="signInModalViewChanger();">Sign Up Now!</span> </span>
+</div>
+</div>
                             </div>
                             <div class="row d-none" id="signInModalSignUpSection">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-1 text-center" id="exampleModalLabel">
+                                Sign Up
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                             <div class="col-12">
                                 <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
                                     <span class="input-group-text rounded-0" id="basic-addon1" style="background-color: rgb(205, 205, 205); height: 50px;"><i class="fa-solid fa-envelope"></i></span>
-                                    <input id="emailInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
+                                    <input id="emailInputs" style="background-color: rgb(205, 205, 205); height: 50px;" type="email" class="form-control rounded-0" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" />
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="input-group m-0" style="padding: 0px 40px 15px 40px;">
                                     <span style="background-color: rgb(205, 205, 205); height: 50px;" class="input-group-text rounded-0" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                                    <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
+                                    <input id="passwordInputs" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
                                 </div>
                             </div>
                             <div style="padding: 0px 50px 15px 50px;">
-                                <button style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
+                                <button onclick="SignUp()" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign Up</button>
                             </div>
+                           
                         </div>
 
                         </div>
-                        <div class="modal-footer">
-
-                            <div class="col-12 text-center">
-                                <span style="font-size: 18px">Or Continue with</span>
-                            </div>
-                            <div class="col-12 text-center" style="margin-top: 12px;">
-                                <button class="btn btn-dark btn-lg fs-6 rounded-1" onclick="window.location = '<?php echo $Google_login_btn ?>'" style="padding: 0; width: 120px; height: 36px;">
-                                    <!-- <a class="text-decoration-none text-white" >
-                                    <div style="font-size: 18px; gap: 5px;"><span style="margin-right:14px ;"><i class="fa-brands fa-google"></i></span><span>Google</span></div>
-                                </a> -->
-                                    GOOGLE
-                                </button>
-                            </div>
-                            <div class="col-12 text-center" style="margin-top: 70px;">
-                                <span style="font-size: 15px;">Not a member? <span class="text-primary" style="cursor: pointer;" id="signInUpChangeBtn" onclick="signInModalViewChanger();">Sign Up Now!</span> </span>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

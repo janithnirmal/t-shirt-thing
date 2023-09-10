@@ -50,7 +50,7 @@ if ($access->isLoggedIn()) {
                                                                                 }
                                                                                 ?></span>
             <i class=""></i>
-            <?php if ($loggedUserData["image_url"]) {
+            <?php if ($loggedUserData["email"]) {
             ?>
                 <a href="account.php"><img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn"></a>
                 <div>

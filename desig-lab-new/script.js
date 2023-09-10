@@ -241,6 +241,31 @@ function SignIn() {
   request.open("POST", SERVER_URL + "backend/sign_in.php", true);
   request.send(form);
 }
+function SignUp() {
+  let form = new FormData();
+  console.log('hi')
+  form.append("email", document.getElementById("emailInputs").value);
+  form.append("password", document.getElementById("passwordInputs").value);
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = () => {
+    if (request.readyState == 4 && request.status == 200) {
+      try {
+        responseObject = JSON.parse(request.responseText);
+        if (responseObject.status === "success") {
+          window.location.reload();
+        } else {
+          console.log(responseObject);
+        }
+      } catch (error) {
+        console.log(request.responseText);
+      }
+    }
+  };
+
+  request.open("POST", SERVER_URL + "backend/sign-up.php", true);
+  request.send(form);
+}
 
 function updateDataObject(dataObject) {
   dataObject = dataObject;
