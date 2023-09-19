@@ -1,7 +1,6 @@
 // const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
-const SERVER_URL =
-  //"http://localhost/voodooDigital/t-shirt-thing/desig-lab-new/"; //janith
- "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
+const SERVER_URL = "http://localhost:9001/"; //janith
+//  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -243,7 +242,7 @@ function SignIn() {
 }
 function SignUp() {
   let form = new FormData();
-  console.log('hi')
+  console.log("hi");
   form.append("email", document.getElementById("emailInputs").value);
   form.append("password", document.getElementById("passwordInputs").value);
 
