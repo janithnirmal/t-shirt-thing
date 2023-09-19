@@ -8,9 +8,9 @@ class database_driver
     {
         $host = 'localhost'; // update your own
         $user = 'root'; // update your own
-        //$password = 'JanithNirmal12#$'; // update janith
-        // $database = 't-shirts-thin'; // update your own
-            $password = 'KaviskaDilshan12#$'; // update kaviska
+        $password = 'JanithNirmal12#$'; // update janith
+        $database = 't-shirts-thin'; // update your own
+        // $password = 'KaviskaDilshan12#$'; // update kaviska
         $database = 't_shirt_design_app_db'; // update your own
 
         // Connect to the database using mysqli
