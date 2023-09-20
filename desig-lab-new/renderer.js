@@ -1300,6 +1300,7 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       }
     }
   } else if (side == "left") {
+    // neck
     for (let x = 0; x < neckStripsArray.length; x++) {
       if (x == 0) {
         drawLine(
@@ -1334,6 +1335,7 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       }
     }
 
+    // arm
     for (let x = 0; x < armStripsArray.length; x++) {
       if (x == 0) {
         drawLine(
@@ -1368,16 +1370,39 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       }
     }
 
-    for (let x = 1; x <= sidesStripsArray.length; x++) {
-      if ((x = 1)) {
+    // sides - kaviska - change line position
+    for (let x = 0; x < sidesStripsArray.length; x++) {
+      if (x == 0) {
         drawLine(
           ctx,
           216,
           248,
           205,
           535,
-          // sidesStripsArray[0].thickness,
+          sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
+        );
+      }
+      if (x == 1) {
+        drawLine(
+          ctx,
+          216,
+          268,
+          205,
+          565,
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[1].color
+        );
+      }
+      if (x == 2) {
+        drawLine(
+          ctx,
+          216,
+          298,
+          205,
+          595,
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[2].color
         );
       }
     }
@@ -1450,16 +1475,42 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       }
     }
 
-    for (let x = 1; x <= sidesStripsArray.length; x++) {
-      if ((x = 1)) {
+    // sides - kaviska - fix line position
+    for (let x = 0; x < sidesStripsArray.length; x++) {
+      consolelog(sidesStripsArray);
+      if (x == 0) {
         drawLine(
           ctx,
           175,
           248,
           185,
           535,
-          // sidesStripsArray[0].thickness,
+          sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
+        );
+      }
+
+      if (x == 1) {
+        drawLine(
+          ctx,
+          175,
+          248,
+          185,
+          535,
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[1].color
+        );
+      }
+
+      if (x == 2) {
+        drawLine(
+          ctx,
+          175,
+          248,
+          185,
+          535,
+          sidesStripsArray[0].thickness,
+          sidesStripsArray[2].color
         );
       }
     }
@@ -1701,7 +1752,7 @@ function stripDrawerJacket(ctx, stripObjects, side) {
 }
 
 // draw lines
-function drawLine(ctx, startX, startY, endX, endY, thickness, color) {
+function drawLine(ctx, startX, startY, endX, endY, thickness = 1, color) {
   // Set line attributes
   ctx.beginPath();
   ctx.moveTo(startX, startY);
@@ -1868,8 +1919,6 @@ function size() {
   });
 
   console.log(totals);
-
-  
 
   // Set the display property of the button based on the total value
 }
@@ -2050,9 +2099,6 @@ function saveCurrentDesign() {
     renderEndEffects();
   }, 14000);
 }
-
-
-
 
 function generateFront() {
   return document.getElementById("designPanelCanvas").toDataURL();

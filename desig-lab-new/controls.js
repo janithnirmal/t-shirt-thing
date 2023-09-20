@@ -315,7 +315,7 @@ function controllerModelOpen(section) {
       temporysidesLineArray.length;
     sidesStripLinePreviewUpdater();
 
-    selectarmLine = 0;
+    selectedsidesLine = 0;
     selectedLineUpdatersides();
 
     stripLineEditModal = new bootstrap.Modal("#sidesStripControlModel");
