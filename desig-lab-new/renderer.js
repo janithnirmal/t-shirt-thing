@@ -2086,3 +2086,4 @@ function renderEndEffects() {
     element.classList.remove("d-none");
   });
 }
+
