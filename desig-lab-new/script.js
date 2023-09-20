@@ -1,6 +1,6 @@
 //const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
-//const SERVER_URL = "http://localhost:9001/"; //janith
-const SERVER_URL="http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
+const SERVER_URL = "http://localhost:9001/"; //janith
+// const SERVER_URL="http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -174,8 +174,6 @@ function openSavedDesignModal() {
   request.send();
 }
 
-
-
 function openSavedDesignModals() {
   console.log("ghffgh");
   let container = document.getElementById("savedDesignModelContentContainer");
@@ -236,20 +234,6 @@ function openSavedDesignModals() {
   request.open("GET", SERVER_URL + "backend/get_preset.php", true);
   request.send();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function loadSavedDesign(dataSet) {
   dataObject = dataSet;
