@@ -1,6 +1,6 @@
-// const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
-const SERVER_URL = "http://localhost:9001/"; //janith
-//  "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
+//const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
+//const SERVER_URL = "http://localhost:9001/"; //janith
+const SERVER_URL="http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -173,6 +173,83 @@ function openSavedDesignModal() {
   request.open("GET", SERVER_URL + "backend/get_saved_design_api.php", true);
   request.send();
 }
+
+
+
+function openSavedDesignModals() {
+  console.log("ghffgh");
+  let container = document.getElementById("savedDesignModelContentContainer");
+  container.innerHTML = "";
+
+  savedDesignModel = new bootstrap.Modal("#savedDesignModel");
+  savedDesignModel.show();
+
+  let request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      let response = request.responseText;
+      try {
+        let responseObject = JSON.parse(response);
+
+        if (responseObject.status == "success") {
+          responseObject.data.forEach((element) => {
+            let id = element.id;
+            let designData = JSON.parse(element.design_data);
+
+            let resultDesign = document.createElement("div");
+            resultDesign.classList.add("saved-design-item");
+            resultDesign.addEventListener("click", () => {
+              loadSavedDesign(designData);
+              imageTextSectionRenderer();
+            });
+
+            const div = document.createElement("div");
+            div.classList.add("saved-design-list-view-details");
+            div.innerHTML = `
+            <span class="fw-bold fs-5">${designData.clothType}</span>
+            <br />
+            <span class="">${designData.printType}</span>
+            `;
+            resultDesign.appendChild(div);
+
+            let image = document.createElement("img");
+            image.width = "200px";
+            image.src =
+              "backend/saved_design_images/" + id + "dataURLFront.png";
+            image.classList.add("saved-design-item-images");
+            resultDesign.appendChild(image);
+
+            container.appendChild(resultDesign);
+          });
+        } else if (responseObject.status == "failed") {
+          console.log(responseObject.error);
+          container.innerText = "Please sign in to watch saved designs......";
+        } else {
+          console.log(responseObject);
+        }
+      } catch (error) {
+        console.log(response);
+      }
+    }
+  };
+
+  request.open("GET", SERVER_URL + "backend/get_preset.php", true);
+  request.send();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function loadSavedDesign(dataSet) {
   dataObject = dataSet;

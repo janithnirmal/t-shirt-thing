@@ -12,6 +12,16 @@
 
 
 ?>
+<?php
+require_once("backend/app/user_access_updater.php");
+
+$loggedUserData = null;
+$access = new UserAccess();
+if ($access->isLoggedIn()) {
+    $loggedUserData = $access->getUserData();
+}
+
+?>
 
 
 
@@ -52,7 +62,23 @@
 <body>
     <?php include 'navbar.php'; ?>
 
-    <div class="section1 px-3" style="height: 100vh;">
+    
+
+                    <?php if (isset($loggedUserData["status"])) {
+            ?>
+               <div class="section1 px-3" style="height: 100vh;">
+        <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
+            <!-- left side panel -->
+            <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
+                <!-- box 1 -->
+                <div class="basic-styling left-side-box1">
+                    
+
+                   
+            <?php
+            } else {
+            ?>
+              <div class="section1 px-3" style="height: 100vh;">
         <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
             <!-- left side panel -->
             <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
@@ -131,6 +157,15 @@
                             </div>
                         </div>
                     </div>
+
+            <?php
+            }
+            ?>
+
+
+
+
+
                     <div class="list-group-item">
                         <div id="btn3">
                             <button class="left-side-btn" id="showModalss" style="background-color: #f62459" onclick="openProductModel();">
@@ -455,14 +490,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="list-group-item" id="btn8">
+                   
+                    <?php if (isset($loggedUserData["status"])) {
+            ?>
+              <div class="list-group-item" id="btn8">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="saveCurrentDesign();">
+                            <i class="left-side-icons fas fa-download"></i>
+                            <p class="p-0 m-0">Save Preset</p>
+                        </button>
+                    </div>
+            <?php
+            } else {
+            ?>
+             <div class="list-group-item" id="btn8">
                         <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="saveCurrentDesign();">
                             <i class="left-side-icons fas fa-download"></i>
                             <p class="p-0 m-0">Save Design</p>
                         </button>
-                    </div>
+                    </div> 
+            <?php
+            }
+            ?>
                     <div class="list-group-item" id="btn10">
-                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2">
+                        <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="openSavedDesignModals()">
                             <i class="left-side-icons fas fa-sliders-h"></i>
                             <p class="p-0 m-0">Preset</p>
                         </button>
@@ -471,7 +521,15 @@
 
                 <!-- box 3 -->
                 <!-- size & qty -->
-                <div class="left-side-box3">
+               
+
+                <?php if (isset($loggedUserData["status"])) {
+            ?>
+             
+            <?php
+            } else {
+            ?>
+              <div class="left-side-box3">
                     <div class="pricetagcontainer">
                         <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center p-2" onclick="placeOrderModalOpen();">
                             <img src="images/Cart.png" style="width: 25px; height: 25px" />
@@ -480,6 +538,10 @@
                        
                     </div>
                 </div>
+
+            <?php
+            }
+            ?>
 
                 <!-- ordering modal -->
                 <div class=" modal" tabindex="-1" id="orderNowModal">
@@ -822,7 +884,14 @@
                 <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
 
                     <!-- size & qty -->
-                    <div class="basic-styling right-side-box1 ">
+                   
+                    <?php if (isset($loggedUserData["status"])) {
+            ?>
+             
+            <?php
+            } else {
+            ?>
+              <div class="basic-styling right-side-box1 ">
                         <div class="right-side-box-btn-container">
                             <div class="d-flex-column">
                                 <button style="background-color: #2596be" class="right-side-box-btn">
@@ -862,6 +931,14 @@
                             </div>
                         </div>
                     </div>
+
+            <?php
+            }
+            ?>
+
+
+
+
 
                     <!-- color controls -->
                     <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
@@ -912,7 +989,14 @@
                     </div>
 
 
-                    <!-- size & qty -->
+                  
+                    <?php if (isset($loggedUserData["status"])) {
+            ?>
+             
+            <?php
+            } else {
+            ?>
+               <!-- size & qty -->
                     <div class="basic-styling big-box order-md-2 order-4">
                         <div class="d-flex-column" style="height: 100%">
                             <!-- <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;"> -->
@@ -1020,94 +1104,11 @@
                                 </div>
                             </div>
 
-                            <!-- <div id="dropdownContent2" class="basic-styling size-dropdown align-items-end flex-column" style="z-index: 500">
-                            <i class="p-2 fas fa-close" onclick="toggleDropdown2()"></i>
-                            <div class="p-2 rounded-3 border border-1 border-secondary w-100">
-                                <p class="text-center">Select your combination.</p>
-                                <div class="size-box1 d-flex justify-content-center flex-column gap-3 w-100">
-                                    <div class="w-100 d-flex">
-                                        <div class="w-50">
-                                            <input type="radio" id="combinationMen" name="combinationGender" />
-                                            <label for="combinationMen" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
-                                                Men
-                                            </label>
-                                        </div>
-                                        <div class="w-50">
-                                            <input type="radio" id="combinationWomen" name="combinationGender" />
-                                            <label for="combinationWomen" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
-                                                Woman
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="w-100 d-flex">
-                                        <div class="w-50">
-                                            <input type="radio" id="combinationBudget" name="combinationBudget" />
-                                            <label for="combinationBudget" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
-                                                Men
-                                            </label>
-                                        </div>
-                                        <div class="w-50">
-                                            <input type="radio" id="combinationCoperate" name="combinationBudget" />
-                                            <label for="combinationCoperate" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
-                                                Woman
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="my-2 d-flex flex-column gap-1">
-                                <div class="w-100 d-flex gap-2">
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">XS</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">S</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                </div>
-                                <div class="w-100 d-flex gap-2">
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">M</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">L</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                </div>
-                                <div class="w-100 d-flex gap-2">
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">Xl</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">2XXL</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                </div>
-                                <div class="w-100 d-flex gap-2">
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">3XXl</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                    <div class="w-50 combination-size d-flex">
-                                        <div class="combination-size-input p-1">XXl</div>
-                                        <input type="number" class="bg-transparent border-1 border border-secondary w-75" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-2 w-100">
-                                <button class="size-chart-text btn btn-secondary w-50">Size Chart</button>
-
-                                <button class="size-chart-text btn btn-dark w-50">Add Quantities</button>
-                            </div>
-                        </div> -->
                         </div>
                     </div>
-
+            <?php
+            }
+            ?>
 
                     <!-- navigation control -->
                     <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">

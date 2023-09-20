@@ -1869,26 +1869,7 @@ function size() {
 
   console.log(totals);
 
-  if (totals > 35) {
-    const sendOrderButton = document.createElement("button");
-    sendOrderButton.id = "sendOrderButton";
-    sendOrderButton.className =
-      "pricetagbtn3box justify-content-center align-items-center p-2 my-4";
-    sendOrderButton.style.display = "block";
-
-    // Create a new paragraph element for the button's text
-    const buttonText = document.createElement("p");
-    buttonText.className = "text-white p-0 m-0";
-    buttonText.textContent = "Send My Order";
-
-    // Append the paragraph element to the button element
-    sendOrderButton.appendChild(buttonText);
-
-    const pricetagContainer = document.querySelector(".pricetagcontainer");
-
-    // Append the button element to the "pricetagcontainer" div
-    pricetagContainer.appendChild(sendOrderButton);
-  }
+  
 
   // Set the display property of the button based on the total value
 }
@@ -2069,6 +2050,9 @@ function saveCurrentDesign() {
     renderEndEffects();
   }, 14000);
 }
+
+
+
 
 function generateFront() {
   return document.getElementById("designPanelCanvas").toDataURL();

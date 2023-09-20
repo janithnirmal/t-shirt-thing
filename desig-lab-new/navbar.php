@@ -8,8 +8,39 @@ if ($access->isLoggedIn()) {
 }
 
 ?>
-
-<nav class="d-flex justify-content-between align-items-center px-5">
+<?php if (isset($loggedUserData["status"])) {
+            ?>
+               <nav class="d-flex justify-content-between align-items-center px-5">
+    <div class=" h-100 d-flex  justify-content-between align-items-center">
+        <div class="d-flex h-100 justify-content-center align-items-center">
+            <div class="menu-hamberger-icon">
+                <i class="fas fa-bars " onclick="openNavigationSideBar()"></i>
+            </div>
+            <div class="nav-logo-container">
+                <a href="index.php" class="logo">
+                    <img src="images/free-logo-simple-illustration-vector-260nw-776460778.webp" />
+                </a>
+            </div>
+        </div>
+        <div class="navbar-link-container">
+            <button class="btn-style-remover text-secondary" href="#" onclick="openSavedDesignModal();">Presets</button>
+            <a href="" class="d-none">
+                Reviews
+                <i class="fas fa-star"></i>
+            </a>
+        </div>
+    </div>
+    <div class="d-flex h-100 justify-content-center align-items-center nav-bar-button-section">
+        <img class="nav-img-contact navbar-talk-image" src="images/contact.png" alt="" />
+        <div class="mx-3 nav-contact-para d-lg-flex d-none  flex-column ">
+            <span class="nav-contact-para1">(+94)70 1234567</span>
+            <span class="nav-contact-para2">Talk to an Expert</span>
+        </div>
+        <a class="d-none" href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a>
+            <?php
+            } else {
+            ?>
+              <nav class="d-flex justify-content-between align-items-center px-5">
     <div class=" h-100 d-flex  justify-content-between align-items-center">
         <div class="d-flex h-100 justify-content-center align-items-center">
             <div class="menu-hamberger-icon">
@@ -38,7 +69,11 @@ if ($access->isLoggedIn()) {
             <span class="nav-contact-para1">(+94)70 1234567</span>
             <span class="nav-contact-para2">Talk to an Expert</span>
         </div>
-        <a class="d-none" href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a>
+        <a class="d-none" href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a>  
+            <?php
+            }
+            ?>
+
         <?php
         if ($loggedUserData) {
         ?>
