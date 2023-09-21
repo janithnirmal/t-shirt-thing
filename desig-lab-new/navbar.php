@@ -87,7 +87,11 @@ if ($access->isLoggedIn()) {
             <i class=""></i>
             <?php if ($loggedUserData["email"]) {
             ?>
-                <a href="account.php"><img class="rounded-circle bg-primary profile-picture " style="width: 30px; height: 30px;" src="<?php echo ($loggedUserData["image_url"]) ?>" id="userProfileBtn"></a>
+
+                <a href="account.php">
+            <i class="fas fa-user"></i>
+
+                </a>
                 <div>
                     <button class="btn-style-remover px-3 bg-danger text-white rounded-2 py-0 my-0 fs-6" onclick="logout()">logout</button>
                     <div class="navbar-signouticon"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i></div>

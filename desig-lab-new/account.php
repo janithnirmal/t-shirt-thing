@@ -57,7 +57,7 @@ if ($access->isLoggedIn()) {
     </div>
     <div class="form-inline d-flex flex-row mt-3">
         <input type="email" class="w-50 mx-2" id="telephoneInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Telephone">
-        <button type="button" class="btn btn-danger" style="width: 100px;">Edit</button>
+        <button type="button" class="btn btn-danger" style="width: 100px;"  onclick="getUserData()">Edit</button>
     </div>
     <div class="form-inline d-flex flex-row mt-5">
         <input type="email" class="bs w-100 mx-2" id="addressInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address">
@@ -71,7 +71,8 @@ if ($access->isLoggedIn()) {
         <input type="email" class="w-50" id="postalCodeInput" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Postal Code">
     </div>
     <div class="form-inline d-flex flex-row mt-5 mb-3" style="margin-left: 35%;">
-        <button type="button" class="btn btn-danger mb-3 mx-2 pl-5" style="width: 100px;">Cancel</button>
+
+        <button type="button" class="btn btn-danger mb-3 mx-2 pl-5" style="width: 100px;" onclick="userData()">Update</button>
         <button type="button" class="btn btn-info text-white mb-3 mx-2" style="width: 100px;" onclick="userData()">Save</button>
     </div>
 </form>

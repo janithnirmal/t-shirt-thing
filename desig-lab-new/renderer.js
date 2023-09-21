@@ -1375,10 +1375,10 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       if (x == 0) {
         drawLine(
           ctx,
-          216,
-          248,
-          205,
-          535,
+          221,
+          244,
+          221,
+          590,
           sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
@@ -1387,8 +1387,8 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
         drawLine(
           ctx,
           216,
-          268,
-          205,
+          244,
+          216,
           565,
           sidesStripsArray[0].thickness,
           sidesStripsArray[1].color
@@ -1397,9 +1397,9 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       if (x == 2) {
         drawLine(
           ctx,
-          216,
-          298,
-          205,
+          211,
+          244,
+          211,
           595,
           sidesStripsArray[0].thickness,
           sidesStripsArray[2].color
@@ -1481,8 +1481,8 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       if (x == 0) {
         drawLine(
           ctx,
-          175,
-          248,
+          185,
+          244,
           185,
           535,
           sidesStripsArray[0].thickness,
@@ -1493,9 +1493,9 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
       if (x == 1) {
         drawLine(
           ctx,
-          175,
-          248,
-          185,
+          180,
+          244,
+          180,
           535,
           sidesStripsArray[0].thickness,
           sidesStripsArray[1].color
@@ -1506,8 +1506,8 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
         drawLine(
           ctx,
           175,
-          248,
-          185,
+          244,
+          175,
           535,
           sidesStripsArray[0].thickness,
           sidesStripsArray[2].color

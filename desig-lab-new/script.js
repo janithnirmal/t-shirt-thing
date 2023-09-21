@@ -270,12 +270,61 @@ function userData() {
     if (request.readyState == 4) {
       let response = request.responseText;
       console.log(response);
+      window.alert("data added sucessfully")
     }
   };
 
   request.open("POST", SERVER_URL + "backend/user_data_save.php", true);
   request.send(form);
 }
+function getUserData() {
+  console.log("Getting user data...");
+  var firstNameInput = document.getElementById("firstNameInput");
+  var lastNameInput = document.getElementById("lastNameInput");
+  var telephoneInput = document.getElementById("telephoneInput");
+  var addressInput = document.getElementById("addressInput");
+  var address2Input = document.getElementById("address2Input");
+  var cityInput = document.getElementById("cityInput");
+  var provinceInput = document.getElementById("provinceInput");
+  var postalCodeInput = document.getElementById("postalCodeInput");
+
+  var request = new XMLHttpRequest();
+  request.open("POST", SERVER_URL + "backend/user_data_get.php", true);
+
+  // Set up the callback function to handle the response
+  request.onload = function () {
+    if (request.status === 200) { // Check if the request was successful
+      try {
+        var userData = JSON.parse(request.responseText); // Assuming the response is JSON
+
+        // Verify the structure of the received data
+        if (userData && userData.status === "success") {
+          firstNameInput.value = userData.userData.firstname;
+          lastNameInput.value = userData.userData.lastname;
+          telephoneInput.value = userData.userData.mobile;
+          addressInput.value = userData.userData.address1;
+          address2Input.value = userData.userData.address2;
+          cityInput.value = userData.userData.city;
+          provinceInput.value = userData.userData.provience;
+          postalCodeInput.value = userData.userData.postal;
+        } else {
+          console.error("Received unexpected response:", userData);
+        }
+      } catch (error) {
+        console.error("Error parsing JSON response:", error);
+      }
+    } else {
+      // Handle error here if needed
+      console.error("Request failed with status:", request.status);
+    }
+  };
+
+  // Send the request
+  request.send();
+}
+
+
+
 
 function SignIn() {
   let form = new FormData();
