@@ -1162,7 +1162,7 @@ if ($access->isLoggedIn()) {
                                         <input id="passwordInput" style="background-color: rgb(205, 205, 205); height: 50px;" type="password" class="form-control rounded-0" placeholder="Passowrd" aria-label="passowrd" aria-describedby="basic-addon1" />
                                     </div>
                                 </div>
-                                <div class="col-12 text-end text-primary" style="font-size: 13px;  padding: 0 50px 0px 0px; cursor: pointer;">forgot passowrd?</div>
+                                <div class="col-12 text-end text-primary" style="font-size: 13px;  padding: 0 50px 0px 0px; cursor: pointer;" ><a href="password.php">forgot passowrd?</a></div>
                                 <div style="padding: 0px 50px 15px 50px;">
                                     <button onclick="SignIn();" style="margin-top: 25px;  height: 50px; font-size: 15px; font-weight: bold; background-color: rgb(46, 228, 176)" class="text-light col-12 btn">Sign In</button>
                                 </div>
