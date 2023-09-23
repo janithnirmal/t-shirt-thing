@@ -534,14 +534,12 @@ if ($access->isLoggedIn()) {
                                                 <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center p-2" onclick="placeOrderModalOpen();">
                                                     <img src="images/Cart.png" style="width: 25px; height: 25px" />
                                                     <p class="text-white p-0 m-0" ">MIN QTY : 35</p>
-                        </button>
-                       
-                    </div>
-                </div>
-
-            <?php
+                                                </button> 
+                                            </div>
+                                        </div>
+                                    <?php
                                     }
-            ?>
+                                    ?>
 
                 <!-- ordering modal -->
                 <div class=" modal" tabindex="-1" id="orderNowModal">

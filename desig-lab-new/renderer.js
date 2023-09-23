@@ -2060,7 +2060,7 @@ function savindDataForOrder() {
   dataObject.views.generatedTextData = savedTextDataArray;
 }
 
-function saveCurrentDesign() {
+function saveCurrentDesign(isOrder = false) {
   savindDataForOrder();
 
   renderStartEffects();
@@ -2132,7 +2132,9 @@ function saveCurrentDesign() {
           let response = JSON.parse(request.responseText);
           if (response.status == "success") {
             alert("Successfully saved");
-            window.location.reload();
+            let returnValue;
+            isOrder ? (returnValue = true) : window.location.reload();
+            return returnValue;
           } else if (response.status == "failed") {
             alert(response.error);
           }

@@ -8,7 +8,12 @@ require "app/user_access_updater.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-
+echo $_POST["imageObject"];
+echo "\n";
+echo "\n";
+echo "\n";
+echo $_POST["design_json"];
+exit();
 
 // $jsonData = '{
 //     "sizeQuntitySets": [
