@@ -980,6 +980,13 @@ function placeOrder() {
 //     .getElementById("addingText")
 //     .setAttribute("onclick", "addTextcanvasPoloRightImage()");
 // }
-function setColor(colours) {
-  document.getElementById("small-box").style.backgroundColor = colours;
+function setColor() {
+  // Get the selected color from the color picker input
+  var colorPicker = document.getElementById("colorPicker");
+  var selectedColor = colorPicker.value;
+  console.log(colorPicker.value)
+
+  // Set the background color of the small-box element
+  document.getElementById("small-box").style.backgroundColor = selectedColor;
 }
+

@@ -1762,10 +1762,69 @@ function drawLine(ctx, startX, startY, endX, endY, thickness = 1, color) {
   ctx.stroke();
 }
 
-function colorUpdate(hue, saturation, value) {
-  dataObject.mainColorHueValue = hue;
-  dataObject.mainColorSaturateValue = saturation;
-  dataObject.mainColorLevelValue = value;
+function setColor() {
+  // Get the selected color from the color picker input
+  var colorPicker = document.getElementById("colorPicker");
+  var selectedColor = colorPicker.value;
+  console.log(colorPicker.value)
+
+  // Set the background color of the small-box element
+  document.getElementById("small-box").style.backgroundColor = selectedColor;
+  const hsvColor = hexToHsv();
+console.log("HSV:", hsvColor);
+}
+
+
+  
+  
+
+
+
+
+
+
+
+function colorUpdate() {
+  // Remove the "#" symbol if it's included
+  var colorPicker = document.getElementById("colorPicker");
+  var hex = colorPicker.value;
+  hex = hex.replace("#", "");
+
+  // Convert hex to RGB
+  const r = parseInt(hex.substring(0, 2), 16) / 255;
+  const g = parseInt(hex.substring(2, 4), 16) / 255;
+  const b = parseInt(hex.substring(4, 6), 16) / 255;
+
+  // Find the maximum and minimum values
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const delta = max - min;
+
+  let h, s, v;
+
+  // Calculate hue (H)
+  if (delta === 0) {
+    h = 0; // No change in hue
+  } else if (max === r) {
+    h = ((g - b) / delta) % 6;
+  } else if (max === g) {
+    h = (b - r) / delta + 2;
+  } else {
+    h = (r - g) / delta + 4;
+  }
+
+  h = Math.round(h * 60); // Convert to degrees
+  if (h < 0) h += 360;
+
+  // Calculate saturation (S)
+  s = delta === 0 ? 0 : delta / max;
+
+  // Calculate value (V)
+  v = max;
+
+  dataObject.mainColorHueValue = h;
+  dataObject.mainColorSaturateValue = s;
+  dataObject.mainColorLevelValue = v;
   render(dataObject);
 }
 

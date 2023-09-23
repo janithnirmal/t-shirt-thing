@@ -955,29 +955,18 @@ if ($access->isLoggedIn()) {
                                         <div class="modal-content  border border-1 border-secondary m-3">
                                             <div class="modal-header">
                                                 <h5 class="modal-title text-center">Select A Color</h5>
+                                                
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="d-flex justify-content-center gap-3">
                                                     <div class="color-row" style="max-width: 350px">
-                                                        <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('#C74B4B')" style="background-color: #C74B4B"></div>
-                                                        <div class="color-option" onclick="colorUpdate(230, 1, 1); setColor('#3B69C0')" style="background-color: #3B69C0"></div>
-                                                        <div class="color-option" onclick="colorUpdate(120, 1, 1); setColor('#1F851F')" style="background-color: #1F851F"></div>
-                                                        <div class="color-option" onclick="colorUpdate(60, 1.4, 1.8); setColor('#f8BB00')" style="background-color: #f8BB00"></div>
-                                                        <div class="color-option" onclick="colorUpdate(35, 1, 1); setColor('#A95B18')" style="background-color: #A95B18"></div>
-                                                        <div class="color-option" onclick="colorUpdate(170, 1, .7); setColor('#005C4E')" style="background-color: #005C4E"></div>
-                                                        <div class="color-option" onclick="colorUpdate(300, 1, 1); setColor('#AF49AE')" style="background-color: #AF49AE"></div>
-                                                        <div class="color-option" onclick="colorUpdate(160, 1, 1); setColor('#00865E')" style="background-color: #00865E"></div>
-                                                        <div class="color-option" onclick="colorUpdate(0, 0, 1.5); setColor('#9A9A9A')" style="background-color: #9A9A9A"></div>
-                                                        <div class="color-option" onclick="colorUpdate(195, 1, .6); setColor('#08495B')" style="background-color: #08495B"></div>
-                                                        <div class="color-option" onclick="colorUpdate(177, 0, .5); setColor('#333333')" style="background-color: #333333"></div>
-                                                        <div class="color-option" onclick="colorUpdate(330, 1, 1); setColor('#CC4883')" style="background-color: #CC4883"></div>
-                                                        <div class="color-option" onclick="colorUpdate(150, 1, 1); setColor('#03844A')" style="background-color: #03844A"></div>
-                                                        <div class="color-option" onclick="colorUpdate(0, 1, 1); setColor('#C84C4C')" style="background-color: #C84C4C"></div>
-                                                        <div class="color-option" onclick="colorUpdate(280, 1, 1); setColor('#9150C2')" style="background-color: #9150C2"></div>
-                                                        <div class="color-option" onclick="colorUpdate(70, 1, 1); setColor('#706F00')" style="background-color: #706F00"></div>
-                                                        <div class="color-option" onclick="colorUpdate(100, .7, 1); setColor('#497727')" style="background-color: #497727"></div>
-                                                        <div class="color-option" onclick="colorUpdate(260, 1, 1); setColor('#715BCE')" style="background-color: #715BCE"></div>
+                                                        
+                                                   <!-- Color Picker Input -->
+    <input type="color" id="colorPicker" style="margin-top: 10px; padding: 5px 5px; background-color: #0074d9; color: white; border: none; border-radius: 50%; cursor: pointer;">
+    
+    <!-- Set Color Button -->
+    <button onclick="setColor(); colorUpdate();" style="margin-top: 10px;margin-left:10px; padding: 10px 20px; background-color: #0074d9; color: white; border: none; border-radius: 5px; cursor: pointer;">Set Color</button>
                                                     </div>
                                                 </div>
                                             </div>
