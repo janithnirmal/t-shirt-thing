@@ -1766,23 +1766,13 @@ function setColor() {
   // Get the selected color from the color picker input
   var colorPicker = document.getElementById("colorPicker");
   var selectedColor = colorPicker.value;
-  console.log(colorPicker.value)
+  console.log(colorPicker.value);
 
   // Set the background color of the small-box element
   document.getElementById("small-box").style.backgroundColor = selectedColor;
   const hsvColor = hexToHsv();
-console.log("HSV:", hsvColor);
+  console.log("HSV:", hsvColor);
 }
-
-
-  
-  
-
-
-
-
-
-
 
 function colorUpdate() {
   // Remove the "#" symbol if it's included
@@ -2191,4 +2181,3 @@ function renderEndEffects() {
     element.classList.remove("d-none");
   });
 }
-
