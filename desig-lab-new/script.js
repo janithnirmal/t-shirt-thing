@@ -1,6 +1,6 @@
 //const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
-//const SERVER_URL = "http://localhost:9001/"; //janith
-const SERVER_URL="http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
+const SERVER_URL = "http://localhost:9001/"; //janith
+// const SERVER_URL="http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/"; //malidu
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -270,7 +270,7 @@ function userData() {
     if (request.readyState == 4) {
       let response = request.responseText;
       console.log(response);
-      window.alert("data added sucessfully")
+      window.alert("data added sucessfully");
     }
   };
 
@@ -293,7 +293,8 @@ function getUserData() {
 
   // Set up the callback function to handle the response
   request.onload = function () {
-    if (request.status === 200) { // Check if the request was successful
+    if (request.status === 200) {
+      // Check if the request was successful
       try {
         var userData = JSON.parse(request.responseText); // Assuming the response is JSON
 
@@ -322,9 +323,6 @@ function getUserData() {
   // Send the request
   request.send();
 }
-
-
-
 
 function SignIn() {
   let form = new FormData();
@@ -984,9 +982,8 @@ function setColor() {
   // Get the selected color from the color picker input
   var colorPicker = document.getElementById("colorPicker");
   var selectedColor = colorPicker.value;
-  console.log(colorPicker.value)
+  console.log(colorPicker.value);
 
   // Set the background color of the small-box element
   document.getElementById("small-box").style.backgroundColor = selectedColor;
 }
-
