@@ -41,7 +41,7 @@ if ($access->isLoggedIn()) {
 
 
 </style>
-<body>
+<body onload="getUserData()">
 <?php include 'navbar.php'; ?>
 
     <div class="container rounded shaddow  ml-2 mb-3 " style="background-color: white; margin-top:90px;">
