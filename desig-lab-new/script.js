@@ -878,24 +878,106 @@ function uploadImage() {
 }
 
 // ordering process
+let orderReadyImageData;
+let orderReadyDataObject;
+
 let placeOrderModal;
 function placeOrderModalOpen() {
   placeOrderModal = new bootstrap.Modal("#orderNowModal");
   placeOrderModal.show();
+
+  let status = saveCurrentDesign(true); //  ordering save design
+
+  if (status) {
+    let dataURLFront;
+    let dataURLBack;
+    let dataURLLeft;
+    let dataURLRight;
+    // front
+    dataObject.views.active = "front";
+    viewChange("front");
+    generateTextImageSections("canvasOverlyFront");
+    setTimeout(() => {
+      render(dataObject);
+    }, 1000);
+
+    setTimeout(() => {
+      dataURLFront = generateFront();
+      dataObject.views.active = "back";
+      viewChange("back");
+      generateTextImageSections("canvasOverlyBack");
+      setTimeout(() => {
+        render(dataObject);
+      }, 1000);
+    }, 4000);
+
+    setTimeout(() => {
+      dataURLBack = generateBack();
+      dataObject.views.active = "left";
+      viewChange("left");
+      generateTextImageSections("canvasOverlyLeft");
+      setTimeout(() => {
+        render(dataObject);
+      }, 1000);
+    }, 8000);
+
+    setTimeout(() => {
+      dataURLLeft = generateLeft();
+      dataObject.views.active = "right";
+      viewChange("right");
+      generateTextImageSections("canvasOverlyRight");
+      setTimeout(() => {
+        render(dataObject);
+      }, 1000);
+    }, 12000);
+
+    setTimeout(() => {
+      dataURLRight = generateRight();
+
+      let imageObject = {
+        dataURLFront: dataURLFront,
+        dataURLBack: dataURLBack,
+        dataURLLeft: dataURLLeft,
+        dataURLRight: dataURLRight,
+      };
+
+      console.log(imageObject);
+      console.log(dataObject);
+      orderReadyImageData = imageObject;
+      orderReadyDataObject = dataObject;
+
+      // dataObject.views.active = "front"; // set default view
+      // viewChange("front");
+
+      // let form = new FormData();
+      // form.append("imageObject", JSON.stringify(imageObject));
+      // form.append("design_json", JSON.stringify(dataObject));
+
+      // let request = new XMLHttpRequest();
+      // request.onreadystatechange = function () {
+      //   if (request.readyState == 4) {
+      //     console.log(request.responseText);
+      //     try {
+      //       // kaviska - fix what happens after placing an order
+      //     } catch (error) {
+      //       console.log(error);
+      //     }
+      //     render(dataObject);
+      //   }
+      // };
+
+      // request.open("POST", SERVER_URL + "backend/orderingProcess.php", true);
+      // request.send(form);
+      // renderEndEffects();
+    }, 14000);
+  }
 }
 
 function placeOrder() {
   savindDataForOrder();
 
-  const form = new FormData();
-  form.append("dataObject", JSON.stringify(dataObject));
-
-  fetch("backend/orderingProcess.php", {
-    method: "POST",
-    body: form,
-  })
-    .then((response) => response.text())
-    .then((data) => console.log(data));
+  console.log(orderReadyDataObject);
+  console.log(orderReadyImageData);
 }
 
 // function addStaticImage() {
