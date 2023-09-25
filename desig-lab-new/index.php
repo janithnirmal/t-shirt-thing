@@ -33,7 +33,7 @@ if ($access->isLoggedIn()) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <title>Document</title>
+    <title>Design Lab</title>
 
     <!-- css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -889,7 +889,12 @@ if ($access->isLoggedIn()) {
                                             <?php
                                             } else {
                                             ?>
-                                                <div class="basic-styling right-side-box1 ">
+
+                                                <div id="clothCombinationOptionViewerToggle" class="d-block d-md-none">
+                                                    <i onclick="toggleClothCombinationPanel()" class="fas fa-shirt p-2 bg-secondary text-white rounded-5 my-2"></i>
+                                                </div>
+
+                                                <div id="clothCombinationOptionViewerPanel" class="basic-styling right-side-box1 bg-white d-none d-md-block my-2">
                                                     <div class="right-side-box-btn-container">
                                                         <div class="d-flex-column">
                                                             <button style="background-color: #2596be" class="right-side-box-btn">
@@ -942,9 +947,9 @@ if ($access->isLoggedIn()) {
                                             <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
                                                 <div class="dropdown">
                                                     <!-- <button onclick="toggleDropdown1()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px"> -->
-                                                    <button onclick="openModelColorControl()" class="size-qty-box2 btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
+                                                    <button onclick="openModelColorControl()" class="size-qty-box2 d-flex btn-style-remover d-flex-column" style="align-items: center; justify-content: center; gap: 10px">
                                                         <div class="small-box" id="small-box"></div>
-                                                        <span>Color</span> <i class="fas fa-chevron-down"></i>
+                                                        <span class="d-none d-md-block">Color</span> <i class="fas fa-chevron-down"></i>
                                                     </button>
 
                                                     <div id="colorControlModelContainer">
@@ -988,7 +993,7 @@ if ($access->isLoggedIn()) {
                                                 <div class="basic-styling big-box order-md-2 order-4">
                                                     <div class="d-flex-column" style="height: 100%">
                                                         <!-- <button onclick="toggleDropdown2()" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;"> -->
-                                                        <button onclick="openSizeQuantityModel();" class="size-qty-box2 btn-style-remover d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
+                                                        <button onclick="openSizeQuantityModel();" class="size-qty-box2 btn-style-remover d-flex d-flex-column" style=" height: 100%; align-items: center; justify-content: center; gap: 10px;">
                                                             <div class="size-qty-box1" id="sizeItems"></div>
                                                             <span style="width: 100%">Size & Qty</span>
 

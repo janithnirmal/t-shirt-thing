@@ -881,7 +881,15 @@ function removeSelectedItem() {
 document.addEventListener("DOMContentLoaded", () => {
   render(dataObject);
   productIdentifier();
+
+  defaultColorUpdate();
 });
+
+function defaultColorUpdate() {
+  document.getElementById("colorPicker").value = "#f5f5f5";
+  setColor();
+  colorUpdate();
+}
 
 // setInterval(() => {
 //   generateTextImageSections();
@@ -1762,17 +1770,6 @@ function drawLine(ctx, startX, startY, endX, endY, thickness = 1, color) {
   ctx.stroke();
 }
 
-function setColor() {
-  // Get the selected color from the color picker input
-  var colorPicker = document.getElementById("colorPicker");
-  var selectedColor = colorPicker.value;
-  console.log(colorPicker.value);
-
-  // Set the background color of the small-box element
-  document.getElementById("small-box").style.backgroundColor = selectedColor;
-  const hsvColor = hexToHsv();
-  console.log("HSV:", hsvColor);
-}
 
 function colorUpdate() {
   // Remove the "#" symbol if it's included
