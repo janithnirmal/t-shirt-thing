@@ -264,7 +264,7 @@ if ($access->isLoggedIn()) {
                                                                             </div>
                                                                             <div class="product-control-card-item">
                                                                                 <span>Long Sleeves</span>
-                                                                                <img class="product-control-item-img" src="images/cloths/long-cotton-t-shirt-front_male.png" />
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-chinese-front_male.png" />
                                                                                 <button onclick="sleeveSelection('longSleeves')" class="btn btn-secondary">Select</button>
                                                                             </div>
                                                                         </div>
@@ -274,27 +274,27 @@ if ($access->isLoggedIn()) {
                                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                                             <div class="product-control-card-item">
                                                                                 <span>Chinese</span>
-                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-shortSleeves-chinese-front_male.png" />
                                                                                 <button onclick="templateSection('chinese');" class="btn btn-secondary">Select</button>
                                                                             </div>
                                                                             <div class="product-control-card-item">
                                                                                 <span>Chinese V Type</span>
-                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-shortSleeves-chinese-v-type-front_female.png" />
                                                                                 <button onclick="templateSection('chinese-v-type');" class="btn btn-secondary">Select</button>
                                                                             </div>
                                                                             <div class="product-control-card-item">
                                                                                 <span>V Neck</span>
-                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-shortSleeves-vneck-front_male.png" />
                                                                                 <button onclick="templateSection('vneck');" class="btn btn-secondary">Select</button>
                                                                             </div>
                                                                             <div class="product-control-card-item">
                                                                                 <span>V Cut with COller</span>
-                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-shortSleeves-v-cut-with-coller-front_male.png" />
                                                                                 <button onclick="templateSection('v-cut-with-coller')" class="btn btn-secondary">Select</button>
                                                                             </div>
                                                                             <div class="product-control-card-item">
                                                                                 <span>V neck with Coller</span>
-                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-shortSleeves-collar2buttons-front_male.png" />
                                                                                 <button onclick="templateSection('collar2buttons');" class="btn btn-secondary">Select</button>
                                                                             </div>
                                                                         </div>
