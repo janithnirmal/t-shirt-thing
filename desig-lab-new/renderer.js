@@ -886,7 +886,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function defaultColorUpdate() {
-  document.getElementById("colorPicker").value = "#f5f5f5";
+  document.getElementById("colorPicker").value = "#dddddd";
   setColor();
   colorUpdate();
 }
@@ -946,7 +946,7 @@ let dataObject = {
   printType: "ScreenPrint",
   mainColorHueValue: 100,
   mainColorSaturateValue: 0,
-  mainColorLevelValue: 2.5,
+  mainColorLevelValue: 1.5,
   clothOption: {
     sleves: "shortSleeves",
     neck: "vneck",
@@ -1770,48 +1770,64 @@ function drawLine(ctx, startX, startY, endX, endY, thickness = 1, color) {
   ctx.stroke();
 }
 
-
-function colorUpdate() {
+function rgbtohsl() {
   // Remove the "#" symbol if it's included
   var colorPicker = document.getElementById("colorPicker");
   var hex = colorPicker.value;
   hex = hex.replace("#", "");
 
   // Convert hex to RGB
-  const r = parseInt(hex.substring(0, 2), 16) / 255;
-  const g = parseInt(hex.substring(2, 4), 16) / 255;
-  const b = parseInt(hex.substring(4, 6), 16) / 255;
+  let r = parseInt(hex.substring(0, 2), 16);
+  let g = parseInt(hex.substring(2, 4), 16);
+  let b = parseInt(hex.substring(4, 6), 16);
 
-  // Find the maximum and minimum values
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  const delta = max - min;
+  // Make r, g, and b fractions of 1
+  r /= 255;
+  g /= 255;
+  b /= 255;
 
-  let h, s, v;
+  // Find greatest and smallest channel values
+  let cmin = Math.min(r, g, b),
+    cmax = Math.max(r, g, b),
+    delta = cmax - cmin,
+    h = 0,
+    s = 0,
+    l = 0;
 
-  // Calculate hue (H)
-  if (delta === 0) {
-    h = 0; // No change in hue
-  } else if (max === r) {
-    h = ((g - b) / delta) % 6;
-  } else if (max === g) {
-    h = (b - r) / delta + 2;
-  } else {
-    h = (r - g) / delta + 4;
-  }
+  // Calculate hue
+  // No difference
+  if (delta == 0) h = 0;
+  // Red is max
+  else if (cmax == r) h = ((g - b) / delta) % 6;
+  // Green is max
+  else if (cmax == g) h = (b - r) / delta + 2;
+  // Blue is max
+  else h = (r - g) / delta + 4;
 
-  h = Math.round(h * 60); // Convert to degrees
+  h = Math.round(h * 60);
+
+  // Make negative hues positive behind 360°
   if (h < 0) h += 360;
 
-  // Calculate saturation (S)
-  s = delta === 0 ? 0 : delta / max;
+  // Calculate lightness
+  l = (cmax + cmin) / 2;
 
-  // Calculate value (V)
-  v = max;
+  // Calculate saturation
+  s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
 
-  dataObject.mainColorHueValue = h;
-  dataObject.mainColorSaturateValue = s;
-  dataObject.mainColorLevelValue = v;
+  // Multiply l and s by 100
+  s = +(s * 100).toFixed(1);
+  l = +(l * 100).toFixed(1);
+
+  return [h, s, l];
+}
+
+function colorUpdate() {
+  let hsl = rgbtohsl();
+
+  dataObject.mainColorHueValue = hsl[0];
+  dataObject.mainColorSaturateValue = hsl[1] / 100;
+  dataObject.mainColorLevelValue = (hsl[2] / 100) * 3;
   render(dataObject);
 }
 
