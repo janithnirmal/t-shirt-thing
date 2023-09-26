@@ -26,7 +26,7 @@ $decrypt_password = $_POST['password'];
 $email = base64_encode($decrypt_email);
 $password = base64_encode($decrypt_password);
 
-$login_link = "http://localhost/to%20do%20list/t-shirt-thing/desig-lab-new/backend/user_verification.php?email={$email}&password={$password}";
+$login_link =  $_SERVER['HTTP_HOST'] ."/backend/user_verification.php?email={$email}&password={$password}";
 
 echo "Login link: $login_link";
 
