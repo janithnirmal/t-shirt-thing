@@ -1069,3 +1069,32 @@ function setColor() {
   // Set the background color of the small-box element
   document.getElementById("small-box").style.backgroundColor = selectedColor;
 }
+
+let toggleClothCombinationPanelToggleStatus = false;
+function toggleClothCombinationPanel() {
+  const toggleIcon = document.getElementById(
+    "clothCombinationOptionViewerToggle"
+  ).childNodes[1];
+
+  const togglePanel = document.getElementById(
+    "clothCombinationOptionViewerPanel"
+  );
+
+  if (toggleClothCombinationPanelToggleStatus) {
+    toggleIcon.classList.add("fa-shirt");
+    toggleIcon.classList.remove("fa-x");
+
+    togglePanel.classList.add("d-none");
+    togglePanel.classList.remove("d-block");
+
+    toggleClothCombinationPanelToggleStatus = false;
+  } else {
+    toggleIcon.classList.remove("fa-shirt");
+    toggleIcon.classList.add("fa-x");
+
+    togglePanel.classList.add("d-block");
+    togglePanel.classList.remove("d-none");
+
+    toggleClothCombinationPanelToggleStatus = true;
+  }
+}

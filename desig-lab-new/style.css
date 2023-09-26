@@ -196,8 +196,14 @@ nav i {
   background-color: transparent;
 }
 
+#clothCombinationOptionViewerToggle {
+  cursor: pointer;
+}
+
 .right-side-box1 {
+  
   margin: 5px 0;
+  position: relative;
 }
 
 .right-side-box2 {
@@ -1153,6 +1159,23 @@ nav i {
 }
 
 @media (max-width: 768px) {
+  .right-side-box2 {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin: 0 10px;
+  }
+
+  .right-side-box1 {
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+    z-index: 1000;
+    position: absolute;
+  }
+
+  #clothCombinationOptionViewerToggle {
+    margin-top: -50px;
+    position: absolute;
+  }
+
   .navbar-link-container {
     z-index: 10;
     position: absolute;
@@ -1161,7 +1184,7 @@ nav i {
     top: 0;
     left: 0;
     flex-direction: column;
-    margin-top: 8vh;
+    margin-top: 45px;
     justify-content: start;
     align-items: start;
     padding: 10px 30px;
@@ -1243,6 +1266,8 @@ nav i {
   .big-box {
     width: 80px;
     height: 80px;
+    margin-top: 0px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 576px) {
