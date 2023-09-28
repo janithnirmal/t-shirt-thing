@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iro.js Color Picker Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+</head>
+<body>
+    <div class="Wrap">
+        <header>
+            <h1>iro.js Layout Examples</h1>
+            <p>
+                Demo showing multiple color picker layout possibilities available with <a href="https://iro.js.org" target="_blank">iro.js</a>
+            </p>
+        </header>
+        <div class="Grid">
+            <div class="ColorPicker" id="boxPicker">
+                <h3>Box &amp; hue slider</h3>
+                <button id="submitButton">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Box & hue slider
+        var boxPicker = new iro.ColorPicker("#boxPicker", {
+            width: 250,
+            color: "rgb(255, 0, 0)",
+            borderWidth: 1,
+            borderColor: "#fff",
+            layout: [
+                {
+                    component: iro.ui.Box,
+                },
+                {
+                    component: iro.ui.Slider,
+                    options: {
+                        id: 'hue-slider',
+                        sliderType: 'hue'
+                    }
+                }
+            ]
+        });
+
+        // Add an event listener to the submit button
+        var submitButton = document.getElementById('submitButton');
+        submitButton.addEventListener('click', function () {
+            // Get the selected color value
+            var selectedColor = boxPicker.color.rgbString;
+
+            // Log the color value to the console
+            console.log("Selected Color:", selectedColor);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+.controller-indication-design {
+  position: absolute;
+  /* background-color: red; */
+  cursor: pointer;
+  border: none;
+}
+
+.controller-indication-design:hover,
+.controller-indication-design:focus {
+  border: 2px rgba(49, 49, 49, 0.9) dashed;
+}
+#polo-t-Shirt {
+  display: none;
+}
+#jacket {
+  display: none;
+}
+#short {
+  display: none;
+}
+#bottom {
+  display: none;
+}
+
+.line-control-preview {
+  width: 250px;
+  margin-top: 8px;
+}
+
+.polo-t-shirt-coller-front-left {
+  width: 20px;
+  height: 70px;
+  margin-left: 147px;
+  margin-top: 23px;
+  rotate: 128deg;
+}
+
+.polo-t-shirt-coller-front-right {
+  width: 20px;
+  height: 70px;
+  margin-left: 228px;
+  margin-top: 23px;
+  rotate: 55deg;
+}
+
+.polo-t-shirt-coller-back {
+  width: 120px;
+  height: 20px;
+  margin-left: 140px;
+  margin-top: 15px;
+  rotate: 0deg;
+}
+
+.polo-t-shirt-coller-left {
+  width: 100px;
+  height: 20px;
+  margin-left: 140px;
+  margin-top: 35px;
+  rotate: -30deg;
+}
+
+.polo-t-shirt-coller-right {
+  width: 100px;
+  height: 20px;
+  margin-left: 147px;
+  margin-top: 40px;
+  rotate: 30deg;
+}
+.polo-t-shirt-front-right-arm {
+  width: 80px;
+  height: 20px;
+  margin-left: -9px;
+  margin-top: 235px;
+  rotate: 14deg;
+}
+.polo-t-shirt-front-left-arm {
+  width: 80px;
+  height: 20px;
+  margin-left: 325px;
+  margin-top: 235px;
+  rotate: -14deg;
+}
+.polo-t-shirt-back-right-arm {
+  width: 80px;
+  height: 20px;
+  margin-left: -4px;
+  margin-top: 230px;
+  rotate: 14deg;
+}
+.polo-t-shirt-back-left-arm {
+  width: 80px;
+  height: 20px;
+  margin-left: 320px;
+  margin-top: 230px;
+  rotate: -14deg;
+}
+.polo-t-shirt-left-arm {
+  width: 100px;
+  height: 20px;
+  margin-left: 165px;
+  margin-top: 227px;
+  rotate: 1deg;
+}
+.polo-t-shirt-coller-left {
+  width: 105px;
+  height: 30px;
+  margin-left: 140px;
+  margin-top: 30px;
+  rotate: -30deg;
+}
+.polo-t-shirt-left-straight-line {
+  width: 80px;
+  height: 270px;
+  margin-left: 170px;
+  margin-top: 250px;
+}
+.polo-t-shirt-right-arm {
+  width: 100px;
+  height: 20px;
+  margin-left: 125px;
+  margin-top: 227px;
+  rotate: 1deg;
+}
+
+.polo-t-shirt-right-straight-line {
+  width: 80px;
+  height: 270px;
+  margin-left: 140px;
+  margin-top: 250px;
+}
+.polo-t-shirt-front-image-middle{
+  margin-left: 90px;
+  margin-top: 225px;
+  width: 220px;
+  height: 300px;
+}
+.polo-t-shirt-front-image-top-left {
+  margin-top: 93px;
+  margin-left: 77px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-front-image-top-left{
+  margin-top: 93px;
+  margin-left: 77px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-front-image-top-right{
+  margin-top: 93px;
+  margin-left: 235px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-back-image-middle{
+  margin-left: 90px;
+  margin-top: 200px;
+  width: 220px;
+  height: 300px;
+}
+.polo-t-shirt-back-image-top{
+  margin-left: 100px;
+  margin-top: 77px;
+  width: 200px;
+  height: 50px;
+  
+}
+.polo-t-shirt-left-image{
+  margin-top: 120px;
+  margin-left: 175px;
+  width: 85px;
+  height: 100px;
+  
+}
+.polo-t-shirt-right-image{
+  margin-top: 120px;
+  margin-left: 140px;
+  width: 75px;
+  height: 100px;
+  
+}
+/* polo-t-shirt image box  styles*/
+.polo-t-shirt-image-control-front-topleft {
+  margin-top: 93px;
+  margin-left: 77px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-image-control-front-topright {
+  margin-top: 93px;
+  margin-left: 235px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-image-control-front-mid {
+  margin-left: 90px;
+  margin-top: 225px;
+  width: 220px;
+  height: 300px;
+}
+
+.polo-t-shirt-image-control-back-top {
+  margin-left: 100px;
+  margin-top: 77px;
+  width: 200px;
+  height: 50px;
+}
+
+.polo-t-shirt-image-control-back-bottom {
+  margin-left: 90px;
+  margin-top: 200px;
+  width: 220px;
+  height: 300px;
+}
+.polo-t-shirt-image-control-left-hand {
+  margin-top: 120px;
+  margin-left: 175px;
+  width: 85px;
+  height: 100px;
+}
+.polo-t-shirt-image-control-right-hand {
+  margin-top: 125px;
+  margin-left: 135px;
+  width: 85px;
+  height: 100px;
+}
+.jacket-image-control-front-topleft {
+  margin-top: 93px;
+  margin-left: 100px;
+  width: 85px;
+  height: 100px;
+}
+.jacket-image-control-front-topright {
+  margin-top: 93px;
+  margin-left: 210px;
+  width: 85px;
+  height: 100px;
+}
+.jacket-image-control-front-mid {
+  margin-left: 125px;
+  margin-top: 250px;
+  width: 150px;
+  height: 200px;
+}
+
+.short-image-control-front-topleft {
+  margin-top: 140px;
+  margin-left: 77px;
+  width: 100px;
+  height: 120px;
+}
+.short-image-control-front-topright {
+  margin-top: 140px;
+  margin-left: 220px;
+  width: 100px;
+  height: 120px;
+}
+.bottom-image-control-front-topleft {
+  margin-top: 110px;
+  margin-left: 140px;
+  width: 40px;
+  height: 100px;
+}
+.bottom-image-control-front-topright {
+  margin-top: 110px;
+  margin-left: 220px;
+  width: 40px;
+  height: 100px;
+}
+.singlet-image-control-front-mid {
+  margin-left: 115px;
+  margin-top: 250px;
+  width: 180px;
+  height: 180px;
+}
+
+/* bottom controls  */
+.bottom-leg-left {
+  margin-left: 195px;
+  margin-top: 3px;
+  width: 12px;
+  height: 492px;
+  rotate: -2deg;
+}
+.bottom-leg-right {
+  margin-left: 183px;
+  margin-top: 3px;
+  width: 12px;
+  height: 492px;
+  rotate: 2deg;
+}
+.jacket-arm-left-top {
+  margin-left: 209px;
+  margin-top: 69px;
+  width: 12px;
+  height: 207px;
+}
+.jacket-arm-left-bottom {
+  margin-left: 170px;
+  margin-top: 266px;
+  width: 12px;
+  height: 201px;
+  rotate: 24deg;
+}
+.jacket-arm-right-top {
+  margin-left: 179px;
+  margin-top: 69px;
+  width: 12px;
+  height: 207px;
+}
+.jacket-arm-right-bottom {
+  margin-left: 218px;
+  margin-top: 266px;
+  width: 12px;
+  height: 201px;
+  rotate: -24deg;
+}
+
+.short-leg-left {
+  margin-left: 200px;
+  margin-top: 65px;
+  width: 25px;
+  height: 402px;
+  rotate: 2deg;
+}
+.short-leg-right {
+  margin-left: 175px;
+  margin-top: 65px;
+  width: 25px;
+  height: 402px;
+  rotate: -2deg;
+}

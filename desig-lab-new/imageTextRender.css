@@ -1,0 +1,5 @@
+.image-control-box-defaults {
+  background-color: red;
+  position: absolute;
+  border: 1px rgba(0, 0, 0, 0.664) dashed;
+}
