@@ -1547,28 +1547,28 @@ function stripDrawerBottom(ctx, stripObjects, side) {
           ctx,
           197,
           30,
-          213,
-          520,
+          217,
+          500,
           sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       } else if (x == 1) {
         drawLine(
           ctx,
-          187,
+          192,
           30,
-          203,
-          520,
+          212,
+          500,
           sidesStripsArray[1].thickness,
           sidesStripsArray[1].color
         );
       } else if (x == 2) {
         drawLine(
           ctx,
-          177,
+          187,
           30,
-          193,
-          520,
+          207,
+          500,
           sidesStripsArray[2].thickness,
           sidesStripsArray[2].color
         );
@@ -1579,30 +1579,30 @@ function stripDrawerBottom(ctx, stripObjects, side) {
       if (x == 0) {
         drawLine(
           ctx,
-          200,
+          207,
           30,
-          185,
-          520,
+          197,
+          500,
           sidesStripsArray[0].thickness,
           sidesStripsArray[0].color
         );
       } else if (x == 1) {
         drawLine(
           ctx,
-          190,
+          202,
           30,
-          175,
-          520,
+          192,
+          500,
           sidesStripsArray[1].thickness,
           sidesStripsArray[1].color
         );
       } else if (x == 2) {
         drawLine(
           ctx,
-          180,
+          197,
           30,
-          165,
-          520,
+          187,
+          500,
           sidesStripsArray[2].thickness,
           sidesStripsArray[2].color
         );
@@ -1697,41 +1697,36 @@ function stripDrawerJacket(ctx, stripObjects, side) {
       if (x == 0) {
         drawLine(
           ctx,
-          210,
-          92,
-          210,
-          300,
-          armStripsArray[0].thickness,
-          armStripsArray[0].color
-        );
-        drawLine(
-          ctx,
-          210,
-          300,
-          130,
+          255,
+          150,
+          110,
           480,
           armStripsArray[0].thickness,
           armStripsArray[0].color
         );
+       
       } else if (x == 1) {
         drawLine(
           ctx,
-          220,
-          92,
-          220,
-          300,
-          armStripsArray[1].thickness,
-          armStripsArray[1].color
-        );
-        drawLine(
-          ctx,
-          220,
-          300,
-          140,
+          260,
+          155,
+          115,
           485,
           armStripsArray[1].thickness,
           armStripsArray[1].color
         );
+        
+      } else if (x == 2) {
+        drawLine(
+          ctx,
+          265,
+          160,
+          120,
+          490,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
+        );
+        
       }
     }
   } else if (side == "right") {
@@ -1739,40 +1734,34 @@ function stripDrawerJacket(ctx, stripObjects, side) {
       if (x == 0) {
         drawLine(
           ctx,
-          190,
-          92,
-          190,
-          300,
-          armStripsArray[0].thickness,
-          armStripsArray[0].color
-        );
-        drawLine(
-          ctx,
-          190,
-          300,
-          270,
+          140,
+          180,
+          280,
           480,
           armStripsArray[0].thickness,
           armStripsArray[0].color
         );
+       
       } else if (x == 1) {
         drawLine(
           ctx,
+          150,
           180,
-          92,
-          180,
-          300,
+          290,
+          480,
           armStripsArray[1].thickness,
           armStripsArray[1].color
         );
+        
+      } else if (x == 2) {
         drawLine(
           ctx,
+          160,
           180,
           300,
-          260,
-          485,
-          armStripsArray[1].thickness,
-          armStripsArray[1].color
+          480,
+          armStripsArray[2].thickness,
+          armStripsArray[2].color
         );
       }
     }

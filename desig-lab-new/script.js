@@ -338,6 +338,7 @@ function SignIn() {
           window.location.reload();
         } else {
           console.log(responseObject);
+          window.alert("sign in unsessfull");
         }
       } catch (error) {
         console.log(request.responseText);
