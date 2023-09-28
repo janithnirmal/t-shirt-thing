@@ -7,11 +7,9 @@ class database_driver
     public function __construct()
     {
         $host = 'localhost'; // update your own
-        $user = 'root'; // update your own
-        $password = 'JanithNirmal12#$'; // update janith
-        // $database = 't-shirts-thin'; // update your own
-        //   $password = 'KaviskaDilshan12#$'; // update kaviska
-        $database = 't_shirt_design_app_db'; // update your own
+        $user = 'samfab_tshirt'; // update your own
+        $password = '%oHNOIP(f5$*'; // update janith
+        $database = 'samfab_tshirt_db'; // update your own
 
         // Connect to the database using mysqli
         $this->connection = new mysqli($host, $user, $password, $database);

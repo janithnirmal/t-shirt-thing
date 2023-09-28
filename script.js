@@ -1,6 +1,4 @@
-//const SERVER_URL = "http://localhost/t-shirt-thing/desig-lab-new/";
-//const SERVER_URL = "http://localhost:9001/"; //janith
- const SERVER_URL=""; //malidu
+const SERVER_URL = "";
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
