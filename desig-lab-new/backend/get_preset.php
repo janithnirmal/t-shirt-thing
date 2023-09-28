@@ -3,21 +3,8 @@ require_once("app/user_access_updater.php");
 require_once("app/database_driver.php");
 require_once("app/response_sender.php");
 
-$loggedUserData = null;
-$access = new UserAccess();
-if ($access->isLoggedIn()) {
-    $loggedUserData = $access->getUserData();
-}
-
 $responseObject = new stdClass();
 $responseObject->status = "failed";
-$access = new UserAccess();
-if (!$access->isLoggedIn()) {
-    $responseObject->error = "Invalid Access";
-    response_sender::sendJson($responseObject);
-    die();
-}
-$loggedUserData = $access->getUserData();
 
 // get the users saved design list
 $database = new database_driver();
