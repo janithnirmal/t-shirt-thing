@@ -13,7 +13,9 @@ class database_driver
 
         $host = 'localhost'; // update your own
         $user = 'root'; // update your own
-        $password = 'JanithNirmal12#$'; // update janith
+ //       $password = 'JanithNirmal12#$'; // update janith
+        $password = 'KaviskaDilshan12#$'; // update janith
+
         $database = 't_shirt_design_app_db'; // update your own
 
         // Connect to the database using mysqli
