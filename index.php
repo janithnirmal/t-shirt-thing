@@ -1,18 +1,4 @@
 <?php
-// require_once("./backend/config.php");
-
-// require_once("backend/app/user_access_updater.php");
-
-// $loggedUserData = null;
-// $access = new UserAccess();
-// if ($access->isLoggedIn()) {
-//     $loggedUserData = $access->getUserData();
-// }
-
-
-
-?>
-<?php
 require_once("backend/app/user_access_updater.php");
 
 $loggedUserData = null;
@@ -60,21 +46,16 @@ if ($access->isLoggedIn()) {
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
-
-
-
-    <?php if (isset($loggedUserData["status"])) {
+    <?php
+    include 'navbar.php';
+    if (isset($loggedUserData["status"])) {
     ?>
-        <div class="section1 px-3" style="height: 100vh;">
+        <div class="section1 px-3">
             <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
                 <!-- left side panel -->
                 <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
                     <!-- box 1 -->
                     <div class="basic-styling left-side-box1">
-
-
-
                     <?php
                 } else {
                     ?>
@@ -1211,11 +1192,6 @@ if ($access->isLoggedIn()) {
 
 
 
-
-
-
-
-
                             <!-- toasts -->
                             <div class="toast-container position-fixed bottom-0 end-0 p-3">
                                 <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -1232,6 +1208,11 @@ if ($access->isLoggedIn()) {
                                 </div>
                             </div>
 
+                            <footer class="bg-black">
+                                <div class="container p-3 text-white text-center">
+                                    <span>All rights reserved 2023</span>
+                                </div>
+                            </footer>
 
 </body>
 
