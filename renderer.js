@@ -443,6 +443,8 @@ let clothTextImageObject = {
   },
 };
 
+let imageDataForOrder = null;
+
 //
 // product Idnetifier
 function productIdentifier() {
@@ -1704,7 +1706,6 @@ function stripDrawerJacket(ctx, stripObjects, side) {
           armStripsArray[0].thickness,
           armStripsArray[0].color
         );
-       
       } else if (x == 1) {
         drawLine(
           ctx,
@@ -1715,7 +1716,6 @@ function stripDrawerJacket(ctx, stripObjects, side) {
           armStripsArray[1].thickness,
           armStripsArray[1].color
         );
-        
       } else if (x == 2) {
         drawLine(
           ctx,
@@ -1726,7 +1726,6 @@ function stripDrawerJacket(ctx, stripObjects, side) {
           armStripsArray[2].thickness,
           armStripsArray[2].color
         );
-        
       }
     }
   } else if (side == "right") {
@@ -1741,7 +1740,6 @@ function stripDrawerJacket(ctx, stripObjects, side) {
           armStripsArray[0].thickness,
           armStripsArray[0].color
         );
-       
       } else if (x == 1) {
         drawLine(
           ctx,
@@ -1752,7 +1750,6 @@ function stripDrawerJacket(ctx, stripObjects, side) {
           armStripsArray[1].thickness,
           armStripsArray[1].color
         );
-        
       } else if (x == 2) {
         drawLine(
           ctx,
@@ -2068,23 +2065,9 @@ function getSelectedBudget() {
 //
 //
 
-function savindDataForOrder() {
-  const savedTextDataArray = [];
-  for (let u = 0; u < allCanvasElements.length; u++) {
-    let textData = {
-      id: allCanvasElements[u].lowerCanvasEl.id,
-      data: JSON.stringify(allCanvasElements[u].toJSON()),
-    };
 
-    savedTextDataArray.push(textData);
-  }
 
-  dataObject.views.generatedTextData = savedTextDataArray;
-}
-
-function saveCurrentDesign(isOrder = false) {
-  savindDataForOrder();
-
+function saveCurrentDesign(isOrder = false, callback) {
   renderStartEffects();
 
   let dataURLFront;
@@ -2142,33 +2125,36 @@ function saveCurrentDesign(isOrder = false) {
     dataObject.views.active = "front"; // set default view
     viewChange("front");
 
-    let form = new FormData();
-    form.append("imageObject", JSON.stringify(imageObject));
-    form.append("design_json", JSON.stringify(dataObject));
+    if (!isOrder) {
+      let form = new FormData();
+      form.append("imageObject", JSON.stringify(imageObject));
+      form.append("design_json", JSON.stringify(dataObject));
 
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-      if (request.readyState == 4) {
-        console.log(request.responseText);
-        try {
-          let response = JSON.parse(request.responseText);
-          if (response.status == "success") {
-            alert("Successfully saved");
-            let returnValue;
-            isOrder ? (returnValue = true) : window.location.reload();
-            return returnValue;
-          } else if (response.status == "failed") {
-            alert(response.error);
+      let request = new XMLHttpRequest();
+      request.onreadystatechange = function () {
+        if (request.readyState == 4) {
+          console.log(request.responseText);
+          try {
+            let response = JSON.parse(request.responseText);
+            if (response.status == "success") {
+              alert("Successfully saved");
+              window.location.reload();
+            } else if (response.status == "failed") {
+              alert(response.error);
+            }
+          } catch (error) {
+            console.log(error);
           }
-        } catch (error) {
-          console.log(error);
+          render(dataObject);
         }
-        render(dataObject);
-      }
-    };
+      };
 
-    request.open("POST", SERVER_URL + "backend/save_design_api.php", true);
-    request.send(form);
+      request.open("POST", SERVER_URL + "backend/save_design_api.php", true);
+      request.send(form);
+    } else {
+      callback(imageObject, dataObject);
+    }
+
     renderEndEffects();
   }, 14000);
 }

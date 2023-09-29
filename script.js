@@ -173,7 +173,6 @@ function openSavedDesignModal() {
 }
 
 function openSavedDesignModals() {
-  console.log("ghffgh");
   let container = document.getElementById("savedDesignModelContentContainer");
   container.innerHTML = "";
 
@@ -239,7 +238,6 @@ function loadSavedDesign(dataSet) {
 }
 
 function userData() {
-  console.log("gf");
   var firstNameInput = document.getElementById("firstNameInput");
   var lastNameInput = document.getElementById("lastNameInput");
   var telephoneInput = document.getElementById("telephoneInput");
@@ -885,98 +883,126 @@ function placeOrderModalOpen() {
   placeOrderModal = new bootstrap.Modal("#orderNowModal");
   placeOrderModal.show();
 
-  let status = saveCurrentDesign(true); //  ordering save design
+  saveCurrentDesign(true, todo); //  ordering save design
 
-  if (status) {
-    let dataURLFront;
-    let dataURLBack;
-    let dataURLLeft;
-    let dataURLRight;
-    // front
-    dataObject.views.active = "front";
-    viewChange("front");
-    generateTextImageSections("canvasOverlyFront");
-    setTimeout(() => {
-      render(dataObject);
-    }, 1000);
-
-    setTimeout(() => {
-      dataURLFront = generateFront();
-      dataObject.views.active = "back";
-      viewChange("back");
-      generateTextImageSections("canvasOverlyBack");
-      setTimeout(() => {
-        render(dataObject);
-      }, 1000);
-    }, 4000);
-
-    setTimeout(() => {
-      dataURLBack = generateBack();
-      dataObject.views.active = "left";
-      viewChange("left");
-      generateTextImageSections("canvasOverlyLeft");
-      setTimeout(() => {
-        render(dataObject);
-      }, 1000);
-    }, 8000);
-
-    setTimeout(() => {
-      dataURLLeft = generateLeft();
-      dataObject.views.active = "right";
-      viewChange("right");
-      generateTextImageSections("canvasOverlyRight");
-      setTimeout(() => {
-        render(dataObject);
-      }, 1000);
-    }, 12000);
-
-    setTimeout(() => {
-      dataURLRight = generateRight();
-
-      let imageObject = {
-        dataURLFront: dataURLFront,
-        dataURLBack: dataURLBack,
-        dataURLLeft: dataURLLeft,
-        dataURLRight: dataURLRight,
-      };
-
-      console.log(imageObject);
-      console.log(dataObject);
-      orderReadyImageData = imageObject;
-      orderReadyDataObject = dataObject;
-
-      // dataObject.views.active = "front"; // set default view
-      // viewChange("front");
-
-      // let form = new FormData();
-      // form.append("imageObject", JSON.stringify(imageObject));
-      // form.append("design_json", JSON.stringify(dataObject));
-
-      // let request = new XMLHttpRequest();
-      // request.onreadystatechange = function () {
-      //   if (request.readyState == 4) {
-      //     console.log(request.responseText);
-      //     try {
-      //       // kaviska - fix what happens after placing an order
-      //     } catch (error) {
-      //       console.log(error);
-      //     }
-      //     render(dataObject);
-      //   }
-      // };
-
-      // request.open("POST", SERVER_URL + "backend/orderingProcess.php", true);
-      // request.send(form);
-      // renderEndEffects();
-    }, 14000);
+  function todo(imageObject, dataObject) {
+    imageDataForOrder = imageObject;
+    const preview = document.getElementById("orderNowModal");
+    preview.querySelector("img").src = imageObject.dataURLFront;
+    dataObject.sizeQuntitySets.forEach((element) => {
+      const row = document.createElement("span");
+      row.innerHTML = JSON.stringify(element);
+      document.getElementById("orderNowModalDetails").appendChild(row);
+    });
   }
+
+  // if (status) {
+  //   let dataURLFront;
+  //   let dataURLBack;
+  //   let dataURLLeft;
+  //   let dataURLRight;
+  //   // front
+  //   dataObject.views.active = "front";
+  //   viewChange("front");
+  //   generateTextImageSections("canvasOverlyFront");
+  //   setTimeout(() => {
+  //     render(dataObject);
+  //   }, 1000);
+
+  //   setTimeout(() => {
+  //     dataURLFront = generateFront();
+  //     dataObject.views.active = "back";
+  //     viewChange("back");
+  //     generateTextImageSections("canvasOverlyBack");
+  //     setTimeout(() => {
+  //       render(dataObject);
+  //     }, 1000);
+  //   }, 4000);
+
+  //   setTimeout(() => {
+  //     dataURLBack = generateBack();
+  //     dataObject.views.active = "left";
+  //     viewChange("left");
+  //     generateTextImageSections("canvasOverlyLeft");
+  //     setTimeout(() => {
+  //       render(dataObject);
+  //     }, 1000);
+  //   }, 8000);
+
+  //   setTimeout(() => {
+  //     dataURLLeft = generateLeft();
+  //     dataObject.views.active = "right";
+  //     viewChange("right");
+  //     generateTextImageSections("canvasOverlyRight");
+  //     setTimeout(() => {
+  //       render(dataObject);
+  //     }, 1000);
+  //   }, 12000);
+
+  //   setTimeout(() => {
+  //     dataURLRight = generateRight();
+
+  //     let imageObject = {
+  //       dataURLFront: dataURLFront,
+  //       dataURLBack: dataURLBack,
+  //       dataURLLeft: dataURLLeft,
+  //       dataURLRight: dataURLRight,
+  //     };
+
+  //     console.log(imageObject);
+  //     console.log(dataObject);
+  //     orderReadyImageData = imageObject;
+  //     orderReadyDataObject = dataObject;
+
+  //     // dataObject.views.active = "front"; // set default view
+  //     // viewChange("front");
+
+  //     // let form = new FormData();
+  //     // form.append("imageObject", JSON.stringify(imageObject));
+  //     // form.append("design_json", JSON.stringify(dataObject));
+
+  //     // let request = new XMLHttpRequest();
+  //     // request.onreadystatechange = function () {
+  //     //   if (request.readyState == 4) {
+  //     //     console.log(request.responseText);
+  //     //     try {
+  //     //       // kaviska - fix what happens after placing an order
+  //     //     } catch (error) {
+  //     //       console.log(error);
+  //     //     }
+  //     //     render(dataObject);
+  //     //   }
+  //     // };
+
+  //     // request.open("POST", SERVER_URL + "backend/orderingProcess.php", true);
+  //     // request.send(form);
+  //     // renderEndEffects();
+  //   }, 14000);
+  // }
 }
 
 function placeOrder() {
-  savindDataForOrder();
+  let form = new FormData();
+  form.append("image", JSON.stringify(imageDataForOrder));
+  form.append("dataObject", JSON.stringify(dataObject));
 
-  console.log(orderReadyDataObject);
-  console.log(orderReadyImageData);
+  let request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      let response = request.responseText;
+      let responseJson = JSON.parse(response);
+      if (responseJson.status == "success") {
+        alert("Success");
+        placeOrderModal.hide();
+      } else if (responseJson.status == "failed") {
+        alert(responseJson.error);
+      } else {
+        alert(response);
+      }
+    }
+  };
+  request.open("POST", SERVER_URL + "backend/orderingProcess.php", true);
+  request.send(form);
 }
 
 // function addStaticImage() {

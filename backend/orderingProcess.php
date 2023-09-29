@@ -8,104 +8,11 @@ require "app/user_access_updater.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-echo $_POST["imageObject"];
-echo "\n";
-echo "\n";
-echo "\n";
-echo $_POST["design_json"];
-exit();
-
-// $jsonData = '{
-//     "sizeQuntitySets": [
-//         {
-//             "timestamp": 1692544662963,
-//             "gender": "combinationMen",
-//             "matirial": "combinationBudget",
-//             "xs": 90,
-//             "s": null,
-//             "m": null,
-//             "l": null,
-//             "xl": null,
-//             "doublexxl": null,
-//             "thribblexxl": null
-//         },
-//         {
-//             "timestamp": 1692544672392,
-//             "gender": "combinationWomen",
-//             "matirial": "combinationBudget",
-//             "xs": null,
-//             "s": 100,
-//             "m": null,
-//             "l": null,
-//             "xl": null,
-//             "doublexxl": null,
-//             "thribblexxl": null
-//         },
-//         {
-//             "timestamp": 1692544672392,
-//             "gender": "combinationWomen",
-//             "matirial": "combinationBudget",
-//             "xs": null,
-//             "s": 100,
-//             "m": null,
-//             "l": null,
-//             "xl": null,
-//             "doublexxl": null,
-//             "thribblexxl": null
-//         }
-//     ],
-//     "gender": "male",
-//     "clothType": "polo-t-shirt",
-//     "printType": "ScreenPrint",
-//     "mainColorHueValue": 100,
-//     "mainColorSaturateValue": 0,
-//     "mainColorLevelValue": 2.5,
-//     "clothOption": {
-//         "sleves": "shortSleeves",
-//         "neck": "vneck",
-//         "buttons": "hfh"
-//     },
-//     "views": {
-//         "active": "front",
-//         "strips": {
-//             "neck": [
-//                 {
-//                     "color": "#851e1e",
-//                     "thickness": "2"
-//                 },
-//                 {
-//                     "color": "#ffffff",
-//                     "thickness": "2"
-//                 }
-//             ],
-//             "arm": [
-//                 {
-//                     "color": "#851e1e",
-//                     "thickness": "2"
-//                 },
-//                 {
-//                     "color": "#ffffff",
-//                     "thickness": "2"
-//                 }
-//             ],
-//             "sides": [
-//                 {
-//                     "color": "#851e1e",
-//                     "thickness": "2"
-//                 },
-//                 {
-//                     "color": "#ffffff",
-//                     "thickness": "2"
-//                 }
-//             ]
-//         }
-//     }
-// }';
-
-
-// $decodedData = json_decode($jsonData);
+$sessionManager = new UserAccess();
+$userData =  $sessionManager->getUserData();
 
 $decodedData = json_decode($_POST["dataObject"]);
+$imageObject = json_decode($_POST["image"]);
 
 
 $sizeQuantitySets = $decodedData->sizeQuntitySets;

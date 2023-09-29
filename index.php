@@ -549,8 +549,12 @@ if ($access->isLoggedIn()) {
                                                                 <h5 class="modal-title">Ordering Process</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-                                                            <div class="modal-body">
-                                                                <p>You are ordering Few Modals</p>
+                                                            <div class="modal-body d-flex flex-column align-items-center">
+                                                                <img src="" class="w-50 rounded-3 p-2">
+                                                                <div class="d-flex flex-column">
+                                                                    <h4 id="orderNowModalQty"></h4>
+                                                                    <div id="orderNowModalDetails"></div>
+                                                                </div>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -1215,13 +1219,15 @@ if ($access->isLoggedIn()) {
                             <!-- toasts -->
                             <div class="toast-container position-fixed bottom-0 end-0 p-3">
                                 <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="toast-header">
-                                        <img src="..." class="rounded me-2" alt="...">
+                                    <div class="toast-header d-flex gap-2">
+                                        <div class="spinner-grow text-warning" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
                                         <strong class="me-auto">Saving Design</strong>
                                         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                     </div>
                                     <div class="toast-body">
-                                        Wait for few seconds.....
+                                        <span>Wait for few seconds.....</span>
                                     </div>
                                 </div>
                             </div>
