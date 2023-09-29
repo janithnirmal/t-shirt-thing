@@ -1060,6 +1060,10 @@ function placeOrderModalOpen() {
 }
 
 function placeOrder() {
+  if (!dataObject.sizeQuntitySets || dataObject.sizeQuntitySets.length === 0) {
+    alert("Size and quantity sets are empty. Please add size and quntity before you press order button.");
+    return; // Do not make a request to the database
+  }
   let form = new FormData();
   form.append("image", JSON.stringify(imageDataForOrder));
   form.append("dataObject", JSON.stringify(dataObject));

@@ -1208,11 +1208,7 @@ if ($access->isLoggedIn()) {
                                 </div>
                             </div>
 
-                            <footer class="bg-black">
-                                <div class="container p-3 text-white text-center">
-                                    <span>All rights reserved 2023</span>
-                                </div>
-                            </footer>
+                           
 
 </body>
 
