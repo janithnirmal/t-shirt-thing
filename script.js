@@ -1,4 +1,5 @@
-const SERVER_URL = "http://localhost/to%20do%20list/t-shirt-thing/";
+// const SERVER_URL = "http://localhost/to%20do%20list/t-shirt-thing/";
+const SERVER_URL = "";
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -202,7 +203,10 @@ function loadOrderData() {
               let frontImage = document.createElement("img");
               frontImage.classList.add("saved-design-item-images");
               frontImage.width = "200px";
-              frontImage.src = "backend/saved_design_images/" + element.id + "dataURLFront.png"; // Set the image source dynamically
+              frontImage.src =
+                "backend/saved_design_images/" +
+                element.id +
+                "dataURLFront.png"; // Set the image source dynamically
               orderContainer.appendChild(frontImage);
 
               // Display order details
@@ -240,15 +244,6 @@ function loadOrderData() {
   request.open("GET", SERVER_URL + "backend/load_order.php", true);
   request.send();
 }
-
-
-
-
-
-
-
-
-
 
 function openSavedDesignModals() {
   let container = document.getElementById("savedDesignModelContentContainer");
@@ -425,17 +420,19 @@ function SignIn() {
 }
 function SignUp() {
   let form = new FormData();
-  console.log("hi");
   form.append("email", document.getElementById("emailInputs").value);
   form.append("password", document.getElementById("passwordInputs").value);
 
   const request = new XMLHttpRequest();
   request.onreadystatechange = () => {
-    if (request.readyState == 4 && request.status == 200) {
+    if (request.readyState == 4) {
       try {
         responseObject = JSON.parse(request.responseText);
         if (responseObject.status === "success") {
+          alert(responseObject.status);
           window.location.reload();
+        } else if (responseObject.status === "failed") {
+          console.log(responseObject.error);
         } else {
           console.log(responseObject);
         }
@@ -1061,7 +1058,9 @@ function placeOrderModalOpen() {
 
 function placeOrder() {
   if (!dataObject.sizeQuntitySets || dataObject.sizeQuntitySets.length === 0) {
-    alert("Size and quantity sets are empty. Please add size and quntity before you press order button.");
+    alert(
+      "Size and quantity sets are empty. Please add size and quntity before you press order button."
+    );
     return; // Do not make a request to the database
   }
   let form = new FormData();
