@@ -5,8 +5,12 @@ require "app/Exception.php";
 
 require "app/database_driver.php";
 require "app/user_access_updater.php";
+require "app/response_sender.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
+
+$responseObject = new stdClass();
+$responseObject->status = "failed";
 
 $sessionManager = new UserAccess();
 $userData =  $sessionManager->getUserData();
@@ -237,8 +241,9 @@ foreach ($canvasItemArray as $object) {
 
 
 if (!$mail->send()) {
-    echo ("failed");
+    $responseObject->error = "Mail Sending Failed";
 } else {
+    $uid = uniqid(); // uuid
     $database = new database_driver();
     $user_access = new UserAccess();
 
@@ -246,10 +251,19 @@ if (!$mail->send()) {
 
     $currentDateTime = date("Y-m-d H:i:s");
 
-    $insertQuery = "INSERT INTO `order` (`ordered_datetime`, `user_email`, `data_object`) VALUES (?, ?, ?) ";
-    $database->execute_query($insertQuery, "sss", [$currentDateTime, $user_access->getUserData()["email"], json_encode($decodedData)]);
+    $insertQuery = "INSERT INTO `order` (`id`, `ordered_datetime`, `user_email`, `data_object`) VALUES (?, ?, ?, ?) ";
+    $database->execute_query($insertQuery, "ssss", [$uid,  $currentDateTime, $user_access->getUserData()["email"], json_encode($decodedData)]);
 
-    echo ("success");
+    foreach ($imageObject as $key => $value) {
+        $dataURL = str_replace("data:image/png;base64,",  "", $value);
+        $imageData = base64_decode($dataURL);
+        $path = "ordered_design_images/" . $uid . $key  . ".png";
+        file_put_contents($path, $imageData);
+    }
+
+
+    $responseObject->status = "success";
+    response_sender::sendJson($responseObject);
 }
 
 

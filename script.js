@@ -204,7 +204,7 @@ function loadOrderData() {
               frontImage.classList.add("saved-design-item-images");
               frontImage.width = "200px";
               frontImage.src =
-                "backend/saved_design_images/" +
+                "backend/ordered_design_images/" +
                 element.id +
                 "dataURLFront.png"; // Set the image source dynamically
               orderContainer.appendChild(frontImage);
@@ -967,7 +967,7 @@ function placeOrderModalOpen() {
     dataObject.sizeQuntitySets.forEach((element) => {
       const row = document.createElement("span");
       row.innerHTML = JSON.stringify(element);
-      document.getElementById("orderNowModalDetails").appendChild(row);
+      // document.getElementById("orderNowModalDetails").appendChild(row);
     });
   }
 
@@ -1075,6 +1075,7 @@ function placeOrder() {
       if (responseJson.status == "success") {
         alert("Success");
         placeOrderModal.hide();
+        window.location.reload();
       } else if (responseJson.status == "failed") {
         alert(responseJson.error);
       } else {
