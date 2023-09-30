@@ -429,7 +429,7 @@ function SignUp() {
       try {
         responseObject = JSON.parse(request.responseText);
         if (responseObject.status === "success") {
-          alert(responseObject.status);
+          alert('Please Check your email for verification link!');
           window.location.reload();
         } else if (responseObject.status === "failed") {
           console.log(responseObject.error);
