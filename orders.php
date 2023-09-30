@@ -41,26 +41,18 @@ if ($access->isLoggedIn()) {
   }
 </style>
 
-<body>
+<body onload="loadOrderData()">
   <?php include 'navbar.php'; ?>
 
 
 
-  <div class="container rounded shaddow  ml-2 mb-3 text-center" style="background-color: white; margin-top:90px;">
-    <h3 class="my-3">My Orders</h3>
-    <div class="container" style="border-style: dashed;width:98%">
-      <img src="images/No orders.png" class="w-25">
-    </div>
+  
+  <div id="orderContainer" style="margin-top: 100px;" style="background-color: black;">
+
   </div>
 
 
-  <footer class="footer bg-dark text-white" style="margin-top: 90px;">
-    <div class="container text-center">
-      <!-- Footer content goes here -->
-      <p>this is just dummy contenet</p>
-    </div>
-  </footer>
-
+  
   <!-- Your content goes here -->
 
   <!-- Latest compiled and minified JavaScript -->

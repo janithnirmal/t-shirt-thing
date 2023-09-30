@@ -1,4 +1,4 @@
-const SERVER_URL = "";
+const SERVER_URL = "http://localhost/to%20do%20list/t-shirt-thing/";
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -171,6 +171,84 @@ function openSavedDesignModal() {
   request.open("GET", SERVER_URL + "backend/get_saved_design_api.php", true);
   request.send();
 }
+
+function loadOrderData() {
+  // Get a reference to the container element
+  let container = document.getElementById("orderContainer");
+  container.innerHTML = ""; // Clear any previous content
+
+  // Create a new XMLHttpRequest
+  let request = new XMLHttpRequest();
+
+  // Set up the event listener for when the request is complete
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      // Check if the request was successful (HTTP status code 200)
+      if (request.status === 200) {
+        let response = request.responseText;
+        try {
+          let responseObject = JSON.parse(response);
+
+          if (responseObject.status == "success") {
+            console.log(responseObject);
+            responseObject.data.forEach((element) => {
+              let dataObject = JSON.parse(element.data_object);
+
+              // Create a container for each order
+              let orderContainer = document.createElement("div");
+              orderContainer.classList.add("order-item");
+
+              // Create an image element for the front image
+              let frontImage = document.createElement("img");
+              frontImage.classList.add("saved-design-item-images");
+              frontImage.width = "200px";
+              frontImage.src = "backend/saved_design_images/" + element.id + "dataURLFront.png"; // Set the image source dynamically
+              orderContainer.appendChild(frontImage);
+
+              // Display order details
+              let orderDetails = document.createElement("div");
+              orderDetails.classList.add("order-details");
+              orderDetails.innerHTML = `
+                <p><strong>Ordered Datetime:</strong> ${element.ordered_datetime}</p>
+                <p><strong>Gender:</strong> ${element.gender}</p>
+                <p><strong>Cloth Type:</strong> ${dataObject.clothType}</p>
+                <p><strong>Print Type:</strong> ${dataObject.printType}</p>
+                <!-- Add more order details here as needed -->
+              `;
+              orderContainer.appendChild(orderDetails);
+
+              // Append the order container to the main container
+              container.appendChild(orderContainer);
+            });
+          } else if (responseObject.status == "failed") {
+            console.log(responseObject.error);
+            container.innerText = "Please sign in to view orders...";
+          } else {
+            console.log(responseObject);
+          }
+        } catch (error) {
+          console.log(response);
+        }
+      } else {
+        // Handle the case where the request was not successful
+        container.innerText = "Error loading orders. Please try again later.";
+      }
+    }
+  };
+
+  // Open and send the GET request to fetch orders
+  request.open("GET", SERVER_URL + "backend/load_order.php", true);
+  request.send();
+}
+
+
+
+
+
+
+
+
+
 
 function openSavedDesignModals() {
   let container = document.getElementById("savedDesignModelContentContainer");
@@ -982,6 +1060,10 @@ function placeOrderModalOpen() {
 }
 
 function placeOrder() {
+  if (!dataObject.sizeQuntitySets || dataObject.sizeQuntitySets.length === 0) {
+    alert("Size and quantity sets are empty. Please add size and quntity before you press order button.");
+    return; // Do not make a request to the database
+  }
   let form = new FormData();
   form.append("image", JSON.stringify(imageDataForOrder));
   form.append("dataObject", JSON.stringify(dataObject));
@@ -1089,7 +1171,6 @@ function setColor() {
   // Get the selected color from the color picker input
   var colorPicker = document.getElementById("colorPicker");
   var selectedColor = colorPicker.value;
-  console.log(colorPicker.value);
 
   // Set the background color of the small-box element
   document.getElementById("small-box").style.backgroundColor = selectedColor;

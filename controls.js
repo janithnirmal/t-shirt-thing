@@ -121,6 +121,7 @@ function openProductModel() {
     .classList.add("d-none");
 }
 
+let selectedSleeveType = null;
 function productControlNavigationChange(option) {
   let items = document.querySelectorAll(".product-control-nav-section-btn");
   items.forEach((element) => {
@@ -148,6 +149,10 @@ function productControlNavigationChange(option) {
 
   let sections = document.querySelectorAll(".product-control-section");
   sections.forEach((element) => {
+    if (option == "Template" && selectedSleeveType) {
+      option += selectedSleeveType;
+    }
+
     if (element.id !== "productControl" + option + "SelectSection") {
       element.classList.add("d-none");
       element.classList.remove("d-flex");
@@ -202,6 +207,8 @@ function templateSection(type) {
 }
 
 function sleeveSelection(type) {
+  selectedSleeveType = type;
+
   let sleeveBtn = document.getElementById(
     "productControlNavigationChangeTemplate"
   );

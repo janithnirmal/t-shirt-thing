@@ -1,18 +1,4 @@
 <?php
-// require_once("./backend/config.php");
-
-// require_once("backend/app/user_access_updater.php");
-
-// $loggedUserData = null;
-// $access = new UserAccess();
-// if ($access->isLoggedIn()) {
-//     $loggedUserData = $access->getUserData();
-// }
-
-
-
-?>
-<?php
 require_once("backend/app/user_access_updater.php");
 
 $loggedUserData = null;
@@ -60,21 +46,16 @@ if ($access->isLoggedIn()) {
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
-
-
-
-    <?php if (isset($loggedUserData["status"])) {
+    <?php
+    include 'navbar.php';
+    if (isset($loggedUserData["status"])) {
     ?>
-        <div class="section1 px-3" style="height: 100vh;">
+        <div class="section1 px-3">
             <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
                 <!-- left side panel -->
                 <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
                     <!-- box 1 -->
                     <div class="basic-styling left-side-box1">
-
-
-
                     <?php
                 } else {
                     ?>
@@ -269,7 +250,7 @@ if ($access->isLoggedIn()) {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div id="productControlTemplateSelectSection" class="d-none flex-column product-control-section">
+                                                                    <div id="productControlTemplateshortSleevesSelectSection" class="d-none flex-column product-control-section">
                                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                                             <div class="product-control-card-item">
@@ -299,6 +280,36 @@ if ($access->isLoggedIn()) {
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div id="productControlTemplatelongSleevesSelectSection" class="d-none flex-column product-control-section">
+                                                                        <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
+                                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                                            <div class="product-control-card-item">
+                                                                                <span>Chinese</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-chinese-front_male.png" />
+                                                                                <button onclick="templateSection('chinese');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>Chinese V Type</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-chinese-v-type-front_female.png" />
+                                                                                <button onclick="templateSection('chinese-v-type');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>V Neck</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-vneck-front_male.png" />
+                                                                                <button onclick="templateSection('vneck');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>V Cut with COller</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-v-cut-with-coller-front_male.png" />
+                                                                                <button onclick="templateSection('v-cut-with-coller')" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>V neck with Coller</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-collar2buttons-front_male.png" />
+                                                                                <button onclick="templateSection('collar2buttons');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                     <div id="productControlTshirtButtonsSelectSection" class="d-none flex-column product-control-section">
                                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
@@ -312,26 +323,9 @@ if ($access->isLoggedIn()) {
                                                                                 <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
                                                                                 <button onclick="tShirtButtonNeckSection('2 Buttons + Open')" class="btn btn-secondary">Select</button>
                                                                             </div>
-                                                                            <!-- <div class="product-control-card-item">
-                                                                <span>3 Buttons Only</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('3 Buttons Only');" class="btn btn-secondary">Select</button>
-                                                            </div>
-                                                            <div class="product-control-card-item">
-                                                                <span>3 Buttons + Open</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('3 Buttons + Open')" class="btn btn-secondary">Select</button>
-                                                            </div> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- <div class="product-control-footer">
-                                                    <hr>
-                                                    <div class="product-control-nav-btn d-flex justify-content-between py-2">
-                                                        <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Previous</div>
-                                                        <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Next</div>
-                                                    </div>
-                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -523,10 +517,8 @@ if ($access->isLoggedIn()) {
                                     <!-- size & qty -->
 
 
-                                    <?php if (isset($loggedUserData["status"])) {
-                                    ?>
-
                                     <?php
+                                    if (isset($loggedUserData["status"])) {
                                     } else {
                                     ?>
                                         <div class="left-side-box3">
@@ -540,9 +532,8 @@ if ($access->isLoggedIn()) {
                                     <?php
                                     }
                                     ?>
-
-                <!-- ordering modal -->
-                <div class=" modal" tabindex="-1" id="orderNowModal">
+                                    <!-- ordering modal -->
+                                    <div class=" modal" tabindex="-1" id="orderNowModal">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -563,18 +554,13 @@ if ($access->isLoggedIn()) {
                                                         </div>
                                                     </div>
                                             </div>
-
                                         </div>
 
                                         <!-- middle panel -->
                                         <div class="section1-panel  section1-panel-mid side-panel-2 h-100 order-1 order-md-2 py-5 d-flex justify-content-center">
                                             <div class="t-shirt-panel-container ">
-
-
-
                                                 <!-- render -->
                                                 <div id="canvas" class=" t-shirt-panel-container d-flex justify-content-center align-items-center position-absolute"></div>
-
                                                 <!-- strips -->
                                                 <div class="canvasOverly ">
                                                     <div id="polo-t-shirt" class="canvasOverlyInner d-block">
@@ -584,28 +570,9 @@ if ($access->isLoggedIn()) {
                                                                 <div class="controller-indication-design polo-t-shirt-coller-front-left" onclick="controllerModelOpen('neck')"></div>
                                                                 <div class="controller-indication-design polo-t-shirt-coller-front-right" onclick="controllerModelOpen('neck')"></div>
 
-
-
-
                                                                 <!-- strips arm -->
                                                                 <div class="controller-indication-design polo-t-shirt-front-left-arm" onclick="controllerModelOpen('arm');"></div>
                                                                 <div class="controller-indication-design polo-t-shirt-front-right-arm" onclick="controllerModelOpen('arm');"></div>
-
-
-                                                                <!-- image box -->
-
-                                                                <!-- <div class="controller-indication-design polo-t-shirt-front-image-middle" ondblclick="openImageModel();poloMiddle()">
-                                        <canvas id="canvass" width="220px" height="300px"></canvas>
-
-                                    </div>
-
-                                    <div class="controller-indication-design polo-t-shirt-front-image-top-left" ondblclick="openImageModel();poloTopLeft()">
-                                        <canvas id="canvaso" width="85px" height="100px"></canvas>
-
-                                    </div>
-                                    <div class="controller-indication-design polo-t-shirt-front-image-top-right" ondblclick="openImageModel();poloTopRight()">
-                                        <canvas id="canvas-polo-top-right" width="85px" height="100px"></canvas>
-                                    </div> -->
                                                             </div>
                                                         </div>
                                                         <div data-controlside="back" id="polo-t-shirt-StripControl-back" class="canvasOverlyInner-back d-none control-sectinos-sides">
@@ -614,14 +581,6 @@ if ($access->isLoggedIn()) {
                                                             <!-- strips arm -->
                                                             <div class="controller-indication-design polo-t-shirt-back-left-arm" onclick="controllerModelOpen('arm');"></div>
                                                             <div class="controller-indication-design polo-t-shirt-back-right-arm" onclick="controllerModelOpen('arm');"></div>
-                                                            <!-- image controll -->
-                                                            <!-- <div class="controller-indication-design polo-t-shirt-back-image-middle" ondblclick="openImageModel();changeCanvasPoloBackMiddle()">
-                                    <canvas id="canvas-polo-back-middle" width="220px" height="300px"></canvas>
-                                </div>
-                                <div class="controller-indication-design polo-t-shirt-back-image-top" ondblclick="openImageModel();changeCanvasPoloBackTop()">
-                                    <canvas id="canvas-polo-back-top" width="200px" height="50px"></canvas>
-                                </div> -->
-
                                                         </div>
                                                         <div data-controlside="left" id="polo-t-shirt-StripControl-left" class="canvasOverlyInner-left d-none control-sectinos-sides">
                                                             <!-- stips neck-->
@@ -631,11 +590,6 @@ if ($access->isLoggedIn()) {
                                                             <div class="controller-indication-design polo-t-shirt-left-arm" onclick="controllerModelOpen('arm');"></div>
                                                             <!-- straight line -->
                                                             <div class="controller-indication-design polo-t-shirt-left-straight-line" onclick="controllerModelOpen('sides')"></div>
-                                                            <!-- image controll -->
-                                                            <!-- <div class="controller-indication-design polo-t-shirt-left-image" ondblclick="openImageModel();changeCanvasPoloLeftImage()">
-                                    <canvas id="canvas-polo-left-image" width="85px" height="100px"></canvas>
-                                </div> -->
-
                                                         </div>
                                                         <div data-controlside="right" id="polo-t-shirt-StripControl-right" class="canvasOverlyInner-right d-none control-sectinos-sides">
                                                             <!-- stips neck-->
@@ -644,10 +598,6 @@ if ($access->isLoggedIn()) {
                                                             <div class="controller-indication-design polo-t-shirt-right-arm" onclick="controllerModelOpen('arm');"></div>
                                                             <!-- straight line -->
                                                             <div class="controller-indication-design polo-t-shirt-right-straight-line" onclick="controllerModelOpen('sides')"></div>
-                                                            <!-- image controll -->
-                                                            <!-- <div class="controller-indication-design polo-t-shirt-right-image" ondblclick="openImageModel();changeCanvasPoloRightImage()">
-                                    <canvas id="canvas-polo-right-image" width="75px" height="100px"></canvas>
-                                </div> -->
                                                         </div>
                                                     </div>
                                                     <div id="cotton-t-shirt" class="canvasOverlyInner  d-none">
@@ -711,7 +661,6 @@ if ($access->isLoggedIn()) {
                                                     </div>
                                                 </div>
 
-
                                                 <!-- image text  -->
                                                 <div class="image-text-container " id="imageTextContainer">
                                                     <div data-type="textimage" data-side="front" id="canvasOverlyFront" class="d-block position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
@@ -723,13 +672,10 @@ if ($access->isLoggedIn()) {
                                                 <div class="image-text-controller-icons position-absolute">
                                                     <button onclick="removeSelectedItem()" id="canvasSelectedItemDeleteBtn" class="py-1 px-2 btn-style-remover btn rounded-2 bg-dark fw-bold text-white"><i class="fas fa-trash"></i></button>
                                                 </div>
-
                                             </div>
 
                                             <!-- model contianer -->
                                             <div class="modelContainer">
-
-
                                                 <!-- Modal - polo neck strip -->
                                                 <div class="modal fade" id="neckStripControlModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
@@ -739,7 +685,6 @@ if ($access->isLoggedIn()) {
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-
                                                                 <div class="d-flex justify-content-center align-items-center p-3 my-3">
                                                                     <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="neckStripLinePreviewContainer">
 
@@ -765,10 +710,6 @@ if ($access->isLoggedIn()) {
                                                                                 <input id="neckStripLinePreviewThicknessInput" onchange="updateneckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
                                                                             </div>
                                                                         </div>
-                                                                        <!-- <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="updateneckStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
-                                            </div> -->
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -789,7 +730,6 @@ if ($access->isLoggedIn()) {
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-
                                                                 <div class="d-flex justify-content-center align-items-center p-3 my-3">
                                                                     <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="armStripLinePreviewContainer">
 
@@ -815,10 +755,6 @@ if ($access->isLoggedIn()) {
                                                                                 <input id="armStripLinePreviewThicknessInput" onchange="updatearmStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
                                                                             </div>
                                                                         </div>
-                                                                        <!-- <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="updatearmStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
-                                            </div> -->
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -839,7 +775,6 @@ if ($access->isLoggedIn()) {
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-
                                                                 <div class="d-flex justify-content-center align-items-center p-3 my-3">
                                                                     <div class="d-flex flex-column py-3 bg-secondary" style="rotate: -180deg;" id="sidesStripLinePreviewContainer">
 
@@ -865,10 +800,6 @@ if ($access->isLoggedIn()) {
                                                                                 <input id="sidesStripLinePreviewThicknessInput" onchange="updatesidesStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
                                                                             </div>
                                                                         </div>
-                                                                        <!-- <div class="p-2">
-                                                <div class="fs-5 text-center">Line gap</div>
-                                                <input onchange="updatesidesStripData(event, 'gap')" type="number" class="form-control" min="0" max="3">
-                                            </div> -->
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -884,16 +815,11 @@ if ($access->isLoggedIn()) {
 
                                         <!-- right side panel -->
                                         <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
-
                                             <!-- size & qty -->
-
-                                            <?php if (isset($loggedUserData["status"])) {
-                                            ?>
-
                                             <?php
+                                            if (isset($loggedUserData["status"])) {
                                             } else {
                                             ?>
-
                                                 <div id="clothCombinationOptionViewerToggle" class="d-block d-md-none">
                                                     <i onclick="toggleClothCombinationPanel()" class="fas fa-shirt p-2 bg-secondary text-white rounded-5 my-2"></i>
                                                 </div>
@@ -938,15 +864,9 @@ if ($access->isLoggedIn()) {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             <?php
                                             }
                                             ?>
-
-
-
-
-
                                             <!-- color controls -->
                                             <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
                                                 <div class="dropdown">
@@ -988,9 +908,6 @@ if ($access->isLoggedIn()) {
 
 
                                             <?php if (isset($loggedUserData["status"])) {
-                                            ?>
-
-                                            <?php
                                             } else {
                                             ?>
                                                 <!-- size & qty -->
@@ -1211,11 +1128,6 @@ if ($access->isLoggedIn()) {
 
 
 
-
-
-
-
-
                             <!-- toasts -->
                             <div class="toast-container position-fixed bottom-0 end-0 p-3">
                                 <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -1231,6 +1143,7 @@ if ($access->isLoggedIn()) {
                                     </div>
                                 </div>
                             </div>
+
 
 
 </body>
