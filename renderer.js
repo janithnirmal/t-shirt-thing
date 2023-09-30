@@ -769,7 +769,6 @@ function textGenerator(fabricElement, inputText, options = {}) {
 function imageGenerator(fabricElement, file, options = {}) {
   imageSizeReducer(file, (URL) => {
     const dataURL = URL;
-    console.log(dataURL);
 
     const imgObj = new Image();
 
@@ -1487,7 +1486,6 @@ function stripDrawerpoloTShirt(ctx, stripObjects, side) {
 
     // sides - kaviska - fix line position
     for (let x = 0; x < sidesStripsArray.length; x++) {
-      consolelog(sidesStripsArray);
       if (x == 0) {
         drawLine(
           ctx,
@@ -1963,7 +1961,6 @@ function size() {
   }
 
   // Optional: Log the updated dataObject to the console
-  console.log(dataObject);
   // Clear the input fields
   document.getElementById("xs").value = "";
   document.getElementById("s").value = "";
@@ -1986,7 +1983,7 @@ function size() {
     totals += value;
   });
 
-  console.log(totals);
+
 
   // Set the display property of the button based on the total value
 }
@@ -2133,7 +2130,6 @@ function saveCurrentDesign(isOrder = false, callback) {
       let request = new XMLHttpRequest();
       request.onreadystatechange = function () {
         if (request.readyState == 4) {
-          console.log(request.responseText);
           try {
             let response = JSON.parse(request.responseText);
             if (response.status == "success") {

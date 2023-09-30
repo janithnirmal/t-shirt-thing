@@ -250,7 +250,7 @@ if ($access->isLoggedIn()) {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div id="productControlTemplateSelectSection" class="d-none flex-column product-control-section">
+                                                                    <div id="productControlTemplateshortSleevesSelectSection" class="d-none flex-column product-control-section">
                                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
                                                                             <div class="product-control-card-item">
@@ -280,6 +280,36 @@ if ($access->isLoggedIn()) {
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div id="productControlTemplatelongSleevesSelectSection" class="d-none flex-column product-control-section">
+                                                                        <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
+                                                                        <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
+                                                                            <div class="product-control-card-item">
+                                                                                <span>Chinese</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-chinese-front_male.png" />
+                                                                                <button onclick="templateSection('chinese');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>Chinese V Type</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-chinese-v-type-front_female.png" />
+                                                                                <button onclick="templateSection('chinese-v-type');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>V Neck</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-vneck-front_male.png" />
+                                                                                <button onclick="templateSection('vneck');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>V Cut with COller</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-v-cut-with-coller-front_male.png" />
+                                                                                <button onclick="templateSection('v-cut-with-coller')" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                            <div class="product-control-card-item">
+                                                                                <span>V neck with Coller</span>
+                                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-longSleeves-collar2buttons-front_male.png" />
+                                                                                <button onclick="templateSection('collar2buttons');" class="btn btn-secondary">Select</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                     <div id="productControlTshirtButtonsSelectSection" class="d-none flex-column product-control-section">
                                                                         <span class="text-center w-100 py-2">We prepaired everything for you. Just select your template!</span>
                                                                         <div class="product-control-slider  d-flex gap-3 py-3 px-3 text-dark ">
@@ -293,26 +323,9 @@ if ($access->isLoggedIn()) {
                                                                                 <img class="product-control-item-img" src="images/cloths/polo-t-shirt-front_male.png" />
                                                                                 <button onclick="tShirtButtonNeckSection('2 Buttons + Open')" class="btn btn-secondary">Select</button>
                                                                             </div>
-                                                                            <!-- <div class="product-control-card-item">
-                                                                <span>3 Buttons Only</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('3 Buttons Only');" class="btn btn-secondary">Select</button>
-                                                            </div>
-                                                            <div class="product-control-card-item">
-                                                                <span>3 Buttons + Open</span>
-                                                                <img class="product-control-item-img" src="images/cloths/cotton-t-shirt-front_male.png" />
-                                                                <button onclick="tShirtButtonNeckSection('3 Buttons + Open')" class="btn btn-secondary">Select</button>
-                                                            </div> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- <div class="product-control-footer">
-                                                    <hr>
-                                                    <div class="product-control-nav-btn d-flex justify-content-between py-2">
-                                                        <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Previous</div>
-                                                        <div style="font-size: 14px;" class="text-white py-1 px-2 rounded-2 btn-style-remover bg-secondary">Next</div>
-                                                    </div>
-                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1131,7 +1144,7 @@ if ($access->isLoggedIn()) {
                                 </div>
                             </div>
 
-                           
+
 
 </body>
 
