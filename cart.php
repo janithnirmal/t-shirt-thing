@@ -8,6 +8,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Extra small screens (phones, less than 576px) */
+@media (max-width: 575px) {
+  .container {
+    max-width: 90%;
+  }
+
+  
+
+  .form-group {
+    width: 100%;
+  }
+  ::placeholder{
+    font-size: 15px;
+  }
+  .responsive-col{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Small screens (tablets, less than 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+/* Medium screens (desktops, less than 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 98%;
+  }
+}
+
+/* Large screens (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+    </style>
 
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/f98ce7c376.js" crossorigin="anonymous" defer></script>

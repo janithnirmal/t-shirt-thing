@@ -772,8 +772,13 @@ function applyFontSize(newFontSize) {
 let addTextModel;
 function openTextPanel() {
   if (!selectedInputCanvas) {
-    alert("Please Select an Area to Add Text");
-  } else {
+    const toastContainer = document.querySelector('.toast-container');
+    const toast = document.getElementById('renderStartToastMessage');
+    const toastBody = toast.querySelector('.toast-body span');
+    toastBody.textContent = "Please Select area to add text  ";
+  
+    const toastInstance = new bootstrap.Toast(toast);
+    toastInstance.show();   } else {
     addTextModel = new bootstrap.Modal("#addTextModel");
     addTextModel.show();
   }
@@ -783,8 +788,15 @@ function openTextPanel() {
 let addImageModel;
 function openImageModel() {
   if (!selectedInputCanvas) {
-    alert("Please Select an Area to Add Text");
-  } else {
+    const toastContainer = document.querySelector('.toast-container');
+    const toast = document.getElementById('renderStartToastMessage');
+    const toastBody = toast.querySelector('.toast-body span');
+    toastBody.textContent = "Please Select area to add text  ";
+  
+    const toastInstance = new bootstrap.Toast(toast);
+    toastInstance.show(); 
+   } 
+    else {
     addImageModel = new bootstrap.Modal("#addImageModel");
     addImageModel.show();
   }

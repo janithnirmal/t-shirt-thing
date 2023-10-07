@@ -1,5 +1,5 @@
-// const SERVER_URL = "http://localhost/to%20do%20list/t-shirt-thing/";
-const SERVER_URL = "";
+ const SERVER_URL = "http://localhost/to%20do%20list/t-shirt-thing/";
+//const SERVER_URL = "";
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -339,7 +339,13 @@ function userData() {
     if (request.readyState == 4) {
       let response = request.responseText;
       console.log(response);
-      window.alert("data added sucessfully");
+      const toastContainer = document.querySelector('.toast-container');
+          const toast = document.getElementById('renderStartToastMessage');
+          const toastBody = toast.querySelector('.toast-body span');
+          toastBody.textContent = "Data added Sucessfully ";
+        
+          const toastInstance = new bootstrap.Toast(toast);
+          toastInstance.show();
     }
   };
 
@@ -407,7 +413,14 @@ function SignIn() {
           window.location.reload();
         } else {
           console.log(responseObject);
-          window.alert("sign in unsessfull");
+          const toastContainer = document.querySelector('.toast-container');
+          const toast = document.getElementById('renderStartToastMessage');
+          const toastBody = toast.querySelector('.toast-body span');
+          toastBody.textContent = "Sign In Failed";
+        
+          const toastInstance = new bootstrap.Toast(toast);
+          toastInstance.show();
+        
         }
       } catch (error) {
         console.log(request.responseText);
@@ -1058,14 +1071,28 @@ function placeOrderModalOpen() {
 
 function placeOrder() {
   if (!dataObject.sizeQuntitySets || dataObject.sizeQuntitySets.length === 0) {
-    alert(
-      "Size and quantity sets are empty. Please add size and quntity before you press order button."
-    );
+    // Display a toast message for empty size and quantity sets
+    const toastContainer = document.querySelector('.toast-container');
+    const toast = document.getElementById('renderStartToastMessage');
+    const toastBody = toast.querySelector('.toast-body span');
+    toastBody.textContent = "Size and quantity sets are empty. Please add size and quantity before you press order button.";
+
+    const toastInstance = new bootstrap.Toast(toast);
+    toastInstance.show();
     return; // Do not make a request to the database
   }
   let form = new FormData();
   form.append("image", JSON.stringify(imageDataForOrder));
   form.append("dataObject", JSON.stringify(dataObject));
+
+  const toastContainer = document.querySelector('.toast-container');
+  const toast = document.getElementById('renderStartToastMessage');
+  const toastBody = toast.querySelector('.toast-body span');
+  toastBody.textContent = "please wait few seconds";
+
+  const toastInstance = new bootstrap.Toast(toast , { delay: 5000 });
+  toastInstance.show();
+
 
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
@@ -1073,19 +1100,36 @@ function placeOrder() {
       let response = request.responseText;
       let responseJson = JSON.parse(response);
       if (responseJson.status == "success") {
-        alert("Success");
+        // Display a success toast message
+        alert("sucess")
+
         placeOrderModal.hide();
         window.location.reload();
       } else if (responseJson.status == "failed") {
-        alert(responseJson.error);
+        // Display an error toast message
+        const toastContainer = document.querySelector('.toast-container');
+        const toast = document.getElementById('renderStartToastMessage');
+        const toastBody = toast.querySelector('.toast-body span');
+        toastBody.textContent = responseJson.error;
+
+        const toastInstance = new bootstrap.Toast(toast);
+        toastInstance.show();
       } else {
-        alert(response);
+        // Display a generic error toast message
+        const toastContainer = document.querySelector('.toast-container');
+        const toast = document.getElementById('renderStartToastMessage');
+        const toastBody = toast.querySelector('.toast-body span');
+        toastBody.textContent = response;
+
+        const toastInstance = new bootstrap.Toast(toast);
+        toastInstance.show();
       }
     }
   };
   request.open("POST", SERVER_URL + "backend/orderingProcess.php", true);
   request.send(form);
 }
+
 
 // function addStaticImage() {
 //   console.log("ihi");

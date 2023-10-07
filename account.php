@@ -37,6 +37,46 @@ if ($access->isLoggedIn()) {
   .bs:focus {
   border: 1px solid black; /* Change the border color when focused */
 }
+/* Extra small screens (phones, less than 576px) */
+@media (max-width: 575px) {
+  .container {
+    max-width: 90%;
+  }
+
+  
+
+  .form-group {
+    width: 100%;
+  }
+  ::placeholder{
+    font-size: 15px;
+  }
+  .responsive-col{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Small screens (tablets, less than 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+/* Medium screens (desktops, less than 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 98%;
+  }
+}
+
+/* Large screens (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 
 
 
@@ -51,21 +91,21 @@ if ($access->isLoggedIn()) {
         </div>
         <div class="container w-75"> 
         <form class="mx-5">
-    <div class="form-inline d-flex flex-row">
+    <div class="form-inline d-flex flex-row responsive-col">
         <input type="email" class="w-50 mx-2" id="firstNameInput" aria-describedby="emailHelp" placeholder="First Name" style="border: none; border-bottom: 1px solid black; border-radius: 0px; outline: none; background-color: white;">
         <input type="email" class="w-50" id="lastNameInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Last Name">
     </div>
-    <div class="form-inline d-flex flex-row mt-3">
+    <div class="form-inline d-flex flex-row mt-3  responsive-col">
         <input type="email" class="w-50 mx-2" id="telephoneInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Telephone">
         <button type="button" class="btn btn-danger" style="width: 100px;"  onclick="getUserData()">Edit</button>
     </div>
-    <div class="form-inline d-flex flex-row mt-5">
+    <div class="form-inline d-flex flex-row mt-5  responsive-col">
         <input type="email" class="bs w-100 mx-2" id="addressInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address">
     </div>
-    <div class="form-inline d-flex flex-row mt-5">
+    <div class="form-inline d-flex flex-row mt-5  responsive-col">
         <input type="email" class="w-100 mx-2" id="address2Input" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address 2">
     </div>
-    <div class="form-inline d-flex flex-row mt-5">
+    <div class="form-inline d-flex flex-row mt-5  responsive-col">
         <input type="email" class="w-50 mx-2" id="cityInput" aria-describedby="emailHelp" placeholder="City" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
         <input type="email" class="w-50 mx-2" id="provinceInput" aria-describedby="emailHelp" placeholder="Province" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
         <input type="email" class="w-50" id="postalCodeInput" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Postal Code">
@@ -82,11 +122,7 @@ if ($access->isLoggedIn()) {
     </div>
 
 
-    <footer class="footer bg-dark text-white">
-    <div class="container text-center">
-      <!-- Footer content goes here --> <p>this is just dummy contenet</p>
-    </div>
-  </footer>
+    
 
 <!-- Your content goes here -->
 

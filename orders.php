@@ -35,10 +35,69 @@ if ($access->isLoggedIn()) {
 
 </head>
 <style>
-  .shaddow {
-    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.2);
+  /* Default styles for all screen sizes */
+.shaddow {
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.2);
+}
 
+/* Styles for screens up to 578px wide */
+@media screen and (max-width: 578px) {
+  /* Example styles for smaller screens */
+  body {
+    font-size: 1px;
   }
+
+  #orderContainer {
+    padding: 20px;
+  }
+  .order-item{
+    color: red;
+  }
+  img{
+    width: 1%;
+  }
+}
+
+/* Styles for screens between 579px and 786px wide */
+@media screen and (min-width: 579px) and (max-width: 786px) {
+  /* Example styles for medium-sized screens */
+  body {
+    font-size: 1px;
+    color: red;
+    background-color: blue;
+  }
+  
+
+  #orderContainer {
+    padding: 30px;
+  }
+}
+
+/* Styles for screens between 787px and 992px wide */
+@media screen and (min-width: 787px) and (max-width: 992px) {
+  /* Example styles for larger screens */
+  body {
+    font-size: 18px;
+  }
+
+  #orderContainer {
+    padding: 40px;
+  }
+}
+
+/* Styles for screens between 993px and 1200px wide */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  /* Example styles for extra-large screens */
+  body {
+    font-size: 20px;
+  }
+  
+
+  #orderContainer {
+    padding: 50px;
+  }
+}
+
 </style>
 
 <body onload="loadOrderData()">
