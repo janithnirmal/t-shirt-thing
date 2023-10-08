@@ -707,7 +707,7 @@ if ($access->isLoggedIn()) {
                                                                             <div class="fs-5 text-center">Line Color & Thickness</div>
                                                                             <div class="d-flex justify-content-between">
                                                                                 <input id="neckStripLinePreviewColorInput" onchange="updateneckStripData(event, 'color')" type="color" class="form-control" style="width: 50px; height: 50px;" class="rounded-pill" />
-                                                                                <input id="neckStripLinePreviewThicknessInput" onchange="updateneckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="3">
+                                                                                <input id="neckStripLinePreviewThicknessInput" onchange="updateneckStripData(event, 'thickness')" type="number" class="form-control" min="1" max="4">
                                                                             </div>
                                                                         </div>
                                                                     </div>
