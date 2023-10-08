@@ -1262,7 +1262,7 @@ function showAlertOnce() {
 
 // Check screen width and trigger the alert if it's smaller than 768px
 function checkScreenSize() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 500) {
       showAlertOnce();
   }
 }
