@@ -1,5 +1,4 @@
- const SERVER_URL = "http://localhost/to%20do%20list/t-shirt-thing/";
-//const SERVER_URL = "";
+const SERVER_URL = "";
 // sign in view opned section name
 let openedSigninViewName = "sign-in";
 function signInModalViewChanger() {
@@ -191,7 +190,6 @@ function loadOrderData() {
           let responseObject = JSON.parse(response);
 
           if (responseObject.status == "success") {
-            console.log(responseObject);
             responseObject.data.forEach((element) => {
               let dataObject = JSON.parse(element.data_object);
 
@@ -339,13 +337,13 @@ function userData() {
     if (request.readyState == 4) {
       let response = request.responseText;
       console.log(response);
-      const toastContainer = document.querySelector('.toast-container');
-          const toast = document.getElementById('renderStartToastMessage');
-          const toastBody = toast.querySelector('.toast-body span');
-          toastBody.textContent = "Data added Sucessfully ";
-        
-          const toastInstance = new bootstrap.Toast(toast);
-          toastInstance.show();
+      const toastContainer = document.querySelector(".toast-container");
+      const toast = document.getElementById("renderStartToastMessage");
+      const toastBody = toast.querySelector(".toast-body span");
+      toastBody.textContent = "Data added Sucessfully ";
+
+      const toastInstance = new bootstrap.Toast(toast);
+      toastInstance.show();
     }
   };
 
@@ -413,14 +411,13 @@ function SignIn() {
           window.location.reload();
         } else {
           console.log(responseObject);
-          const toastContainer = document.querySelector('.toast-container');
-          const toast = document.getElementById('renderStartToastMessage');
-          const toastBody = toast.querySelector('.toast-body span');
+          const toastContainer = document.querySelector(".toast-container");
+          const toast = document.getElementById("renderStartToastMessage");
+          const toastBody = toast.querySelector(".toast-body span");
           toastBody.textContent = "Sign In Failed";
-        
+
           const toastInstance = new bootstrap.Toast(toast);
           toastInstance.show();
-        
         }
       } catch (error) {
         console.log(request.responseText);
@@ -442,7 +439,7 @@ function SignUp() {
       try {
         responseObject = JSON.parse(request.responseText);
         if (responseObject.status === "success") {
-          alert('Please Check your email for verification link!');
+          alert("Please Check your email for verification link!");
           window.location.reload();
         } else if (responseObject.status === "failed") {
           console.log(responseObject.error);
@@ -1072,10 +1069,11 @@ function placeOrderModalOpen() {
 function placeOrder() {
   if (!dataObject.sizeQuntitySets || dataObject.sizeQuntitySets.length === 0) {
     // Display a toast message for empty size and quantity sets
-    const toastContainer = document.querySelector('.toast-container');
-    const toast = document.getElementById('renderStartToastMessage');
-    const toastBody = toast.querySelector('.toast-body span');
-    toastBody.textContent = "Size and quantity sets are empty. Please add size and quantity before you press order button.";
+    const toastContainer = document.querySelector(".toast-container");
+    const toast = document.getElementById("renderStartToastMessage");
+    const toastBody = toast.querySelector(".toast-body span");
+    toastBody.textContent =
+      "Size and quantity sets are empty. Please add size and quantity before you press order button.";
 
     const toastInstance = new bootstrap.Toast(toast);
     toastInstance.show();
@@ -1085,14 +1083,13 @@ function placeOrder() {
   form.append("image", JSON.stringify(imageDataForOrder));
   form.append("dataObject", JSON.stringify(dataObject));
 
-  const toastContainer = document.querySelector('.toast-container');
-  const toast = document.getElementById('renderStartToastMessage');
-  const toastBody = toast.querySelector('.toast-body span');
+  const toastContainer = document.querySelector(".toast-container");
+  const toast = document.getElementById("renderStartToastMessage");
+  const toastBody = toast.querySelector(".toast-body span");
   toastBody.textContent = "please wait few seconds";
 
-  const toastInstance = new bootstrap.Toast(toast , { delay: 5000 });
+  const toastInstance = new bootstrap.Toast(toast, { delay: 5000 });
   toastInstance.show();
-
 
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
@@ -1101,24 +1098,24 @@ function placeOrder() {
       let responseJson = JSON.parse(response);
       if (responseJson.status == "success") {
         // Display a success toast message
-        alert("sucess")
+        alert("sucess");
 
         placeOrderModal.hide();
         window.location.reload();
       } else if (responseJson.status == "failed") {
         // Display an error toast message
-        const toastContainer = document.querySelector('.toast-container');
-        const toast = document.getElementById('renderStartToastMessage');
-        const toastBody = toast.querySelector('.toast-body span');
+        const toastContainer = document.querySelector(".toast-container");
+        const toast = document.getElementById("renderStartToastMessage");
+        const toastBody = toast.querySelector(".toast-body span");
         toastBody.textContent = responseJson.error;
 
         const toastInstance = new bootstrap.Toast(toast);
         toastInstance.show();
       } else {
         // Display a generic error toast message
-        const toastContainer = document.querySelector('.toast-container');
-        const toast = document.getElementById('renderStartToastMessage');
-        const toastBody = toast.querySelector('.toast-body span');
+        const toastContainer = document.querySelector(".toast-container");
+        const toast = document.getElementById("renderStartToastMessage");
+        const toastBody = toast.querySelector(".toast-body span");
         toastBody.textContent = response;
 
         const toastInstance = new bootstrap.Toast(toast);
@@ -1129,7 +1126,6 @@ function placeOrder() {
   request.open("POST", SERVER_URL + "backend/orderingProcess.php", true);
   request.send(form);
 }
-
 
 // function addStaticImage() {
 //   console.log("ihi");
