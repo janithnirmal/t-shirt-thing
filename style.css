@@ -1379,8 +1379,8 @@ nav i {
 
 /* Add more styles as needed for additional order details */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
   body {
-      transform: scale(0.1); /* Zoom out to 80% when screen width is 768px or less */
+      transform: scale(0.5); /* Zoom out to 80% when screen width is 768px or less */
   }
 }
