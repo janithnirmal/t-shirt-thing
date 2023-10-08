@@ -220,7 +220,26 @@ let clothTextImageObject = {
         leftMargin: 220,
       },
     ],
-    
+    left: [
+      {
+        canvasId: "bottom-5",
+        canvasWidth: 50,
+        canvasHeight: 100,
+        topMargin: 70,
+        leftMargin: 160,
+      },
+     
+    ],
+    right: [
+      {
+        canvasId: "bottom-5",
+        canvasWidth: 50,
+        canvasHeight: 100,
+        topMargin: 70,
+        leftMargin: 190,
+      },
+     
+    ],
   },
   short: {
     front: [
@@ -438,7 +457,7 @@ let clothTextImageObject = {
         canvasWidth: 30,
         canvasHeight: 70,
         topMargin: 180,
-        leftMargin: 130,
+        leftMargin: 160,
       },
     ],
   },
