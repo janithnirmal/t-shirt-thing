@@ -1244,3 +1244,23 @@ function toggleClothCombinationPanel() {
     toggleClothCombinationPanelToggleStatus = true;
   }
 }
+
+
+
+
+function showAlert() {
+  window.alert("For better user experience please zoom out your screen");
+}
+
+// Check screen width and trigger the alert if it's smaller than 768px
+function checkScreenSize() {
+  if (window.innerWidth <= 768) {
+      showAlert();
+  }
+}
+
+// Attach an event listener to the window's resize event
+window.addEventListener("resize", checkScreenSize);
+
+// Check screen size when the page loads
+checkScreenSize();

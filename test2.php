@@ -28,33 +28,29 @@
 </head>
 <body>
 
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header d-flex gap-2">
-            <div class="spinner-grow text-warning" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <strong class="me-auto">Saving Design</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            <span>Wait for a few seconds.....</span>
-        </div>
-    </div>
-</div>
+
 
 <button id="showToastButton" class="btn btn-primary">Show Toast</button>
 
 <script>
-    // Get a reference to the toast element and the button
-    const toast = document.getElementById('renderStartToastMessage');
-    const showToastButton = document.getElementById('showToastButton');
+   // Function to display an alert message
+function showAlert() {
+    window.alert("This is a message for small screens (less than 768px).");
+}
 
-    // Add an event listener to the button to display the toast
-    showToastButton.addEventListener('click', () => {
-        const toastInstance = new bootstrap.Toast(toast); // Initialize the Bootstrap Toast
-        toastInstance.show(); // Show the toast
-    });
+// Check screen width and trigger the alert if it's smaller than 768px
+function checkScreenSize() {
+    if (window.innerWidth <= 768) {
+        showAlert();
+    }
+}
+
+// Attach an event listener to the window's resize event
+window.addEventListener("resize", checkScreenSize);
+
+// Check screen size when the page loads
+checkScreenSize();
+
 </script>
 
 </body>
