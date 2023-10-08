@@ -1249,9 +1249,9 @@ function toggleClothCombinationPanel() {
 
 
 
-// Function to display an alert message if it has not been shown before
+
 function showAlertOnce() {
-  // Check if a flag exists in local storage indicating that the alert has been shown
+  
   if (!localStorage.getItem("alertShown")) {
       window.alert("For a better user experience, please zoom out your screen.");
 
@@ -1260,7 +1260,6 @@ function showAlertOnce() {
   }
 }
 
-// Check screen width and trigger the alert if it's smaller than 768px
 function checkScreenSize() {
   if (window.innerWidth <= 500) {
       showAlertOnce();
