@@ -663,10 +663,10 @@ if ($access->isLoggedIn()) {
 
                                                 <!-- image text  -->
                                                 <div class="image-text-container " id="imageTextContainer">
-                                                    <div data-type="textimage" data-side="front" id="canvasOverlyFront" class="d-block position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
-                                                    <div data-type="textimage" data-side="back" id="canvasOverlyBack" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
-                                                    <div data-type="textimage" data-side="left" id="canvasOverlyLeft" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
-                                                    <div data-type="textimage" data-side="right" id="canvasOverlyRight" class="d-none position-absolute    canvas-overly" style="width: 400px; height: 540px;"></div>
+                                                    <div data-type="textimage" data-side="front" id="canvasOverlyFront" class="d-block position-absolute    canvas-overly"></div>
+                                                    <div data-type="textimage" data-side="back" id="canvasOverlyBack" class="d-none position-absolute    canvas-overly"></div>
+                                                    <div data-type="textimage" data-side="left" id="canvasOverlyLeft" class="d-none position-absolute    canvas-overly"></div>
+                                                    <div data-type="textimage" data-side="right" id="canvasOverlyRight" class="d-none position-absolute    canvas-overly"></div>
                                                 </div>
 
                                                 <div class="image-text-controller-icons position-absolute">

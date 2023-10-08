@@ -69,6 +69,11 @@ nav i {
 }
 
 .canvas-overly {
+  width: 400px;
+  height: 540px;
+
+  width: 100%;
+  height: 100%;
   pointer-events: none; /* Make the overlay click-through */
 }
 
@@ -201,7 +206,6 @@ nav i {
 }
 
 .right-side-box1 {
-  
   margin: 5px 0;
   position: relative;
 }
@@ -1320,21 +1324,6 @@ nav i {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Modern styling for larger order cards */
 .order-item {
   border: 1px solid #000000;
@@ -1368,7 +1357,6 @@ nav i {
 
 /* Styling for order details */
 .order-details {
-  
 }
 
 .order-details p {
@@ -1378,4 +1366,3 @@ nav i {
 }
 
 /* Add more styles as needed for additional order details */
-
