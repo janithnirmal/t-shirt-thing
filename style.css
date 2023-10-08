@@ -1381,6 +1381,6 @@ nav i {
 
 @media screen and (max-width: 768px) {
   body {
-      transform: scale(0.8); /* Zoom out to 80% when screen width is 768px or less */
+      transform: scale(0.95); /* Zoom out to 80% when screen width is 768px or less */
   }
 }
