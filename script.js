@@ -1078,6 +1078,7 @@ function placeOrder() {
     const toastInstance = new bootstrap.Toast(toast);
     toastInstance.show();
     return; // Do not make a request to the database
+    
   }
   let form = new FormData();
   form.append("image", JSON.stringify(imageDataForOrder));
@@ -1248,14 +1249,21 @@ function toggleClothCombinationPanel() {
 
 
 
-function showAlert() {
-  window.alert("For better user experience please zoom out your screen");
+// Function to display an alert message if it has not been shown before
+function showAlertOnce() {
+  // Check if a flag exists in local storage indicating that the alert has been shown
+  if (!localStorage.getItem("alertShown")) {
+      window.alert("For better user experience please zoom out your screen");
+
+      // Set a flag in local storage to indicate that the alert has been shown
+      localStorage.setItem("alertShown", "true");
+  }
 }
 
 // Check screen width and trigger the alert if it's smaller than 768px
 function checkScreenSize() {
-  if (window.innerWidth <= 768) {
-      showAlert();
+  if (window.innerWidth <= 500) {
+      showAlertOnce();
   }
 }
 
