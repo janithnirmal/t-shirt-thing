@@ -1253,7 +1253,7 @@ function toggleClothCombinationPanel() {
 function showAlertOnce() {
   // Check if a flag exists in local storage indicating that the alert has been shown
   if (!localStorage.getItem("alertShown")) {
-      window.alert("For better user experience please zoom out your screen");
+      window.alert("For a better user experience, please zoom out your screen.");
 
       // Set a flag in local storage to indicate that the alert has been shown
       localStorage.setItem("alertShown", "true");
@@ -1262,10 +1262,13 @@ function showAlertOnce() {
 
 // Check screen width and trigger the alert if it's smaller than 768px
 function checkScreenSize() {
-  if (window.innerWidth <= 500) {
+  if (window.innerWidth <= 768) {
       showAlertOnce();
   }
 }
+
+// Clear the alert flag in local storage when the page loads (to show the alert again)
+localStorage.removeItem("alertShown");
 
 // Attach an event listener to the window's resize event
 window.addEventListener("resize", checkScreenSize);
