@@ -220,6 +220,7 @@ let clothTextImageObject = {
         leftMargin: 220,
       },
     ],
+    
   },
   short: {
     front: [
