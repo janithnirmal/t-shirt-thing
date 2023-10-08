@@ -16,7 +16,7 @@ class database_driver
         //   $password = 'JanithNirmal12#$'; // update janith
         //  $password = 'KaviskaDilshan12#$'; // update janith
 
-        $database = 't_shirt_design_app_db'; // update your own
+        // $database = 't_shirt_design_app_db'; // update your own
 
         // Connect to the database using mysqli
         $this->connection = new mysqli($host, $user, $password, $database);
