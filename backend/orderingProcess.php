@@ -68,129 +68,334 @@ ob_start();
         }
 
         th,
-        td {
+        td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+" {
             border: 1px solid #e0e0e0;
             padding: 10px;
             text-align: left;
+            vertical-align: top;
+
         }
 
         th {
             background-color: #f5f5f5;
             font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
         }
 
-        td {
-            vertical-align: top;
-        }
+       
     </style>
-    <div class="container">
-        <h2>Main Data</h2>
+    <div class="container" style="max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;">
+        <h2 style=" text-align: center;
+            margin-bottom: 20px;">Main Data</h2>
 
-        <table>
+        <table style="  border-collapse: collapse;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);"
             <tr>
-                <th>Variable</th>
-                <th>Value</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">Variable</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">Value</th>
             </tr>
             <tr>
-                <td>Gender</td>
-                <td><?php echo $gender; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">Gender</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $gender; ?></td >
             </tr>
             <tr>
-                <td>Cloth Type</td>
-                <td><?php echo $clothType; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">Cloth Type</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $clothType; ?></td >
             </tr>
             <tr>
-                <td>Print Type</td>
-                <td><?php echo $printType; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">Print Type</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $printType; ?></td >
             </tr>
             <tr>
-                <td>Main Color Hue Value</td>
-                <td><?php echo $mainColorHueValue; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">Main Color Hue Value</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $mainColorHueValue; ?></td >
             </tr>
             <tr>
-                <td>Main Color Saturate Value</td>
-                <td><?php echo $mainColorSaturateValue; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">Main Color Saturate Value</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $mainColorSaturateValue; ?></td >
             </tr>
             <tr>
-                <td>Main Color Level Value</td>
-                <td><?php echo $mainColorLevelValue; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">Main Color Level Value</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $mainColorLevelValue; ?></td >
             </tr>
             <tr>
-                <td>sleve type</td>
-                <td><?php echo $clothOptionSleves; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">sleve type</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $clothOptionSleves; ?></td >
             </tr>
             <tr>
-                <td>neck type</td>
-                <td><?php echo $clothOptionNeck; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">neck type</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $clothOptionNeck; ?></td >
             </tr>
             <tr>
-                <td>button type</td>
-                <td><?php echo $clothOptionButtons; ?></td>
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+">button type</td >
+                <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $clothOptionButtons; ?></td >
             </tr>
 
         </table>
-        <table>
-            <h2>Quntity Data</h2>
+        <table style="  border-collapse: collapse;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h2 style=" text-align: center;
+            margin-bottom: 20px;">Quntity Data</h2>
 
             <tr>
-                <th>Timestamp</th>
-                <th>Gender</th>
-                <th>Material</th>
-                <th>XS</th>
-                <th>S</th>
-                <th>M</th>
-                <th>L</th>
-                <th>XL</th>
-                <th>DoubleXXL</th>
-                <th>ThribbleXXL</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">Timestamp</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">Gender</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">Material</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">XS</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">S</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">M</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">L</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">XL</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">DoubleXXL</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">ThribbleXXL</th>
             </tr>
             <?php foreach ($sizeQuantitySets as $set) { ?>
                 <tr>
-                    <th>Variable</th>
-                    <th>Value</th>
+                    <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">Variable</th>
+                    <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">Value</th>
                 </tr>
 
             <?php } ?>
         </table>
-        <table>
-            <h2>Neck Line Data</h2>
+        <table style="  border-collapse: collapse;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h2 style=" text-align: center;
+            margin-bottom: 20px;">Neck Line Data</h2>
 
             <tr>
-                <th>colour</th>
-                <th>thickness</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">colour</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">thickness</th>
             </tr>
             <?php foreach ($stripsNeck as $setp) { ?>
                 <tr>
-                    <td><?php echo $setp->color; ?></td>
-                    <td><?php echo $setp->thickness; ?></td>
+                    <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $setp->color; ?></td >
+                    <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $setp->thickness; ?></td >
                 </tr>
             <?php } ?>
         </table>
-        <table>
-            <h2>Arm Line Data</h2>
+        <table style="  border-collapse: collapse;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h2 style=" text-align: center;
+            margin-bottom: 20px;">Arm Line Data</h2>
 
             <tr>
-                <th>colour</th>
-                <th>thickness</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">colour</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">thickness</th>
             </tr>
             <?php foreach ($stripsArm as $setpo) { ?>
                 <tr>
-                    <td><?php echo $setpo->color; ?></td>
-                    <td><?php echo $setpo->thickness; ?></td>
+                    <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $setpo->color; ?></td >
+                    <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $setpo->thickness; ?></td >
                 </tr>
             <?php } ?>
         </table>
-        <table>
-            <h2>Side Line Data</h2>
+        <table style="  border-collapse: collapse;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h2 style=" text-align: center;
+            margin-bottom: 20px;">Side Line Data</h2>
 
             <tr>
-                <th>colour</th>
-                <th>thickness</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">thickness</th>
+                <th style="background-color: #f5f5f5;
+            font-weight: bold;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;">colour</th>
             </tr>
             <?php foreach ($stripsSides as $setpm) { ?>
                 <tr>
-                    <td><?php echo $setpm->color; ?></td>
-                    <td><?php echo $setpm->thickness; ?></td>
+                    <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $setpm->color; ?></td >
+                    <td style=" border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+"><?php echo $setpm->thickness; ?></td >
                 </tr>
             <?php } ?>
         </table>
