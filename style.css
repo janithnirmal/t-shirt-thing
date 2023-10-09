@@ -1366,10 +1366,6 @@ nav i {
   border-radius: 8px;
 }
 
-/* Styling for order details */
-.order-details {
-  
-}
 
 .order-details p {
   margin: 8px 0;
@@ -1377,11 +1373,5 @@ nav i {
   color: #fff;
 }
 
-/* Add more styles as needed for additional order details */
 
-/* Custom modal size for extra-small screens */
-@media (max-width: 575.98px) {
-  #savedDesignModel{
-    width: 15%;
-  }
-}
+

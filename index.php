@@ -1053,7 +1053,7 @@ if ($access->isLoggedIn()) {
                             <div class="model-container">
                                 <div class="modal fade" id="signInModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
+                                        <div class="modal-content modal-custom-height">
 
                                             <div class="modal-body">
                                                 <div class="row" id="signInModalSignInSection">
