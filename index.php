@@ -154,7 +154,7 @@ if ($access->isLoggedIn()) {
 
                                             <div class="produtModelContainer">
                                                 <div class="modal" tabindex="-1" id="productControlModel">
-                                                    <div class="modal-dialog">
+                                                    <div class="modal-dialog modal-fullscreen-md-down">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -377,7 +377,7 @@ if ($access->isLoggedIn()) {
                                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
                                                 <!-- Modal -->
                                                 <div class="modal fade " id="addTextModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
+                                                    <div class="modal-dialog modal-fullscreen-md-down">
                                                         <div class="modal-content" style="background-color: #e3e8ce;">
                                                             <div class="modal-header">
                                                                 <p class="modal-title fs-3 fw-bold text-center" id="exampleModalLabel">Edit Text</p>
@@ -533,7 +533,7 @@ if ($access->isLoggedIn()) {
                                     ?>
                                     <!-- ordering modal -->
                                     <div class=" modal" tabindex="-1" id="orderNowModal">
-                                                    <div class="modal-dialog">
+                                                    <div class="modal-dialog modal-fullscreen-md-down">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title">Ordering Process</h5>
@@ -877,7 +877,7 @@ if ($access->isLoggedIn()) {
 
                                                     <div id="colorControlModelContainer">
                                                         <div class="modal" tabindex="-1" id="colorControlModel">
-                                                            <div class="modal-dialog">
+                                                            <div class="modal-dialog ">
                                                                 <div class="modal-content  border border-1 border-secondary m-3">
                                                                     <div class="modal-header">
                                                                         <h5 class="modal-title text-center">Select A Color</h5>
@@ -921,7 +921,7 @@ if ($access->isLoggedIn()) {
                                                         </button>
 
                                                         <div class="modal" tabindex="-1" id="sizeQuantityModel">
-                                                            <div class="modal-dialog">
+                                                            <div class="modal-dialog modal-fullscreen-md-down">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
                                                                         <h5 class="modal-title">Select your combination.</h5>
@@ -1051,7 +1051,7 @@ if ($access->isLoggedIn()) {
                             <!-- models -->
                             <div class="model-container">
                                 <div class="modal fade" id="signInModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
                                         <div class="modal-content modal-custom-height">
 
                                             <div class="modal-body">

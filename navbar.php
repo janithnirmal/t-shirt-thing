@@ -118,7 +118,7 @@ if ($access->isLoggedIn()) {
 
             <!-- modals -->
             <div class="modal" tabindex="-1" id="savedDesignModel">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-fullscreen-md-down">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Saved Designs</h5>
