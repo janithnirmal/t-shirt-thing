@@ -193,36 +193,36 @@ function loadOrderData() {
             responseObject.data.forEach((element) => {
               console.log(element);
               let dataObject = JSON.parse(element.data_object);
-              container.innerHTML = dataObject;
-              // // Create a container for each order
-              // let orderContainer = document.createElement("div");
-              // orderContainer.classList.add("order-item");
+              // container.innerHTML = dataObject;
+              // Create a container for each order
+              let orderContainer = document.createElement("div");
+              orderContainer.classList.add("order-item");
 
-              // // Create an image element for the front image
-              // let frontImage = document.createElement("img");
-              // frontImage.classList.add("saved-design-item-images");
-              // frontImage.width = "200px";
-              // frontImage.src =
-              //   "backend/ordered_design_images/" +
-              //   element.id +
-              //   "dataURLFront.png"; // Set the image source dynamically
-              // orderContainer.appendChild(frontImage);
+              // Create an image element for the front image
+              let frontImage = document.createElement("img");
+              frontImage.classList.add("saved-design-item-images");
+              frontImage.width = "200px";
+              frontImage.src =
+                "backend/ordered_design_images/" +
+                element.id +
+                "dataURLFront.png"; // Set the image source dynamically
+              orderContainer.appendChild(frontImage);
 
-              // // Display order details
-              // let orderDetails = document.createElement("div");
-              // orderDetails.classList.add("order-details");
-              // orderDetails.innerHTML = `
-              //   <div class="d-flex flex-column">
-              //     <p><strong>Ordered Datetime:</strong> ${element.ordered_datetime}</p>
-              //     <p><strong>Gender:</strong> ${element.gender}</p>
-              //     <p><strong>Cloth Type:</strong> ${dataObject.clothType}</p>
-              //     <p><strong>Print Type:</strong> ${dataObject.printType}</p>
-              //   </div>
-              // `;
-              // orderContainer.appendChild(orderDetails);
+              // Display order details
+              let orderDetails = document.createElement("div");
+              orderDetails.classList.add("order-details");
+              orderDetails.innerHTML = `
+                <div class="d-flex flex-column">
+                  <p><strong>Ordered Datetime:</strong> ${element.ordered_datetime}</p>
+                  <p><strong>Gender:</strong> ${element.gender}</p>
+                  <p><strong>Cloth Type:</strong> ${dataObject.clothType}</p>
+                  <p><strong>Print Type:</strong> ${dataObject.printType}</p>
+                </div>
+              `;
+              orderContainer.appendChild(orderDetails);
 
-              // // Append the order container to the main container
-              // container.appendChild(orderContainer);
+              // Append the order container to the main container
+              container.appendChild(orderContainer);
             });
           } else if (responseObject.status == "failed") {
             console.log(responseObject.error);
