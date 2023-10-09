@@ -772,13 +772,14 @@ function applyFontSize(newFontSize) {
 let addTextModel;
 function openTextPanel() {
   if (!selectedInputCanvas) {
-    const toastContainer = document.querySelector('.toast-container');
-    const toast = document.getElementById('renderStartToastMessage');
-    const toastBody = toast.querySelector('.toast-body span');
+    const toastContainer = document.querySelector(".toast-container");
+    const toast = document.getElementById("renderStartToastMessage");
+    const toastBody = toast.querySelector(".toast-body span");
     toastBody.textContent = "Please Select area to add text  ";
-  
+
     const toastInstance = new bootstrap.Toast(toast);
-    toastInstance.show();   } else {
+    toastInstance.show();
+  } else {
     addTextModel = new bootstrap.Modal("#addTextModel");
     addTextModel.show();
   }
@@ -788,15 +789,14 @@ function openTextPanel() {
 let addImageModel;
 function openImageModel() {
   if (!selectedInputCanvas) {
-    const toastContainer = document.querySelector('.toast-container');
-    const toast = document.getElementById('renderStartToastMessage');
-    const toastBody = toast.querySelector('.toast-body span');
+    const toastContainer = document.querySelector(".toast-container");
+    const toast = document.getElementById("renderStartToastMessage");
+    const toastBody = toast.querySelector(".toast-body span");
     toastBody.textContent = "Please Select area to add text  ";
-  
+
     const toastInstance = new bootstrap.Toast(toast);
-    toastInstance.show(); 
-   } 
-    else {
+    toastInstance.show();
+  } else {
     addImageModel = new bootstrap.Modal("#addImageModel");
     addImageModel.show();
   }
@@ -812,6 +812,17 @@ function addImageToSelectedCanvas() {
   let imageFile = document.getElementById("imageAddingInput").files[0];
   generateDataUrlFromInputImage(imageFile, function (dataUrl) {
     imageGenerator(selectedInputCanvas, dataUrl);
+
+    for (let u = 0; u < allCanvasElements.length; u++) {
+      console.log(dataObject.views.generatedTextData)
+      dataObject.views.generatedTextData.forEach((element) => {
+        console.log("done");
+        if (element.id === allCanvasElements[u].lowerCanvasEl.id) {
+          element.data = JSON.stringify(selectedInputCanvas);
+          console.log("done");
+        }
+      });
+    }
   });
 
   addImageModel.hide();

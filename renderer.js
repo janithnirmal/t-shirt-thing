@@ -228,7 +228,6 @@ let clothTextImageObject = {
         topMargin: 70,
         leftMargin: 160,
       },
-     
     ],
     right: [
       {
@@ -238,7 +237,6 @@ let clothTextImageObject = {
         topMargin: 70,
         leftMargin: 190,
       },
-     
     ],
   },
   short: {
@@ -1702,7 +1700,7 @@ function stripDrawerShort(ctx, stripObjects, side) {
           sidesStripsArray[1].thickness,
           sidesStripsArray[1].color
         );
-      }else if (x == 2) {
+      } else if (x == 2) {
         drawLine(
           ctx,
           165,
@@ -2010,13 +2008,13 @@ function size() {
   document.getElementById("2xl").value = "";
   document.getElementById("3xl").value = "";
 
-  const toastContainer = document.querySelector('.toast-container');
-          const toast = document.getElementById('renderStartToastMessage');
-          const toastBody = toast.querySelector('.toast-body span');
-          toastBody.textContent = "Data added Sucessfuly";
-        
-          const toastInstance = new bootstrap.Toast(toast);
-          toastInstance.show();
+  const toastContainer = document.querySelector(".toast-container");
+  const toast = document.getElementById("renderStartToastMessage");
+  const toastBody = toast.querySelector(".toast-body span");
+  toastBody.textContent = "Data added Sucessfuly";
+
+  const toastInstance = new bootstrap.Toast(toast);
+  toastInstance.show();
 
   const spans = document.querySelectorAll(".right-side-box-num");
 
@@ -2028,8 +2026,6 @@ function size() {
     const value = parseFloat(content) || 0; // Convert the content to a number, default to 0 if conversion fails
     totals += value;
   });
-
-
 
   // Set the display property of the button based on the total value
 }
@@ -2108,8 +2104,6 @@ function getSelectedBudget() {
 //
 //
 
-
-
 function saveCurrentDesign(isOrder = false, callback) {
   renderStartEffects();
 
@@ -2167,6 +2161,8 @@ function saveCurrentDesign(isOrder = false, callback) {
 
     dataObject.views.active = "front"; // set default view
     viewChange("front");
+    // console.log(dataObject.views.generatedTextData);
+    console.log(allCanvasElements);
 
     if (!isOrder) {
       let form = new FormData();
@@ -2180,7 +2176,7 @@ function saveCurrentDesign(isOrder = false, callback) {
             let response = JSON.parse(request.responseText);
             if (response.status == "success") {
               alert("Successfully saved");
-              window.location.reload();
+              // window.location.reload();
             } else if (response.status == "failed") {
               alert(response.error);
             }
