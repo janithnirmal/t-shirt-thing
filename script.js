@@ -191,36 +191,38 @@ function loadOrderData() {
 
           if (responseObject.status == "success") {
             responseObject.data.forEach((element) => {
+              console.log(element);
               let dataObject = JSON.parse(element.data_object);
+              container.innerHTML = dataObject;
+              // // Create a container for each order
+              // let orderContainer = document.createElement("div");
+              // orderContainer.classList.add("order-item");
 
-              // Create a container for each order
-              let orderContainer = document.createElement("div");
-              orderContainer.classList.add("order-item");
+              // // Create an image element for the front image
+              // let frontImage = document.createElement("img");
+              // frontImage.classList.add("saved-design-item-images");
+              // frontImage.width = "200px";
+              // frontImage.src =
+              //   "backend/ordered_design_images/" +
+              //   element.id +
+              //   "dataURLFront.png"; // Set the image source dynamically
+              // orderContainer.appendChild(frontImage);
 
-              // Create an image element for the front image
-              let frontImage = document.createElement("img");
-              frontImage.classList.add("saved-design-item-images");
-              frontImage.width = "200px";
-              frontImage.src =
-                "backend/ordered_design_images/" +
-                element.id +
-                "dataURLFront.png"; // Set the image source dynamically
-              orderContainer.appendChild(frontImage);
+              // // Display order details
+              // let orderDetails = document.createElement("div");
+              // orderDetails.classList.add("order-details");
+              // orderDetails.innerHTML = `
+              //   <div class="d-flex flex-column">
+              //     <p><strong>Ordered Datetime:</strong> ${element.ordered_datetime}</p>
+              //     <p><strong>Gender:</strong> ${element.gender}</p>
+              //     <p><strong>Cloth Type:</strong> ${dataObject.clothType}</p>
+              //     <p><strong>Print Type:</strong> ${dataObject.printType}</p>
+              //   </div>
+              // `;
+              // orderContainer.appendChild(orderDetails);
 
-              // Display order details
-              let orderDetails = document.createElement("div");
-              orderDetails.classList.add("order-details");
-              orderDetails.innerHTML = `
-                <p><strong>Ordered Datetime:</strong> ${element.ordered_datetime}</p>
-                <p><strong>Gender:</strong> ${element.gender}</p>
-                <p><strong>Cloth Type:</strong> ${dataObject.clothType}</p>
-                <p><strong>Print Type:</strong> ${dataObject.printType}</p>
-                <!-- Add more order details here as needed -->
-              `;
-              orderContainer.appendChild(orderDetails);
-
-              // Append the order container to the main container
-              container.appendChild(orderContainer);
+              // // Append the order container to the main container
+              // container.appendChild(orderContainer);
             });
           } else if (responseObject.status == "failed") {
             console.log(responseObject.error);
@@ -1249,17 +1251,17 @@ function toggleClothCombinationPanel() {
 function showAlertOnce() {
   // Check if a flag exists in local storage indicating that the alert has been shown
   if (!localStorage.getItem("alertShown")) {
-      window.alert("For a better user experience, please zoom out your screen.");
+    window.alert("For a better user experience, please zoom out your screen.");
 
-      // Set a flag in local storage to indicate that the alert has been shown
-      localStorage.setItem("alertShown", "true");
+    // Set a flag in local storage to indicate that the alert has been shown
+    localStorage.setItem("alertShown", "true");
   }
 }
 
 // Check screen width and trigger the alert if it's smaller than 768px
 function checkScreenSize() {
   if (window.innerWidth <= 768) {
-      showAlertOnce();
+    showAlertOnce();
   }
 }
 

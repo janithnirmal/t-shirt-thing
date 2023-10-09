@@ -36,6 +36,12 @@ if ($access->isLoggedIn()) {
 
 </head>
 <style>
+  body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
   /* Default styles for all screen sizes */
   .shaddow {
     box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.2);
@@ -43,22 +49,13 @@ if ($access->isLoggedIn()) {
 
   /* Styles for screens up to 578px wide */
   @media screen and (max-width: 578px) {
-
-    /* Example styles for smaller screens */
-    body {
-      font-size: 1px;
-    }
-
     #orderContainer {
       padding: 20px;
     }
 
     .order-item {
+      width: 100%;
       color: red;
-    }
-
-    img {
-      width: 1%;
     }
   }
 
@@ -66,12 +63,6 @@ if ($access->isLoggedIn()) {
   @media screen and (min-width: 579px) and (max-width: 786px) {
 
     /* Example styles for medium-sized screens */
-    body {
-      font-size: 1px;
-      color: red;
-      background-color: blue;
-    }
-
 
     #orderContainer {
       padding: 30px;
@@ -106,19 +97,26 @@ if ($access->isLoggedIn()) {
   }
 </style>
 
-<body onload="loadOrderData()">
+<body onload="loadOrderData()" class="d-flex flex-column" style="height: 100vh;">
   <?php include 'navbar.php'; ?>
 
 
 
 
-  <div id="orderContainer" style="margin-top: 100px;" style="background-color: black;">
+  <section class="d-flex flex-grow-1">
+    <div class="container">
+      <div id="orderContainer" style="margin-top: 100px;" style="background-color: black;">
 
-  </div>
+      </div>
+    </div>
+  </section>
 
 
 
-  <!-- Your content goes here -->
+  <!-- footer -->
+  <footer class="py-2 bg-dark">
+    <p class="text-center text-white">2022 All rights reserved</p>
+  </footer>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

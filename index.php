@@ -936,13 +936,13 @@ if ($access->isLoggedIn()) {
                                                                                     <div class="w-100 d-flex">
                                                                                         <div class="w-50">
                                                                                             <input type="radio" id="combinationMen" name="combinationGender" />
-                                                                                            <label for="combinationMen" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
+                                                                                            <label for="combinationMen" class=" popup-btn w-75" style="background-color: #0c7ce5">
                                                                                                 Men
                                                                                             </label>
                                                                                         </div>
                                                                                         <div class="w-50">
                                                                                             <input type="radio" id="combinationWomen" name="combinationGender" />
-                                                                                            <label for="combinationWomen" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
+                                                                                            <label for="combinationWomen" class=" popup-btn w-75" style="background-color: #8e44ad">
                                                                                                 Woman
                                                                                             </label>
                                                                                         </div>
@@ -950,13 +950,13 @@ if ($access->isLoggedIn()) {
                                                                                     <div class="w-100 d-flex">
                                                                                         <div class="w-50">
                                                                                             <input type="radio" id="combinationBudget" name="combinationBudget" />
-                                                                                            <label for="combinationBudget" class="btn-style-remover popup-btn w-75" style="background-color: #0c7ce5">
+                                                                                            <label for="combinationBudget" class=" popup-btn w-75" style="background-color: #0c7ce5">
                                                                                                 Budget
                                                                                             </label>
                                                                                         </div>
                                                                                         <div class="w-50">
                                                                                             <input type="radio" id="combinationCoperate" name="combinationBudget" />
-                                                                                            <label for="combinationCoperate" class="btn-style-remover popup-btn w-75" style="background-color: #8e44ad">
+                                                                                            <label for="combinationCoperate" class=" popup-btn w-75" style="background-color: #8e44ad">
                                                                                                 Coperate
                                                                                             </label>
                                                                                         </div>
