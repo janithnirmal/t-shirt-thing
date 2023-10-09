@@ -1078,7 +1078,6 @@ function placeOrder() {
     const toastInstance = new bootstrap.Toast(toast);
     toastInstance.show();
     return; // Do not make a request to the database
-    
   }
   let form = new FormData();
   form.append("image", JSON.stringify(imageDataForOrder));
@@ -1246,31 +1245,28 @@ function toggleClothCombinationPanel() {
   }
 }
 
-
-
-
-
 function showAlertOnce() {
-  
   if (!localStorage.getItem("alertShown")) {
-      window.alert("For a better user experience, please zoom out your screen.");
+    window.alert("For a better user experience, please zoom out your screen.");
 
-      // Set a flag in local storage to indicate that the alert has been shown
-      localStorage.setItem("alertShown", "true");
+    // Set a flag in local storage to indicate that the alert has been shown
+    localStorage.setItem("alertShown", "true");
   }
 }
 
 function checkScreenSize() {
   if (window.innerWidth <= 500) {
-      showAlertOnce();
+    showAlertOnce();
   }
 }
 
 // Clear the alert flag in local storage when the page loads (to show the alert again)
 localStorage.removeItem("alertShown");
 
-// Attach an event listener to the window's resize event
-window.addEventListener("resize", checkScreenSize);
+document.addEventListener("DOMContentLoaded", () => {
+  // Attach an event listener to the window's resize event
+  window.addEventListener("resize", checkScreenSize);
 
-// Check screen size when the page loads
-checkScreenSize();
+  // Check screen size when the page loads
+  checkScreenSize();
+});
