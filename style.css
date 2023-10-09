@@ -1379,3 +1379,9 @@ nav i {
 
 /* Add more styles as needed for additional order details */
 
+/* Custom modal size for extra-small screens */
+@media (max-width: 575.98px) {
+  #savedDesignModel{
+    width: 15%;
+  }
+}
