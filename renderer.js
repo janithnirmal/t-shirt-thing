@@ -488,7 +488,7 @@ function productIdentifier() {
 
 // image Text render
 function imageTextSectionRenderer() {
-  console.log(allCanvasElements);
+  allCanvasElements = [];
   // front
   const frontArray = dataObject.views.imageTextContanerData.front;
   document.getElementById("canvasOverlyFront").innerHTML = "";
@@ -544,6 +544,8 @@ function imageTextSectionRenderer() {
       element.leftMargin
     );
   });
+
+  canvasToJson();
   //
   //
   //
@@ -850,12 +852,12 @@ function generateTextImageSections(sideId) {
   html2canvas(document.getElementById(sideId), {
     backgroundColor: "transparent",
   }).then((canvas) => {
-    const img = new Image();
-    img.src = canvas.toDataURL();
-    currentImageTextRenderViewImage = img;
-    let imageContainer = document.body;
-    // imageContainer.innerHTML = "";
-    imageContainer.appendChild(img);
+    // const img = new Image();
+    // img.src = canvas.toDataURL();
+    // currentImageTextRenderViewImage = img;
+    // let imageContainer = document.body;
+    // // imageContainer.innerHTML = "";
+    // imageContainer.appendChild(img);
   });
 }
 
@@ -1873,14 +1875,15 @@ function colorUpdate() {
 }
 
 function canvasToJson() {
+  let textImageArray = dataObject.views.generatedTextData;
   for (let u = 0; u < allCanvasElements.length; u++) {
-    let textImageArray = dataObject.views.generatedTextData;
     textImageArray.forEach((element) => {
       if (element.id === allCanvasElements[u].lowerCanvasEl.id) {
         element.data = JSON.stringify(allCanvasElements[u].toJSON());
       }
     });
   }
+  console.log(textImageArray);
 }
 
 //
