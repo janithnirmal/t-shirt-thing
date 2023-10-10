@@ -856,12 +856,12 @@ function generateTextImageSections(sideId) {
   html2canvas(document.getElementById(sideId), {
     backgroundColor: "transparent",
   }).then((canvas) => {
-    // const img = new Image();
-    // img.src = canvas.toDataURL();
-    // currentImageTextRenderViewImage = img;
-    // let imageContainer = document.body;
-    // // imageContainer.innerHTML = "";
-    // imageContainer.appendChild(img);
+    const img = new Image();
+    img.src = canvas.toDataURL();
+    currentImageTextRenderViewImage = img;
+    let imageContainer = document.body;
+    // imageContainer.innerHTML = "";
+    imageContainer.appendChild(img);
   });
 }
 
@@ -2124,22 +2124,22 @@ function getSelectedBudget() {
 //
 //
 
-function savindDataForOrder() {
-  const savedTextDataArray = [];
-  for (let u = 0; u < allCanvasElements.length; u++) {
-    let textData = {
-      id: allCanvasElements[u].lowerCanvasEl.id,
-      data: JSON.stringify(allCanvasElements[u].toJSON()),
-    };
+// function savindDataForOrder() {
+//   const savedTextDataArray = [];
+//   for (let u = 0; u < allCanvasElements.length; u++) {
+//     let textData = {
+//       id: allCanvasElements[u].lowerCanvasEl.id,
+//       data: JSON.stringify(allCanvasElements[u].toJSON()),
+//     };
 
-    savedTextDataArray.push(textData);
-  }
+//     savedTextDataArray.push(textData);
+//   }
 
-  dataObject.views.generatedTextData = savedTextDataArray;
-}
+//   dataObject.views.generatedTextData = savedTextDataArray;
+// }
 
 function saveCurrentDesign(isOrder = false, callback) {
-  savindDataForOrder();
+  // savindDataForOrder();
 
   renderStartEffects();
 
