@@ -805,6 +805,7 @@ function openImageModel() {
 function addTextToSelectedCanvas() {
   let inputText = document.getElementById("textAddingInput").value;
   textGenerator(selectedInputCanvas, inputText);
+
   addTextModel.hide();
 }
 
@@ -812,8 +813,8 @@ function addImageToSelectedCanvas() {
   let imageFile = document.getElementById("imageAddingInput").files[0];
   generateDataUrlFromInputImage(imageFile, function (dataUrl) {
     imageGenerator(selectedInputCanvas, dataUrl);
-    canvasToJson();
   });
+  
 
   addImageModel.hide();
 }

@@ -130,6 +130,7 @@ function openSavedDesignModal() {
           responseObject.data.forEach((element) => {
             let id = element.id;
             let designData = JSON.parse(element.design_data);
+            console.log(designData);
 
             let resultDesign = document.createElement("div");
             resultDesign.classList.add("saved-design-item");

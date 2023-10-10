@@ -488,7 +488,7 @@ function productIdentifier() {
 
 // image Text render
 function imageTextSectionRenderer() {
-  allCanvasElements = [];
+  // allCanvasElements = [];
   // front
   const frontArray = dataObject.views.imageTextContanerData.front;
   document.getElementById("canvasOverlyFront").innerHTML = "";
@@ -545,7 +545,7 @@ function imageTextSectionRenderer() {
     );
   });
 
-  canvasToJson();
+  // canvasToJson();
   //
   //
   //
@@ -741,6 +741,8 @@ function textGenerator(fabricElement, inputText, options = {}) {
     fabricElement.add(text);
     // textChanger(text);
     fabricElement.renderAll();
+
+    canvasToJson();
   }
 }
 
@@ -806,6 +808,8 @@ function imageGenerator(fabricElement, file, options = {}) {
 
       fabricElement.add(image);
       fabricElement.renderAll();
+
+      canvasToJson();
     };
 
     imgObj.src = dataURL;
@@ -1875,15 +1879,18 @@ function colorUpdate() {
 }
 
 function canvasToJson() {
-  let textImageArray = dataObject.views.generatedTextData;
+  let savedTextDataArray = [];
+
   for (let u = 0; u < allCanvasElements.length; u++) {
-    textImageArray.forEach((element) => {
-      if (element.id === allCanvasElements[u].lowerCanvasEl.id) {
-        element.data = JSON.stringify(allCanvasElements[u].toJSON());
-      }
-    });
+    let textData = {
+      id: allCanvasElements[u].lowerCanvasEl.id,
+      data: JSON.stringify(allCanvasElements[u].toJSON()),
+    };
+
+    savedTextDataArray.push(textData);
   }
-  console.log(textImageArray);
+  dataObject.views.generatedTextData = savedTextDataArray;
+  console.log(dataObject);
 }
 
 //
@@ -2117,7 +2124,23 @@ function getSelectedBudget() {
 //
 //
 
+function savindDataForOrder() {
+  const savedTextDataArray = [];
+  for (let u = 0; u < allCanvasElements.length; u++) {
+    let textData = {
+      id: allCanvasElements[u].lowerCanvasEl.id,
+      data: JSON.stringify(allCanvasElements[u].toJSON()),
+    };
+
+    savedTextDataArray.push(textData);
+  }
+
+  dataObject.views.generatedTextData = savedTextDataArray;
+}
+
 function saveCurrentDesign(isOrder = false, callback) {
+  savindDataForOrder();
+
   renderStartEffects();
 
   let dataURLFront;
