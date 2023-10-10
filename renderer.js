@@ -488,8 +488,7 @@ function productIdentifier() {
 
 // image Text render
 function imageTextSectionRenderer() {
-  allCanvasElements = []; // clear all canavas array
-
+  console.log(allCanvasElements);
   // front
   const frontArray = dataObject.views.imageTextContanerData.front;
   document.getElementById("canvasOverlyFront").innerHTML = "";
@@ -1873,6 +1872,17 @@ function colorUpdate() {
   render(dataObject);
 }
 
+function canvasToJson() {
+  for (let u = 0; u < allCanvasElements.length; u++) {
+    let textImageArray = dataObject.views.generatedTextData;
+    textImageArray.forEach((element) => {
+      if (element.id === allCanvasElements[u].lowerCanvasEl.id) {
+        element.data = JSON.stringify(allCanvasElements[u].toJSON());
+      }
+    });
+  }
+}
+
 //
 //
 //
@@ -2161,8 +2171,6 @@ function saveCurrentDesign(isOrder = false, callback) {
 
     dataObject.views.active = "front"; // set default view
     viewChange("front");
-    // console.log(dataObject.views.generatedTextData);
-    console.log(allCanvasElements);
 
     if (!isOrder) {
       let form = new FormData();

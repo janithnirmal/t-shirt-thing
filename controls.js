@@ -812,17 +812,7 @@ function addImageToSelectedCanvas() {
   let imageFile = document.getElementById("imageAddingInput").files[0];
   generateDataUrlFromInputImage(imageFile, function (dataUrl) {
     imageGenerator(selectedInputCanvas, dataUrl);
-
-    for (let u = 0; u < allCanvasElements.length; u++) {
-      console.log(dataObject.views.generatedTextData)
-      dataObject.views.generatedTextData.forEach((element) => {
-        console.log("done");
-        if (element.id === allCanvasElements[u].lowerCanvasEl.id) {
-          element.data = JSON.stringify(selectedInputCanvas);
-          console.log("done");
-        }
-      });
-    }
+    canvasToJson();
   });
 
   addImageModel.hide();
