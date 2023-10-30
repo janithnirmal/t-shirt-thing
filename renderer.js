@@ -2210,7 +2210,7 @@ function saveCurrentDesign(isOrder = false, callback) {
             let response = JSON.parse(request.responseText);
             if (response.status == "success") {
               alert("Successfully saved");
-              // window.location.reload();
+               window.location.reload();
             } else if (response.status == "failed") {
               alert(response.error);
             }

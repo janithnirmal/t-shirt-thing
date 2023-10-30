@@ -49,12 +49,126 @@ if ($access->isLoggedIn()) {
     include 'navbar.php';
     if (isset($loggedUserData["status"])) {
     ?>
-        <div class="section1 px-3">
-            <div class="container section1-layout d-flex justify-content-between align-items-center align-items-md-start flex-column flex-md-row ">
-                <!-- left side panel -->
-                <div class="section1-panel d-flex flex-md-column mt-3 mt-md-0 justify-content-center align-items-center section1-panel-sides side-panel-1 h-100 order-3 order-md-1 gap-2">
-                    <!-- box 1 -->
-                    <div class="basic-styling left-side-box1">
+
+
+
+
+<div style="margin-top: 50px;" class="container">
+    <!--Image-->
+<div class="d-flex justify-content-between">
+<div class="mb-4 d-flex justify-content-center mx-1 mt-3">
+    <!--img src="" alt="example placeholder" style="width: 250px;" /-->
+</div>
+<div class="d-flex justify-content-center mx-1 mt-3">
+    <span class="border border-primary" style="width: 250px; height: 350px; position: relative;">
+        <img id="imagePlaceholder" src="./images/sk.png"
+            alt="example placeholder" style="width: 200px; margin-left: 22px; margin-top: 40px;" />
+        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+            <div class="btn btn-primary btn-rounded border border-primary">
+                <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                <input type="file" class="form-control d-none" id="customFile1" accept="image/*" onchange="updateImage()" />
+            </div>
+        </div>
+    </span>
+</div>
+    <div class="mb-4 d-flex justify-content-center mx-1 mt-3">
+        <!--img src=""
+        alt="example placeholder" style="width: 250px;" /-->
+    </div>
+    <div class="d-flex justify-content-center mx-1 mt-3">
+    <span class="border border-primary" style="width: 250px; height: 350px; position: relative;">
+    <img src="./images/sk.png "
+        alt="example placeholder" style="width: 200px;margin-left:22px;margin-top:40px;" id="imagePlaceholder1"  />
+        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+            <div class="btn btn-primary btn-rounded border border-primary">
+                <label class="form-label text-white m-1" for="customFile2">Choose file</label>
+                <input type="file" class="form-control d-none" id="customFile2" onchange="updateImage1()" />
+            </div>
+        </div>
+    </span>
+</div>
+
+
+<div class="mb-4 d-flex justify-content-center mx-1 mt-3">
+        <!--img src=""
+        alt="example placeholder" style="width: 250px;" /-->
+    </div>
+    <div class="d-flex justify-content-center mx-1 mt-3">
+    <span class="border border-primary" style="width: 250px; height: 350px; position: relative;">
+    <img src="./images/sk.png "
+        alt="example placeholder" style="width: 200px;margin-left:22px;margin-top:40px;" id="imagePlaceholder2"  />
+        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+            <div class="btn btn-primary btn-rounded border border-primary">
+                <label class="form-label text-white m-1" for="customFile3">Choose file</label>
+                <input type="file" class="form-control d-none" id="customFile3" onchange="updateImage2()" />
+            </div>
+        </div>
+    </span>
+</div>
+
+<div class="mb-4 d-flex justify-content-center mx-1 mt-3">
+        <!--img src=""
+        alt="example placeholder" style="width: 250px;" /-->
+    </div>
+    <div class="d-flex justify-content-center mx-1 mt-3">
+    <span class="border border-primary" style="width: 250px; height: 350px; position: relative;">
+    <img src="./images/sk.png "
+        alt="example placeholder" style="width: 200px;margin-left:22px;margin-top:40px;" id="imagePlaceholder3"  />
+        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+            <div class="btn btn-primary btn-rounded border border-primary">
+                <label class="form-label text-white m-1" for="customFile4">Choose file</label>
+                <input type="file" class="form-control d-none" id="customFile4" onchange="updateImage3()" />
+            </div>
+        </div>
+    </span>
+</div>
+
+
+</div>
+<div class="d-flex justify-content-between mt-5">
+<button class="btn btn-primary btn-rounded border border-primary mx-5" id="submitButton" onclick="submitImages()" style="margin-left: 45%;font-size:20px;">Submit</button>
+<input type="text" class="form-control" placeholder="Enter title" id="presettitle">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container mt-4">
+
+
+
+<table style="border: 3px solid black; width: 100%;" id="presetTable">
+    <h1 style="margin-left: 42%;">PRESET</h1>
+
+       
+        
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
                     <?php
                 } else {
                     ?>
@@ -138,10 +252,7 @@ if ($access->isLoggedIn()) {
                                             </div>
                                         </div>
 
-                                    <?php
-                                }
-                                    ?>
-
+                                   
 
 
 
@@ -484,26 +595,14 @@ if ($access->isLoggedIn()) {
                                             </div>
                                         </div>
 
-                                        <?php if (isset($loggedUserData["status"])) {
-                                        ?>
-                                            <div class="list-group-item" id="btn8">
-                                                <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="saveCurrentDesign();">
-                                                    <i class="left-side-icons fas fa-download"></i>
-                                                    <p class="p-0 m-0">Save Preset</p>
-                                                </button>
-                                            </div>
-                                        <?php
-                                        } else {
-                                        ?>
+                                      
                                             <div class="list-group-item" id="btn8">
                                                 <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="saveCurrentDesign();">
                                                     <i class="left-side-icons fas fa-download"></i>
                                                     <p class="p-0 m-0">Save Design</p>
                                                 </button>
                                             </div>
-                                        <?php
-                                        }
-                                        ?>
+                                       
                                         <div class="list-group-item" id="btn10">
                                             <button class="btn-style-remover left-side-box-btn d-flex justify-content-center align-items-center py-1 px-2" onclick="openSavedDesignModals()">
                                                 <i class="left-side-icons fas fa-sliders-h"></i>
@@ -516,10 +615,7 @@ if ($access->isLoggedIn()) {
                                     <!-- size & qty -->
 
 
-                                    <?php
-                                    if (isset($loggedUserData["status"])) {
-                                    } else {
-                                    ?>
+                                   
                                         <div class="left-side-box3">
                                             <div class="pricetagcontainer">
                                                 <button class="pricetagbtn3box d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center p-2" onclick="placeOrderModalOpen();">
@@ -528,9 +624,7 @@ if ($access->isLoggedIn()) {
                                                 </button> 
                                             </div>
                                         </div>
-                                    <?php
-                                    }
-                                    ?>
+                                   
                                     <!-- ordering modal -->
                                     <div class=" modal" tabindex="-1" id="orderNowModal">
                                                     <div class="modal-dialog modal-fullscreen-md-down">
@@ -815,10 +909,7 @@ if ($access->isLoggedIn()) {
                                         <!-- right side panel -->
                                         <div class="section1-panel d-flex flex-row flex-md-column  section1-panel-sides side-panel-3 d-flex order-2 order-md-3  h-100 ">
                                             <!-- size & qty -->
-                                            <?php
-                                            if (isset($loggedUserData["status"])) {
-                                            } else {
-                                            ?>
+                                           
                                                 <div id="clothCombinationOptionViewerToggle" class="d-block d-md-none">
                                                     <i onclick="toggleClothCombinationPanel()" class="fas fa-shirt p-2 bg-secondary text-white rounded-5 my-2"></i>
                                                 </div>
@@ -863,9 +954,7 @@ if ($access->isLoggedIn()) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            <?php
-                                            }
-                                            ?>
+                                            
                                             <!-- color controls -->
                                             <div class="basic-styling big-box d-flex justify-content-center flex-column align-items-center">
                                                 <div class="dropdown">
@@ -906,9 +995,7 @@ if ($access->isLoggedIn()) {
 
 
 
-                                            <?php if (isset($loggedUserData["status"])) {
-                                            } else {
-                                            ?>
+                                            
                                                 <!-- size & qty -->
                                                 <div class="basic-styling big-box order-md-2 order-4">
                                                     <div class="d-flex-column" style="height: 100%">
@@ -1019,9 +1106,7 @@ if ($access->isLoggedIn()) {
 
                                                     </div>
                                                 </div>
-                                            <?php
-                                            }
-                                            ?>
+                                           
 
                                             <!-- navigation control -->
                                             <div class="basic-styling right-side-box2 order-md-4 order-3 d-flex justify-content-center align-items-center">
@@ -1144,6 +1229,9 @@ if ($access->isLoggedIn()) {
                             </div>
 
 
+                            <?php
+                                }
+                                    ?>
 
 
 

@@ -67,12 +67,8 @@ ob_start();
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        th,
-        td style=" border: 1px solid #e0e0e0;
-            padding: 10px;
-            text-align: left;
-            vertical-align: top;
-" {
+        th,td
+        {
             border: 1px solid #e0e0e0;
             padding: 10px;
             text-align: left;

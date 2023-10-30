@@ -284,7 +284,7 @@ function openSavedDesignModals() {
             let image = document.createElement("img");
             image.width = "200px";
             image.src =
-              "backend/saved_design_images/" + id + "dataURLFront.png";
+            "./backend/preset_images/1_${item.preset_idea}.png";
             image.classList.add("saved-design-item-images");
             resultDesign.appendChild(image);
 
@@ -302,7 +302,7 @@ function openSavedDesignModals() {
     }
   };
 
-  request.open("GET", SERVER_URL + "backend/get_preset.php", true);
+  request.open("GET", SERVER_URL + "backend/presetLoader.php", true);
   request.send();
 }
 
@@ -1274,3 +1274,383 @@ window.addEventListener("resize", checkScreenSize);
 
 // Check screen size when the page loads
 checkScreenSize();
+
+
+
+
+
+
+
+const imageDataArray = []; // Create an array to store image data
+
+function updateImage() {
+  const fileInput = document.getElementById("customFile1");
+  const image = document.getElementById("imagePlaceholder");
+
+  if (fileInput.files && fileInput.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      // Push the image data (in this case, the data URL) to the array
+      imageDataArray.push(e.target.result);
+
+      // You can also display the image if needed
+      image.src = e.target.result;
+    };
+
+    reader.readAsDataURL(fileInput.files[0]);
+    console.log(imageDataArray)
+  } else {
+    // Handle the case where no file is selected or other errors
+    console.error("No file selected or an error occurred.");
+    window.alert('No file selected or an error occurred.')
+  }
+
+ 
+}
+
+function updateImage1() {
+  const fileInput = document.getElementById("customFile2");
+  const image = document.getElementById("imagePlaceholder1");
+
+  if (fileInput.files && fileInput.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        // Push the image data (in this case, the data URL) to the array
+        imageDataArray.push(e.target.result);
+  
+        // You can also display the image if needed
+        image.src = e.target.result;
+      };
+  
+      reader.readAsDataURL(fileInput.files[0]);
+      console.log(imageDataArray)
+    } else {
+      // Handle the case where no file is selected or other errors
+      console.error("No file selected or an error occurred.");
+      window.alert('No file selected or an error occurred.')
+    }
+  
+   
+  }
+function updateImage2() {
+  const fileInput = document.getElementById("customFile3");
+  const image = document.getElementById("imagePlaceholder2");
+
+  if (fileInput.files && fileInput.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        // Push the image data (in this case, the data URL) to the array
+        imageDataArray.push(e.target.result);
+  
+        // You can also display the image if needed
+        image.src = e.target.result;
+      };
+  
+      reader.readAsDataURL(fileInput.files[0]);
+      console.log(imageDataArray)
+    } else {
+      // Handle the case where no file is selected or other errors
+      console.error("No file selected or an error occurred.");
+      window.alert('No file selected or an error occurred.')
+    }
+  
+   
+  }
+function updateImage3() {
+  const fileInput = document.getElementById("customFile4");
+  const image = document.getElementById("imagePlaceholder3");
+
+  if (fileInput.files && fileInput.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        // Push the image data (in this case, the data URL) to the array
+        imageDataArray.push(e.target.result);
+  
+        // You can also display the image if needed
+        image.src = e.target.result;
+      };
+  
+      reader.readAsDataURL(fileInput.files[0]);
+      console.log(imageDataArray)
+    } else {
+      // Handle the case where no file is selected or other errors
+      console.error("No file selected or an error occurred.");
+      window.alert('No file selected or an error occurred.')
+    }
+  
+   
+  }
+
+
+function submitImages() {
+  if(imageDataArray.length>=1){
+    const title = document.getElementById('presettitle').value;
+const data = {
+    imageData: imageDataArray,
+    title: title
+};
+  
+  let form=new FormData();
+  form.append("presetData",JSON.stringify(data))
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        // preform an action on response
+        let response = JSON.parse(request.responseText);
+        if (response.status == "success") {
+          alert("Sucessfully updated");
+          // This will refresh the page
+         window.location.reload();
+
+        } else {
+          console.log(response.status);
+        }
+        console.log(request.responseText);
+      }
+    };
+    request.open("POST", SERVER_URL + "backend/presetUpdater.php", true);
+    request.send(form);  
+
+  }
+ 
+ 
+}
+document.addEventListener("DOMContentLoaded", () => {
+  dataLoader();
+ 
+});
+
+
+
+function dataLoader(){
+
+  console.log("data loaded")
+  let request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      // preform an action on response
+      let response = JSON.parse(request.responseText);
+      if (response.status == "success") {
+        let data=response.data;
+        let tableFinalData=`        <tr>
+        <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">Title</th>
+        <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">Image</th>
+        <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 150px;" class="image-column">Delete</th>
+    </tr>`
+        data.forEach(item => {
+          console.log(item.preset_idea);
+          let tableData=` <tr>
+          <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">${item.presettitle}</td>
+          <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 150px;" class="image-column">
+          <img style="max-width: 100%; height: auto; display: block; margin: 0 auto;" src="./backend/preset_images/1_${item.preset_idea}.png" alt="Image 1">
+          </td>
+          <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;width:500px;">
+
+          <button class="btn btn-danger btn-rounded border border-primary" id="submitButton" onclick="deleteImage('${item.preset_idea}')" style="font-size:20px;">Delete</button>
+          
+          
+          </td>
+          
+      </tr>
+     `
+     tableFinalData=tableFinalData+tableData
+
+        });
+        document.getElementById('presetTable').innerHTML=tableFinalData;
+
+      } else {
+        console.log(response.status);
+      }
+      console.log(request.responseText);
+    }
+  };
+  request.open("POST", SERVER_URL + "backend/presetLoader.php", true);
+  request.send();  
+
+
+}
+
+function deleteImage(id) {
+  const data={
+    imageData:id
+  }
+
+  let form=new FormData();
+  form.append("presetData",JSON.stringify(data))
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        // preform an action on response
+        let response = JSON.parse(request.responseText);
+        if (response.status == "success") {
+          alert("Sucessfully Deleted");
+        } else {
+          console.log(response.status);
+        }
+        console.log(request.responseText);
+      }
+    };
+    request.open("POST", SERVER_URL + "backend/presetDelete.php", true);
+    request.send(form);  
+ 
+}
+
+
+
+
+
+
+
+
+function openSavedDesignModals() {
+  const container = document.getElementById("savedDesignModelContentContainer");
+  container.innerHTML = "";
+
+  // Declare the modal using const if it won't be reassigned
+  const savedDesignModel = new bootstrap.Modal("#savedDesignModel");
+  savedDesignModel.show();
+  console.log("Modal opened");
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      if (request.status === 200) {
+        const response = request.responseText;
+        try {
+          const responseObject = JSON.parse(response);
+
+          if (responseObject.status === "success") {
+            responseObject.data.forEach((element) => {
+              const resultDesign = document.createElement("div");
+              resultDesign.classList.add("saved-design-item");
+
+              // Add an onclick function to the resultDesign element
+resultDesign.addEventListener("click", function() {
+  // Your custom logic for the click event goes here
+   // Example action, you can replace this with your logic
+  // Define your parameters as key-value pairs
+  const param1 = `./backend/preset_images/1_${element.preset_idea}.png`;
+var param2 = `./backend/preset_images/2_${element.preset_idea}.png`;
+var param3 = `./backend/preset_images/3_${element.preset_idea}.png`;
+var param4 = `./backend/preset_images/4_${element.preset_idea}.png`;
+
+var param5 = element.presettitle;
+
+// Construct the URL with the parameters
+var url = "userPreset.php" + 
+          "?param1=" + param1 + 
+          "&param2=" + param2+
+          "&param3=" + param3+
+          "&param4=" + param4+
+          "&param5=" + param5;
+
+
+// Navigate to the URL
+window.location.href = url;
+
+});
+
+              const div = document.createElement("div");
+              div.classList.add("saved-design-list-view-details");
+              div.innerHTML = `
+                <span class="fw-bold  my-5 mx-5" style="margin-top:277700px;">${element.presettitle}</span>
+                <br />
+              `;
+              resultDesign.appendChild(div);
+
+              const image = document.createElement("img");
+              image.width = "200px";
+              image.src = `./backend/preset_images/1_${element.preset_idea}.png`;
+              image.classList.add("saved-design-item-images");
+              resultDesign.appendChild(image);
+
+              container.appendChild(resultDesign);
+            });
+          } else if (responseObject.status === "failed") {
+            console.log(responseObject.error);
+            container.innerText = "Please sign in to view saved designs...";
+          } else {
+            console.log(responseObject);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        // Handle network or server-related errors here
+        console.error("Request failed with status: " + request.status);
+      }
+    }
+  };
+
+  request.open("POST", SERVER_URL + "backend/presetLoader.php", true);
+  request.send();
+}
+
+
+
+
+
+// Declare imageData array outside of the event listener and the preset function
+const imageData = [];
+
+document.getElementById('customFilenew').addEventListener('change', function (event) {
+    const fileInput = event.target;
+    const selectedFiles = fileInput.files;
+
+    for (let i = 0; i < selectedFiles.length; i++) {
+        const file = selectedFiles[i];
+
+        // Read the file as a data URL
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+            // Push the file data (in base64 format) into the array
+            window.alert("image update sucess add more images if you want")
+            imageData.push(event.target.result);
+
+            // Log the last data in the array
+            if (i === selectedFiles.length - 1) {
+                console.log("Last data in the array:", event.target.result);
+            }
+        };
+
+        reader.readAsDataURL(file);
+    }
+});
+
+function preset() {
+  const data={
+    imageData:imageData,
+    instuctions: document.getElementById('instuctionBox').value,
+    title:document.getElementById('hidetext').textContent
+  }
+  console.log(data)
+  alert("Please wait few secons your oder is processing")
+
+  let form=new FormData();
+  form.append("presetData",JSON.stringify(data))
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        // preform an action on response
+        let response = JSON.parse(request.responseText);
+        if (response.status == "success") {
+          alert("Sucessfully place your oreder");
+          window.location.reload();
+
+        } else {
+          console.log(response.status);
+        }
+        console.log(request.responseText);
+      }
+    };
+    request.open("POST", SERVER_URL + "backend/presetOrder.php", true);
+    request.send(form);  
+}
