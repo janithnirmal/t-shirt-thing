@@ -17,7 +17,7 @@ $loggedUserData = $access->getUserData();
 $database = new database_driver();
 
 // Query to retrieve user data from the database
-$query = "SELECT `firstname`, `lastname`, `address1`, `address2`, `mobile`, `city`, `provience`, `postal` FROM `user` WHERE `email` = ?";
+$query = "SELECT `firstname`, `lastname`, `address1`, `address2`, `mobile`, `city`, `province`, `postal` FROM `user` WHERE `email` = ?";
 $userData = $database->execute_query($query, "s", [$loggedUserData['email']]);
 
 if ($userData['result']) {

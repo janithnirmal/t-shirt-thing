@@ -50,7 +50,7 @@ if ($access->isLoggedIn()) {
     ?>
 
 <div class="container mt-5">
-    <div class="d-flex justify-content-between">
+    <div class="d-block d-md-flex justify-content-between">
 <div class="mb-4 d-flex justify-content-center  mt-3">
     <!--img src="" alt="example placeholder" style="width: 250px;" /-->
 </div>

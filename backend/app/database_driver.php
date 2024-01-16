@@ -6,10 +6,10 @@ class database_driver
     // Constructor that takes in connection details and establishes a connection to the database
     public function __construct()
     {
-       $host = 'localhost'; // update your own
-       $user = 'samfab_tshirt'; // update your own
-       $password = '%oHNOIP(f5$*'; // update janith
-       $database = 'samfab_tshirt_db'; // update your own
+      $host = 'localhost'; // update your own
+      $user = 'samfab_tshirt'; // update your own
+      $password = '%oHNOIP(f5$*'; // update janith
+      $database = 'samfab_tshirt_db'; // update your own
 
         // $host = 'localhost'; // update your own
         // $user = 'root'; // update your own

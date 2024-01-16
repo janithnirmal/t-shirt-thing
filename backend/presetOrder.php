@@ -31,7 +31,7 @@ if (isset($_POST['presetData'])) {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'trackaaofficial@gmail.com';
-    $mail->Password = 'gijtkbbqyrnxnwzr';
+    $mail->Password = 'foamzsrbhogekuhz';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
     $mail->setFrom('trackaaofficial@gmail.com', 'Admin Verification');

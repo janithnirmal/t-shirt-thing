@@ -153,6 +153,7 @@ function openSavedDesignModal() {
             image.src =
               "backend/saved_design_images/" + id + "dataURLFront.png";
             image.classList.add("saved-design-item-images");
+          
             resultDesign.appendChild(image);
 
             container.appendChild(resultDesign);
@@ -204,9 +205,7 @@ function loadOrderData() {
               frontImage.classList.add("saved-design-item-images");
               frontImage.width = "200px";
               frontImage.src =
-                "backend/ordered_design_images/" +
-                element.id +
-                "dataURLFront.png"; // Set the image source dynamically
+                "order-confirmed-5115435-4273317.webp"; // Set the image source dynamically
               orderContainer.appendChild(frontImage);
 
               // Display order details
@@ -215,7 +214,6 @@ function loadOrderData() {
               orderDetails.innerHTML = `
                 <div class="d-flex flex-column">
                   <p><strong>Ordered Datetime:</strong> ${element.ordered_datetime}</p>
-                  <p><strong>Gender:</strong> ${element.gender}</p>
                   <p><strong>Cloth Type:</strong> ${dataObject.clothType}</p>
                   <p><strong>Print Type:</strong> ${dataObject.printType}</p>
                 </div>
@@ -382,7 +380,7 @@ function getUserData() {
           addressInput.value = userData.userData.address1;
           address2Input.value = userData.userData.address2;
           cityInput.value = userData.userData.city;
-          provinceInput.value = userData.userData.provience;
+          provinceInput.value = userData.userData.province;
           postalCodeInput.value = userData.userData.postal;
         } else {
           console.error("Received unexpected response:", userData);
@@ -1069,67 +1067,79 @@ function placeOrderModalOpen() {
   // }
 }
 
-function placeOrder() {
-  if (!dataObject.sizeQuntitySets || dataObject.sizeQuntitySets.length === 0) {
-    // Display a toast message for empty size and quantity sets
-    const toastContainer = document.querySelector(".toast-container");
-    const toast = document.getElementById("renderStartToastMessage");
-    const toastBody = toast.querySelector(".toast-body span");
-    toastBody.textContent =
-      "Size and quantity sets are empty. Please add size and quantity before you press order button.";
+let form = new FormData();
 
-    const toastInstance = new bootstrap.Toast(toast);
-    toastInstance.show();
-    return; // Do not make a request to the database
+async function getUserDetails() {
+  try {
+    const response = await fetch(SERVER_URL + "backend/user_data_get.php", {
+      method: "POST",
+      body: form,
+    });
+    const data = await response.json();
+    if (data.status === "success") {
+      return data.userData.mobile ? true : false;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error("Error fetching user details:", error);
+    return false;
   }
-  let form = new FormData();
-  form.append("image", JSON.stringify(imageDataForOrder));
-  form.append("dataObject", JSON.stringify(dataObject));
+}
 
+async function showToastMessage(message) {
   const toastContainer = document.querySelector(".toast-container");
   const toast = document.getElementById("renderStartToastMessage");
   const toastBody = toast.querySelector(".toast-body span");
-  toastBody.textContent = "please wait few seconds";
+  toastBody.textContent = message;
 
   const toastInstance = new bootstrap.Toast(toast, { delay: 5000 });
   toastInstance.show();
-
-  let request = new XMLHttpRequest();
-  request.onreadystatechange = function () {
-    if (request.readyState == 4) {
-      let response = request.responseText;
-      let responseJson = JSON.parse(response);
-      if (responseJson.status == "success") {
-        // Display a success toast message
-        alert("sucess");
-
-        placeOrderModal.hide();
-        window.location.reload();
-      } else if (responseJson.status == "failed") {
-        // Display an error toast message
-        const toastContainer = document.querySelector(".toast-container");
-        const toast = document.getElementById("renderStartToastMessage");
-        const toastBody = toast.querySelector(".toast-body span");
-        toastBody.textContent = responseJson.error;
-
-        const toastInstance = new bootstrap.Toast(toast);
-        toastInstance.show();
-      } else {
-        // Display a generic error toast message
-        const toastContainer = document.querySelector(".toast-container");
-        const toast = document.getElementById("renderStartToastMessage");
-        const toastBody = toast.querySelector(".toast-body span");
-        toastBody.textContent = response;
-
-        const toastInstance = new bootstrap.Toast(toast);
-        toastInstance.show();
-      }
-    }
-  };
-  request.open("POST", SERVER_URL + "backend/orderingProcess.php", true);
-  request.send(form);
 }
 
+async function placeOrder() {
+  if (!dataObject.sizeQuntitySets || dataObject.sizeQuntitySets.length === 0) {
+    await showToastMessage(
+      "Size and quantity sets are empty. Please add size and quantity before you press the order button."
+    );
+    return;
+  }
+
+  const userDetails = await getUserDetails();
+  if (!userDetails) {
+    await showToastMessage(
+      "Please fill user details so that we can contact you if there's an issue with your order."
+    );
+    return;
+  }
+  await showToastMessage(
+    "Please Wait Few Seconds."
+  );
+  form.append("image", JSON.stringify(imageDataForOrder));
+  form.append("dataObject", JSON.stringify(dataObject));
+  console.log(dataObject)
+  console.log(imageDataForOrder)
+
+  try {
+    const response = await fetch(SERVER_URL + "backend/orderingProcess.php", {
+      method: "POST",
+      body: form,
+    });
+    const responseData = await response.json();
+    if (responseData.status === "success") {
+      alert("Order placed successfully");
+      placeOrderModal.hide();
+      window.location.reload();
+    } else if (responseData.status === "failed") {
+      await showToastMessage(responseData.error);
+    } else {
+      await showToastMessage("An error occurred while processing the order.");
+    }
+  } catch (error) {
+    console.error("Error placing order:", error);
+    await showToastMessage("Order placed successfully.");
+  }
+}
 // function addStaticImage() {
 //   console.log("ihi");
 //   const imgPath = "uploads/" + imageName; // Replace this with the correct path to your image

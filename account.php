@@ -91,26 +91,26 @@ if ($access->isLoggedIn()) {
         </div>
         <div class="container w-75"> 
         <form class="mx-5">
-    <div class="form-inline d-flex flex-row responsive-col">
-        <input type="email" class="w-50 mx-2" id="firstNameInput" aria-describedby="emailHelp" placeholder="First Name" style="border: none; border-bottom: 1px solid black; border-radius: 0px; outline: none; background-color: white;">
-        <input type="email" class="w-50" id="lastNameInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Last Name">
+    <div class=" d-block d-md-flex flex-row ">
+        <input type="email" class="w-md--50 w-100 mx-md-2 mx-auto" id="firstNameInput" aria-describedby="emailHelp" placeholder="First Name" style="border: none; border-bottom: 1px solid black; border-radius: 0px; outline: none; background-color: white;">
+        <input type="email" class="w-md-50 w-100" id="lastNameInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Last Name">
     </div>
-    <div class="form-inline d-flex flex-row mt-3  responsive-col">
-        <input type="email" class="w-50 mx-2" id="telephoneInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Telephone">
-        <button type="button" class="btn btn-danger" style="width: 100px;"  onclick="getUserData()">Edit</button>
+    <div class=" d-block d-md-flex flex-row-row mt-md-2 mt-auto">
+        <input type="email" class="w-md-25 w-100 mx-md-2 mx-auto " id="telephoneInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Telephone">
+        <button type="button" class="btn btn-danger d-md-block d-none" style="width: 100px;"  onclick="getUserData()">Edit</button>
     </div>
-    <div class="form-inline d-flex flex-row mt-5  responsive-col">
-        <input type="email" class="bs w-100 mx-2" id="addressInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address">
+    <div class="form-inline d-flex flex-row mt-md-5 mt-auto ">
+        <input type="email" class="bs w-100 mx-md-2 md-auto" id="addressInput" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address">
     </div>
-    <div class="form-inline d-flex flex-row mt-5  responsive-col">
-        <input type="email" class="w-100 mx-2" id="address2Input" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address 2">
+    <div class="form-inline d-flex flex-row mt-md-5 mt-auto ">
+        <input type="email" class="w-100 mx-md-2 md-auto" id="address2Input" style="border: none; border-bottom: 1px solid black;border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Address 2">
     </div>
-    <div class="form-inline d-flex flex-row mt-5  responsive-col">
-        <input type="email" class="w-50 mx-2" id="cityInput" aria-describedby="emailHelp" placeholder="City" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
-        <input type="email" class="w-50 mx-2" id="provinceInput" aria-describedby="emailHelp" placeholder="Province" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
-        <input type="email" class="w-50" id="postalCodeInput" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Postal Code">
+    <div class="d-block d-md-flex flex-row-row mt-md-5 mt-auto">
+        <input type="email" class="w-md-50 w-100 mx-md-2 mx-auto" id="cityInput" aria-describedby="emailHelp" placeholder="City" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
+        <input type="email" class="w-md-50 w-100 mx-md-2 mx-auto" id="provinceInput" aria-describedby="emailHelp" placeholder="Province" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
+        <input type="email" class="w-md-50 w-100 mx-md-2 mx-auto" id="postalCodeInput" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Postal Code">
     </div>
-    <div class="form-inline d-flex flex-row mt-5 mb-3" style="margin-left: 35%;">
+    <div class="form-inline d-flex flex-row mt-5 mb-3 justify-content-center" >
 
         <button type="button" class="btn btn-danger mb-3 mx-2 pl-5" style="width: 100px;" onclick="userData()">Update</button>
         <button type="button" class="btn btn-info text-white mb-3 mx-2" style="width: 100px;" onclick="userData()">Save</button>
@@ -122,7 +122,21 @@ if ($access->isLoggedIn()) {
     </div>
 
 
-    
+       <!-- toasts -->
+       <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                <div id="renderStartToastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header d-flex gap-2">
+                                        <div class="spinner-grow text-danger" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <strong class="me-auto">Notification Panel</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-body">
+                                        <span>Wait for few seconds.....</span>
+                                    </div>
+                                </div>
+                            </div>
 
 <!-- Your content goes here -->
 

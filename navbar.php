@@ -54,8 +54,8 @@ if ($access->isLoggedIn()) {
                     </div>
                     <div class="navbar-link-container">
                         <a href="index.php">DesignHome</a>
-                        <button class="btn-style-remover text-secondary" href="#" onclick="openSavedDesignModal();">Designs</button>
-                        <a href="orders.php">Orders</a>
+                        <a class="" href="#" onclick="openSavedDesignModal();">Designs</a>
+                        <a href="orders.php" class="">Orders</a>
                         <a class="d-none" href="">Help</a>
                         <a href="" class="d-none">
                             Reviews

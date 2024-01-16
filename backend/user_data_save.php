@@ -37,10 +37,11 @@ $province = $formData["province"];
 $postalCode = $formData["postalCode"];
 
 
+
 $database = new database_driver();
 
-$updateQuery="UPDATE `user` SET `firstname`=?,`lastname`=?,`address1`=?,`address2`=?,`mobile`=?,`city`=?,`provience`=?,`postal`=? WHERE `email`=? ";
-$database->execute_query($updateQuery,"sssssssss",[$firstName,$lastName,$address,$address2,$telephone,$city,$province,$postalCode,$loggedUserData['email']]);
+$updateQuery="UPDATE `user` SET `firstname`=?,`lastname`=?,`address1`=?,`address2`=?,`mobile`=?,`city`=?,`province`=?,`postal`=? WHERE `email`=? ";
+$database->execute_query($updateQuery,"ssssssssi",[$firstName,$lastName,$address,$address2,$telephone,$city,$province,$postalCode,$loggedUserData['email']]);
 
-$responseObject->error = $postalCode;
+$responseObject->status = "success";
 response_sender::sendJson($responseObject);
