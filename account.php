@@ -108,7 +108,7 @@ if ($access->isLoggedIn()) {
     <div class="d-block d-md-flex flex-row-row mt-md-5 mt-auto">
         <input type="email" class="w-md-50 w-100 mx-md-2 mx-auto" id="cityInput" aria-describedby="emailHelp" placeholder="City" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
         <input type="email" class="w-md-50 w-100 mx-md-2 mx-auto" id="provinceInput" aria-describedby="emailHelp" placeholder="Province" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;">
-        <input type="email" class="w-md-50 w-100 mx-md-2 mx-auto" id="postalCodeInput" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Postal Code">
+        <input type="email" class="w-md-50 w-100 mx-md-2 mx-auto d-none" id="postalCodeInput" style="border: none; border-bottom: 1px solid black; border-radius: 0px;outline: none; background-color: white;" aria-describedby="emailHelp" placeholder="Postal Code">
     </div>
     <div class="form-inline d-flex flex-row mt-5 mb-3 justify-content-center" >
 
