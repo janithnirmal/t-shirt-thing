@@ -11,11 +11,11 @@ class database_driver
       $password = '%oHNOIP(f5$*'; // update janith
       $database = 'samfab_tshirt_db'; // update your own
 
-        // $host = 'localhost'; // update your own
-        // $user = 'root'; // update your own
+         //$host = 'localhost'; // update your own
+         //$user = 'root'; // update your own
         //// $password = 'JanithNirmal12#$'; // update janith
-        //  $password = 'KaviskaDilshan12#$'; // update janith
-        // $database = 't_shirt_design_app_db'; // update your own
+         // $password = 'KaviskaDilshan12#$'; // update janith
+         //$database = 't_shirt_design_app_db'; // update your own
 
         // Connect to the database using mysqli
         $this->connection = new mysqli($host, $user, $password, $database);

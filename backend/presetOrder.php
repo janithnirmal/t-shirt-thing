@@ -36,7 +36,7 @@ if (isset($_POST['presetData'])) {
     $mail->Port = 465;
     $mail->setFrom('trackaaofficial@gmail.com', 'Admin Verification');
     $mail->addReplyTo('trackaaofficial@gmail.com', 'Admin Verification');
-    $mail->addAddress('rmjanithnirmal@gmail.com');
+    $mail->addAddress('webkd20@gmail.com');
     $mail->isHTML(true);
     $mail->Subject = 'T-shirt order with instructions';
 
